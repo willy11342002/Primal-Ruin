@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dvod5cngq3pf3"]
+
+[ext_resource type="Script" uid="uid://bqf53epsb5xpj" path="res://Core/Persistences/Persistence.gd" id="1_wxst7"]
+[ext_resource type="Script" uid="uid://d0pg7hdmyujgo" path="res://Core/Scripts/Resources/SaveData.gd" id="3_si005"]
+
+[sub_resource type="Resource" id="Resource_ngy8j"]
+script = ExtResource("3_si005")
+metadata/_custom_type_script = "uid://d0pg7hdmyujgo"
+
+[node name="Persistence" type="Node2D" unique_id=608044120]
+script = ExtResource("1_wxst7")
+data = SubResource("Resource_ngy8j")

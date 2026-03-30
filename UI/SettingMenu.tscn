@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://c3vubn3ume1wh"]
+
+[ext_resource type="Script" uid="uid://dqyhkphv68yvh" path="res://UI/SettingMenu.gd" id="1_mm1a1"]
+
+[node name="SettingMenu" type="Node" unique_id=202177011]
+script = ExtResource("1_mm1a1")
+back_scene_path = "res://UI/MainMenu.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=531016937]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1560426370]
+modulate = Color(1, 1, 1, 0.19607843)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1345099544]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -20.0
+offset_right = 34.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/VBoxContainer" unique_id=90872525]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+current_tab = 0
+
+[node name="UI_Video" type="MarginContainer" parent="CanvasLayer/VBoxContainer/TabContainer" unique_id=1768450954]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Video" unique_id=128922118]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Video/GridContainer" unique_id=1543691919]
+layout_mode = 2
+text = "UI_FullScreen"
+
+[node name="FullScreen" type="CheckButton" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Video/GridContainer" unique_id=1871904088]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Video/GridContainer" unique_id=1228827989]
+layout_mode = 2
+text = "UI_Language"
+
+[node name="Language" type="OptionButton" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Video/GridContainer" unique_id=291192576]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="UI_Audio" type="MarginContainer" parent="CanvasLayer/VBoxContainer/TabContainer" unique_id=441383824]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio" unique_id=1332372911]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=1700517227]
+layout_mode = 2
+text = "UI_MasterVolume"
+
+[node name="MasterSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=2066474729]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=1730850636]
+layout_mode = 2
+text = "UI_BGMVolume"
+
+[node name="BGMSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=1752855255]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=816972941]
+layout_mode = 2
+text = "UI_SFXVolume"
+
+[node name="SFXSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=961171497]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="Label4" type="Label" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=1698864632]
+layout_mode = 2
+text = "UI_UIVolume"
+
+[node name="UISlider" type="HSlider" parent="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer" unique_id=589382830]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="UI_Input" type="MarginContainer" parent="CanvasLayer/VBoxContainer/TabContainer" unique_id=1548187339]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=469460011]
+layout_mode = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=593959738]
+layout_mode = 2
+text = "UI_Back"
+
+[node name="Save" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer" unique_id=1181072433]
+layout_mode = 2
+text = "UI_Save"
+
+[connection signal="toggled" from="CanvasLayer/VBoxContainer/TabContainer/UI_Video/GridContainer/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="item_selected" from="CanvasLayer/VBoxContainer/TabContainer/UI_Video/GridContainer/Language" to="." method="_on_language_item_selected"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/TabContainer/UI_Audio/GridContainer/UISlider" to="." method="_on_ui_silder_value_changed"]
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_button_up"]

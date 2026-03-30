@@ -1,0 +1,23 @@
+key,en,zh_TW
+UI_StartGame,Start Game,開始遊戲
+UI_LoadGame,Load Game,載入遊戲
+UI_Settings,Settings,設定
+UI_Credit,Credit,製作團隊
+UI_Exit,Exit,退出
+
+UI_Video,Video,視訊
+UI_Audio,Audio,音訊
+UI_Input,Input,輸入
+UI_Back,Back,返回
+UI_Save,Save,保存
+
+UI_FullScreen,Full Screen,全螢幕
+UI_Language,Language,語言
+
+UI_MasterVolume,Master,主音量
+UI_BGMVolume,BGM,背景音量
+UI_SFXVolume,SFX,音效音量
+UI_UIVolume,UI,介面音量
+
+en,English,English
+zh_TW,繁體中文,繁體中文
