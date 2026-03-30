@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7tygrrbx6tl8"]
 
-[ext_resource type="Texture2D" uid="uid://bjnmlm02o10h6" path="res://battle3D/Sprites/MousePoint.png" id="1_dmjx7"]
-[ext_resource type="Script" uid="uid://cv22mprxpjl2s" path="res://battle3D/Scripts/Coordinate.gd" id="1_kdicg"]
+[ext_resource type="Texture2D" uid="uid://bjnmlm02o10h6" path="res://Battle3D/Sprites/Coordinate.png" id="1_dmjx7"]
+[ext_resource type="Script" uid="uid://cv22mprxpjl2s" path="res://Battle3D/Coordinates/Coordinate.gd" id="1_kdicg"]
 
 [node name="Coordinate" type="Node3D" unique_id=461673887]
 script = ExtResource("1_kdicg")

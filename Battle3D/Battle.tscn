@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" uid="uid://db8n3msxd0q7t" path="res://Battle3D/Battle.gd" id="1_b06fd"]
 [ext_resource type="Script" uid="uid://r1alp46xyy2t" path="res://Battle3D/Scripts/Servers/NavServer.gd" id="1_tvoeq"]
-[ext_resource type="PackedScene" uid="uid://bopuyec36wfh0" path="res://Battle3D/Scenes/MovePreview.tscn" id="2_hdoun"]
+[ext_resource type="PackedScene" uid="uid://bopuyec36wfh0" path="res://Battle3D/MovePreviews/MovePreview.tscn" id="2_hdoun"]
 [ext_resource type="Script" uid="uid://dd654f55rlpd4" path="res://Battle3D/Scripts/Servers/CombatServer.gd" id="2_q31bq"]
 [ext_resource type="Script" uid="uid://c2txb43d5q03t" path="res://Battle3D/Scripts/Resources/PathResource.gd" id="3_1vw4f"]
 [ext_resource type="Script" uid="uid://exlsny2nfpo3" path="res://Battle3D/Scripts/Controller.gd" id="3_icoww"]
 [ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Battle3D/UnitDatas/GiantFly/UnitData.tres" id="4_snrpe"]
 [ext_resource type="Resource" uid="uid://01ii8u5sfe4c" path="res://Battle3D/UnitDatas/BasePlayer/UnitData.tres" id="5_nw1dk"]
 [ext_resource type="Script" uid="uid://bx38q3tjpefj6" path="res://Battle3D/Scripts/Resources/CombatData.gd" id="6_e8ow2"]
-[ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/Scenes/SpawnPoint.tscn" id="7_7ukbj"]
+[ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/SpawnPoints/SpawnPoint.tscn" id="7_7ukbj"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="7_fq02d"]
-[ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://Battle3D/Scenes/CombatUnit.tscn" id="10_fq02d"]
+[ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://Battle3D/CombatUnits/CombatUnit.tscn" id="10_fq02d"]
 [ext_resource type="Texture2D" uid="uid://cr38qvd1xxfec" path="res://Battle3D/Sprites/Path.png" id="10_snrpe"]
 [ext_resource type="Shape3D" uid="uid://dqcfhkgtp3rxx" path="res://Battle3D/Battle_CollisionData/Battle_BaseLevel_collision.res" id="14_b06fd"]
 [ext_resource type="Script" uid="uid://0ebjhstv2luk" path="res://Battle3D/Scripts/CustomTileMapLayer3D.gd" id="18_0h6wk"]
-[ext_resource type="PackedScene" uid="uid://c7tygrrbx6tl8" path="res://Battle3D/Scenes/Coordinate.tscn" id="19_fx1ly"]
+[ext_resource type="PackedScene" uid="uid://c7tygrrbx6tl8" path="res://Battle3D/Coordinates/Coordinate.tscn" id="19_fx1ly"]
 [ext_resource type="Script" uid="uid://dk0ib5b4w24ll" path="res://addons/TileMapLayer3D/core/animated_tiles/animated_tile_data.gd" id="19_hdoun"]
 [ext_resource type="Script" uid="uid://bli432i5uj51v" path="res://addons/TileMapLayer3D/core/tile_creation_placement/tilemap_layer_settings.gd" id="20_1vw4f"]
 [ext_resource type="Texture2D" uid="uid://bk4v48e8mia8a" path="res://Battle3D/Sprites/Tiles.png" id="21_f6147"]
@@ -136,6 +136,8 @@ current_depth_scale = 1.0
 [node name="Battle" type="Node" unique_id=408126451]
 script = ExtResource("1_b06fd")
 data = SubResource("Resource_megvt")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1787067044]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1969056614]
 transform = Transform3D(0.73951364, -0.6039093, 0.2973435, 0, 0.44172505, 0.89715046, -0.6731416, -0.663455, 0.3266617, 1.1468025, 4.9260287, 3.6339917)

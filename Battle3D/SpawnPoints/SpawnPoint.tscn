@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blxowjx7ib6vy"]
 
-[ext_resource type="Script" uid="uid://gpp73vx77rlp" path="res://battle3D/Scripts/SpawnPoint.gd" id="1_vlad8"]
-[ext_resource type="Texture2D" uid="uid://5h4dg6olisuo" path="res://battle3D/Sprites/PawnPlaceholder.png" id="2_q0h2q"]
+[ext_resource type="Script" uid="uid://gpp73vx77rlp" path="res://Battle3D/SpawnPoints/SpawnPoint.gd" id="1_vlad8"]
+[ext_resource type="Texture2D" uid="uid://5h4dg6olisuo" path="res://Battle3D/Sprites/PawnPlaceholder.png" id="2_q0h2q"]
 
 [node name="SpawnPoint" type="Node3D" unique_id=480946794]
 script = ExtResource("1_vlad8")
