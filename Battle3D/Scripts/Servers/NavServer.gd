@@ -18,6 +18,15 @@ const NEIGHBOR_OFFSETS: Array[Vector2i] = [
 var preview_dic: Dictionary = {}
 
 
+func _ready() -> void:
+	Global.nav = self
+
+
+func _exit_tree() -> void:
+	Global.nav = null
+
+
+
 func world_to_map(world_pos: Vector3) -> Vector2i:
 	return base_level.world_to_map(world_pos)
 

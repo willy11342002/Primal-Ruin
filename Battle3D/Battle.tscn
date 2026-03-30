@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Battle3D/UnitDatas/GiantFly/UnitData.tres" id="4_snrpe"]
 [ext_resource type="Resource" uid="uid://01ii8u5sfe4c" path="res://Battle3D/UnitDatas/BasePlayer/UnitData.tres" id="5_nw1dk"]
 [ext_resource type="Script" uid="uid://bx38q3tjpefj6" path="res://Battle3D/Scripts/Resources/CombatData.gd" id="6_e8ow2"]
+[ext_resource type="PackedScene" uid="uid://fo7kwd7yqf37" path="res://Battle3D/HUD/HUD.tscn" id="6_nw1dk"]
 [ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/SpawnPoints/SpawnPoint.tscn" id="7_7ukbj"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="7_fq02d"]
 [ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://Battle3D/CombatUnits/CombatUnit.tscn" id="10_fq02d"]
@@ -137,7 +138,7 @@ current_depth_scale = 1.0
 script = ExtResource("1_b06fd")
 data = SubResource("Resource_megvt")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1787067044]
+[node name="HUD" parent="." unique_id=1050984296 instance=ExtResource("6_nw1dk")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1969056614]
 transform = Transform3D(0.73951364, -0.6039093, 0.2973435, 0, 0.44172505, 0.89715046, -0.6731416, -0.663455, 0.3266617, 1.1468025, 4.9260287, 3.6339917)

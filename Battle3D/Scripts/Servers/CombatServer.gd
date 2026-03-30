@@ -3,13 +3,20 @@ extends Node
 
 signal hover_unit_changed(new_unit)
 
-@onready var nav = get_tree().get_first_node_in_group("NavigationServer")
 @export var unit_scene: PackedScene
 @export var units_container: Node
 
 var combat_data: CombatData
 var current_unit: CombatUnit: get = get_current_unit
 var hovered_unit: CombatUnit = null
+
+
+func _ready() -> void:
+	Global.combat = self
+
+
+func _exit_tree() -> void:
+	Global.combat = null
 
 
 func hover_on_unit(unit: CombatUnit) -> void:
@@ -30,7 +37,7 @@ func hover_off_unit(unit: CombatUnit) -> void:
 func map_pos_to_unit(map_pos: Variant) -> CombatUnit:
 	for unit in get_tree().get_nodes_in_group("CombatUnit"):
 		if unit is CombatUnit:
-			var unit_map_pos = nav.world_to_map(unit.global_position)
+			var unit_map_pos = Global.nav.world_to_map(unit.global_position)
 			if unit_map_pos == map_pos:
 				return unit
 	return
@@ -49,9 +56,9 @@ func get_current_unit() -> CombatUnit:
 
 
 func show_move_range(unit: CombatUnit) -> Dictionary:
-	var map_pos = nav.world_to_map(unit.global_position)
-	var distances = nav.find_range(map_pos, unit.unit_data.balance_movement)
-	nav.show_range(unit.unit_data.camp, distances)
+	var map_pos = Global.nav.world_to_map(unit.global_position)
+	var distances = Global.nav.find_range(map_pos, unit.unit_data.balance_movement)
+	Global.nav.show_range(unit.unit_data.camp, distances)
 	return distances
 
 
@@ -63,14 +70,14 @@ func clear_units() -> void:
 func add_unit(_data: UnitData, pos: Vector2i) -> CombatUnit:
 	var unit: CombatUnit = unit_scene.instantiate()
 	units_container.add_child(unit)
-	unit.global_position = nav.map_to_world(pos)
+	unit.global_position = Global.nav.map_to_world(pos)
 	unit.setup(_data)
 	unit.health_depleted.connect(deplete_unit)
 	return unit
 
 
 func get_unit_info(unit: CombatUnit) -> Dictionary:
-	nav.clear_preview()
+	Global.nav.clear_preview()
 	if unit == null:
 		return {}
 

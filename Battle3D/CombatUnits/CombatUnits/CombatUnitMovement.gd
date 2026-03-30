@@ -6,7 +6,6 @@ signal move_started
 signal move_updated
 signal move_finished
 
-@onready var nav = get_tree().get_first_node_in_group("NavigationServer")
 @onready var unit: CombatUnit = get_parent() as CombatUnit
 @export var move_duration: float = 0.3
 
@@ -20,7 +19,7 @@ func move_alone_path(_path: Array) -> void:
 			_ when point is Vector2i:
 				path.append(point)
 			_ when point is Vector3:
-				path.append(nav.world_to_map(point))
+				path.append(Global.nav.world_to_map(point))
 			_:
 				push_error("Invalid path point: " + str(point))
 	move_started.emit()
@@ -33,7 +32,7 @@ func move_to_next_point() -> void:
 		return
 
 	var next_point: Vector2i = path.pop_front()
-	var next_position: Vector3 = nav.map_to_world(next_point)
+	var next_position: Vector3 = Global.nav.map_to_world(next_point)
 	if global_position == next_position:
 		move_to_next_point()
 		return

@@ -98,6 +98,7 @@ Cancel={
 
 locale/translation_remaps={}
 locale/translations=PackedStringArray("res://Translations/UI.en.translation", "res://Translations/UI.zh_TW.translation")
+locale/locale_filter_mode=0
 
 [rendering]
 

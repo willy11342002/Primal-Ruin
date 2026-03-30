@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://fo7kwd7yqf37"]
+
+[ext_resource type="Script" uid="uid://bl3hsu0acxp4k" path="res://Battle3D/HUD/HUD.gd" id="1_l1683"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1050984296]
+script = ExtResource("1_l1683")
