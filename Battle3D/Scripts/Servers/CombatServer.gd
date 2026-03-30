@@ -13,12 +13,16 @@ var hovered_unit: CombatUnit = null
 
 
 func hover_on_unit(unit: CombatUnit) -> void:
+	if unit:
+		unit.hover_on()
 	hovered_unit = unit
 	hover_unit_changed.emit(unit.unit_data.camp)
 
 
 func hover_off_unit(unit: CombatUnit) -> void:
 	if hovered_unit == unit:
+		if unit:
+			unit.hover_off()
 		hovered_unit = null
 		hover_unit_changed.emit(null)
 

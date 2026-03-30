@@ -63,18 +63,21 @@ func _update_facing() -> void:
 
 
 func update_animations(unit_data) -> void:
-	$Idle.sprite_frames = unit_data.idle_animation
-	$Move.sprite_frames = unit_data.move_animation
-	$Attack.sprite_frames = unit_data.attack_animation
-	$Die.sprite_frames = unit_data.die_animation
+	for child in get_children():
+		child.setup(unit_data)
+	play("Idle")
 
 
 func play(animation_name: String) -> void:
 	for child in get_children():
-		if child is AnimatedSprite3D:
-			if child.name == animation_name:
-				child.show()
-				child.play()
-			else:
-				child.hide()
-				child.stop()
+		if child.name == animation_name:
+			child.show()
+			child.play()
+		else:
+			child.hide()
+			child.stop()
+
+
+func set_outline(enabled: bool) -> void:
+	for child in get_children():
+		child.set_outline(enabled)

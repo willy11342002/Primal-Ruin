@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bybdwtbsalvc4"]
+
+[ext_resource type="Shader" uid="uid://cryk1a5h18x2x" path="res://Battle3D/Shaders/Outline.gdshader" id="1_gg7on"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_gg7on")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
