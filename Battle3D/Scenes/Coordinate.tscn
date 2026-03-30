@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c7tygrrbx6tl8"]
+
+[ext_resource type="Texture2D" uid="uid://bjnmlm02o10h6" path="res://battle3D/Sprites/MousePoint.png" id="1_dmjx7"]
+[ext_resource type="Script" uid="uid://cv22mprxpjl2s" path="res://battle3D/Scripts/Coordinate.gd" id="1_kdicg"]
+
+[node name="Coordinate" type="Node3D" unique_id=461673887]
+script = ExtResource("1_kdicg")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=454562716]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+pixel_size = 0.008
+axis = 1
+texture_filter = 0
+texture = ExtResource("1_dmjx7")

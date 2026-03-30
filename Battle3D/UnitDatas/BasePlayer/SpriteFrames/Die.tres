@@ -1,0 +1,91 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cil88gfoc3ets"]
+
+[ext_resource type="Texture2D" uid="uid://css87q12twnmw" path="res://Battle3D/UnitDatas/BasePlayer/Sprites/BasePlayer Die.png" id="1_4wdcf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yvx6"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj6r6"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1koo"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbsps"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rginl"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j30m0"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhnyi"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpjea"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_462cm"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(240, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyher"]
+atlas = ExtResource("1_4wdcf")
+region = Rect2(320, 80, 80, 80)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yvx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj6r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1koo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbsps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rginl")
+}],
+"loop": true,
+"name": &"Anim001",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j30m0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhnyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpjea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_462cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyher")
+}],
+"loop": true,
+"name": &"Anim002",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

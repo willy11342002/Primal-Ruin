@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://62152g4a3j5c"]
+
+[ext_resource type="Script" uid="uid://kcrp2ilqwaw3" path="res://Battle3D/Scripts/CombatUnits/CombatUnit.gd" id="1_iq6de"]
+[ext_resource type="SpriteFrames" uid="uid://c2otr0uwcntmd" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Idle.tres" id="3_ngcne"]
+[ext_resource type="SpriteFrames" uid="uid://bv83mfuv3lqxb" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Move.tres" id="4_iq6de"]
+[ext_resource type="Script" uid="uid://bjsp5qbh1svgr" path="res://Battle3D/Scripts/CombatUnits/CombatUnitModel.gd" id="4_oermp"]
+[ext_resource type="SpriteFrames" uid="uid://cfgnyhhgu3v5r" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Attack.tres" id="5_od71g"]
+[ext_resource type="SpriteFrames" uid="uid://d1m615nq5otj4" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Die.tres" id="6_1ypb8"]
+[ext_resource type="Script" uid="uid://16xd682ue0cq" path="res://Battle3D/Scripts/CombatUnits/CombatUnitMovement.gd" id="8_u1s1b"]
+
+[node name="CombatUnit" type="Node3D" unique_id=1568124908 groups=["CombatUnit"]]
+transform = Transform3D(0.9974491, -0.0022457168, 0.0035859754, 0.002165601, 0.99999744, 0.0002179827, -0.003565005, -0.00021166321, 0.9954128, 0, 0, 0)
+script = ExtResource("1_iq6de")
+
+[node name="CombatUnitMovement3D" type="Node3D" parent="." unique_id=1080171870]
+unique_name_in_owner = true
+transform = Transform3D(1, -5.803713e-11, -2.3283064e-10, -1.7894308e-10, 1, -2.910383e-11, -2.3283064e-10, 0, 1, 0, 0, 0)
+script = ExtResource("8_u1s1b")
+move_duration = 0.5
+
+[node name="CombatUnitModel" type="Node3D" parent="." unique_id=1105797494]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("4_oermp")
+metadata/_edit_lock_ = true
+
+[node name="Idle" type="AnimatedSprite3D" parent="CombatUnitModel" unique_id=2066104240]
+billboard = 1
+texture_filter = 0
+sprite_frames = ExtResource("3_ngcne")
+animation = &"Anim001"
+metadata/_edit_lock_ = true
+
+[node name="Move" type="AnimatedSprite3D" parent="CombatUnitModel" unique_id=1703699485]
+visible = false
+billboard = 1
+texture_filter = 0
+sprite_frames = ExtResource("4_iq6de")
+animation = &"Anim001"
+metadata/_edit_lock_ = true
+
+[node name="Attack" type="AnimatedSprite3D" parent="CombatUnitModel" unique_id=72477105]
+visible = false
+billboard = 1
+texture_filter = 0
+sprite_frames = ExtResource("5_od71g")
+animation = &"Anim001"
+metadata/_edit_lock_ = true
+
+[node name="Die" type="AnimatedSprite3D" parent="CombatUnitModel" unique_id=990181104]
+visible = false
+billboard = 1
+texture_filter = 0
+sprite_frames = ExtResource("6_1ypb8")
+animation = &"Anim001"
+metadata/_edit_lock_ = true

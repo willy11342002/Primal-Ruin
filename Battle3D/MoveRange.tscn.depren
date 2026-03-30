@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://bopuyec36wfh0"]
+
+[ext_resource type="Texture2D" uid="uid://bbu713ggc87yn" path="res://battle3D/Sprites/Range.png" id="1_2y42k"]
+[ext_resource type="Script" uid="uid://xdmm7egms4uv" path="res://addons/sprite_mesh/sprite_mesh_instance.gd" id="2_p0fwb"]
+[ext_resource type="Script" uid="uid://onnxwjckopnl" path="res://addons/sprite_mesh/sprite_mesh.gd" id="3_epgur"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx7ju"]
+albedo_texture = ExtResource("1_2y42k")
+texture_filter = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m1vqy"]
+_surfaces = [{
+"aabb": AABB(-0.16, -0.07000001, -0.16, 0.32, 0.14000002, 0.32),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA9AAAAAAAAgD0AAAA/AAAAAAAAAD8AAIA9AAAAAAAAAAAAAAAAAAAAAAAAAD8AAIA9AAAAPwAAADsAAAAAAAAAOwAAAAAAAAA7AAAAPwAAADsAAAAAAAAAOwAAAD8AAAA7AAAAPwAAeD0AAAAAAAB4PQAAAAAAAHg9AAAAPwAAeD0AAAAAAAB4PQAAAD8AAHg9AAAAPwAAAAAAAIA8AACAPQAAgDwAAIA9AACAPAAAAAAAAIA8AACAPQAAgDwAAAAAAACAPAAAAAAAAPg+AACAPQAA+D4AAIA9AAD4PgAAAAAAAPg+AACAPQAA+D4AAAAAAAD4Pg=="),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACwAMAA0ADgAPABAAEQASABMAFAAVABYAFwAYABkAGgAbABwAHQAeAB8A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("Ctcjvihcjz0K1yO+CtcjPihcjz0K1yO+CtcjPipcjz0K1yM+Ctcjvipcjz0K1yM+CtcjPipcj70K1yO+Ctcjvipcj70K1yO+Ctcjvihcj70K1yM+CtcjPihcj70K1yM+Ctcjvipcj70K1yO+Ctcjvihcjz0K1yO+Ctcjvipcjz0K1yM+Ctcjvipcj70K1yO+Ctcjvipcjz0K1yM+Ctcjvihcj70K1yM+CtcjPihcjz0K1yO+CtcjPipcj70K1yO+CtcjPihcj70K1yM+CtcjPihcjz0K1yO+CtcjPihcj70K1yM+CtcjPipcjz0K1yM+Ctcjvipcj70K1yO+CtcjPipcj70K1yO+CtcjPihcjz0K1yO+Ctcjvipcj70K1yO+CtcjPihcjz0K1yO+Ctcjvihcjz0K1yO+Ctcjvipcjz0K1yM+CtcjPipcjz0K1yM+CtcjPihcj70K1yM+Ctcjvipcjz0K1yM+CtcjPihcj70K1yM+Ctcjvihcj70K1yM+/3///////7//f///////v/9///////+//3///////7//fwAA////P/9/AAD///8//38AAP///z//fwAA////PwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v/////////+//////////7//////////v/////////+//////////7//////////v/9//3////8//3//f////z//f/9/////P/9//3////8//3//f////z//f/9/////Pw==")
+}]
+
+[sub_resource type="Resource" id="Resource_3bjec"]
+script = ExtResource("3_epgur")
+meshes = Array[ArrayMesh]([SubResource("ArrayMesh_m1vqy")])
+material = SubResource("StandardMaterial3D_gx7ju")
+
+[node name="MoveRange" type="MeshInstance3D" unique_id=741993044]
+material_override = SubResource("StandardMaterial3D_gx7ju")
+mesh = SubResource("ArrayMesh_m1vqy")
+script = ExtResource("2_p0fwb")
+depth = 7.0
+pixel_size = 0.02
+axis = 1
+region_enabled = true
+region_rect = Rect2i(0, 0, 1, 1)
+generated_sprite_mesh = SubResource("Resource_3bjec")
+metadata/_custom_type_script = "uid://xdmm7egms4uv"

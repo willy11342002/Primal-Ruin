@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://blxowjx7ib6vy"]
+
+[ext_resource type="Script" uid="uid://gpp73vx77rlp" path="res://battle3D/Scripts/SpawnPoint.gd" id="1_vlad8"]
+[ext_resource type="Texture2D" uid="uid://5h4dg6olisuo" path="res://battle3D/Sprites/PawnPlaceholder.png" id="2_q0h2q"]
+
+[node name="SpawnPoint" type="Node3D" unique_id=480946794]
+script = ExtResource("1_vlad8")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1341373829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16238412, 0)
+modulate = Color(0, 1, 0, 1)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_q0h2q")

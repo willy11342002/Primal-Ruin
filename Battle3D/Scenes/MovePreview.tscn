@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bopuyec36wfh0"]
+
+[ext_resource type="Texture2D" uid="uid://bbu713ggc87yn" path="res://battle3D/Sprites/Range.png" id="1_2y42k"]
+[ext_resource type="Script" uid="uid://djtl57c8oxim5" path="res://battle3D/Scripts/MovePreview.gd" id="1_dbdr6"]
+
+[node name="MovePreview" type="Node3D" unique_id=263324730 node_paths=PackedStringArray("path_sprite", "surface_sprite")]
+script = ExtResource("1_dbdr6")
+path_sprite = NodePath("PathSprite")
+surface_sprite = NodePath("SurfaceSprite")
+
+[node name="PathSprite" type="Sprite3D" parent="." unique_id=215005083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0)
+pixel_size = 0.017
+axis = 1
+texture_filter = 0
+
+[node name="SurfaceSprite" type="Sprite3D" parent="." unique_id=868722254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+pixel_size = 0.017
+axis = 1
+texture_filter = 0
+texture = ExtResource("1_2y42k")
+hframes = 6
+vframes = 2

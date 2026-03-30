@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://ci1e0536bttgj"]
+
+[ext_resource type="Script" uid="uid://db8n3msxd0q7t" path="res://Battle3D/Battle.gd" id="1_b06fd"]
+[ext_resource type="Script" uid="uid://r1alp46xyy2t" path="res://Battle3D/Scripts/Servers/NavServer.gd" id="1_tvoeq"]
+[ext_resource type="PackedScene" uid="uid://bopuyec36wfh0" path="res://Battle3D/Scenes/MovePreview.tscn" id="2_hdoun"]
+[ext_resource type="Script" uid="uid://dd654f55rlpd4" path="res://Battle3D/Scripts/Servers/CombatServer.gd" id="2_q31bq"]
+[ext_resource type="Script" uid="uid://c2txb43d5q03t" path="res://Battle3D/Scripts/Resources/PathResource.gd" id="3_1vw4f"]
+[ext_resource type="Script" uid="uid://exlsny2nfpo3" path="res://Battle3D/Scripts/Controller.gd" id="3_icoww"]
+[ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Battle3D/UnitDatas/GiantFly/UnitData.tres" id="4_snrpe"]
+[ext_resource type="Resource" uid="uid://01ii8u5sfe4c" path="res://Battle3D/UnitDatas/BasePlayer/UnitData.tres" id="5_nw1dk"]
+[ext_resource type="Script" uid="uid://bx38q3tjpefj6" path="res://Battle3D/Scripts/Resources/CombatData.gd" id="6_e8ow2"]
+[ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/Scenes/SpawnPoint.tscn" id="7_7ukbj"]
+[ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="7_fq02d"]
+[ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://Battle3D/Scenes/CombatUnit.tscn" id="10_fq02d"]
+[ext_resource type="Texture2D" uid="uid://cr38qvd1xxfec" path="res://Battle3D/Sprites/Path.png" id="10_snrpe"]
+[ext_resource type="Shape3D" uid="uid://dqcfhkgtp3rxx" path="res://Battle3D/Battle_CollisionData/Battle_BaseLevel_collision.res" id="14_b06fd"]
+[ext_resource type="Script" uid="uid://0ebjhstv2luk" path="res://Battle3D/Scripts/CustomTileMapLayer3D.gd" id="18_0h6wk"]
+[ext_resource type="PackedScene" uid="uid://c7tygrrbx6tl8" path="res://Battle3D/Scenes/Coordinate.tscn" id="19_fx1ly"]
+[ext_resource type="Script" uid="uid://dk0ib5b4w24ll" path="res://addons/TileMapLayer3D/core/animated_tiles/animated_tile_data.gd" id="19_hdoun"]
+[ext_resource type="Script" uid="uid://bli432i5uj51v" path="res://addons/TileMapLayer3D/core/tile_creation_placement/tilemap_layer_settings.gd" id="20_1vw4f"]
+[ext_resource type="Texture2D" uid="uid://bk4v48e8mia8a" path="res://Battle3D/Sprites/Tiles.png" id="21_f6147"]
+[ext_resource type="Script" uid="uid://c2lxt2vjdjb4b" path="res://addons/TileMapLayer3D/nodes/static_collision_body.gd" id="22_gxida"]
+
+[sub_resource type="Resource" id="Resource_megvt"]
+script = ExtResource("6_e8ow2")
+units = Array[ExtResource("7_fq02d")]([ExtResource("4_snrpe"), ExtResource("5_nw1dk")])
+metadata/_custom_type_script = "uid://bx38q3tjpefj6"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxida"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_0ryw8"]
+script = ExtResource("3_1vw4f")
+texture = SubResource("AtlasTexture_gxida")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ordp"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_2luv7"]
+script = ExtResource("3_1vw4f")
+connections = 3
+texture = SubResource("AtlasTexture_2ordp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pil8n"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_shenm"]
+script = ExtResource("3_1vw4f")
+connections = 12
+texture = SubResource("AtlasTexture_pil8n")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snrpe"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_vl0qd"]
+script = ExtResource("3_1vw4f")
+connections = 1
+texture = SubResource("AtlasTexture_snrpe")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw1dk"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_4mvw8"]
+script = ExtResource("3_1vw4f")
+connections = 8
+texture = SubResource("AtlasTexture_nw1dk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtfi8"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_5hnu5"]
+script = ExtResource("3_1vw4f")
+connections = 2
+texture = SubResource("AtlasTexture_wtfi8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnexo"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_8gh8n"]
+script = ExtResource("3_1vw4f")
+connections = 4
+texture = SubResource("AtlasTexture_hnexo")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46lrd"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_eamiy"]
+script = ExtResource("3_1vw4f")
+connections = 9
+texture = SubResource("AtlasTexture_46lrd")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxuig"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_3s64h"]
+script = ExtResource("3_1vw4f")
+connections = 10
+texture = SubResource("AtlasTexture_lxuig")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b65g7"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_mkoik"]
+script = ExtResource("3_1vw4f")
+connections = 6
+texture = SubResource("AtlasTexture_b65g7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdm4a"]
+atlas = ExtResource("10_snrpe")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_51p6q"]
+script = ExtResource("3_1vw4f")
+connections = 5
+texture = SubResource("AtlasTexture_rdm4a")
+
+[sub_resource type="Resource" id="Resource_77axy"]
+script = ExtResource("20_1vw4f")
+tileset_texture = ExtResource("21_f6147")
+tile_size = Vector2i(16, 16)
+selected_tile_uv = Rect2(80, 96, 16, 16)
+grid_size = 0.30000000000000004
+smart_select_mode = 1
+current_depth_scale = 1.0
+
+[node name="Battle" type="Node" unique_id=408126451]
+script = ExtResource("1_b06fd")
+data = SubResource("Resource_megvt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1969056614]
+transform = Transform3D(0.73951364, -0.6039093, 0.2973435, 0, 0.44172505, 0.89715046, -0.6731416, -0.663455, 0.3266617, 1.1468025, 4.9260287, 3.6339917)
+light_energy = 0.5
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=538183216]
+transform = Transform3D(-0.6959129, 0.6442673, -0.31721437, 0, 0.44172502, 0.89715046, 0.71812636, 0.6243385, -0.30740213, -2.3016562, 4.9260287, -2.2922463)
+light_energy = 0.5
+
+[node name="Controller" type="Node3D" parent="." unique_id=1878118467 groups=["Controller"]]
+transform = Transform3D(0.7070821, 0, 0.70713145, 0, 1, 0, -0.70713145, 0, 0.7070821, 0, 0, 0)
+script = ExtResource("3_icoww")
+rotation_speed = 1.0
+min_zoom = 2.0
+max_zoom = 4.0
+zoom_speed = 0.05
+move_speed = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="Controller" unique_id=778380024]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.70710677, 0.7071068, 0, -0.70710677, 0.7071068, 0, 2, 2)
+projection = 1
+current = true
+size = 3.0
+
+[node name="Servers" type="Node" parent="." unique_id=366546251]
+
+[node name="NavServer" type="Node" parent="Servers" unique_id=103938983 node_paths=PackedStringArray("base_level", "move_preview_container") groups=["NavigationServer"]]
+process_priority = -100
+script = ExtResource("1_tvoeq")
+base_level = NodePath("../../BaseLevel")
+move_preview_container = NodePath("../../MovePreviews")
+move_preview_scene = ExtResource("2_hdoun")
+path_resources = Array[ExtResource("3_1vw4f")]([SubResource("Resource_0ryw8"), SubResource("Resource_2luv7"), SubResource("Resource_shenm"), SubResource("Resource_vl0qd"), SubResource("Resource_4mvw8"), SubResource("Resource_5hnu5"), SubResource("Resource_8gh8n"), SubResource("Resource_eamiy"), SubResource("Resource_3s64h"), SubResource("Resource_mkoik"), SubResource("Resource_51p6q")])
+
+[node name="CombatServer" type="Node" parent="Servers" unique_id=2118580512 node_paths=PackedStringArray("units_container") groups=["CombatServer"]]
+script = ExtResource("2_q31bq")
+unit_scene = ExtResource("10_fq02d")
+units_container = NodePath("../../Units")
+
+[node name="Units" type="Node" parent="." unique_id=485717510]
+
+[node name="MovePreviews" type="Node" parent="." unique_id=2098451293]
+
+[node name="Coordinate" parent="." unique_id=461673887 instance=ExtResource("19_fx1ly")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.14756614, 0, -0.15067285)
+
+[node name="BaseLevel" type="Node3D" parent="." unique_id=1921369450 node_paths=PackedStringArray("_quad_chunks", "_box_chunks")]
+script = ExtResource("18_0h6wk")
+settings = SubResource("Resource_77axy")
+_tile_positions = PackedVector3Array(-0.5, 0, -1, -1, 0, -1.5, -1, 0, -0.5, -1.5, 0, -1, -3, -0.5, -4, -3, -0.5, -3, -3, -0.5, -2, -3, -0.5, -1, -3, -0.5, 0, -3, -0.5, 1, -3, -0.5, 2, -3, -0.5, 3, -2, -0.5, -4, -2, -0.5, -3, -2, -0.5, -2, -2, -0.5, -1, -2, -0.5, 0, -2, -0.5, 1, -2, -0.5, 2, -2, -0.5, 3, -1, -0.5, -4, -1, -0.5, -3, -1, -0.5, -2, -1, -0.5, -1, -1, -0.5, 0, -1, -0.5, 1, -1, -0.5, 2, -1, -0.5, 3, 0, -0.5, -4, 0, -0.5, -3, 0, -0.5, -2, 0, -0.5, -1, 0, -0.5, 0, 0, -0.5, 1, 0, -0.5, 2, 0, -0.5, 3, 1, -0.5, -4, 1, -0.5, -3, 1, -0.5, -2, 1, -0.5, -1, 1, -0.5, 0, 1, -0.5, 1, 1, -0.5, 2, 1, -0.5, 3, 2, -0.5, -4, 2, -0.5, -3, 2, -0.5, -2, 2, -0.5, -1, 2, -0.5, 0, 2, -0.5, 1, 2, -0.5, 2, 2, -0.5, 3, 3, -0.5, -4, 3, -0.5, -3, 3, -0.5, -2, 3, -0.5, -1, 3, -0.5, 0, 3, -0.5, 1, 3, -0.5, 2, 3, -0.5, 3, -7, 0.5, -3, -7, 0.5, -2, -7, 0.5, -1, -7, 0.5, 0, -7, 0.5, 1, -7, 0.5, 2, -6, 0.5, -3, -6, 0.5, -2, -6, 0.5, -1, -6, 0.5, 0, -6, 0.5, 1, -6, 0.5, 2, -5, 0.5, -3, -5, 0.5, -2, -5, 0.5, -1, -5, 0.5, 0, -5, 0.5, 1, -5, 0.5, 2, -11, 1.5, -2, -11, 1.5, -1, -11, 1.5, 0, -11, 1.5, 1, -10, 1.5, -2, -10, 1.5, -1, -10, 1.5, 0, -10, 1.5, 1, -9, 1.5, -2, -9, 1.5, -1, -9, 1.5, 0, -9, 1.5, 1, -8, 1.5, -2, -8, 1.5, -1, -8, 1.5, 0, -8, 1.5, 1, -7.5, 2, -2, -7.5, 2, -1, -7.5, 2, 0, -7.5, 2, 1, -11, 2, -2.5, -10, 2, -2.5, -9, 2, -2.5, -8, 2, -2.5, -11.5, 2, -2, -11.5, 2, -1, -11.5, 2, 0, -11.5, 2, 1, -11, 2, 1.5, -10, 2, 1.5, -9, 2, 1.5, -8, 2, 1.5, -4, 0, 3.5, -3, 0, 3.5, -2, 0, 3.5, -1, 0, 3.5, 0, 0, 3.5, 1, 0, 3.5, 2, 0, 3.5, 3, 0, 3.5, 3.5, 0, -4, 3.5, 0, -3, 3.5, 0, -2, 3.5, 0, -1, 3.5, 0, 0, 3.5, 0, 1, 3.5, 0, 2, 3.5, 0, 3, -3, 0, -4.5, -2, 0, -4.5, -1, 0, -4.5, 0, 0, -4.5, 1, 0, -4.5, 2, 0, -4.5, 3, 0, -4.5, -7, 1, -3.5, -6, 1, -3.5, -5, 1, -3.5, -4.5, 1, -3, -4.5, 1, -2, -4.5, 1, -1, -4.5, 1, 0, -4.5, 1, 1, -4.5, 1, 2, -7, 1, 2.5, -6, 1, 2.5, -5, 1, 2.5, -4, -0.5, -4, -4, -0.5, -3, -4, -0.5, -2, -4, -0.5, -1, -4, -0.5, 0, -4, -0.5, 1, -4, -0.5, 2, -4, -0.5, 3, -4, 0, -4.5, -4.5, 0, -4, -4.5, 0, -3, -4.5, 0, -2, -4.5, 0, -1, -4.5, 0, 0, -4.5, 0, 1, -4.5, 0, 2, -4.5, 0, 3, -7.5, 1, -3, -7.5, 1, -2, -7.5, 1, -1, -7.5, 1, 0, -7.5, 1, 1, -7.5, 1, 2)
+_tile_uv_rects = PackedFloat32Array(16, 64, 16, 16, 16, 64, 16, 16, 16, 64, 16, 16, 16, 64, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16, 80, 96, 16, 16)
+_tile_flags = PackedInt32Array(130053, 130051, 130050, 130052, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130053, 130053, 130053, 130053, 130051, 130051, 130051, 130051, 130052, 130052, 130052, 130052, 130050, 130050, 130050, 130050, 130050, 130050, 130050, 130050, 130050, 130050, 130050, 130050, 130053, 130053, 130053, 130053, 130053, 130053, 130053, 130053, 130051, 130051, 130051, 130051, 130051, 130051, 130051, 130051, 130051, 130051, 130053, 130053, 130053, 130053, 130053, 130053, 130050, 130050, 130050, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130304, 130051, 130052, 130052, 130052, 130052, 130052, 130052, 130052, 130052, 130052, 130052, 130052, 130052, 130052, 130052)
+_tile_transform_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+_tile_transform_data = PackedFloat32Array()
+_tile_anim_indices = PackedInt32Array(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+_tile_anim_data = PackedFloat32Array()
+_quad_chunks = [NodePath("SquareChunk_R0_0_-1_C0"), NodePath("SquareChunk_R-1_0_-1_C0"), NodePath("SquareChunk_R-1_0_0_C0"), NodePath("SquareChunk_R0_0_0_C0")]
+_box_chunks = [NodePath("BoxChunk_R-1_0_-1_C0"), NodePath("BoxChunk_R-1_0_0_C0"), NodePath("BoxChunk_R0_0_-1_C0"), NodePath("BoxChunk_R0_0_0_C0")]
+metadata/_custom_type_script = "uid://4kv8f8ejgwqn"
+
+[node name="@StaticBody3D@165969" type="StaticBody3D" parent="BaseLevel" unique_id=1156168386]
+script = ExtResource("22_gxida")
+
+[node name="@CollisionShape3D@165968" type="CollisionShape3D" parent="BaseLevel/@StaticBody3D@165969" unique_id=1835626223]
+shape = ExtResource("14_b06fd")
+
+[node name="SpawnPoints" type="Node3D" parent="BaseLevel" unique_id=800593991]
+
+[node name="SpawnPoint" parent="BaseLevel/SpawnPoints" unique_id=480946794 instance=ExtResource("7_7ukbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6500001, 0.6, -0.15)
+
+[node name="SpawnPoint2" parent="BaseLevel/SpawnPoints" unique_id=1101769274 instance=ExtResource("7_7ukbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.3, 0.15)
+camp = 1
