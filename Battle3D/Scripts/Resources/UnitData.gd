@@ -9,6 +9,7 @@ extends Resource
 @export var next_time: float = 0.0
 
 @export_group("Animation")
+@export var sprite_size: float = 1.0
 @export var idle_animation: SpriteFrames
 @export var move_animation: SpriteFrames
 @export var attack_animation: SpriteFrames

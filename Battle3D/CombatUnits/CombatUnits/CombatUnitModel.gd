@@ -62,7 +62,8 @@ func _update_facing() -> void:
 			child.animation = back_animation
 
 
-func update_animations(unit_data) -> void:
+func setup(unit_data) -> void:
+	scale = Vector3.ONE * unit_data.sprite_size
 	for child in get_children():
 		child.setup(unit_data)
 	play("Idle")

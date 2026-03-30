@@ -14,7 +14,7 @@ func setup(_data: UnitData) -> void:
 	unit_data = _data
 	unit_data.unit = self
 	unit_data.end_turn()
-	unit_model.update_animations(unit_data)
+	unit_model.setup(unit_data)
 
 
 func play_animation(ani_name: String) -> void:
