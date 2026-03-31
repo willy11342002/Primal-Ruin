@@ -17,7 +17,7 @@ var _camera_forward: Vector3 = Vector3.FORWARD
 func _ready() -> void:
 	set_notify_transform(true)
 
-	var camera: Controller = get_tree().get_first_node_in_group("Controller")
+	var camera: PlayerController = get_tree().get_first_node_in_group("Controller")
 	if camera:
 		camera.rotation_changed.connect(_on_rotation_changed)
 		camera.rotation_changed.emit(-camera.global_basis.z)

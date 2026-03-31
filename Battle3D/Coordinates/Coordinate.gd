@@ -4,7 +4,7 @@ extends Node3D
 var map_pos: Vector2i = Vector2i.ZERO
 var world_pos: Vector3 = Vector3.INF
 
-@onready var control = get_tree().get_first_node_in_group("Controller")
+@onready var control: PlayerController = get_tree().get_first_node_in_group("Controller")
 
 
 func _ready() -> void:

@@ -62,7 +62,7 @@ func get_controller() -> String:
 	var _controller: String = "Player"
 	if camp != Global.Camp.PLAYER:
 		_controller = "AI"
-	return _controller + "TurnState"
+	return _controller
 
 
 func end_turn() -> void:

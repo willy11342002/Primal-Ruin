@@ -10,6 +10,7 @@ UI_Audio,Audio,音訊
 UI_Input,Input,輸入
 UI_Back,Back,返回
 UI_Save,Save,保存
+UI_EndTurn,End Turn,結束回合
 
 UI_FullScreen,Full Screen,全螢幕
 UI_Language,Language,語言

@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://ci1e0536bttgj"]
 
 [ext_resource type="Script" uid="uid://db8n3msxd0q7t" path="res://Battle3D/Battle.gd" id="1_b06fd"]
-[ext_resource type="Script" uid="uid://exlsny2nfpo3" path="res://Battle3D/Scripts/Controller.gd" id="3_icoww"]
+[ext_resource type="Script" uid="uid://exlsny2nfpo3" path="res://Battle3D/Scripts/PlayerController.gd" id="3_icoww"]
 [ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Battle3D/UnitDatas/GiantFly/UnitData.tres" id="4_snrpe"]
 [ext_resource type="Resource" uid="uid://c27dboevxddlb" path="res://Battle3D/UnitDatas/Player/UnitData.tres" id="5_nw1dk"]
 [ext_resource type="Script" uid="uid://bx38q3tjpefj6" path="res://Battle3D/Scripts/Resources/CombatData.gd" id="6_e8ow2"]
 [ext_resource type="PackedScene" uid="uid://fo7kwd7yqf37" path="res://Battle3D/HUD/HUD.tscn" id="6_nw1dk"]
 [ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/SpawnPoints/SpawnPoint.tscn" id="7_7ukbj"]
+[ext_resource type="Script" uid="uid://dtqj34cf1wxuq" path="res://Battle3D/Scripts/AIController.gd" id="7_e8ow2"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="7_fq02d"]
 [ext_resource type="PackedScene" uid="uid://cxmvhvxfqihrl" path="res://Battle3D/HighLights/HighLight.tscn" id="8_y6s6i"]
 [ext_resource type="Script" uid="uid://bxysh7qc3qgm1" path="res://Battle3D/HighLights/HighLight.gd" id="9_iej0n"]
@@ -49,7 +50,10 @@ light_energy = 0.5
 transform = Transform3D(-0.6959129, 0.6442673, -0.31721437, 0, 0.44172502, 0.89715046, 0.71812636, 0.6243385, -0.30740213, -2.3016562, 4.9260287, -2.2922463)
 light_energy = 0.5
 
-[node name="Controller" type="Node3D" parent="." unique_id=1878118467 groups=["Controller"]]
+[node name="AIController" type="Node3D" parent="." unique_id=325525333]
+script = ExtResource("7_e8ow2")
+
+[node name="PlayerController" type="Node3D" parent="." unique_id=1878118467 groups=["Controller"]]
 transform = Transform3D(0.7070821, 0, 0.70713145, 0, 1, 0, -0.70713145, 0, 0.7070821, 0, 0, 0)
 script = ExtResource("3_icoww")
 rotation_speed = 1.0
@@ -58,7 +62,7 @@ max_zoom = 4.0
 zoom_speed = 0.05
 move_speed = 2.0
 
-[node name="Camera3D" type="Camera3D" parent="Controller" unique_id=778380024]
+[node name="Camera3D" type="Camera3D" parent="PlayerController" unique_id=778380024]
 transform = Transform3D(1.0000001, 0, 0, 0, 0.70710677, 0.7071068, 0, -0.70710677, 0.7071068, 0, 2, 2)
 projection = 1
 current = true

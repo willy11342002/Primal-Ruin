@@ -1,4 +1,4 @@
-class_name Controller
+class_name PlayerController
 extends Node3D
 
 
@@ -17,10 +17,19 @@ signal cast_position_changed(map_pos: Vector2i)
 var unit_info: Dictionary = {}
 var zoom_direction: int = 0
 var paused: bool = false
+var target: Node3D
 
 
 func _ready() -> void:
 	Global.pause_player_input.connect(func(p): paused = p)
+	CombatServer.after_end_turn.connect(_on_after_end_turn)
+
+
+func _on_after_end_turn() -> void:
+	if CombatServer.current_unit == null:
+		return
+	paused = CombatServer.current_unit.unit_data.get_controller() != "Player"
+	target = CombatServer.current_unit
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -65,7 +74,15 @@ func _process(delta: float) -> void:
 	var rot_dir := Input.get_axis("CameraRotateLeft", "CameraRotateRight")
 	if rot_dir != 0:
 		_rotate_camera(rot_dir, delta)
-	
+
+	# 相機跟隨
+	if target:
+		var direction := target.global_position - global_position
+		direction.y = 0  # 保持在水平面上
+		if direction.length() > 0.1:
+			direction = direction.normalized()
+			global_position += direction * move_speed * delta
+
 	# 暫停狀態下不處理相機移動
 	if paused: return
 
@@ -73,7 +90,8 @@ func _process(delta: float) -> void:
 	var input_dir := Input.get_vector("CameraLeft", "CameraRight", "CameraForward", "CameraBackward")
 	if input_dir != Vector2.ZERO:
 		_move_camera(input_dir.normalized(), delta)
-
+		target = null
+		
 
 ## 取得滑鼠目前對應的格子座標, 如果沒有射線碰撞到任何物件，或是碰撞點不在導航網格上，則回傳 null。
 func get_raycasted_position() -> Variant:
