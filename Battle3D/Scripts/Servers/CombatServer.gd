@@ -2,6 +2,8 @@ extends Node
 
 
 signal hover_unit_changed(new_unit)
+signal before_end_turn
+signal after_end_turn
 
 @export var unit_scene: PackedScene
 
@@ -12,6 +14,13 @@ var hovered_unit: CombatUnit = null
 
 func setup(_data: CombatData) -> void:
 	combat_data = _data
+	after_end_turn.emit()
+
+
+func end_turn() -> void:
+	before_end_turn.emit()
+	current_unit.unit_data.end_turn()
+	after_end_turn.emit()
 
 
 func hover_on_unit(unit: CombatUnit) -> void:
