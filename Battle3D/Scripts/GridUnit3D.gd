@@ -4,7 +4,6 @@ extends Node3D
 
 
 var _last_valid_position: Vector3 = Vector3.ZERO
-@onready var nav = get_tree().get_first_node_in_group("NavigationServer")
 
 
 func _ready() -> void:
@@ -18,8 +17,8 @@ func _notification(what: int) -> void:
 		call_deferred("_notification", what)
 		return
 	if what in [NOTIFICATION_TRANSFORM_CHANGED, NOTIFICATION_LOCAL_TRANSFORM_CHANGED]:
-		var map_pos: Vector2i = nav.world_to_map(global_position)
-		var world_pos: Vector3 = nav.map_to_world(map_pos)
+		var map_pos: Vector2i = NavServer.world_to_map(global_position)
+		var world_pos: Vector3 = NavServer.map_to_world(map_pos)
 
 		if world_pos == Vector3.INF:
 			global_position = _last_valid_position

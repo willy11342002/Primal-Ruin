@@ -14,7 +14,7 @@ func setup(_data: CombatData) -> void:
 	CombatServer.clear_units()
 
 	_create_units(_data)
-	CombatServer.combat_data = _data
+	CombatServer.setup(_data)
 
 
 func _create_units(_data: CombatData) -> void:

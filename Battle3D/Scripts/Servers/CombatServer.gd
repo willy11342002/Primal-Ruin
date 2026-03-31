@@ -10,6 +10,10 @@ var current_unit: CombatUnit: get = get_current_unit
 var hovered_unit: CombatUnit = null
 
 
+func setup(_data: CombatData) -> void:
+	combat_data = _data
+
+
 func hover_on_unit(unit: CombatUnit) -> void:
 	if unit:
 		unit.hover_on()

@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://fo7kwd7yqf37" path="res://Battle3D/HUD/HUD.tscn" id="6_nw1dk"]
 [ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/SpawnPoints/SpawnPoint.tscn" id="7_7ukbj"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="7_fq02d"]
+[ext_resource type="PackedScene" uid="uid://cxmvhvxfqihrl" path="res://Battle3D/HighLights/HighLight.tscn" id="8_y6s6i"]
+[ext_resource type="Script" uid="uid://bxysh7qc3qgm1" path="res://Battle3D/HighLights/HighLight.gd" id="9_iej0n"]
 [ext_resource type="Shape3D" uid="uid://dqcfhkgtp3rxx" path="res://Battle3D/Battle_CollisionData/Battle_BaseLevel_collision.res" id="14_b06fd"]
 [ext_resource type="Script" uid="uid://0ebjhstv2luk" path="res://Battle3D/Scripts/CustomTileMapLayer3D.gd" id="18_0h6wk"]
 [ext_resource type="PackedScene" uid="uid://c7tygrrbx6tl8" path="res://Battle3D/Coordinates/Coordinate.tscn" id="19_fx1ly"]
@@ -62,8 +64,11 @@ projection = 1
 current = true
 size = 3.0
 
+[node name="HighLight" parent="." unique_id=777236974 instance=ExtResource("8_y6s6i")]
+script = ExtResource("9_iej0n")
+
 [node name="Coordinate" parent="." unique_id=461673887 instance=ExtResource("19_fx1ly")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.14756614, 0, -0.15067285)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="BaseLevel" type="Node3D" parent="." unique_id=1921369450 node_paths=PackedStringArray("_box_chunks") groups=["Level"]]
 script = ExtResource("18_0h6wk")

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjnmlm02o10h6"
-path.s3tc="res://.godot/imported/Coordinate.png-50d4d405106252bea428fdd7fdfab2e4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Coordinate.png-51ff4e6a4f53b486223effb1d1939fb1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Battle3D/Sprites/Coordinate.png"
-dest_files=["res://.godot/imported/Coordinate.png-50d4d405106252bea428fdd7fdfab2e4.s3tc.ctex"]
+source_file="res://Battle3D/Coordinates/Coordinate.png"
+dest_files=["res://.godot/imported/Coordinate.png-51ff4e6a4f53b486223effb1d1939fb1.s3tc.ctex"]
 
 [params]
 
