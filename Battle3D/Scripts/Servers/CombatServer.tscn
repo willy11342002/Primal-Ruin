@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://it1ip55o4u7u"]
+
+[ext_resource type="Script" uid="uid://dd654f55rlpd4" path="res://Battle3D/Scripts/Servers/CombatServer.gd" id="1_hnux2"]
+[ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://Battle3D/CombatUnits/CombatUnit.tscn" id="2_0a6bm"]
+
+[node name="CombatServer" type="Node" unique_id=605619367 groups=["CombatServer"]]
+script = ExtResource("1_hnux2")
+unit_scene = ExtResource("2_0a6bm")

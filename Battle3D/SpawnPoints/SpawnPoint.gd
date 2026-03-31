@@ -1,4 +1,5 @@
 @tool
+class_name SpawnPoint
 extends GridUnit3D
 
 

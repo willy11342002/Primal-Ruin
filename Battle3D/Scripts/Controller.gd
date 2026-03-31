@@ -35,19 +35,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		if unit_info.is_empty():
 			return
 
-		if unit_info['unit'] == Global.combat.current_unit:
-			unit_info['path'] = Global.nav.find_path_from_range(unit_info["move_distances"], map_pos)
-			Global.nav.show_path(unit_info['path'])
+		if unit_info['unit'] == CombatServer.current_unit:
+			unit_info['path'] = NavServer.find_path_from_range(unit_info["move_distances"], map_pos)
+			NavServer.show_path(unit_info['path'])
 
 	# 滑鼠點擊
 	if event.is_action_pressed("Confirm"):
 		# 如果點擊在可移動範圍內，則移動角色
 		if unit_info.get('path', []).size() > 1:
 			var move_cost: float = unit_info['move_distances'].get(map_pos, INF)
-			Global.combat.move_unit_alone_path(unit_info['unit'], unit_info['path'], move_cost)
+			CombatServer.move_unit_alone_path(unit_info['unit'], unit_info['path'], move_cost)
 
-		var unit: CombatUnit = Global.combat.map_pos_to_unit(map_pos)
-		unit_info = Global.combat.get_unit_info(unit)
+		var unit: CombatUnit = CombatServer.map_pos_to_unit(map_pos)
+		unit_info = CombatServer.get_unit_info(unit)
 
 	# 相機縮放
 	if event.is_action_pressed("CameraZoomIn"):
@@ -98,7 +98,7 @@ func get_raycasted_position() -> Variant:
 	var hit_position = result.position
 	
 	# 4. 轉換成網格座標
-	var map_pos: Vector2i = Global.nav.world_to_map(hit_position)
+	var map_pos: Vector2i = NavServer.world_to_map(hit_position)
 	
 	return map_pos
 
@@ -139,7 +139,7 @@ func _move_camera(direction: Vector2, delta: float) -> void:
 	global_position += movement
 
 	# 限制相機在地圖邊界內
-	var start: Vector3 = Global.nav.grid_to_world(Global.nav.map_to_grid(Global.nav.base_level.rect.position, 0))
-	var end: Vector3 = Global.nav.grid_to_world(Global.nav.map_to_grid(Global.nav.base_level.rect.end, 0))
+	var start: Vector3 = NavServer.grid_to_world(NavServer.map_to_grid(NavServer.base_level.rect.position, 0))
+	var end: Vector3 = NavServer.grid_to_world(NavServer.map_to_grid(NavServer.base_level.rect.end, 0))
 	global_position.x = clamp(global_position.x, start.x, end.x)
 	global_position.z = clamp(global_position.z, start.z, end.z)

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://c4b6gibe6t3xj"]
+
+[ext_resource type="Script" uid="uid://r1alp46xyy2t" path="res://Battle3D/Scripts/Servers/NavServer.gd" id="1_q5bb6"]
+[ext_resource type="PackedScene" uid="uid://bopuyec36wfh0" path="res://Battle3D/MovePreviews/MovePreview.tscn" id="2_0e64r"]
+[ext_resource type="Script" uid="uid://c2txb43d5q03t" path="res://Battle3D/Scripts/Resources/PathResource.gd" id="3_g1re7"]
+[ext_resource type="Texture2D" uid="uid://cr38qvd1xxfec" path="res://Battle3D/Sprites/Path.png" id="4_2i11q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxida"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_0ryw8"]
+script = ExtResource("3_g1re7")
+texture = SubResource("AtlasTexture_gxida")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ordp"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_2luv7"]
+script = ExtResource("3_g1re7")
+connections = 3
+texture = SubResource("AtlasTexture_2ordp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pil8n"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_shenm"]
+script = ExtResource("3_g1re7")
+connections = 12
+texture = SubResource("AtlasTexture_pil8n")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snrpe"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_vl0qd"]
+script = ExtResource("3_g1re7")
+connections = 1
+texture = SubResource("AtlasTexture_snrpe")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw1dk"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_4mvw8"]
+script = ExtResource("3_g1re7")
+connections = 8
+texture = SubResource("AtlasTexture_nw1dk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtfi8"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_5hnu5"]
+script = ExtResource("3_g1re7")
+connections = 2
+texture = SubResource("AtlasTexture_wtfi8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnexo"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_8gh8n"]
+script = ExtResource("3_g1re7")
+connections = 4
+texture = SubResource("AtlasTexture_hnexo")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46lrd"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_eamiy"]
+script = ExtResource("3_g1re7")
+connections = 9
+texture = SubResource("AtlasTexture_46lrd")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxuig"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_3s64h"]
+script = ExtResource("3_g1re7")
+connections = 10
+texture = SubResource("AtlasTexture_lxuig")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b65g7"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_mkoik"]
+script = ExtResource("3_g1re7")
+connections = 6
+texture = SubResource("AtlasTexture_b65g7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdm4a"]
+atlas = ExtResource("4_2i11q")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_51p6q"]
+script = ExtResource("3_g1re7")
+connections = 5
+texture = SubResource("AtlasTexture_rdm4a")
+
+[node name="NavServer" type="Node" unique_id=896743102 groups=["NavigationServer"]]
+process_priority = -100
+script = ExtResource("1_q5bb6")
+HEIGHT_COST_MULTIPLIER = 1.0
+move_preview_scene = ExtResource("2_0e64r")
+path_resources = Array[ExtResource("3_g1re7")]([SubResource("Resource_0ryw8"), SubResource("Resource_2luv7"), SubResource("Resource_shenm"), SubResource("Resource_vl0qd"), SubResource("Resource_4mvw8"), SubResource("Resource_5hnu5"), SubResource("Resource_8gh8n"), SubResource("Resource_eamiy"), SubResource("Resource_3s64h"), SubResource("Resource_mkoik"), SubResource("Resource_51p6q")])

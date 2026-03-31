@@ -10,21 +10,15 @@ const NEIGHBOR_OFFSETS: Array[Vector2i] = [
 ]
 
 @export var HEIGHT_COST_MULTIPLIER: float = 3.0
-@export var base_level: CustomTileMapLayer3D
-@export var move_preview_container: Node
 @export var move_preview_scene: PackedScene
 @export var path_resources: Array[PathResource] = []
 
 var preview_dic: Dictionary = {}
 
 
-func _ready() -> void:
-	Global.nav = self
-
-
-func _exit_tree() -> void:
-	Global.nav = null
-
+var base_level: CustomTileMapLayer3D:
+	get:
+		return get_tree().get_first_node_in_group("Level")
 
 
 func world_to_map(world_pos: Vector3) -> Vector2i:
@@ -110,14 +104,14 @@ func find_path_from_range(distances: Dictionary, target_pos: Variant) -> Array:
 
 func clear_preview() -> void:
 	preview_dic.clear()
-	for child in move_preview_container.get_children():
+	for child in get_children():
 		child.queue_free()
 
 
 func show_range(camp: Global.Camp, distances: Dictionary) -> void:
 	for pos in distances:
 		var instance = move_preview_scene.instantiate()
-		move_preview_container.add_child(instance)
+		add_child(instance)
 		instance.global_position = map_to_world(pos)
 		preview_dic[pos] = instance
 		instance.set_camp(camp)

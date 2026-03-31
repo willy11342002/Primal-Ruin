@@ -27,6 +27,8 @@ buses/default_bus_layout="uid://b5erumvacmqfa"
 Global="*uid://1vf4mbmcnk3w"
 SceneLoader="*uid://cvwjm24l3ydfd"
 Persistence="*uid://dvod5cngq3pf3"
+NavServer="*uid://c4b6gibe6t3xj"
+CombatServer="*uid://it1ip55o4u7u"
 
 [display]
 

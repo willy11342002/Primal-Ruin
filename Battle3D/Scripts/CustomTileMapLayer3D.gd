@@ -10,7 +10,9 @@ var rect: Rect2i
 func _ready() -> void:
 	super._ready()
 	if not Engine.is_editor_hint():
-		$SpawnPoints.hide()
+		for child in get_children():
+			if child is SpawnPoint:
+				child.hide()
 	for i in _tile_positions.size():
 		var grid_position: Vector3 = _tile_positions[i]
 		if fmod(grid_position.x, 1.0) != 0 or fmod(grid_position.z, 1.0) != 0:
@@ -127,8 +129,9 @@ func get_map_height(map_pos: Vector2i) -> float:
 
 func get_camp_spawn_points(camp: Global.Camp) -> Array:
 	var points: Array = []
-	for spawn in $SpawnPoints.get_children():
-		if spawn.camp == camp:
-			var point = world_to_map(spawn.global_position)
-			points.append(point)
+	for child in get_children():
+		if child is SpawnPoint:
+			if child.camp == camp:
+				var point = world_to_map(child.global_position)
+				points.append(point)
 	return points
