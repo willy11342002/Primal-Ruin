@@ -76,12 +76,10 @@ func _process(delta: float) -> void:
 		_rotate_camera(rot_dir, delta)
 
 	# 相機跟隨
-	if target:
-		var direction := target.global_position - global_position
-		direction.y = 0  # 保持在水平面上
-		if direction.length() > 0.1:
-			direction = direction.normalized()
-			global_position += direction * move_speed * delta
+	if is_instance_valid(target):
+		_follow_target(delta)
+	elif target:
+		target = null
 
 	# 暫停狀態下不處理相機移動
 	if paused: return
@@ -91,6 +89,13 @@ func _process(delta: float) -> void:
 	if input_dir != Vector2.ZERO:
 		_move_camera(input_dir.normalized(), delta)
 		target = null
+
+
+func _follow_target(delta: float) -> void:
+	var target_position := global_position
+	target_position.x = target.global_position.x
+	target_position.z = target.global_position.z
+	global_position = global_position.move_toward(target_position, move_speed * delta)
 		
 
 ## 取得滑鼠目前對應的格子座標, 如果沒有射線碰撞到任何物件，或是碰撞點不在導航網格上，則回傳 null。
