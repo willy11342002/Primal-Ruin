@@ -2,6 +2,7 @@ extends Node
 
 
 signal hover_unit_changed(new_unit)
+signal setup_finished
 signal before_end_turn
 signal after_end_turn
 
@@ -15,6 +16,7 @@ var hovered_unit: CombatUnit = null
 func setup(_data: CombatData) -> void:
 	combat_data = _data
 	after_end_turn.emit()
+	setup_finished.emit()
 
 
 func end_turn() -> void:

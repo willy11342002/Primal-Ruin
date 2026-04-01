@@ -1,9 +1,13 @@
 extends CanvasLayer
 
 
+@export var sort_icon: PackedScene
+
+
 func _ready() -> void:
 	CombatServer.after_end_turn.connect(_on_after_end_turn)
 	CombatServer.before_end_turn.connect(_on_before_end_turn)
+	CombatServer.setup_finished.connect(_on_setup_finished)
 
 
 func _on_before_end_turn() -> void:
@@ -11,13 +15,24 @@ func _on_before_end_turn() -> void:
 		CombatServer.current_unit.update_requested.disconnect(_on_current_unit_update_requested)
 
 
+func _on_setup_finished() -> void:
+	for unit: UnitData in CombatServer.combat_data.units:
+		var order = sort_icon.instantiate()
+		order.setup(unit)
+		%SortDisplay.add_child(order)
+
+
 func _on_after_end_turn() -> void:
 	if CombatServer.current_unit == null:
 		return
-	
+
+	# 綁定當前角色在左下角顯示
 	CombatServer.current_unit.update_requested.connect(_on_current_unit_update_requested)
 	_on_current_unit_update_requested()
-	if CombatServer.current_unit.unit_data.camp == Global.Camp.PLAYER:
+	
+	# 根據當前角色是否可控 顯示/隱藏 玩家UI
+	print(CombatServer.current_unit.unit_data.get_controller())
+	if CombatServer.current_unit.unit_data.get_controller() == 'Player':
 		get_tree().call_group("PlayerControl", "show")
 	else:
 		get_tree().call_group("PlayerControl", "hide")
