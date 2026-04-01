@@ -2,6 +2,7 @@ class_name UnitData
 extends Resource
 
 
+@export var head: Texture2D
 @export var camp: Global.Camp
 @export var turn: int = 0
 @export var ap: int = 1

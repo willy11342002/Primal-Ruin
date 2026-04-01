@@ -2,6 +2,7 @@
 
 [ext_resource type="SpriteFrames" uid="uid://h7b3q173e6j7" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Back.ase_layer" id="1_c52cs"]
 [ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Front.ase_layer" id="2_sg8d1"]
+[ext_resource type="Texture2D" uid="uid://cw3jl0wbljoo2" path="res://Battle3D/UnitDatas/GiantFly/Sprites/Head.png" id="3_1178v"]
 [ext_resource type="Script" uid="uid://clf62lvf4vc4c" path="res://Battle3D/Scripts/Resources/move_skills/NormalMove.gd" id="3_sg8d1"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="5_8lvhn"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Skills/Scripts/SkillData.gd" id="6_vaswc"]
@@ -12,6 +13,7 @@ metadata/_custom_type_script = "uid://clf62lvf4vc4c"
 
 [resource]
 script = ExtResource("5_8lvhn")
+head = ExtResource("3_1178v")
 camp = 1
 back_animation = ExtResource("1_c52cs")
 front_animation = ExtResource("2_sg8d1")
