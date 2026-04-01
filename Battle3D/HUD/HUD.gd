@@ -31,7 +31,6 @@ func _on_after_end_turn() -> void:
 	_on_current_unit_update_requested()
 	
 	# 根據當前角色是否可控 顯示/隱藏 玩家UI
-	print(CombatServer.current_unit.unit_data.get_controller())
 	if CombatServer.current_unit.unit_data.get_controller() == 'Player':
 		get_tree().call_group("PlayerControl", "show")
 	else:

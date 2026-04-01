@@ -9,6 +9,7 @@ const FLIP_THRESHOLD: float = 0.0
 @export var default_animation: String = "Idle"
 @export var looping_animations: Array[String] = ["Idle", "Move"]
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var front_animation: AnimatedSprite3D = $Front
 @onready var back_animation: AnimatedSprite3D = $Back
 
@@ -76,8 +77,13 @@ func setup(unit_data) -> void:
 
 
 func play(animation_name: String) -> void:
-	front_animation.play(animation_name)
-	back_animation.play(animation_name)
+	if animation_name in ["Idle", "Move"]:
+		front_animation.play(animation_name)
+		back_animation.play(animation_name)
+	else:
+		animation_player.play(animation_name)
+		await animation_player.animation_finished
+		play(default_animation)
 
 
 func set_outline(enabled: bool) -> void:
