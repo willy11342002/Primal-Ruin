@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://dhurc66ghqmll"]
+
+[ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Battle3D/Skills/Scripts/SkillCost.gd" id="1_2ctil"]
+[ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Skills/Scripts/SkillData.gd" id="1_qt61q"]
+
+[sub_resource type="Resource" id="Resource_6dwit"]
+script = ExtResource("1_2ctil")
+amount = 1
+metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
+
+[resource]
+script = ExtResource("1_qt61q")
+name = "s_MeleeAttack"
+description = "sd_MeleeAttack"
+cost = SubResource("Resource_6dwit")
+metadata/_custom_type_script = "uid://byv54yb4gof43"
