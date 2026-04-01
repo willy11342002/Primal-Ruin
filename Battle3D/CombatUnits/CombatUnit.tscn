@@ -15,7 +15,6 @@ script = ExtResource("1_iq6de")
 unique_name_in_owner = true
 transform = Transform3D(1, -5.803713e-11, -2.3283064e-10, -1.7894308e-10, 1, -2.910383e-11, -2.3283064e-10, 0, 1, 0, 0, 0)
 script = ExtResource("8_u1s1b")
-move_duration = 0.5
 
 [node name="CombatUnitModel" type="Node3D" parent="." unique_id=1105797494]
 unique_name_in_owner = true

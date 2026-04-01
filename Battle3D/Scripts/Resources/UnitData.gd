@@ -23,6 +23,8 @@ extends Resource
 @export var agility: int
 @export var intelligence: int
 
+@export_group("Skills")
+@export var move_skill: MoveSkillData
 @export var skills: Array[SkillData]
 
 var unit: CombatUnit

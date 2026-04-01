@@ -89,10 +89,10 @@ _box_chunks = [NodePath("BoxChunk_R-1_0_-1_C0"), NodePath("BoxChunk_R-1_0_0_C0")
 metadata/_custom_type_script = "uid://4kv8f8ejgwqn"
 
 [node name="SpawnPoint" parent="BaseLevel" unique_id=480946794 instance=ExtResource("7_7ukbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 0.3, 0.45000002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.15, 0.45000002)
 
 [node name="SpawnPoint2" parent="BaseLevel" unique_id=1101769274 instance=ExtResource("7_7ukbj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.15, -0.45000002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.15, 0.15)
 camp = 1
 
 [node name="@StaticBody3D@25277" type="StaticBody3D" parent="BaseLevel" unique_id=1739750113]

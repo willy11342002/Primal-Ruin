@@ -48,7 +48,7 @@ func map_to_grid(map_pos: Vector2i, height: float = -0.5) -> Vector3:
 
 ## 使用BFS演算法, 計算從起始位置出發, 在指定距離內所有可到達的位置
 ## pass_func: Callable( Vector2i ) -> bool, 回傳 true 表示跳過
-func find_range(start_pos: Vector2i, _range: float, pass_func: Callable = Callable()) -> Dictionary:
+func find_range(start_pos: Vector2i, _range: float, pass_func: Callable = Callable(), exclude_func: Callable = Callable()) -> Dictionary:
 	var queue: Array = [start_pos]
 	var distances: Dictionary = {start_pos: 0.0}
 
@@ -77,6 +77,10 @@ func find_range(start_pos: Vector2i, _range: float, pass_func: Callable = Callab
 					distances[neighbor_pos] = total_dist
 					queue.push_back(neighbor_pos)
 
+	for pos in distances.keys():
+		if exclude_func.is_valid() and exclude_func.call(pos):
+			distances.erase(pos)
+
 	return distances
 
 
@@ -91,13 +95,19 @@ func find_path_from_range(distances: Dictionary, target_pos: Variant) -> Array:
 	while true:
 		if distances[current] == 0:
 			break
+		var best_neighbor: Variant = null
+		var best_cost: float = distances[current]
 		for neighbor in NEIGHBOR_OFFSETS:
 			var neighbor_pos: Vector2i = current + neighbor
 			if neighbor_pos not in distances:
 				continue
-			if distances[neighbor_pos] < distances[current]:
-				current = neighbor_pos
-				_path.append(neighbor_pos)
+			if distances[neighbor_pos] < best_cost:
+				best_cost = distances[neighbor_pos]
+				best_neighbor = neighbor_pos
+		if best_neighbor == null:
+			break
+		current = best_neighbor
+		_path.append(current)
 	_path.reverse()
 	return _path
 

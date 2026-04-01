@@ -2,8 +2,13 @@
 
 [ext_resource type="SpriteFrames" uid="uid://h7b3q173e6j7" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Back.ase_layer" id="1_c52cs"]
 [ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Front.ase_layer" id="2_sg8d1"]
+[ext_resource type="Script" uid="uid://clf62lvf4vc4c" path="res://Battle3D/Scripts/Resources/move_skills/NormalMove.gd" id="3_sg8d1"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="5_8lvhn"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Scripts/Resources/SkillData.gd" id="6_vaswc"]
+
+[sub_resource type="Resource" id="Resource_1178v"]
+script = ExtResource("3_sg8d1")
+metadata/_custom_type_script = "uid://clf62lvf4vc4c"
 
 [resource]
 script = ExtResource("5_8lvhn")
@@ -18,4 +23,5 @@ speed = 3
 strength = 5
 agility = 4
 intelligence = 4
+move_skill = SubResource("Resource_1178v")
 metadata/_custom_type_script = "uid://db0c52gmcxdon"

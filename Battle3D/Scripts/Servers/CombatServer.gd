@@ -61,7 +61,12 @@ func get_current_unit() -> CombatUnit:
 
 func show_move_range(unit: CombatUnit) -> Dictionary:
 	var map_pos = NavServer.world_to_map(unit.global_position)
-	var distances = NavServer.find_range(map_pos, unit.unit_data.balance_movement)
+	var distances = NavServer.find_range(
+		map_pos,
+		unit.unit_data.balance_movement,
+		unit.unit_data.move_skill.pass_func,
+		unit.unit_data.move_skill.exclude_func
+	)
 	NavServer.show_range(unit.unit_data.camp, distances)
 	return distances
 

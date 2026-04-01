@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="1_rxout"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Scripts/Resources/SkillData.gd" id="2_5hsm6"]
 [ext_resource type="SpriteFrames" uid="uid://b7wffwf3ylh6d" path="res://Battle3D/UnitDatas/Player/Sprites/All_Front.ase_layer" id="2_7fh8q"]
+[ext_resource type="Script" uid="uid://hugv1xmiibh6" path="res://Battle3D/Scripts/Resources/move_skills/TrampleMove.gd" id="3_7fh8q"]
+
+[sub_resource type="Resource" id="Resource_njkgg"]
+script = ExtResource("3_7fh8q")
+metadata/_custom_type_script = "uid://hugv1xmiibh6"
 
 [resource]
 script = ExtResource("1_rxout")
@@ -18,4 +23,5 @@ speed = 4
 strength = 10
 agility = 10
 intelligence = 10
+move_skill = SubResource("Resource_njkgg")
 metadata/_custom_type_script = "uid://db0c52gmcxdon"
