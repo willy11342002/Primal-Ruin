@@ -12,12 +12,17 @@ signal cast_position_changed(map_pos: Vector2i)
 @export_range(1,100) var min_zoom: float = 10
 @export_range(1,100) var max_zoom: float = 100
 @export var zoom_speed: float = 10
+@export_range(0.1, 20.0) var follow_speed: float = 5.0
 @export_range(0.1, 20.0) var move_speed: float = 5.0
 
 var unit_info: Dictionary = {}
 var zoom_direction: int = 0
 var paused: bool = false
-var target: Node3D
+var target: Node3D: set = set_target
+
+
+func set_target(unit: CombatUnit) -> void:
+	target = unit
 
 
 func _ready() -> void:
@@ -95,7 +100,7 @@ func _follow_target(delta: float) -> void:
 	var target_position := global_position
 	target_position.x = target.global_position.x
 	target_position.z = target.global_position.z
-	global_position = global_position.move_toward(target_position, move_speed * delta)
+	global_position = global_position.move_toward(target_position, follow_speed * delta)
 		
 
 ## 取得滑鼠目前對應的格子座標, 如果沒有射線碰撞到任何物件，或是碰撞點不在導航網格上，則回傳 null。

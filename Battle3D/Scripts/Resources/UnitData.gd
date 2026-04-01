@@ -10,10 +10,8 @@ extends Resource
 
 @export_group("Animation")
 @export var sprite_size: float = 1.0
-@export var idle_animation: SpriteFrames
-@export var move_animation: SpriteFrames
-@export var attack_animation: SpriteFrames
-@export var die_animation: SpriteFrames
+@export var back_animation: SpriteFrames
+@export var front_animation: SpriteFrames
 
 @export_group("Stats")
 @export var max_health: int

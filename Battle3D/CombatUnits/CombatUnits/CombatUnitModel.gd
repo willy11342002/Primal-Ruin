@@ -7,8 +7,10 @@ const SCALAR_THRESHOLD: float = 0.306
 const FLIP_THRESHOLD: float = 0.0
 
 @export var default_animation: String = "Idle"
-@export var front_animation: String = "Anim001"
-@export var back_animation: String = "Anim002"
+@export var looping_animations: Array[String] = ["Idle", "Move"]
+
+@onready var front_animation: AnimatedSprite3D = $Front
+@onready var back_animation: AnimatedSprite3D = $Back
 
 var unit: CombatUnit
 var _camera_forward: Vector3 = Vector3.FORWARD
@@ -21,8 +23,8 @@ func _ready() -> void:
 	if camera:
 		camera.rotation_changed.connect(_on_rotation_changed)
 		camera.rotation_changed.emit(-camera.global_basis.z)
-
-	play(default_animation)
+	
+	unit = get_parent() as CombatUnit
 
 
 func _notification(what: int) -> void:
@@ -45,40 +47,44 @@ func _update_facing() -> void:
 	var model_right := yaw_basis.x
 	var model_back := yaw_basis.z
 
-	for child in get_children():
-		if child is not AnimatedSprite3D:
-			continue
 
-		# 面相左側時，flip_h = true, 面相右側時，flip_h = false。
-		if model_right.dot(horizontal_camera_forward) > FLIP_THRESHOLD:
-			child.flip_h = true
-		else:
-			child.flip_h = false
+	# 面相左側時，flip_h = true, 面相右側時，flip_h = false。
+	if model_right.dot(horizontal_camera_forward) > FLIP_THRESHOLD:
+		front_animation.flip_h = true
+		back_animation.flip_h = true
+	else:
+		front_animation.flip_h = false
+		back_animation.flip_h = false
 
-		# 面向鏡頭時，使用 front_frame, 背對鏡頭時，使用 back_frame。
-		if model_back.dot(horizontal_camera_forward) > SCALAR_THRESHOLD:
-			child.animation = front_animation
-		else:
-			child.animation = back_animation
+	# 面向鏡頭時，使用 front_frame, 背對鏡頭時，使用 back_frame。
+	if model_back.dot(horizontal_camera_forward) > SCALAR_THRESHOLD:
+		front_animation.visible = true
+		back_animation.visible = false
+	else:
+		front_animation.visible = false
+		back_animation.visible = true
 
 
 func setup(unit_data) -> void:
 	scale = Vector3.ONE * unit_data.sprite_size
-	for child in get_children():
-		child.setup(unit_data)
-	play("Idle")
+
+	front_animation.setup(unit_data)
+	back_animation.setup(unit_data)
+
+	_update_facing()
+	play(default_animation)
 
 
 func play(animation_name: String) -> void:
-	for child in get_children():
-		if child.name == animation_name:
-			child.show()
-			child.play()
-		else:
-			child.hide()
-			child.stop()
+	front_animation.play(animation_name)
+	back_animation.play(animation_name)
 
 
 func set_outline(enabled: bool) -> void:
-	for child in get_children():
-		child.set_outline(enabled)
+	front_animation.set_outline(enabled)
+	back_animation.set_outline(enabled)
+
+
+func _on_sprite_animation_looped() -> void:
+	if front_animation.animation not in looping_animations:
+		play(default_animation)

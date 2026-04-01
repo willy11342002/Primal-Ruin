@@ -1,19 +1,15 @@
 [gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://55sfak4rqkkx"]
 
-[ext_resource type="SpriteFrames" uid="uid://cfgnyhhgu3v5r" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Attack.tres" id="1_1178v"]
-[ext_resource type="SpriteFrames" uid="uid://d1m615nq5otj4" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Die.tres" id="2_psnks"]
-[ext_resource type="SpriteFrames" uid="uid://c2otr0uwcntmd" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Idle.tres" id="3_eklsc"]
-[ext_resource type="SpriteFrames" uid="uid://bv83mfuv3lqxb" path="res://Battle3D/UnitDatas/GiantFly/SpriteFrames/Move.tres" id="4_xsxbw"]
+[ext_resource type="SpriteFrames" uid="uid://h7b3q173e6j7" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Back.ase_layer" id="1_c52cs"]
+[ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Front.ase_layer" id="2_sg8d1"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="5_8lvhn"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Scripts/Resources/SkillData.gd" id="6_vaswc"]
 
 [resource]
 script = ExtResource("5_8lvhn")
 camp = 1
-idle_animation = ExtResource("3_eklsc")
-move_animation = ExtResource("4_xsxbw")
-attack_animation = ExtResource("1_1178v")
-die_animation = ExtResource("2_psnks")
+back_animation = ExtResource("1_c52cs")
+front_animation = ExtResource("2_sg8d1")
 max_health = 35
 health = 35
 max_mana = 10

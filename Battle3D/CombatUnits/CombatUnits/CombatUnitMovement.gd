@@ -1,4 +1,4 @@
-class_name CombatUnitMovement3D
+class_name CombatUnitMovement
 extends Node3D
 
 

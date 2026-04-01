@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://daotlkw66s7qn"
+path="res://.godot/imported/All_Front.ase_layer-dbf541d4cdfc736142cc429952300993.res"
+
+[deps]
+
+source_file="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Front.ase_layer"
+dest_files=["res://.godot/imported/All_Front.ase_layer-dbf541d4cdfc736142cc429952300993.res"]
+
+[params]
+

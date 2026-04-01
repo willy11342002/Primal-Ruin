@@ -3,7 +3,7 @@ extends Node3D
 
 
 @onready var unit_model: CombatUnitModel = %CombatUnitModel
-@onready var move_component: CombatUnitMovement3D = %CombatUnitMovement3D
+@onready var move_component: CombatUnitMovement = %CombatUnitMovement
 @export var unit_data: UnitData
 
 @warning_ignore("unused_signal") signal health_depleted(c: CombatUnit)

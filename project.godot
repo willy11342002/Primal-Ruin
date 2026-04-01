@@ -37,7 +37,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/TileMapLayer3D/plugin.cfg", "res://addons/anim_sheet/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/TileMapLayer3D/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg")
 
 [input]
 

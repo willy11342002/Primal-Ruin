@@ -1,18 +1,15 @@
 [gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://c27dboevxddlb"]
 
-[ext_resource type="SpriteFrames" uid="uid://c5c0own73r5q2" path="res://Battle3D/UnitDatas/Player/SpriteFrames/Attack.tres" id="1_7fh8q"]
+[ext_resource type="SpriteFrames" uid="uid://fglk7lfpjijm" path="res://Battle3D/UnitDatas/Player/Sprites/All_Back.ase_layer" id="1_6mv6k"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="1_rxout"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Scripts/Resources/SkillData.gd" id="2_5hsm6"]
-[ext_resource type="SpriteFrames" uid="uid://bju0hb5r3kkko" path="res://Battle3D/UnitDatas/Player/SpriteFrames/Idle.tres" id="2_njkgg"]
-[ext_resource type="SpriteFrames" uid="uid://da6jnvviclu8s" path="res://Battle3D/UnitDatas/Player/SpriteFrames/Move.tres" id="3_h1gwc"]
+[ext_resource type="SpriteFrames" uid="uid://b7wffwf3ylh6d" path="res://Battle3D/UnitDatas/Player/Sprites/All_Front.ase_layer" id="2_7fh8q"]
 
 [resource]
 script = ExtResource("1_rxout")
 sprite_size = 0.6
-idle_animation = ExtResource("2_njkgg")
-move_animation = ExtResource("3_h1gwc")
-attack_animation = ExtResource("1_7fh8q")
-die_animation = ExtResource("2_njkgg")
+back_animation = ExtResource("1_6mv6k")
+front_animation = ExtResource("2_7fh8q")
 max_health = 150
 health = 150
 max_mana = 75

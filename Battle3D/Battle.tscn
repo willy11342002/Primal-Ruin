@@ -60,6 +60,7 @@ rotation_speed = 1.0
 min_zoom = 2.0
 max_zoom = 4.0
 zoom_speed = 0.05
+follow_speed = 4.0
 move_speed = 2.0
 
 [node name="Camera3D" type="Camera3D" parent="PlayerController" unique_id=778380024]

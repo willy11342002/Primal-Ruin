@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://73q2alr3gfbl"
+path="res://.godot/imported/All_Layer.ase_layer-a061e55b3cd961c9ce7d9a20c5372cde.res"
+
+[deps]
+
+source_file="res://Battle3D/UnitDatas/Player/Sprites/All_Layer.ase_layer"
+dest_files=["res://.godot/imported/All_Layer.ase_layer-a061e55b3cd961c9ce7d9a20c5372cde.res"]
+
+[params]
+
