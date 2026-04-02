@@ -24,6 +24,7 @@ func _ready() -> void:
 	if camera:
 		camera.rotation_changed.connect(_on_rotation_changed)
 		camera.rotation_changed.emit(-camera.global_basis.z)
+		camera.cast_position_changed.connect(_on_cast_position_changed)
 	
 	unit = get_parent() as CombatUnit
 
@@ -31,6 +32,14 @@ func _ready() -> void:
 func _notification(what: int) -> void:
 	if what in [NOTIFICATION_TRANSFORM_CHANGED, NOTIFICATION_LOCAL_TRANSFORM_CHANGED]:
 		_update_facing()
+
+
+func _on_cast_position_changed(_map_pos) -> void:
+	var unit_pos = NavServer.world_to_map(unit.global_position)
+	if unit_pos == _map_pos:
+		set_outline(true)
+	else:
+		set_outline(false)
 
 
 func _on_rotation_changed(camera_forward: Vector3) -> void:

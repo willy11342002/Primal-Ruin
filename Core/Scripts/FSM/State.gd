@@ -13,7 +13,7 @@ func init() -> void:
 	pass
 
 
-func enter() -> void:
+func enter(_context: Dictionary = {}) -> void:
 	pass
 
 
@@ -33,5 +33,5 @@ func handle_input(_event: InputEvent) -> void:
 	pass
 
 
-func translate_to(new_state: String) -> void:
-	state_machine.translate_to(new_state)
+func translate_to(new_state: String, _context: Dictionary = {}) -> void:
+	state_machine.translate_to(new_state, _context)

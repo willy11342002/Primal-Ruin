@@ -1,31 +1,28 @@
-extends Node
+extends Machine
 
 
-signal hover_unit_changed(new_unit)
 signal setup_finished
 signal before_end_turn
 signal after_end_turn
+signal canceled_skill
 
 @export var unit_scene: PackedScene
 
 var combat_data: CombatData
 var current_unit: CombatUnit: get = get_current_unit
-var hovered_unit: CombatUnit = null
 var skill_castable_positions: Array = []
 var distances: Dictionary = {}
 var move_path: Array = []
 
-## 當前選擇的單位
-var toggled_unit: CombatUnit = null
-## 當前選擇的技能
-var toggled_skill: SkillData = null
+
 
 
 func setup(_data: CombatData) -> void:
 	combat_data = _data
 	after_end_turn.emit()
 	setup_finished.emit()
-	choose_unit(null)
+	mode = true
+	_init_states()
 
 
 func end_turn() -> void:
@@ -34,25 +31,10 @@ func end_turn() -> void:
 	current_unit.unit_data.end_turn()
 	if not current_unit.unit_data.depleted:
 		after_end_turn.emit()
-		choose_unit(null)
+		translate_to("IdleState")
 	else:
 		await get_tree().create_timer(0.5).timeout
 		end_turn()
-
-
-func hover_on_unit(unit: CombatUnit) -> void:
-	if unit:
-		unit.hover_on()
-	hovered_unit = unit
-	hover_unit_changed.emit(unit.unit_data.camp)
-
-
-func hover_off_unit(unit: CombatUnit) -> void:
-	if hovered_unit == unit:
-		if unit:
-			unit.hover_off()
-		hovered_unit = null
-		hover_unit_changed.emit(null)
 
 
 func map_pos_to_unit(map_pos: Variant) -> CombatUnit:
@@ -71,19 +53,10 @@ func get_current_unit() -> CombatUnit:
 	return combat_data.units[0].unit
 
 
-func get_move_range(unit: CombatUnit) -> Dictionary:
-	var map_pos = NavServer.world_to_map(unit.global_position)
-	distances = NavServer.find_range(
-		map_pos,
-		unit.unit_data.balance_movement,
-		unit.unit_data.move_skill.pass_func,
-		unit.unit_data.move_skill.exclude_func
-	)
-	return distances
-
-
 func clear_units() -> void:
 	for child in get_children():
+		if child is State:
+			continue
 		child.queue_free()
 
 
@@ -95,73 +68,20 @@ func add_unit(_data: UnitData, pos: Vector2i) -> CombatUnit:
 	return unit
 
 
-func move_unit_alone_path(unit: CombatUnit, path: Array) -> void:
-	var cost = distances.get(path[-1], INF)
+func move_unit_alone_path(unit: CombatUnit, path: Array, cost: float) -> void:
+	translate_to("IdleState")
 	Global.pause_player_input.emit(true)
 	await unit.move_alone_path(path)
 	unit.unit_data.balance_movement -= cost
 	Global.pause_player_input.emit(false)
-	choose_unit(null)
-
-
-## 選擇單位
-## 如果選擇非當前單位, 預覽該單位行動格
-## 選擇無效單位或當前單位, 預覽該單位行動格以及移動路徑
-func choose_unit(unit: CombatUnit) -> void:
-	NavServer.clear_preview()
-	if unit == null or unit == current_unit:
-		toggled_unit = null
-		get_move_range(current_unit)
-		NavServer.show_range(current_unit.unit_data.camp, distances)
-	else:
-		toggled_unit = unit
-		get_move_range(toggled_unit)
-		NavServer.show_range(toggled_unit.unit_data.camp, distances)
-
-
-## 未選擇其他單位時, 選擇格子用以預覽移動
-func get_path_pos(map_pos: Variant) -> Array:
-	if toggled_unit != null:
-		return []
-
-	get_move_range(current_unit)
-	return NavServer.find_path_from_range(distances, map_pos)
-
-
-func show_path(path: Array) -> void:
-	NavServer.show_path(path)
 
 
 ## 取消技能
 func cancel_skill() -> void:
-	toggled_skill = null
-	choose_unit(null)
+	translate_to("IdleState")
+	canceled_skill.emit()
 
 
-## 選擇技能
+## 選擇技能, 預覽技能可釋放的位置
 func choose_skill(skill: SkillData) -> void:
-	toggled_skill = skill
-	NavServer.clear_preview()
-
-	var map_pos = NavServer.world_to_map(current_unit.global_position)
-	skill_castable_positions = toggled_skill.get_castable_positions(map_pos)
-	NavServer.show_array(Global.Camp.NEUTRAL, skill_castable_positions)
-
-
-func preview_skill(_target_pos: Variant) -> void:
-	NavServer.remove_preview_by_camp(Global.Camp.ENEMY)
-	if toggled_skill == null: return
-	if _target_pos not in skill_castable_positions: return
-
-	var unit_map_pos = NavServer.world_to_map(current_unit.global_position)
-	var impact_positions = toggled_skill.get_impact_positions(unit_map_pos, _target_pos)
-	
-	NavServer.show_array(Global.Camp.ENEMY, impact_positions, 0.01)
-
-
-func cast_skill(_target_pos: Variant) -> void:
-	if toggled_skill == null: return
-
-	toggled_skill.costs_pay(current_unit)
-	print('嘗試釋放技能: ', toggled_skill.name, ' 目標位置: ', _target_pos)
-	print(current_unit.unit_data.ap)
+	translate_to("ShowingSkill", {"skill": skill})

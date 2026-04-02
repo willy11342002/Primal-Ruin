@@ -51,42 +51,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		cast_position = map_pos
 		cast_position_changed.emit(map_pos)
 
-		# 有選取技能時, 嘗試預覽技能範圍
-		if CombatServer.toggled_skill and map_pos != null:
-			CombatServer.preview_skill(map_pos)
-			return
-		
-		# 沒有選取單位, 嘗試預覽移動路徑
-		if CombatServer.toggled_unit == null:
-			var path = CombatServer.get_path_pos(map_pos)
-			if path.size() > 0:
-				CombatServer.show_path(path)
-
-	# 滑鼠點擊
-	if event.is_action_pressed("Confirm"):
-		# 嘗試釋放技能
-		if CombatServer.toggled_skill:
-			CombatServer.cast_skill(map_pos)
-			return
-		# 沒有選取單位, 嘗試移動
-		if CombatServer.toggled_unit == null:
-			var path = CombatServer.get_path_pos(map_pos)
-			if path.size() > 0:
-				CombatServer.move_unit_alone_path(CombatServer.current_unit, path)
-				return
-
-		# 嘗試選取某個單位, 用於預覽其行動
-		var unit: CombatUnit = CombatServer.map_pos_to_unit(map_pos)
-		CombatServer.choose_unit(unit)
-
-	if event.is_action_pressed("Cancel"):
-		# 取消技能選取
-		if CombatServer.toggled_skill:
-			CombatServer.cancel_skill()
-		# 取消選取單位
-		elif CombatServer.toggled_unit:
-			CombatServer.choose_unit(null)
-
 	# 相機縮放
 	if event.is_action_pressed("CameraZoomIn"):
 		zoom_direction = -1

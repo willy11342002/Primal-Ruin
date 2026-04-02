@@ -2,7 +2,29 @@
 
 [ext_resource type="Script" uid="uid://dd654f55rlpd4" path="res://Battle3D/Scripts/Servers/CombatServer.gd" id="1_hnux2"]
 [ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://Battle3D/CombatUnits/CombatUnit.tscn" id="2_0a6bm"]
+[ext_resource type="Script" uid="uid://f3pyyah1py73" path="res://Battle3D/Scripts/Servers/ShowingCurrentMove.gd" id="4_53e7f"]
+[ext_resource type="Script" uid="uid://u3sfyljs2q5d" path="res://Battle3D/Scripts/Servers/IdleState.gd" id="4_c0m2p"]
+[ext_resource type="Script" uid="uid://dqqprq367l1mt" path="res://Battle3D/Scripts/Servers/ShowingOtherMove.gd" id="6_c0m2p"]
+[ext_resource type="Script" uid="uid://djurxcyjoietm" path="res://Battle3D/Scripts/Servers/ShowingSkill.gd" id="7_l6onl"]
 
-[node name="CombatServer" type="Node" unique_id=605619367 groups=["CombatServer"]]
+[node name="CombatServer" type="Node" unique_id=605619367 node_paths=PackedStringArray("initial_state") groups=["CombatServer"]]
 script = ExtResource("1_hnux2")
 unit_scene = ExtResource("2_0a6bm")
+initial_state = NodePath("IdleState")
+mode = 0
+
+[node name="IdleState" type="Node" parent="." unique_id=1902443130]
+script = ExtResource("4_c0m2p")
+metadata/_custom_type_script = "uid://8asrtajql0nt"
+
+[node name="ShowingCurrentMove" type="Node" parent="." unique_id=663086177]
+script = ExtResource("4_53e7f")
+metadata/_custom_type_script = "uid://8asrtajql0nt"
+
+[node name="ShowingOtherMove" type="Node" parent="." unique_id=1296377531]
+script = ExtResource("6_c0m2p")
+metadata/_custom_type_script = "uid://8asrtajql0nt"
+
+[node name="ShowingSkill" type="Node" parent="." unique_id=500672556]
+script = ExtResource("7_l6onl")
+metadata/_custom_type_script = "uid://8asrtajql0nt"

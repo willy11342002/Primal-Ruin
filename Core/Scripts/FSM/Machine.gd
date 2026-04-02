@@ -5,7 +5,7 @@ class_name Machine extends Node
 @export_enum("OFF", "ON") var mode: int = 1
 @onready var _target_node: Node = get_parent() as Node
 
-signal state_changed(new_state: String)
+signal state_changed(new_state: String, context: Dictionary)
 
 var _map: Dictionary = {}
 var current: State
@@ -46,15 +46,15 @@ func _physics_process(delta: float) -> void:
 		current.physics_update(delta)
 
 
-func translate_to(new_state: String) -> void:
+func translate_to(new_state: String, context: Dictionary = {}) -> void:
 	if not mode:
 		return
 	if not _map.has(new_state):
-		push_error("錯誤: 狀態機 %s 無法轉換到未知狀態 %s!" % [self.name, new_state])
+		push_error("錯誤: 狀態機 %s 無法轉換到未知狀態 [%s]" % [self.name, new_state])
 		return
 
 	current.exit()
 	current = _map[new_state]
-	current.enter()
+	current.enter(context)
 
 	state_changed.emit(new_state)

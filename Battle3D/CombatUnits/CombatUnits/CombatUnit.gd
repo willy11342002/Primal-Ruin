@@ -26,11 +26,3 @@ func move_alone_path(path: Array) -> void:
 	move_component.move_alone_path(path)
 	await move_component.move_finished
 	play_animation("Idle")
-
-
-func hover_on() -> void:
-	unit_model.set_outline(true)
-
-
-func hover_off() -> void:
-	unit_model.set_outline(false)
