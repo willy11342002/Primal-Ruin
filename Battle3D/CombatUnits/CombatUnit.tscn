@@ -4,106 +4,100 @@
 [ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Battle3D/UnitDatas/GiantFly/UnitData.tres" id="2_w2qo0"]
 [ext_resource type="Script" uid="uid://bjsp5qbh1svgr" path="res://Battle3D/CombatUnits/CombatUnits/CombatUnitModel.gd" id="4_oermp"]
 [ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Front.ase_layer" id="4_pvyvv"]
+[ext_resource type="Material" uid="uid://b18ou3jovj26n" path="res://Battle3D/Shaders/MixMaterial.tres" id="5_d8x18"]
 [ext_resource type="SpriteFrames" uid="uid://h7b3q173e6j7" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Back.ase_layer" id="6_81gct"]
-[ext_resource type="Script" uid="uid://bpkj21so7dwmp" path="res://Battle3D/CombatUnits/CombatUnits/OutlineAnimattedSprite3D.gd" id="6_gndi1"]
+[ext_resource type="Script" uid="uid://bpkj21so7dwmp" path="res://Battle3D/CombatUnits/CombatUnits/AnimatedSprite3D.gd" id="6_gndi1"]
 [ext_resource type="Script" uid="uid://16xd682ue0cq" path="res://Battle3D/CombatUnits/CombatUnits/CombatUnitMovement.gd" id="8_u1s1b"]
 
-[sub_resource type="Animation" id="Animation_81gct"]
-resource_name = "Hurt"
-length = 0.5
-tracks/0/type = "method"
+[sub_resource type="Animation" id="Animation_d8x18"]
+resource_name = "Deplete"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Front")
+tracks/0/path = NodePath("Front:material_override:shader_parameter/stone_mix")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [Color(1, 1, 1, 1)],
-"method": &"flash_color"
-}, {
-"args": [null],
-"method": &"flash_color"
-}]
+"update": 0,
+"values": [0.0, 1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Front:material_override:shader_parameter/flash_state")
+tracks/1/path = NodePath("Back:material_override:shader_parameter/stone_mix")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_81gct"]
+resource_name = "Hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Front:material_override:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0.03333333, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Front:material_override:shader_parameter/flash_color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Front:material_override:shader_parameter/flash_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Back")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [Color(1, 1, 1, 1)],
-"method": &"flash_color"
-}, {
-"args": [null],
-"method": &"flash_color"
-}]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Back:material_override:shader_parameter/flash_state")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Back:material_override:shader_parameter/flash_state")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0.033333335, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Back:material_override:shader_parameter/flash_color")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Back:material_override:shader_parameter/flash_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0.033333335, 0.13333334, 0.23333333, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.031463478, 0.078116216, 0.15406254, 0.23434865, 0.33199394, 0.44591343),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.031463478, 0.078116216, 0.15406254, 0.23434865, 0.33199394, 0.44591343, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector3(0, 0.1, 0), Vector3(0.03, 0.1, 0.02), Vector3(0.01, 0.1, -0.01), Vector3(-0.03, 0.1, 0.03), Vector3(0.02, 0.1, 0.02), Vector3(-0.02, 0.1, -0.02), Vector3(0.02, 0.1, -0.02)]
+"values": [Vector3(0, 0.1, 0), Vector3(0.03, 0.1, 0.02), Vector3(0.01, 0.1, -0.01), Vector3(-0.01, 0.1, 0.03), Vector3(0.02, 0.1, 0.02), Vector3(-0.01, 0.1, -0.02), Vector3(0.02, 0.1, -0.01), Vector3(0, 0.1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_w2qo0"]
@@ -120,9 +114,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0.1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Front:material_override:shader_parameter/flash_state")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Back:material_override:shader_parameter/flash_state")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d8x18"]
 _data = {
+&"Deplete": SubResource("Animation_d8x18"),
 &"Hurt": SubResource("Animation_81gct"),
 &"RESET": SubResource("Animation_w2qo0")
 }
@@ -143,6 +162,7 @@ script = ExtResource("4_oermp")
 
 [node name="Front" type="AnimatedSprite3D" parent="CombatUnitModel" unique_id=40696541]
 transform = Transform3D(1, -5.803713e-11, -2.3283064e-10, -1.7894308e-10, 1, -2.910383e-11, -2.3283064e-10, 0, 1, 0, 0, 0)
+material_override = ExtResource("5_d8x18")
 billboard = 1
 texture_filter = 0
 sprite_frames = ExtResource("4_pvyvv")
@@ -154,6 +174,7 @@ metadata/_edit_lock_ = true
 [node name="Back" type="AnimatedSprite3D" parent="CombatUnitModel" unique_id=2065432681]
 transform = Transform3D(1, -5.803713e-11, -2.3283064e-10, -1.7894308e-10, 1, -2.910383e-11, -2.3283064e-10, 0, 1, 0, 0, 0)
 visible = false
+material_override = ExtResource("5_d8x18")
 billboard = 1
 texture_filter = 0
 sprite_frames = ExtResource("6_81gct")

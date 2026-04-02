@@ -18,7 +18,7 @@ func setup(_data: UnitData) -> void:
 
 
 func play_animation(ani_name: String) -> void:
-	unit_model.play(ani_name)
+	await unit_model.play(ani_name)
 
 
 func move_alone_path(path: Array) -> void:

@@ -77,13 +77,14 @@ func setup(unit_data) -> void:
 
 
 func play(animation_name: String) -> void:
-	if animation_name in ["Idle", "Move"]:
+	if front_animation.sprite_frames.has_animation(animation_name):
 		front_animation.play(animation_name)
 		back_animation.play(animation_name)
 	else:
+		front_animation.stop()
+		back_animation.stop()
 		animation_player.play(animation_name)
 		await animation_player.animation_finished
-		play(default_animation)
 
 
 func set_outline(enabled: bool) -> void:

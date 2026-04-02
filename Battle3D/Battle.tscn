@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bx38q3tjpefj6" path="res://Battle3D/Scripts/Resources/CombatData.gd" id="6_e8ow2"]
 [ext_resource type="PackedScene" uid="uid://fo7kwd7yqf37" path="res://Battle3D/HUD/HUD.tscn" id="6_nw1dk"]
 [ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/SpawnPoints/SpawnPoint.tscn" id="7_7ukbj"]
-[ext_resource type="Script" path="res://Battle3D/Scripts/AIController.gd" id="7_e8ow2"]
+[ext_resource type="Script" uid="uid://dtqj34cf1wxuq" path="res://Battle3D/Scripts/AIController.gd" id="7_e8ow2"]
 [ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="7_fq02d"]
 [ext_resource type="PackedScene" uid="uid://cxmvhvxfqihrl" path="res://Battle3D/HighLights/HighLight.tscn" id="8_y6s6i"]
 [ext_resource type="Script" uid="uid://bxysh7qc3qgm1" path="res://Battle3D/HighLights/HighLight.gd" id="9_iej0n"]

@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b18ou3jovj26n"]
+
+[ext_resource type="Shader" uid="uid://dn8jdaklo0ogg" path="res://Battle3D/Shaders/Mix.gdshader" id="1_2g5tv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2g5tv")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
+shader_parameter/stone_mix = 0.0
+shader_parameter/stone_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/grain_intensity = 0.15
+shader_parameter/grain_scale = 1.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_state = 0.0
