@@ -37,3 +37,5 @@ value = 37.0
 nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_n123s")
 texture_progress = SubResource("AtlasTexture_1ilym")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

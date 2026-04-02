@@ -47,3 +47,8 @@ func _on_current_unit_update_requested() -> void:
 
 func _on_end_turn_button_up() -> void:
 	CombatServer.end_turn()
+
+
+func _on_head_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		get_tree().get_first_node_in_group("Controller").set_target(CombatServer.current_unit)
