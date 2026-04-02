@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bgxmtx3hxn5on"]
+
+[ext_resource type="Texture2D" uid="uid://b1nv4ytrdc2iq" path="res://Battle3D/Sprites/SkillBorder.png" id="1_nog6c"]
+[ext_resource type="Texture2D" uid="uid://bq672mei8ykku" path="res://Battle3D/Sprites/SkillBorderPressed.png" id="2_jnyrt"]
+[ext_resource type="Texture2D" uid="uid://d3agus1uy5ohw" path="res://Battle3D/Sprites/SkillBorderHover.png" id="3_mkpp2"]
+[ext_resource type="Script" uid="uid://k6sxh6vtk4l2" path="res://Battle3D/HUD/SkillScene.gd" id="4_jnyrt"]
+[ext_resource type="Texture2D" uid="uid://bef5yscvf3qts" path="res://Battle3D/Sprites/SkillBorderDisabled.png" id="4_mkpp2"]
+[ext_resource type="Texture2D" uid="uid://c868p0fiqvaf3" path="res://Resources/Skills/Sprites/RPG_Debuff_Zzz_Sleep_Status.png" id="5_jnyrt"]
+
+[node name="SkillScene" type="TextureButton" unique_id=1291778039]
+custom_minimum_size = Vector2(48, 48)
+toggle_mode = true
+texture_normal = ExtResource("1_nog6c")
+texture_pressed = ExtResource("2_jnyrt")
+texture_hover = ExtResource("3_mkpp2")
+texture_disabled = ExtResource("4_mkpp2")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_jnyrt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=636965057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SkillIcon" type="TextureRect" parent="MarginContainer" unique_id=1314611604]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_jnyrt")
+expand_mode = 5
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

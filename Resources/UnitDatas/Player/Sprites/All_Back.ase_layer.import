@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://fglk7lfpjijm"
+path="res://.godot/imported/All_Back.ase_layer-0ff9be4db66252031c39ae839b703183.res"
+
+[deps]
+
+source_file="res://Resources/UnitDatas/Player/Sprites/All_Back.ase_layer"
+dest_files=["res://.godot/imported/All_Back.ase_layer-0ff9be4db66252031c39ae839b703183.res"]
+
+[params]
+

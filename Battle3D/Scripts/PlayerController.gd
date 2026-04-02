@@ -3,7 +3,7 @@ extends Node3D
 
 
 signal rotation_changed(_camera_forward: Vector3)
-signal cast_position_changed(map_pos: Vector2i)
+signal cast_position_changed(cast_position: Variant)
 
 @onready var camera: Camera3D = $Camera3D
 
@@ -19,6 +19,7 @@ var unit_info: Dictionary = {}
 var zoom_direction: int = 0
 var paused: bool = false
 var target: Node3D: set = set_target
+var cast_position: Variant = null
 
 
 func set_target(unit: CombatUnit) -> void:
@@ -44,24 +45,45 @@ func _unhandled_input(event: InputEvent) -> void:
 	# 滑鼠移動
 	if event is InputEventMouseMotion:
 		# 發送訊號, 更新滑鼠位置
-		cast_position_changed.emit(map_pos)
+		if cast_position != map_pos:
+			cast_position = map_pos
+			cast_position_changed.emit(map_pos)
 
-		if unit_info.is_empty():
+		# 有選取技能時, 嘗試預覽技能範圍
+		if CombatServer.toggled_skill:
+			CombatServer.preview_skill(map_pos)
 			return
-
-		if unit_info['unit'] == CombatServer.current_unit:
-			unit_info['path'] = NavServer.find_path_from_range(unit_info["move_distances"], map_pos)
-			NavServer.show_path(unit_info['path'])
+		
+		# 沒有選取單位, 嘗試預覽移動路徑
+		if CombatServer.toggled_unit == null:
+			var path = CombatServer.get_path_pos(map_pos)
+			if path.size() > 0:
+				CombatServer.show_path(path)
 
 	# 滑鼠點擊
 	if event.is_action_pressed("Confirm"):
-		# 如果點擊在可移動範圍內，則移動角色
-		if unit_info.get('path', []).size() > 1:
-			var move_cost: float = unit_info['move_distances'].get(map_pos, INF)
-			CombatServer.move_unit_alone_path(unit_info['unit'], unit_info['path'], move_cost)
+		# 嘗試釋放技能
+		if CombatServer.toggled_skill:
+			CombatServer.cast_skill(map_pos)
+			return
+		# 沒有選取單位, 嘗試移動
+		if CombatServer.toggled_unit == null:
+			var path = CombatServer.get_path_pos(map_pos)
+			if path.size() > 0:
+				CombatServer.move_unit_alone_path(CombatServer.current_unit, path)
+				return
 
+		# 嘗試選取某個單位, 用於預覽其行動
 		var unit: CombatUnit = CombatServer.map_pos_to_unit(map_pos)
-		unit_info = CombatServer.get_unit_info(unit)
+		CombatServer.choose_unit(unit)
+
+	if event.is_action_pressed("Cancel"):
+		# 取消技能選取
+		if CombatServer.toggled_skill:
+			CombatServer.choose_skill(null)
+		# 取消選取單位
+		elif CombatServer.toggled_unit:
+			CombatServer.choose_unit(null)
 
 	# 相機縮放
 	if event.is_action_pressed("CameraZoomIn"):

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://oskduqd2b5vj"]
+
+[ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Battle3D/Skills/SkillCost.gd" id="1_sumx7"]
+[ext_resource type="Texture2D" uid="uid://c868p0fiqvaf3" path="res://Resources/Skills/Sprites/RPG_Debuff_Zzz_Sleep_Status.png" id="2_4cpsm"]
+[ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Skills/SkillData.gd" id="3_v36sp"]
+
+[sub_resource type="Resource" id="Resource_4cpsm"]
+script = ExtResource("1_sumx7")
+type = 2
+amount = 30
+metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
+
+[resource]
+script = ExtResource("3_v36sp")
+name = "s_MeleeAttack"
+icon = ExtResource("2_4cpsm")
+description = "sd_MeleeAttack"
+cost = SubResource("Resource_4cpsm")
+metadata/_custom_type_script = "uid://byv54yb4gof43"

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bl3hsu0acxp4k" path="res://Battle3D/HUD/HUD.gd" id="1_l1683"]
 [ext_resource type="Texture2D" uid="uid://bpisd8p52d768" path="res://Battle3D/Sprites/HealthBar.png" id="2_dl6o4"]
 [ext_resource type="PackedScene" uid="uid://ccaxwhxf6upyv" path="res://Battle3D/HUD/SortScene.tscn" id="2_n123s"]
+[ext_resource type="PackedScene" uid="uid://bgxmtx3hxn5on" path="res://Battle3D/HUD/SkillScene.tscn" id="4_1ilym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n123s"]
 atlas = ExtResource("2_dl6o4")
@@ -21,7 +22,8 @@ region = Rect2(10, 1, 2, 4)
 
 [node name="HUD" type="CanvasLayer" unique_id=1050984296]
 script = ExtResource("1_l1683")
-sort_icon = ExtResource("2_n123s")
+sort_scene = ExtResource("2_n123s")
+skill_scene = ExtResource("4_1ilym")
 
 [node name="TopContainer" type="MarginContainer" parent="." unique_id=1183597498]
 anchors_preset = 5
@@ -40,9 +42,23 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="EndTurn" type="Button" parent="TopContainer/VBoxContainer" unique_id=620374320 groups=["PlayerControl"]]
+[node name="SortScene" parent="TopContainer/VBoxContainer/SortDisplay" unique_id=806396153 instance=ExtResource("2_n123s")]
 layout_mode = 2
-text = "UI_EndTurn"
+
+[node name="SortScene2" parent="TopContainer/VBoxContainer/SortDisplay" unique_id=1335892534 instance=ExtResource("2_n123s")]
+layout_mode = 2
+
+[node name="SortScene3" parent="TopContainer/VBoxContainer/SortDisplay" unique_id=410008841 instance=ExtResource("2_n123s")]
+layout_mode = 2
+
+[node name="SortScene4" parent="TopContainer/VBoxContainer/SortDisplay" unique_id=1083210103 instance=ExtResource("2_n123s")]
+layout_mode = 2
+
+[node name="SortScene5" parent="TopContainer/VBoxContainer/SortDisplay" unique_id=2089782414 instance=ExtResource("2_n123s")]
+layout_mode = 2
+
+[node name="SortScene6" parent="TopContainer/VBoxContainer/SortDisplay" unique_id=1992244258 instance=ExtResource("2_n123s")]
+layout_mode = 2
 
 [node name="LeftDownContainer" type="MarginContainer" parent="." unique_id=306712143]
 anchors_preset = 2
@@ -54,25 +70,39 @@ grow_vertical = 0
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="PanelContainer" type="PanelContainer" parent="LeftDownContainer" unique_id=987087616]
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftDownContainer" unique_id=206642090]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="LeftDownContainer/PanelContainer" unique_id=2108952873]
+[node name="EndTurn" type="Button" parent="LeftDownContainer/VBoxContainer" unique_id=620374320 groups=["PlayerControl"]]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "UI_EndTurn"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LeftDownContainer/VBoxContainer" unique_id=2059453912]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="LeftDownContainer/VBoxContainer/HBoxContainer" unique_id=987087616]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="LeftDownContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=2108952873]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LeftDownContainer/PanelContainer/MarginContainer" unique_id=252600497]
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftDownContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=252600497]
 layout_mode = 2
+alignment = 2
 
-[node name="Head" type="TextureRect" parent="LeftDownContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1908028138]
+[node name="Head" type="TextureRect" parent="LeftDownContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1908028138]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="HealthBar" type="TextureProgressBar" parent="LeftDownContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1211582433]
+[node name="HealthBar" type="TextureProgressBar" parent="LeftDownContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1211582433]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
@@ -81,7 +111,7 @@ nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_n123s")
 texture_progress = SubResource("AtlasTexture_1ilym")
 
-[node name="ManaBar" type="TextureProgressBar" parent="LeftDownContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=365314425]
+[node name="ManaBar" type="TextureProgressBar" parent="LeftDownContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=365314425]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
@@ -90,5 +120,33 @@ nine_patch_stretch = true
 texture_under = SubResource("AtlasTexture_n123s")
 texture_progress = SubResource("AtlasTexture_ghma0")
 
-[connection signal="button_up" from="TopContainer/VBoxContainer/EndTurn" to="." method="_on_end_turn_button_up"]
-[connection signal="gui_input" from="LeftDownContainer/PanelContainer/MarginContainer/VBoxContainer/Head" to="." method="_on_head_gui_input"]
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftDownContainer/VBoxContainer/HBoxContainer" unique_id=1438932721]
+layout_mode = 2
+alignment = 2
+
+[node name="BuffDisplay" type="HBoxContainer" parent="LeftDownContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=985527061]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="StatDisplay" type="HBoxContainer" parent="LeftDownContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1731063125]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="SkillDisplay" type="HBoxContainer" parent="LeftDownContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=658989538]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="SkillScene" parent="LeftDownContainer/VBoxContainer/HBoxContainer/VBoxContainer/SkillDisplay" unique_id=1291778039 instance=ExtResource("4_1ilym")]
+layout_mode = 2
+
+[node name="SkillScene2" parent="LeftDownContainer/VBoxContainer/HBoxContainer/VBoxContainer/SkillDisplay" unique_id=948886301 instance=ExtResource("4_1ilym")]
+layout_mode = 2
+
+[node name="SkillScene3" parent="LeftDownContainer/VBoxContainer/HBoxContainer/VBoxContainer/SkillDisplay" unique_id=1568636676 instance=ExtResource("4_1ilym")]
+layout_mode = 2
+
+[connection signal="button_up" from="LeftDownContainer/VBoxContainer/EndTurn" to="." method="_on_end_turn_button_up"]
+[connection signal="gui_input" from="LeftDownContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Head" to="." method="_on_head_gui_input"]

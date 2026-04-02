@@ -8,6 +8,7 @@ extends Resource
 @export var ap: int = 1
 @export var balance_movement: float = 0.0
 @export var next_time: float = 0.0
+@export var depleted: bool = false
 
 @export_group("Animation")
 @export var sprite_size: float = 1.0
@@ -36,9 +37,10 @@ func set_health(v):
 
 	health = clampi(v, 0, max_health)
 	if not initing and health == 0:
+		depleted = true
 		if unit != null:
-			unit.health_depleted.emit()
-	
+			await unit.play_animation("Deplete")
+			CombatServer.end_turn()
 
 func set_mana(v):
 	mana = clampi(v, 0, max_mana)
@@ -50,13 +52,12 @@ func _init() -> void:
 		unit.call_deferred("emit_signal", "update_requested")
 
 
-func _set(property, _value) -> bool:
-	if property not in self:
-		return false
+func set_property(property, _value) -> void:
+	if property not in self: return
 
+	set(property, _value)
 	if unit != null:
 		unit.call_deferred("emit_signal", "update_requested")
-	return false
 
 
 func get_controller() -> String:

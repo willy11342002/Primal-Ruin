@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://jayymfosk4v4"]
+
+[ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Battle3D/Skills/SkillCost.gd" id="1_5b43o"]
+[ext_resource type="Texture2D" uid="uid://dgtqt2bvdd4xj" path="res://Resources/Skills/Sprites/RPG_Skill_Teeth_Fangs_Bite_Beast_Vampire_Blood_Leech_Damage.png" id="2_5b43o"]
+[ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Skills/SkillData.gd" id="3_yop0r"]
+
+[sub_resource type="Resource" id="Resource_5b43o"]
+script = ExtResource("1_5b43o")
+type = 1
+amount = 20
+metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
+
+[resource]
+script = ExtResource("3_yop0r")
+name = "s_MeleeAttack"
+icon = ExtResource("2_5b43o")
+description = "sd_MeleeAttack"
+cost = SubResource("Resource_5b43o")
+metadata/_custom_type_script = "uid://byv54yb4gof43"

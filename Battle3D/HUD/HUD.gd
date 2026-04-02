@@ -1,10 +1,14 @@
 extends CanvasLayer
 
 
-@export var sort_icon: PackedScene
+@export var sort_scene: PackedScene
+@export var skill_scene: PackedScene
+
+var button_group: ButtonGroup
 
 
 func _ready() -> void:
+	button_group = ButtonGroup.new()
 	CombatServer.after_end_turn.connect(_on_after_end_turn)
 	CombatServer.before_end_turn.connect(_on_before_end_turn)
 	CombatServer.setup_finished.connect(_on_setup_finished)
@@ -16,8 +20,11 @@ func _on_before_end_turn() -> void:
 
 
 func _on_setup_finished() -> void:
+	# 生成回合順序UI
+	for child in %SortDisplay.get_children():
+		child.queue_free()
 	for unit: UnitData in CombatServer.combat_data.units:
-		var order = sort_icon.instantiate()
+		var order = sort_scene.instantiate()
 		order.setup(unit)
 		%SortDisplay.add_child(order)
 
@@ -29,7 +36,16 @@ func _on_after_end_turn() -> void:
 	# 綁定當前角色在左下角顯示
 	CombatServer.current_unit.update_requested.connect(_on_current_unit_update_requested)
 	_on_current_unit_update_requested()
-	
+
+	# 生成技能UI
+	for child in %SkillDisplay.get_children():
+		child.queue_free()
+	for skill in CombatServer.current_unit.unit_data.skills:
+		var skill_ui = skill_scene.instantiate()
+		skill_ui.setup(CombatServer.current_unit, skill)
+		skill_ui.button_group = button_group
+		%SkillDisplay.add_child(skill_ui)
+
 	# 根據當前角色是否可控 顯示/隱藏 玩家UI
 	if CombatServer.current_unit.unit_data.get_controller() == 'Player':
 		get_tree().call_group("PlayerControl", "show")

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://62152g4a3j5c"]
 
 [ext_resource type="Script" uid="uid://kcrp2ilqwaw3" path="res://Battle3D/CombatUnits/CombatUnits/CombatUnit.gd" id="1_iq6de"]
-[ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Battle3D/UnitDatas/GiantFly/UnitData.tres" id="2_w2qo0"]
+[ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Resources/UnitDatas/GiantFly/UnitData.tres" id="2_w2qo0"]
 [ext_resource type="Script" uid="uid://bjsp5qbh1svgr" path="res://Battle3D/CombatUnits/CombatUnits/CombatUnitModel.gd" id="4_oermp"]
-[ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Front.ase_layer" id="4_pvyvv"]
+[ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://Resources/UnitDatas/GiantFly/Sprites/All_Front.ase_layer" id="4_pvyvv"]
 [ext_resource type="Material" uid="uid://b18ou3jovj26n" path="res://Battle3D/Shaders/MixMaterial.tres" id="5_d8x18"]
-[ext_resource type="SpriteFrames" uid="uid://h7b3q173e6j7" path="res://Battle3D/UnitDatas/GiantFly/Sprites/All_Back.ase_layer" id="6_81gct"]
+[ext_resource type="SpriteFrames" uid="uid://h7b3q173e6j7" path="res://Resources/UnitDatas/GiantFly/Sprites/All_Back.ase_layer" id="6_81gct"]
 [ext_resource type="Script" uid="uid://bpkj21so7dwmp" path="res://Battle3D/CombatUnits/CombatUnits/AnimatedSprite3D.gd" id="6_gndi1"]
 [ext_resource type="Script" uid="uid://16xd682ue0cq" path="res://Battle3D/CombatUnits/CombatUnits/CombatUnitMovement.gd" id="8_u1s1b"]
 
