@@ -44,13 +44,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	# 滑鼠移動
 	if event is InputEventMouseMotion:
+		if cast_position == map_pos:
+			return
+
 		# 發送訊號, 更新滑鼠位置
-		if cast_position != map_pos:
-			cast_position = map_pos
-			cast_position_changed.emit(map_pos)
+		cast_position = map_pos
+		cast_position_changed.emit(map_pos)
 
 		# 有選取技能時, 嘗試預覽技能範圍
-		if CombatServer.toggled_skill:
+		if CombatServer.toggled_skill and map_pos != null:
 			CombatServer.preview_skill(map_pos)
 			return
 		
@@ -80,7 +82,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Cancel"):
 		# 取消技能選取
 		if CombatServer.toggled_skill:
-			CombatServer.choose_skill(null)
+			CombatServer.cancel_skill()
 		# 取消選取單位
 		elif CombatServer.toggled_unit:
 			CombatServer.choose_unit(null)

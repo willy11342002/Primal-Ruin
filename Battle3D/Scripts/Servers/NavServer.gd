@@ -118,11 +118,29 @@ func clear_preview() -> void:
 		child.queue_free()
 
 
-func show_range(camp: Global.Camp, distances: Dictionary) -> void:
+func remove_preview_by_camp(camp: Global.Camp) -> void:
+	for pos in preview_dic.keys():
+		if preview_dic[pos].camp == camp:
+			preview_dic[pos].queue_free()
+			preview_dic.erase(pos)
+
+
+func show_array(camp: Global.Camp, positions: Array, height_offset: float = 0.0) -> void:
+	for pos in positions:
+		if map_to_world(pos) == Vector3.INF:
+			continue
+		var instance = move_preview_scene.instantiate()
+		add_child(instance)
+		instance.global_position = map_to_world(pos) + Vector3(0, height_offset, 0)
+		preview_dic[pos] = instance
+		instance.set_camp(camp)
+
+
+func show_range(camp: Global.Camp, distances: Dictionary, height_offset: float = 0.0) -> void:
 	for pos in distances:
 		var instance = move_preview_scene.instantiate()
 		add_child(instance)
-		instance.global_position = map_to_world(pos)
+		instance.global_position = map_to_world(pos) + Vector3(0, height_offset, 0)
 		preview_dic[pos] = instance
 		instance.set_camp(camp)
 

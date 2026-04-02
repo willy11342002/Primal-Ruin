@@ -1,13 +1,26 @@
 [gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://dhurc66ghqmll"]
 
 [ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Battle3D/Skills/SkillCost.gd" id="1_2ctil"]
+[ext_resource type="Script" uid="uid://dfgl23jtul3hj" path="res://Battle3D/Skills/CastRules/LineCastRule.gd" id="1_kwtde"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Battle3D/Skills/SkillData.gd" id="1_qt61q"]
 [ext_resource type="Texture2D" uid="uid://fwyyp3vsmms3" path="res://Resources/Skills/Sprites/RPG_Stat_Strength_Fist_Melee_Attack_Small.png" id="2_82qhp"]
+[ext_resource type="Script" uid="uid://bemrla4l6d0av" path="res://Battle3D/Skills/ImpactRules/LineImpactRule.gd" id="4_3x38h"]
+
+[sub_resource type="Resource" id="Resource_3x38h"]
+script = ExtResource("1_kwtde")
+min_range = 1
+max_range = 2
+metadata/_custom_type_script = "uid://dfgl23jtul3hj"
 
 [sub_resource type="Resource" id="Resource_6dwit"]
 script = ExtResource("1_2ctil")
 amount = 1
 metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
+
+[sub_resource type="Resource" id="Resource_3eopp"]
+script = ExtResource("4_3x38h")
+radius = 2
+metadata/_custom_type_script = "uid://bemrla4l6d0av"
 
 [resource]
 script = ExtResource("1_qt61q")
@@ -15,4 +28,6 @@ name = "s_MeleeAttack"
 icon = ExtResource("2_82qhp")
 description = "sd_MeleeAttack"
 cost = SubResource("Resource_6dwit")
+cast_rule = SubResource("Resource_3x38h")
+impact_rule = SubResource("Resource_3eopp")
 metadata/_custom_type_script = "uid://byv54yb4gof43"

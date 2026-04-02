@@ -11,6 +11,7 @@ signal after_end_turn
 var combat_data: CombatData
 var current_unit: CombatUnit: get = get_current_unit
 var hovered_unit: CombatUnit = null
+var skill_castable_positions: Array = []
 var distances: Dictionary = {}
 var move_path: Array = []
 
@@ -131,23 +132,31 @@ func show_path(path: Array) -> void:
 	NavServer.show_path(path)
 
 
+## 取消技能
+func cancel_skill() -> void:
+	toggled_skill = null
+	choose_unit(null)
+
+
+## 選擇技能
 func choose_skill(skill: SkillData) -> void:
 	toggled_skill = skill
-	if toggled_skill == null:
-		choose_unit(null)
-		return
-	else:
-		NavServer.clear_preview()
-		if toggled_unit == null:
-			get_move_range(current_unit)
-			NavServer.show_range(current_unit.unit_data.camp, distances)
-		else:
-			get_move_range(toggled_unit)
-			NavServer.show_range(toggled_unit.unit_data.camp, distances)
+	NavServer.clear_preview()
+
+	var map_pos = NavServer.world_to_map(current_unit.global_position)
+	skill_castable_positions = toggled_skill.get_castable_positions(map_pos)
+	NavServer.show_array(Global.Camp.NEUTRAL, skill_castable_positions)
 
 
 func preview_skill(_target_pos: Variant) -> void:
+	NavServer.remove_preview_by_camp(Global.Camp.ENEMY)
 	if toggled_skill == null: return
+	if _target_pos not in skill_castable_positions: return
+
+	var unit_map_pos = NavServer.world_to_map(current_unit.global_position)
+	var impact_positions = toggled_skill.get_impact_positions(unit_map_pos, _target_pos)
+	
+	NavServer.show_array(Global.Camp.ENEMY, impact_positions, 0.01)
 
 
 func cast_skill(_target_pos: Variant) -> void:

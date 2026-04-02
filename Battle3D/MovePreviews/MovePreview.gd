@@ -4,7 +4,11 @@ extends Node3D
 @export var path_sprite: Sprite3D
 @export var surface_sprite: Sprite3D
 
-func set_camp(camp: Global.Camp) -> void:
+var camp: Global.Camp = Global.Camp.NEUTRAL
+
+
+func set_camp(_camp: Global.Camp) -> void:
+	camp = _camp
 	surface_sprite.frame = int(camp)
 
 

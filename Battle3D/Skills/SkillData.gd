@@ -33,3 +33,16 @@ func costs_pay(unit: CombatUnit) -> void:
 	if property == null:
 		return
 	unit.unit_data.set_property(property_name, property - cost.amount)
+
+
+func get_castable_positions(unit_map_pos: Vector2i) -> Array:
+	var positions := cast_rule.get_valid_positions()
+	return positions.map(func(pos): return pos + unit_map_pos)
+
+
+func get_impact_positions(unit_map_pos: Vector2i, target_map_pos: Vector2i) -> Array:
+	var direction := target_map_pos - unit_map_pos
+	direction = direction.sign()
+
+	var positions := impact_rule.get_valid_positions(direction)
+	return positions.map(func(pos): return pos + target_map_pos)

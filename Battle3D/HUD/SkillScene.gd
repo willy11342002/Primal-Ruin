@@ -16,6 +16,8 @@ func setup(_unit: CombatUnit, _skill: SkillData) -> void:
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		CombatServer.choose_skill(skill)
+	else:
+		CombatServer.cancel_skill()
 
 
 func _on_unit_update() -> void:
@@ -25,4 +27,4 @@ func _on_unit_update() -> void:
 	disabled = not can_afford
 	if disabled and button_pressed:
 		button_pressed = false
-		CombatServer.choose_skill(null)
+		CombatServer.cancel_skill()

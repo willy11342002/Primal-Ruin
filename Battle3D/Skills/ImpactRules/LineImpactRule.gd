@@ -6,6 +6,8 @@ extends ImpactRule
 
 
 func get_valid_positions(direction: Vector2i) -> Array:
+	if direction == Vector2i.ZERO:
+		return [Vector2i.ZERO]
 	var positions = []
 	for i in range(radius):
 		positions.append(direction * i)
