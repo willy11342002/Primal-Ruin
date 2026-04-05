@@ -49,5 +49,11 @@ func _on_cast_position_changed(map_pos) -> void:
 
 	var unit_map_pos = NavServer.local_to_map(CombatServer.current_unit.global_position)
 	impact_positions = skill.get_impact_positions(unit_map_pos, map_pos)
+	var preview_impact_positions = impact_positions.reduce(func(acc, poses):
+		for pos in poses:
+			if pos not in acc:
+				acc.append(pos)
+		return acc
+	)
 	
-	NavServer.show_array(Global.Camp.ENEMY, impact_positions, 0.01)
+	NavServer.show_array(Global.Camp.ENEMY, preview_impact_positions, 0.01)
