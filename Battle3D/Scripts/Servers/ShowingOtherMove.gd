@@ -8,7 +8,7 @@ func enter(context: Dictionary = {}) -> void:
 	if not context.has("unit"):
 		return
 	unit = context['unit']
-	var map_pos = NavServer.world_to_map(unit.global_position)
+	var map_pos = NavServer.local_to_map(unit.global_position)
 	var distances = NavServer.find_range(
 		map_pos,
 		unit.unit_data.balance_movement,

@@ -77,7 +77,7 @@ func get_top_tile_data(xz: Vector2i) -> Dictionary:
 
 
 ## 世界座標轉INDEX座標
-func world_to_grid(world_pos: Vector3) -> Vector3:
+func local_to_grid(world_pos: Vector3) -> Vector3:
 	var grid_position: Vector3 = world_pos / grid_size - 0.5 * Vector3.ONE
 	grid_position.x = roundi(grid_position.x)
 	grid_position.y = roundi(grid_position.y)
@@ -97,22 +97,22 @@ func map_to_grid(map_pos: Vector2i, height: float = -0.5) -> Vector3:
 
 
 ## INDEX座標轉世界座標
-func grid_to_world(grid_position: Vector3) -> Vector3:
-	grid_position.y += 0.5 # 補回world_to_grid中減去的0.5
+func grid_to_local(grid_position: Vector3) -> Vector3:
+	grid_position.y += 0.5 # 補回local_to_grid中減去的0.5
 	grid_position += 0.5 * Vector3.ONE
 	return grid_position * grid_size
 
 
 ## 世界座標轉地圖座標, 損失Y軸資訊
-func world_to_map(world_pos: Vector3) -> Vector2i:
-	return grid_to_map(world_to_grid(world_pos))
+func local_to_map(world_pos: Vector3) -> Vector2i:
+	return grid_to_map(local_to_grid(world_pos))
 
 
-func map_to_world(map_pos: Vector2i) -> Vector3:
+func map_to_local(map_pos: Vector2i) -> Vector3:
 	var height: float = get_map_height(map_pos)
 	if height == -INF: return Vector3.INF
 	
-	return grid_to_world(map_to_grid(map_pos, height))
+	return grid_to_local(map_to_grid(map_pos, height))
 
 
 func get_map_height(map_pos: Vector2i) -> float:
@@ -132,6 +132,6 @@ func get_camp_spawn_points(camp: Global.Camp) -> Array:
 	for child in get_children():
 		if child is SpawnPoint:
 			if child.camp == camp:
-				var point = world_to_map(child.global_position)
+				var point = local_to_map(child.global_position)
 				points.append(point)
 	return points

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://b18ou3jovj26n"]
 
-[ext_resource type="Shader" uid="uid://dn8jdaklo0ogg" path="res://Battle3D/Shaders/Mix.gdshader" id="1_2g5tv"]
+[ext_resource type="Shader" path="res://Battle3D/Shaders/Mix.gdshader" id="1_2g5tv"]
 
 [resource]
 render_priority = 0

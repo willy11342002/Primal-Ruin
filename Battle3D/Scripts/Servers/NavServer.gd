@@ -21,20 +21,20 @@ var base_level: CustomTileMapLayer3D:
 		return get_tree().get_first_node_in_group("Level")
 
 
-func world_to_map(world_pos: Vector3) -> Vector2i:
-	return base_level.world_to_map(world_pos)
+func local_to_map(world_pos: Vector3) -> Vector2i:
+	return base_level.local_to_map(world_pos)
 
 
-func map_to_world(map_pos: Vector2i) -> Vector3:
-	return base_level.map_to_world(map_pos)
+func map_to_local(map_pos: Vector2i) -> Vector3:
+	return base_level.map_to_local(map_pos)
 
 
-func world_to_grid(world_pos: Vector3) -> Vector3:
-	return base_level.world_to_grid(world_pos)
+func local_to_grid(world_pos: Vector3) -> Vector3:
+	return base_level.local_to_grid(world_pos)
 
 
-func grid_to_world(grid_pos: Vector3) -> Vector3:
-	return base_level.grid_to_world(grid_pos)
+func grid_to_local(grid_pos: Vector3) -> Vector3:
+	return base_level.grid_to_local(grid_pos)
 
 
 func grid_to_map(grid_pos: Vector3) -> Vector2i:
@@ -127,11 +127,11 @@ func remove_preview_by_camp(camp: Global.Camp) -> void:
 
 func show_array(camp: Global.Camp, positions: Array, height_offset: float = 0.0) -> void:
 	for pos in positions:
-		if map_to_world(pos) == Vector3.INF:
+		if map_to_local(pos) == Vector3.INF:
 			continue
 		var instance = move_preview_scene.instantiate()
 		add_child(instance)
-		instance.global_position = map_to_world(pos) + Vector3(0, height_offset, 0)
+		instance.global_position = map_to_local(pos) + Vector3(0, height_offset, 0)
 		preview_dic[pos] = instance
 		instance.set_camp(camp)
 
@@ -140,7 +140,7 @@ func show_range(camp: Global.Camp, distances: Dictionary, height_offset: float =
 	for pos in distances:
 		var instance = move_preview_scene.instantiate()
 		add_child(instance)
-		instance.global_position = map_to_world(pos) + Vector3(0, height_offset, 0)
+		instance.global_position = map_to_local(pos) + Vector3(0, height_offset, 0)
 		preview_dic[pos] = instance
 		instance.set_camp(camp)
 

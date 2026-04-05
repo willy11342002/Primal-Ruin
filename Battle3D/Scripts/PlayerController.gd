@@ -6,6 +6,7 @@ signal rotation_changed(_camera_forward: Vector3)
 signal cast_position_changed(cast_position: Variant)
 
 @onready var camera: Camera3D = $Camera3D
+@onready var coordinate: Sprite3D = $Sprite3D
 
 @export_group('Camera')
 @export var rotation_speed: float = 120.0
@@ -114,7 +115,7 @@ func get_raycasted_position() -> Variant:
 	var hit_position = result.position
 	
 	# 4. 轉換成網格座標
-	var map_pos: Vector2i = NavServer.world_to_map(hit_position)
+	var map_pos: Vector2i = NavServer.local_to_map(hit_position)
 	
 	return map_pos
 
@@ -155,7 +156,34 @@ func _move_camera(direction: Vector2, delta: float) -> void:
 	global_position += movement
 
 	# 限制相機在地圖邊界內
-	var start: Vector3 = NavServer.grid_to_world(NavServer.map_to_grid(NavServer.base_level.rect.position, 0))
-	var end: Vector3 = NavServer.grid_to_world(NavServer.map_to_grid(NavServer.base_level.rect.end, 0))
+	var start: Vector3 = NavServer.grid_to_local(NavServer.map_to_grid(NavServer.base_level.rect.position, 0))
+	var end: Vector3 = NavServer.grid_to_local(NavServer.map_to_grid(NavServer.base_level.rect.end, 0))
 	global_position.x = clamp(global_position.x, start.x, end.x)
 	global_position.z = clamp(global_position.z, start.z, end.z)
+
+
+func _on_cast_position_changed(_map_pos) -> void:
+	if _map_pos == null:
+		coordinate.hide()
+		return
+
+	var world_pos = NavServer.map_to_local(_map_pos)
+	if world_pos == Vector3.INF:
+		coordinate.hide()
+		return
+
+	var unit = CombatServer.map_pos_to_unit(_map_pos)
+	if unit:
+		coordinate.modulate = Global.CampColor[unit.unit_data.camp]
+	else:
+		coordinate.modulate = Color.WHITE
+
+	coordinate.global_position = world_pos + Vector3(0, 0.01, 0)
+	coordinate.show()
+
+
+func _on_rotation_changed(_camera_forward: Vector3) -> void:
+	var target_angle = atan2(_camera_forward.x, _camera_forward.z)
+	coordinate.rotation.y = -target_angle
+
+	_on_cast_position_changed(cast_position)

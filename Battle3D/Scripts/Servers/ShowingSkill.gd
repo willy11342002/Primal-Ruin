@@ -18,7 +18,7 @@ func enter(context: Dictionary = {}) -> void:
 	skill = context["skill"]
 	NavServer.clear_preview()
 
-	var map_pos = NavServer.world_to_map(CombatServer.current_unit.global_position)
+	var map_pos = NavServer.local_to_map(CombatServer.current_unit.global_position)
 	castable_positions = skill.get_castable_positions(map_pos)
 	NavServer.show_array(Global.Camp.NEUTRAL, castable_positions)
 	if camera:
@@ -47,7 +47,7 @@ func _on_cast_position_changed(map_pos) -> void:
 	if skill == null: return
 	if map_pos not in castable_positions: return
 
-	var unit_map_pos = NavServer.world_to_map(CombatServer.current_unit.global_position)
+	var unit_map_pos = NavServer.local_to_map(CombatServer.current_unit.global_position)
 	impact_positions = skill.get_impact_positions(unit_map_pos, map_pos)
 	
 	NavServer.show_array(Global.Camp.ENEMY, impact_positions, 0.01)

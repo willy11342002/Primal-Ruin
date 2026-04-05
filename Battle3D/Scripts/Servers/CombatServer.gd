@@ -40,7 +40,7 @@ func end_turn() -> void:
 func map_pos_to_unit(map_pos: Variant) -> CombatUnit:
 	for unit in get_tree().get_nodes_in_group("CombatUnit"):
 		if unit is CombatUnit:
-			var unit_map_pos = NavServer.world_to_map(unit.global_position)
+			var unit_map_pos = NavServer.local_to_map(unit.global_position)
 			if unit_map_pos == map_pos:
 				return unit
 	return
@@ -63,7 +63,7 @@ func clear_units() -> void:
 func add_unit(_data: UnitData, pos: Vector2i) -> CombatUnit:
 	var unit: CombatUnit = unit_scene.instantiate()
 	add_child(unit)
-	unit.global_position = NavServer.map_to_world(pos)
+	unit.global_position = NavServer.map_to_local(pos)
 	unit.setup(_data)
 	return unit
 

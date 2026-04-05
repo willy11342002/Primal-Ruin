@@ -35,7 +35,7 @@ func _notification(what: int) -> void:
 
 
 func _on_cast_position_changed(_map_pos) -> void:
-	var unit_pos = NavServer.world_to_map(unit.global_position)
+	var unit_pos = NavServer.local_to_map(unit.global_position)
 	if unit_pos == _map_pos:
 		set_outline(true)
 	else:

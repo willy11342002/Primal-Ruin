@@ -10,7 +10,7 @@ var camera: PlayerController:
 
 
 func enter(_context: Dictionary = {}) -> void:
-	var map_pos = NavServer.world_to_map(CombatServer.current_unit.global_position)
+	var map_pos = NavServer.local_to_map(CombatServer.current_unit.global_position)
 	distances = NavServer.find_range(
 		map_pos,
 		CombatServer.current_unit.unit_data.balance_movement,
