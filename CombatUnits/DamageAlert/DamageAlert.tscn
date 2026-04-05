@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b07y288pje36l"]
+
+[ext_resource type="Script" uid="uid://bkenr864n3a7n" path="res://CombatUnits/DamageAlert/DamageAlert.gd" id="2_ptdiu"]
+[ext_resource type="PackedScene" uid="uid://caocexlpjp0u7" path="res://CombatUnits/DamageAlert/AlertNumber.tscn" id="3_uwhjm"]
+
+[node name="DamageAlert" type="HBoxContainer" unique_id=1099207789]
+script = ExtResource("2_ptdiu")
+number_scene = ExtResource("3_uwhjm")
+offset_3d = Vector3(0, 0.2, 0)
+
+[node name="Sprite3D" parent="." unique_id=604097302 instance=ExtResource("3_uwhjm")]
+layout_mode = 2

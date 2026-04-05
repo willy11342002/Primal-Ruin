@@ -37,6 +37,7 @@ func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Confirm"):
 		if impact_positions.size() > 0:
 			skill.costs_pay(CombatServer.current_unit)
+			skill.apply_effects(CombatServer.current_unit, camera.cast_position)
 	if event.is_action_pressed("Cancel"):
 		CombatServer.cancel_skill()
 

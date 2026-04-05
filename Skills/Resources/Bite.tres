@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Skills/Scripts/SkillCost.gd" id="1_5b43o"]
 [ext_resource type="Script" uid="uid://dyphxxijcy2x5" path="res://Skills/Scripts/CastRules/RangeCastRule.gd" id="1_yop0r"]
 [ext_resource type="Texture2D" uid="uid://dgtqt2bvdd4xj" path="res://Skills/Sprites/RPG_Skill_Teeth_Fangs_Bite_Beast_Vampire_Blood_Leech_Damage.png" id="2_5b43o"]
+[ext_resource type="Script" uid="uid://bdgl7g7q246dr" path="res://Skills/Scripts/SkillEffects/SkillEffect.gd" id="3_ldttj"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Skills/Scripts/SkillData.gd" id="3_yop0r"]
+[ext_resource type="Script" uid="uid://b6erl8mqobmit" path="res://Skills/Scripts/SkillEffects/DamageEffect.gd" id="4_88ujj"]
 [ext_resource type="Script" uid="uid://lephj5uqyoin" path="res://Skills/Scripts/ImpactRules/ImpactRule.gd" id="4_osdrx"]
 [ext_resource type="Script" uid="uid://btxicjrjs3ten" path="res://Skills/Scripts/ImpactRules/ForkRule.gd" id="5_qcg8l"]
 [ext_resource type="Script" uid="uid://dnmr0aukfw25g" path="res://Skills/Scripts/ImpactRules/LongitudeRule.gd" id="6_ldttj"]
@@ -20,6 +22,10 @@ script = ExtResource("1_5b43o")
 type = 1
 amount = 20
 metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
+
+[sub_resource type="Resource" id="Resource_3ghjy"]
+script = ExtResource("4_88ujj")
+metadata/_custom_type_script = "uid://b6erl8mqobmit"
 
 [sub_resource type="Resource" id="Resource_fve2u"]
 script = ExtResource("5_qcg8l")
@@ -38,4 +44,5 @@ description = "sd_MeleeAttack"
 cost = SubResource("Resource_5b43o")
 cast_rule = SubResource("Resource_isypl")
 impact_rules = Array[ExtResource("4_osdrx")]([SubResource("Resource_fve2u"), SubResource("Resource_c7fk5"), SubResource("Resource_0j85s")])
+effects = Array[ExtResource("3_ldttj")]([SubResource("Resource_3ghjy")])
 metadata/_custom_type_script = "uid://byv54yb4gof43"

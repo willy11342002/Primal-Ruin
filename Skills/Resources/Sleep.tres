@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://b2h0nsan2aoq" path="res://Skills/Scripts/CastRules/CastRule.gd" id="1_iol43"]
 [ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Skills/Scripts/SkillCost.gd" id="1_sumx7"]
 [ext_resource type="Texture2D" uid="uid://c868p0fiqvaf3" path="res://Skills/Sprites/RPG_Debuff_Zzz_Sleep_Status.png" id="2_4cpsm"]
+[ext_resource type="Script" uid="uid://bdgl7g7q246dr" path="res://Skills/Scripts/SkillEffects/SkillEffect.gd" id="3_84oav"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Skills/Scripts/SkillData.gd" id="3_v36sp"]
+[ext_resource type="Script" uid="uid://lephj5uqyoin" path="res://Skills/Scripts/ImpactRules/ImpactRule.gd" id="5_pogcn"]
 
 [sub_resource type="Resource" id="Resource_sg4wb"]
 script = ExtResource("1_iol43")

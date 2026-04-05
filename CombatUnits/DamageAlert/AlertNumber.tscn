@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://caocexlpjp0u7"]
+
+[ext_resource type="Texture2D" uid="uid://bso0g43r8v8j8" path="res://CombatUnits/DamageAlert/Number.png" id="1_h0r32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj54k"]
+resource_local_to_scene = true
+atlas = ExtResource("1_h0r32")
+region = Rect2(66, 0, 6, 10)
+
+[node name="Sprite3D" type="TextureRect" unique_id=62505229]
+use_parent_material = true
+custom_minimum_size = Vector2(12, 20)
+texture = SubResource("AtlasTexture_wj54k")

@@ -36,14 +36,19 @@ func set_health(v):
 	var initing: int = health == -1
 
 	health = clampi(v, 0, max_health)
+	if unit:
+		unit.call_deferred("emit_signal", "update_requested")
 	if not initing and health == 0:
 		depleted = true
 		if unit != null:
 			await unit.play_animation("Deplete")
 			CombatServer.end_turn()
 
+
 func set_mana(v):
 	mana = clampi(v, 0, max_mana)
+	if unit:
+		unit.call_deferred("emit_signal", "update_requested")
 
 
 func _init() -> void:

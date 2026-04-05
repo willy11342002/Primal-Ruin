@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://kcrp2ilqwaw3" path="res://CombatUnits/Components/CombatUnit.gd" id="1_iq6de"]
 [ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://CombatUnits/Resources/GiantFly/UnitData.tres" id="2_w2qo0"]
+[ext_resource type="PackedScene" uid="uid://b07y288pje36l" path="res://CombatUnits/DamageAlert/DamageAlert.tscn" id="3_pvs5s"]
 [ext_resource type="Script" uid="uid://bjsp5qbh1svgr" path="res://CombatUnits/Components/CombatUnitModel.gd" id="4_oermp"]
 [ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://CombatUnits/Resources/GiantFly/Sprites/All_Front.ase_layer" id="4_pvyvv"]
 [ext_resource type="Material" uid="uid://b18ou3jovj26n" path="res://CombatUnits/Shaders/MixMaterial.tres" id="5_d8x18"]
@@ -185,6 +186,9 @@ metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CombatUnitModel" unique_id=1495399839]
 libraries/ = SubResource("AnimationLibrary_d8x18")
+
+[node name="DamageAlert" parent="." unique_id=945295689 instance=ExtResource("3_pvs5s")]
+unique_name_in_owner = true
 
 [connection signal="animation_looped" from="CombatUnitModel/Front" to="CombatUnitModel" method="_on_sprite_animation_looped"]
 [connection signal="animation_looped" from="CombatUnitModel/Back" to="CombatUnitModel" method="_on_sprite_animation_looped"]

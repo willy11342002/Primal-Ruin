@@ -4,6 +4,7 @@ extends Node3D
 
 @onready var unit_model: CombatUnitModel = %CombatUnitModel
 @onready var move_component: CombatUnitMovement = %CombatUnitMovement
+@onready var damage_alert: DamageAlert = %DamageAlert
 @export var unit_data: UnitData
 
 @warning_ignore("unused_signal") signal health_depleted(c: CombatUnit)
@@ -15,6 +16,7 @@ func setup(_data: UnitData) -> void:
 	unit_data.unit = self
 	unit_data.end_turn()
 	unit_model.setup(unit_data)
+	damage_alert.setup(unit_data)
 
 
 func play_animation(ani_name: String) -> void:
@@ -26,3 +28,8 @@ func move_alone_path(path: Array) -> void:
 	move_component.move_alone_path(path)
 	await move_component.move_finished
 	play_animation("Idle")
+
+
+func take_damage(amount: int) -> void:
+	unit_data.set_health(unit_data.health - amount)
+	play_animation("Hurt")

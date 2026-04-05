@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bby6uj8aemiaj"]
+
+[ext_resource type="Shader" uid="uid://ccienl5gqh4ri" path="res://CombatUnits/DamageAlert/Shaders/color.gdshader" id="1_d311v"]
+
+[resource]
+shader = ExtResource("1_d311v")
+shader_parameter/ori_color = Color(1, 1, 1, 1)
+shader_parameter/new_color = Color(0.77, 0.2387, 0.24755485, 1)
+shader_parameter/threshold = 1.3650000648375

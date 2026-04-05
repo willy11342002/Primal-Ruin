@@ -27,8 +27,8 @@ func _on_after_end_turn() -> void:
 
 
 func _on_update_requested() -> void:
-	%HealthBar.max_value = CombatServer.current_unit.unit_data.max_health
-	%HealthBar.value = CombatServer.current_unit.unit_data.health
+	%HealthBar.max_value = unit.unit_data.max_health
+	%HealthBar.value = unit.unit_data.health
 
 
 func _on_gui_input(event: InputEvent) -> void:

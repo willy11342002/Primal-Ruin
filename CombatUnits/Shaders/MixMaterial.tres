@@ -1,10 +1,10 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://b18ou3jovj26n"]
 
-[ext_resource type="Shader" uid="uid://dn8jdaklo0ogg" path="res://CombatUnits/Shaders/Mix.gdshader" id="1_2g5tv"]
+[ext_resource type="Shader" uid="uid://dn8jdaklo0ogg" path="res://CombatUnits/Shaders/Mix.gdshader" id="1_ocdum"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_2g5tv")
+shader = ExtResource("1_ocdum")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_width = 0.0
 shader_parameter/stone_mix = 0.0

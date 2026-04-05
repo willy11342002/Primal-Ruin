@@ -15,6 +15,8 @@ extends Resource
 @export var impact_rules: Array[ImpactRule]
 ## 能量傳遞, 用來決定如何通過路徑
 @export var emitter_rule: EmitterRule
+## 技能效果列表, 由多個碎片組成
+@export var effects: Array[SkillEffect]
 
 
 func costs_enough(unit: CombatUnit) -> bool:
@@ -84,3 +86,33 @@ func get_impact_positions(unit_map_pos: Vector2i, target_map_pos: Vector2i) -> A
 		current_sources = next_sources
 
 	return results
+
+
+func apply_effects(caster: CombatUnit, target_cell: Vector2i):
+	var context = SkillContext.new(caster, target_cell)
+	
+	for effect in effects:
+		effect.execute(context)
+	
+	_resolve_context(context)
+
+
+func _resolve_context(ctx: SkillContext):
+	# 1. 處理傷害
+	if ctx.target_unit and (ctx.raw_damage > 0):
+		# 統一計算公式: (基礎和 * 總倍率)
+		ctx.final_damage = int(ctx.raw_damage * ctx.damage_multiplier)
+		ctx.target_unit.take_damage(ctx.final_damage)
+
+	# 2. 處理召喚
+	if ctx.should_summon and CombatServer.map_pos_to_unit(ctx.target_cell) == null:
+		CombatServer.add_unit(ctx.summon_data, ctx.target_cell)
+
+	# # 3. 處理地形
+	# if ctx.terrain_to_change != "":
+	# 	ctx.map_manager.set_terrain(ctx.target_cell, ctx.terrain_to_change)
+	
+	# # 4. 處理 Buff
+	# for buff_id in ctx.buffs_to_apply:
+	# 	if ctx.target_unit:
+	# 		ctx.target_unit.add_buff(buff_id)
