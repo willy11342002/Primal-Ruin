@@ -22,3 +22,5 @@ const Languages: Array = [
 ]
 
 @warning_ignore("unused_signal") signal pause_player_input(paused: bool)
+
+@onready var music_manager: AudioStreamPlayer = $MusicManager

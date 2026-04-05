@@ -1,6 +1,18 @@
 [gd_scene format=3 uid="uid://1vf4mbmcnk3w"]
 
 [ext_resource type="Script" uid="uid://lp8ncecvgh8" path="res://Core/Global/Global.gd" id="1_hdi5s"]
+[ext_resource type="Script" uid="uid://r4rj0tnepp4b" path="res://Core/Global/MusicManager.gd" id="2_px3t7"]
+[ext_resource type="AudioStream" uid="uid://cnhmu8yvwkhyl" path="res://Assets/Musics/Palace Attack Theme.wav" id="3_pb8s0"]
+[ext_resource type="AudioStream" uid="uid://dir6ym7ai265b" path="res://Assets/Musics/Through Mountains.wav" id="4_faahj"]
 
 [node name="Global" type="Node" unique_id=590130989]
 script = ExtResource("1_hdi5s")
+
+[node name="MusicManager" type="AudioStreamPlayer" parent="." unique_id=678455621]
+autoplay = true
+bus = &"BGM"
+script = ExtResource("2_px3t7")
+is_shuffled = true
+playlist = Array[AudioStream]([ExtResource("3_pb8s0"), ExtResource("4_faahj")])
+
+[connection signal="finished" from="MusicManager" to="MusicManager" method="_on_track_finished"]
