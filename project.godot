@@ -39,6 +39,14 @@ window/size/viewport_height=720
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/TileMapLayer3D/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://CombatUnits/": "green",
+"res://Core/": "gray",
+"res://Skills/": "red"
+}
+
 [input]
 
 CameraRotateLeft={

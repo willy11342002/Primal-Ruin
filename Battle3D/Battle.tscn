@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://db8n3msxd0q7t" path="res://Battle3D/Battle.gd" id="1_b06fd"]
 [ext_resource type="Script" uid="uid://exlsny2nfpo3" path="res://Battle3D/Scripts/PlayerController.gd" id="3_icoww"]
-[ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://Resources/UnitDatas/GiantFly/UnitData.tres" id="4_snrpe"]
-[ext_resource type="Resource" uid="uid://c27dboevxddlb" path="res://Resources/UnitDatas/Player/UnitData.tres" id="5_nw1dk"]
+[ext_resource type="Resource" uid="uid://55sfak4rqkkx" path="res://CombatUnits/Resources/GiantFly/UnitData.tres" id="4_snrpe"]
+[ext_resource type="Resource" uid="uid://c27dboevxddlb" path="res://CombatUnits/Resources/Player/UnitData.tres" id="5_nw1dk"]
 [ext_resource type="Script" uid="uid://bx38q3tjpefj6" path="res://Battle3D/Scripts/Resources/CombatData.gd" id="6_e8ow2"]
 [ext_resource type="PackedScene" uid="uid://fo7kwd7yqf37" path="res://Battle3D/HUD/HUD.tscn" id="6_nw1dk"]
 [ext_resource type="PackedScene" uid="uid://blxowjx7ib6vy" path="res://Battle3D/SpawnPoints/SpawnPoint.tscn" id="7_7ukbj"]

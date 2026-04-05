@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://it1ip55o4u7u"]
 
 [ext_resource type="Script" uid="uid://dd654f55rlpd4" path="res://Battle3D/Scripts/Servers/CombatServer.gd" id="1_hnux2"]
-[ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://Battle3D/CombatUnits/CombatUnit.tscn" id="2_0a6bm"]
+[ext_resource type="PackedScene" uid="uid://62152g4a3j5c" path="res://CombatUnits/CombatUnit.tscn" id="2_0a6bm"]
 [ext_resource type="Script" uid="uid://f3pyyah1py73" path="res://Battle3D/Scripts/Servers/ShowingCurrentMove.gd" id="4_53e7f"]
 [ext_resource type="Script" uid="uid://u3sfyljs2q5d" path="res://Battle3D/Scripts/Servers/IdleState.gd" id="4_c0m2p"]
 [ext_resource type="Script" uid="uid://dqqprq367l1mt" path="res://Battle3D/Scripts/Servers/ShowingOtherMove.gd" id="6_c0m2p"]

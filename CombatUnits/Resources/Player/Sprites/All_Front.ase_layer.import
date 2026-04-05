@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.spriteframes-split-layer"
+type="SpriteFrames"
+uid="uid://b7wffwf3ylh6d"
+path="res://.godot/imported/All_Front.ase_layer-96a763cd48f744720bf7457670e20fad.res"
+
+[deps]
+
+source_file="res://CombatUnits/Resources/Player/Sprites/All_Front.ase_layer"
+dest_files=["res://.godot/imported/All_Front.ase_layer-96a763cd48f744720bf7457670e20fad.res"]
+
+[params]
+
