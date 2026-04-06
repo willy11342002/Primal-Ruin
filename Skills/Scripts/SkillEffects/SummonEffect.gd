@@ -5,5 +5,5 @@ extends SkillEffect
 @export var unit_data: UnitData
 
 
-func execute(context: SkillContext) -> void:
-	context.summon_data = unit_data
+func apply(context: SkillContext) -> void:
+	context.summons.append(unit_data)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chmucs4y582ta"]
+
+[ext_resource type="Script" uid="uid://bf0x0ttvxmnrs" path="res://Skills/Scripts/SkillContext.gd" id="1_ranld"]
+
+[node name="SkillContext" type="Node3D" unique_id=371149432]
+script = ExtResource("1_ranld")

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://f3pyyah1py73" path="res://Battle3D/Scripts/Servers/ShowingCurrentMove.gd" id="4_53e7f"]
 [ext_resource type="Script" uid="uid://u3sfyljs2q5d" path="res://Battle3D/Scripts/Servers/IdleState.gd" id="4_c0m2p"]
 [ext_resource type="Script" uid="uid://dqqprq367l1mt" path="res://Battle3D/Scripts/Servers/ShowingOtherMove.gd" id="6_c0m2p"]
+[ext_resource type="PackedScene" uid="uid://chmucs4y582ta" path="res://Battle3D/SkillContexts/SkillContext.tscn" id="7_hrxp7"]
 [ext_resource type="Script" uid="uid://djurxcyjoietm" path="res://Battle3D/Scripts/Servers/ShowingSkill.gd" id="7_l6onl"]
 
 [node name="CombatServer" type="Node" unique_id=605619367 node_paths=PackedStringArray("initial_state") groups=["CombatServer"]]
@@ -27,4 +28,5 @@ metadata/_custom_type_script = "uid://8asrtajql0nt"
 
 [node name="ShowingSkill" type="Node" parent="." unique_id=500672556]
 script = ExtResource("7_l6onl")
+skill_context_scene = ExtResource("7_hrxp7")
 metadata/_custom_type_script = "uid://8asrtajql0nt"

@@ -33,6 +33,7 @@ func exit() -> void:
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Confirm"):
 		if path.size() > 0:
+			camera.hide_coordinate()
 			CombatServer.move_unit_alone_path(
 				CombatServer.current_unit,
 				path.duplicate(),

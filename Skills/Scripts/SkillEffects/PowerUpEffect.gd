@@ -5,5 +5,5 @@ extends SkillEffect
 @export var value: float = 0.2
 
 
-func execute(context: SkillContext) -> void:
+func apply(context: SkillContext) -> void:
 	context.damage_multiplier += value

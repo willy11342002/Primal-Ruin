@@ -187,3 +187,7 @@ func _on_rotation_changed(_camera_forward: Vector3) -> void:
 	coordinate.rotation.y = -target_angle
 
 	_on_cast_position_changed(cast_position)
+
+
+func hide_coordinate() -> void:
+	coordinate.hide()

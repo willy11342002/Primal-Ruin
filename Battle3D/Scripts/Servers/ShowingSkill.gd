@@ -5,6 +5,9 @@ var skill: SkillData
 var castable_positions: Array
 var impact_positions: Array
 
+@export var skill_context_scene: PackedScene
+
+
 var camera: PlayerController:
 	get:
 		return get_tree().get_first_node_in_group("Controller")
@@ -36,8 +39,16 @@ func exit() -> void:
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Confirm"):
 		if impact_positions.size() > 0:
+			# 支付代價
 			skill.costs_pay(CombatServer.current_unit)
-			skill.apply_effects(CombatServer.current_unit, camera.cast_position)
+			# 執行技能
+			var context = skill_context_scene.instantiate() as SkillContext
+			context.setup(CombatServer.current_unit, skill)
+			get_tree().current_scene.add_child(context)
+			for layer in impact_positions:
+				for pos in layer:
+					context.resolve_cell(pos)
+
 	if event.is_action_pressed("Cancel"):
 		CombatServer.cancel_skill()
 
@@ -50,11 +61,11 @@ func _on_cast_position_changed(map_pos) -> void:
 
 	var unit_map_pos = NavServer.local_to_map(CombatServer.current_unit.global_position)
 	impact_positions = skill.get_impact_positions(unit_map_pos, map_pos)
-	var preview_impact_positions = impact_positions.reduce(func(acc, poses):
-		for pos in poses:
-			if pos not in acc:
-				acc.append(pos)
-		return acc
-	)
+
+	var preview_impact_positions: Array = []
+	for layer in impact_positions:
+		for pos in layer:
+			if pos not in preview_impact_positions:
+				preview_impact_positions.append(pos)
 	
 	NavServer.show_array(Global.Camp.ENEMY, preview_impact_positions, 0.01)

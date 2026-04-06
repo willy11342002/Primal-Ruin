@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SkillFragment" format=3 uid="uid://dl33d4big576t"]
+
+[ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Skills/Scripts/SkillCost.gd" id="1_v8q57"]
+[ext_resource type="Script" uid="uid://bdgl7g7q246dr" path="res://Skills/Scripts/SkillEffects/SkillEffect.gd" id="2_0rjpr"]
+[ext_resource type="Script" uid="uid://dnmr0aukfw25g" path="res://Skills/Scripts/ImpactRules/LongitudeRule.gd" id="3_v8q57"]
+[ext_resource type="Script" uid="uid://ku3p73hx8cr3" path="res://Skills/Scripts/SkillFragment.gd" id="4_7dq31"]
+
+[sub_resource type="Resource" id="Resource_150js"]
+script = ExtResource("1_v8q57")
+type = 1
+amount = 5
+metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
+
+[sub_resource type="Resource" id="Resource_0rjpr"]
+script = ExtResource("3_v8q57")
+metadata/_custom_type_script = "uid://dnmr0aukfw25g"
+
+[resource]
+script = ExtResource("4_7dq31")
+cost = SubResource("Resource_150js")
+impact_rule = SubResource("Resource_0rjpr")
+metadata/_custom_type_script = "uid://ku3p73hx8cr3"

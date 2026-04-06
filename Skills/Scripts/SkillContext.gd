@@ -1,26 +1,51 @@
 class_name SkillContext
-extends RefCounted
+extends Node3D
 
 ## 施法者
 var caster: CombatUnit
-## 當前處理的格子座標
-var target_cell: Vector2i
-## 該格子上的單位 (如果有的話)
-var target_unit: CombatUnit
 ## 當前技能
-var skill_data: SkillData
+var skill: SkillData
 
-var raw_damage: float = 0.0      # 基礎傷害總和
-var damage_multiplier: float = 1.0 # 總傷害倍率
-var final_damage: int = 0        # 最終計算結果
+## 技能消耗
+var costs: Dictionary[String, int] = {}
 
-var buffs_to_apply: Array[String] = [] # 預計附加的 Buff 列表
-var terrain_to_change: String = ""      # 預計修改的地形類型
-var should_summon: bool = false         # 是否觸發召喚
-var summon_data: UnitData
+## 基礎傷害總和
+var raw_damage: float = 0.0
+## 總傷害倍率
+var damage_multiplier: float = 1.0
+## 最終傷害結果，經過所有計算後的數值
+var final_damage: int = 0
+
+## 預計附加的 Buff 列表
+var buffs_to_apply: Array[String] = []
+
+## 預計召喚的單位資料列表
+var summons: Array[UnitData] = []
 
 
-func _init(_caster, _cell):
+func setup(_caster, _skill):
 	caster = _caster
-	target_cell = _cell
-	target_unit = CombatServer.map_pos_to_unit(_cell)
+	skill = _skill
+
+	for fragment in skill.fragments:
+		if fragment.cast_vfx:
+			fragment.cast_vfx.apply(self)
+
+		if fragment.impact_vfx:
+			fragment.impact_vfx.apply(self)
+
+		for effect in fragment.effects:
+			effect.apply(self)
+
+
+func resolve_cell(cell: Vector2i) -> void:
+	var target_unit: CombatUnit = CombatServer.map_pos_to_unit(cell)
+	# 處理傷害
+	if target_unit and raw_damage > 0:
+		final_damage = int(raw_damage * damage_multiplier)
+		target_unit.take_damage(final_damage)
+	
+	# 處理召喚
+	if summons.size() > 0 and CombatServer.map_pos_to_unit(cell) == null:
+		var summon_data = summons.pop_front()
+		CombatServer.add_unit(summon_data, cell)

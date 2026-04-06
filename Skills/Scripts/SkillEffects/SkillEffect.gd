@@ -2,5 +2,5 @@ class_name SkillEffect
 extends Resource
 
 
-func execute(_context: SkillContext) -> void:
+func apply(_context: SkillContext) -> void:
 	pass

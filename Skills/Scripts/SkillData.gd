@@ -6,40 +6,48 @@ extends Resource
 @export var icon: Texture2D
 @export var description: String
 
-## 技能消耗
-@export var cost: SkillCost
 
 ## 施放邏輯, 用來決定可被施放格子
 @export var cast_rule: CastRule
-## 波及邏輯, 用來決定造成效果的格子
-@export var impact_rules: Array[ImpactRule]
 ## 能量傳遞, 用來決定如何通過路徑
 @export var emitter_rule: EmitterRule
-## 技能效果列表, 由多個碎片組成
-@export var effects: Array[SkillEffect]
+
+## 特效配置
+@export var fragments: Array[SkillFragment]
 
 
-func costs_enough(unit: CombatUnit) -> bool:
-	var property_name: String = SkillCost.Type.keys()[cost.type].to_lower()
-	var property = unit.unit_data.get(property_name)
-	if property == null:
-		return false
-	if property < cost.amount:
-		return false
+func costs_enough(caster: CombatUnit) -> bool:
+	var costs = {}
+	for fragment in fragments:
+		if fragment.cost:
+			fragment.cost.apply(costs)
+
+	for cost_name in costs.keys():
+		var cost_amount: int = costs[cost_name]
+		var property: int = caster.unit_data.get(cost_name)
+		if property == null:
+			return false
+		if property < cost_amount:
+			return false
 	return true
 
 
-func costs_pay(unit: CombatUnit) -> void:
-	var property_name: String = SkillCost.Type.keys()[cost.type].to_lower()
-	var property = unit.unit_data.get(property_name)
-	if property == null:
-		return
-	unit.unit_data.set_property(property_name, property - cost.amount)
+func costs_pay(caster: CombatUnit) -> void:
+	var costs = {}
+	for fragment in fragments:
+		if fragment.cost:
+			fragment.cost.apply(costs)
+
+	for cost_name in costs.keys():
+		var cost_amount: int = costs[cost_name]
+		var property: int = caster.unit_data.get(cost_name)
+		if property != null:
+			caster.unit_data.set(cost_name, property - cost_amount)
 
 
-func get_castable_positions(unit_map_pos: Vector2i) -> Array:
+func get_castable_positions(caster_map_pos: Vector2i) -> Array:
 	var positions := cast_rule.get_valid_positions()
-	return positions.map(func(pos): return pos + unit_map_pos)
+	return positions.map(func(pos): return pos + caster_map_pos)
 
 
 func get_impact_positions(unit_map_pos: Vector2i, target_map_pos: Vector2i) -> Array:
@@ -60,13 +68,15 @@ func get_impact_positions(unit_map_pos: Vector2i, target_map_pos: Vector2i) -> A
 	]
 
 	# 依照碎片鏈條逐層處理
-	for ext in impact_rules:
+	for fragment in fragments:
+		if fragment.impact_rule == null:
+			continue
 		var next_layer_cells: Array[Vector2i] = []
 		var next_sources: Array[Dictionary] = []
 		
 		for source in current_sources:
 			# 關鍵：根據「進入這一格的方向」來計算「下一格的方向」
-			var offsets = ext.get_valid_positions(source.dir)
+			var offsets = fragment.impact_rule.get_valid_positions(source.dir)
 			
 			for offset in offsets:
 				var next_pos = source.pos + offset
@@ -86,33 +96,3 @@ func get_impact_positions(unit_map_pos: Vector2i, target_map_pos: Vector2i) -> A
 		current_sources = next_sources
 
 	return results
-
-
-func apply_effects(caster: CombatUnit, target_cell: Vector2i):
-	var context = SkillContext.new(caster, target_cell)
-	
-	for effect in effects:
-		effect.execute(context)
-	
-	_resolve_context(context)
-
-
-func _resolve_context(ctx: SkillContext):
-	# 1. 處理傷害
-	if ctx.target_unit and (ctx.raw_damage > 0):
-		# 統一計算公式: (基礎和 * 總倍率)
-		ctx.final_damage = int(ctx.raw_damage * ctx.damage_multiplier)
-		ctx.target_unit.take_damage(ctx.final_damage)
-
-	# 2. 處理召喚
-	if ctx.should_summon and CombatServer.map_pos_to_unit(ctx.target_cell) == null:
-		CombatServer.add_unit(ctx.summon_data, ctx.target_cell)
-
-	# # 3. 處理地形
-	# if ctx.terrain_to_change != "":
-	# 	ctx.map_manager.set_terrain(ctx.target_cell, ctx.terrain_to_change)
-	
-	# # 4. 處理 Buff
-	# for buff_id in ctx.buffs_to_apply:
-	# 	if ctx.target_unit:
-	# 		ctx.target_unit.add_buff(buff_id)
