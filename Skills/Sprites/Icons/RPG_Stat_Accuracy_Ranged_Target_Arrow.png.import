@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pqrjtr4p457"
-path="res://.godot/imported/RPG_Magic_Sparkles_Enchantment.png-ff9f0a93c75e571185bf49d387a2ddc1.ctex"
+uid="uid://7hbdcp7vqk74"
+path="res://.godot/imported/RPG_Stat_Accuracy_Ranged_Target_Arrow.png-8c6d595b5bbf9c7c95d7eda35da6be5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/RPG_Magic_Sparkles_Enchantment.png"
-dest_files=["res://.godot/imported/RPG_Magic_Sparkles_Enchantment.png-ff9f0a93c75e571185bf49d387a2ddc1.ctex"]
+source_file="res://Skills/Sprites/Icons/RPG_Stat_Accuracy_Ranged_Target_Arrow.png"
+dest_files=["res://.godot/imported/RPG_Stat_Accuracy_Ranged_Target_Arrow.png-8c6d595b5bbf9c7c95d7eda35da6be5d.ctex"]
 
 [params]
 

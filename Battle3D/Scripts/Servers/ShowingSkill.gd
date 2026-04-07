@@ -3,9 +3,8 @@ extends State
 
 var skill: SkillData
 var castable_positions: Array
-var impact_positions: Array
 
-@export var skill_context_scene: PackedScene
+var vfx_scene: PackedScene
 
 
 var camera: PlayerController:
@@ -38,16 +37,21 @@ func exit() -> void:
 
 func handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Confirm"):
+		var target_position = camera.cast_position
+		var caster_position = NavServer.local_to_map(CombatServer.current_unit.global_position)
+		var impact_positions: Array = skill.get_impact_positions(caster_position, target_position)
 		if impact_positions.size() > 0:
 			# 支付代價
 			skill.costs_pay(CombatServer.current_unit)
-			# 執行技能
-			var context = skill_context_scene.instantiate() as SkillContext
+			# 計算技能效果
+			var context = SkillContext.new()
 			context.setup(CombatServer.current_unit, skill)
-			get_tree().current_scene.add_child(context)
+			# 展示施放特效
+			await context.apply_cast_vfx(caster_position)
+			# 每一個影響位置展示特效, 並處理效果
 			for layer in impact_positions:
 				for pos in layer:
-					context.resolve_cell(pos)
+					await context.resolve_cell(pos)
 
 	if event.is_action_pressed("Cancel"):
 		CombatServer.cancel_skill()
@@ -55,14 +59,13 @@ func handle_input(event: InputEvent) -> void:
 
 func _on_cast_position_changed(map_pos) -> void:
 	NavServer.remove_preview_by_camp(Global.Camp.ENEMY)
-	impact_positions.clear()
 	if skill == null: return
 	if map_pos not in castable_positions: return
 
 	var unit_map_pos = NavServer.local_to_map(CombatServer.current_unit.global_position)
-	impact_positions = skill.get_impact_positions(unit_map_pos, map_pos)
 
 	var preview_impact_positions: Array = []
+	var impact_positions: Array = skill.get_impact_positions(unit_map_pos, map_pos)
 	for layer in impact_positions:
 		for pos in layer:
 			if pos not in preview_impact_positions:

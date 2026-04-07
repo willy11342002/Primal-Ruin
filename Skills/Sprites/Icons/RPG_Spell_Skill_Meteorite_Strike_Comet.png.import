@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7hbdcp7vqk74"
-path="res://.godot/imported/RPG_Stat_Accuracy_Ranged_Target_Arrow.png-ee7527ebf2ae094d4312a1c189b4a9a1.ctex"
+uid="uid://brkjbgpffjv12"
+path="res://.godot/imported/RPG_Spell_Skill_Meteorite_Strike_Comet.png-b06ca77aedbd9fb4e42f07f1b3b060b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/RPG_Stat_Accuracy_Ranged_Target_Arrow.png"
-dest_files=["res://.godot/imported/RPG_Stat_Accuracy_Ranged_Target_Arrow.png-ee7527ebf2ae094d4312a1c189b4a9a1.ctex"]
+source_file="res://Skills/Sprites/Icons/RPG_Spell_Skill_Meteorite_Strike_Comet.png"
+dest_files=["res://.godot/imported/RPG_Spell_Skill_Meteorite_Strike_Comet.png-b06ca77aedbd9fb4e42f07f1b3b060b2.ctex"]
 
 [params]
 

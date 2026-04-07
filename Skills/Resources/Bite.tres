@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://jayymfosk4v4"]
 
 [ext_resource type="Script" uid="uid://dyphxxijcy2x5" path="res://Skills/Scripts/CastRules/RangeCastRule.gd" id="1_yop0r"]
-[ext_resource type="Texture2D" uid="uid://dgtqt2bvdd4xj" path="res://Skills/Sprites/RPG_Skill_Teeth_Fangs_Bite_Beast_Vampire_Blood_Leech_Damage.png" id="2_5b43o"]
+[ext_resource type="Texture2D" uid="uid://dgtqt2bvdd4xj" path="res://Skills/Sprites/Icons/RPG_Skill_Teeth_Fangs_Bite_Beast_Vampire_Blood_Leech_Damage.png" id="2_5b43o"]
 [ext_resource type="Script" uid="uid://ku3p73hx8cr3" path="res://Skills/Scripts/SkillFragment.gd" id="2_f4fmq"]
 [ext_resource type="Resource" uid="uid://dvty121y1xgr0" path="res://Skills/Resources/Fragments/Illumination.tres" id="3_r7jj1"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Skills/Scripts/SkillData.gd" id="3_yop0r"]

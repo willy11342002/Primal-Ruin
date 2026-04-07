@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlmo5ovefh515"
-path="res://.godot/imported/RPG_Minesweeper_Bomb_Naval_Underwater.png-3d4daa900ed21ac4015fce98ece58dc4.ctex"
+uid="uid://c868p0fiqvaf3"
+path="res://.godot/imported/RPG_Debuff_Zzz_Sleep_Status.png-6887ff353517d278d694bbc524030cdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/RPG_Minesweeper_Bomb_Naval_Underwater.png"
-dest_files=["res://.godot/imported/RPG_Minesweeper_Bomb_Naval_Underwater.png-3d4daa900ed21ac4015fce98ece58dc4.ctex"]
+source_file="res://Skills/Sprites/Icons/RPG_Debuff_Zzz_Sleep_Status.png"
+dest_files=["res://.godot/imported/RPG_Debuff_Zzz_Sleep_Status.png-6887ff353517d278d694bbc524030cdb.ctex"]
 
 [params]
 

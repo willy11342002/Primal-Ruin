@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fwyyp3vsmms3"
-path="res://.godot/imported/RPG_Stat_Strength_Fist_Melee_Attack_Small.png-4fb47ca95ecf151718d0bb6853f92487.ctex"
+uid="uid://bj8egaamuymva"
+path="res://.godot/imported/RPG_Skill_Claw_Scratch_Rake_Maul_Attack_Damage.png-028ab501d8eb128b9ffc3ba69e92e116.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/RPG_Stat_Strength_Fist_Melee_Attack_Small.png"
-dest_files=["res://.godot/imported/RPG_Stat_Strength_Fist_Melee_Attack_Small.png-4fb47ca95ecf151718d0bb6853f92487.ctex"]
+source_file="res://Skills/Sprites/Icons/RPG_Skill_Claw_Scratch_Rake_Maul_Attack_Damage.png"
+dest_files=["res://.godot/imported/RPG_Skill_Claw_Scratch_Rake_Maul_Attack_Damage.png-028ab501d8eb128b9ffc3ba69e92e116.ctex"]
 
 [params]
 

@@ -1,9 +1,18 @@
 [gd_resource type="Resource" script_class="SkillFragment" format=3 uid="uid://dvty121y1xgr0"]
 
+[ext_resource type="Script" uid="uid://cw5gkwmsvt7j5" path="res://Skills/Scripts/SkillVFXs/SkillVFX.gd" id="1_42dc7"]
 [ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Skills/Scripts/SkillCost.gd" id="1_nrjhg"]
+[ext_resource type="PackedScene" uid="uid://bsn52goohkiry" path="res://Skills/Sprites/SpriteFrames/SkillVFX.tscn" id="2_18ixq"]
 [ext_resource type="Script" uid="uid://bdgl7g7q246dr" path="res://Skills/Scripts/SkillEffects/SkillEffect.gd" id="2_wu5yn"]
 [ext_resource type="Script" uid="uid://b6erl8mqobmit" path="res://Skills/Scripts/SkillEffects/DamageEffect.gd" id="3_42dc7"]
 [ext_resource type="Script" uid="uid://ku3p73hx8cr3" path="res://Skills/Scripts/SkillFragment.gd" id="4_18ixq"]
+
+[sub_resource type="Resource" id="Resource_nxm7n"]
+script = ExtResource("1_42dc7")
+vfx_scene = ExtResource("2_18ixq")
+wait_for_next = 0.0
+offset = Vector2(0, 32)
+metadata/_custom_type_script = "uid://cw5gkwmsvt7j5"
 
 [sub_resource type="Resource" id="Resource_150js"]
 script = ExtResource("1_nrjhg")
@@ -15,8 +24,17 @@ metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
 script = ExtResource("3_42dc7")
 metadata/_custom_type_script = "uid://b6erl8mqobmit"
 
+[sub_resource type="Resource" id="Resource_trqwq"]
+script = ExtResource("1_42dc7")
+vfx_scene = ExtResource("2_18ixq")
+wait_for_next = 0.2
+offset = Vector2(0, 32)
+metadata/_custom_type_script = "uid://cw5gkwmsvt7j5"
+
 [resource]
 script = ExtResource("4_18ixq")
+cast_vfx = SubResource("Resource_nxm7n")
+impact_vfx = SubResource("Resource_trqwq")
 effects = Array[ExtResource("2_wu5yn")]([SubResource("Resource_03o71")])
 cost = SubResource("Resource_150js")
 metadata/_custom_type_script = "uid://ku3p73hx8cr3"

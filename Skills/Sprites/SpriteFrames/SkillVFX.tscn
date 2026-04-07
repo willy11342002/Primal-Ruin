@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bsn52goohkiry"]
+
+[ext_resource type="SpriteFrames" uid="uid://cllacljxnmwsr" path="res://Skills/Sprites/SpriteFrames/Dark VFX 2.tres" id="1_a5ruj"]
+[ext_resource type="Script" uid="uid://cpisc6ls78qge" path="res://Skills/Sprites/SpriteFrames/SkillVFXScene.gd" id="2_bollj"]
+
+[node name="Vfx" type="AnimatedSprite3D" unique_id=1690077958]
+offset = Vector2(0, 32)
+billboard = 2
+texture_filter = 0
+sprite_frames = ExtResource("1_a5ruj")
+autoplay = "default"
+frame = 15
+frame_progress = 1.0
+speed_scale = 1.5
+script = ExtResource("2_bollj")

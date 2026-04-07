@@ -1,5 +1,5 @@
 class_name SkillContext
-extends Node3D
+extends RefCounted
 
 ## 施法者
 var caster: CombatUnit
@@ -28,17 +28,19 @@ func setup(_caster, _skill):
 	skill = _skill
 
 	for fragment in skill.fragments:
-		if fragment.cast_vfx:
-			fragment.cast_vfx.apply(self)
+		# if fragment.cast_vfx:
+		# 	fragment.cast_vfx.apply(self)
 
-		if fragment.impact_vfx:
-			fragment.impact_vfx.apply(self)
+		# if fragment.impact_vfx:
+		# 	fragment.impact_vfx.apply(self)
 
 		for effect in fragment.effects:
 			effect.apply(self)
 
 
 func resolve_cell(cell: Vector2i) -> void:
+	await apply_impact_vfx(cell)
+	
 	var target_unit: CombatUnit = CombatServer.map_pos_to_unit(cell)
 	# 處理傷害
 	if target_unit and raw_damage > 0:
@@ -49,3 +51,18 @@ func resolve_cell(cell: Vector2i) -> void:
 	if summons.size() > 0 and CombatServer.map_pos_to_unit(cell) == null:
 		var summon_data = summons.pop_front()
 		CombatServer.add_unit(summon_data, cell)
+
+
+func apply_cast_vfx(cell: Vector2i) -> void:
+	var world_pos = NavServer.map_to_local(cell)
+	for fragment in skill.fragments:
+		if fragment.cast_vfx:
+			await fragment.cast_vfx.apply(world_pos)
+
+
+
+func apply_impact_vfx(cell: Vector2i) -> void:
+	var world_pos = NavServer.map_to_local(cell)
+	for fragment in skill.fragments:
+		if fragment.impact_vfx:
+			await fragment.impact_vfx.apply(world_pos)

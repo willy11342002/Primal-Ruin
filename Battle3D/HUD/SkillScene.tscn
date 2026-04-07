@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d3agus1uy5ohw" path="res://Battle3D/Sprites/SkillBorderHover.png" id="3_mkpp2"]
 [ext_resource type="Script" uid="uid://k6sxh6vtk4l2" path="res://Battle3D/HUD/SkillScene.gd" id="4_jnyrt"]
 [ext_resource type="Texture2D" uid="uid://bef5yscvf3qts" path="res://Battle3D/Sprites/SkillBorderDisabled.png" id="4_mkpp2"]
-[ext_resource type="Texture2D" uid="uid://c868p0fiqvaf3" path="res://Skills/Sprites/RPG_Debuff_Zzz_Sleep_Status.png" id="5_jnyrt"]
+[ext_resource type="Texture2D" uid="uid://c868p0fiqvaf3" path="res://Skills/Sprites/Icons/RPG_Debuff_Zzz_Sleep_Status.png" id="5_jnyrt"]
 
 [node name="SkillScene" type="TextureButton" unique_id=1291778039]
 custom_minimum_size = Vector2(48, 48)

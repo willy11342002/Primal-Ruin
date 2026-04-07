@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwmewu2iu6a14"
-path="res://.godot/imported/Misc_Medkit_Medicine_Health_Pickup.png-cb4add5a242b751e9dce7d1ecab438ec.ctex"
+uid="uid://bnm5pfji8hvx5"
+path="res://.godot/imported/RPG_Stat_Pet_Paw_Animal_Handling_Tame_Beast_Mastery.png-24424d45806a0d6884454a5dfcd697a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/Misc_Medkit_Medicine_Health_Pickup.png"
-dest_files=["res://.godot/imported/Misc_Medkit_Medicine_Health_Pickup.png-cb4add5a242b751e9dce7d1ecab438ec.ctex"]
+source_file="res://Skills/Sprites/Icons/RPG_Stat_Pet_Paw_Animal_Handling_Tame_Beast_Mastery.png"
+dest_files=["res://.godot/imported/RPG_Stat_Pet_Paw_Animal_Handling_Tame_Beast_Mastery.png-24424d45806a0d6884454a5dfcd697a4.ctex"]
 
 [params]
 

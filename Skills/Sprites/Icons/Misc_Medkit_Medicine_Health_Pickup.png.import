@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brkjbgpffjv12"
-path="res://.godot/imported/RPG_Spell_Skill_Meteorite_Strike_Comet.png-dc098e7476b6894ae5012ff8125918e7.ctex"
+uid="uid://bwmewu2iu6a14"
+path="res://.godot/imported/Misc_Medkit_Medicine_Health_Pickup.png-4d0eb4ea00cb6a7740e9e9fdcad679b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/RPG_Spell_Skill_Meteorite_Strike_Comet.png"
-dest_files=["res://.godot/imported/RPG_Spell_Skill_Meteorite_Strike_Comet.png-dc098e7476b6894ae5012ff8125918e7.ctex"]
+source_file="res://Skills/Sprites/Icons/Misc_Medkit_Medicine_Health_Pickup.png"
+dest_files=["res://.godot/imported/Misc_Medkit_Medicine_Health_Pickup.png-4d0eb4ea00cb6a7740e9e9fdcad679b2.ctex"]
 
 [params]
 

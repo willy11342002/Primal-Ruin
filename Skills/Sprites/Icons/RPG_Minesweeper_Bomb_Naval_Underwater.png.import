@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj8egaamuymva"
-path="res://.godot/imported/RPG_Skill_Claw_Scratch_Rake_Maul_Attack_Damage.png-cd74f848e3c31b32f6feda393191fa3c.ctex"
+uid="uid://dlmo5ovefh515"
+path="res://.godot/imported/RPG_Minesweeper_Bomb_Naval_Underwater.png-88bb793702cd03406e8c9492d4cd7f81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/RPG_Skill_Claw_Scratch_Rake_Maul_Attack_Damage.png"
-dest_files=["res://.godot/imported/RPG_Skill_Claw_Scratch_Rake_Maul_Attack_Damage.png-cd74f848e3c31b32f6feda393191fa3c.ctex"]
+source_file="res://Skills/Sprites/Icons/RPG_Minesweeper_Bomb_Naval_Underwater.png"
+dest_files=["res://.godot/imported/RPG_Minesweeper_Bomb_Naval_Underwater.png-88bb793702cd03406e8c9492d4cd7f81.ctex"]
 
 [params]
 

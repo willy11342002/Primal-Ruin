@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgfk36jc360su"
-path="res://.godot/imported/RPG_Debuff_Zz_Sleep_Status.png-31c4b93184918d182164f01e3184d942.ctex"
+uid="uid://bhbsra3w21fnb"
+path="res://.godot/imported/RPG_Debuff_Stunned_Disabled_CC_Crowd_Control.png-32bd510ad8c32ce255e59f1da8ff762c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Sprites/RPG_Debuff_Zz_Sleep_Status.png"
-dest_files=["res://.godot/imported/RPG_Debuff_Zz_Sleep_Status.png-31c4b93184918d182164f01e3184d942.ctex"]
+source_file="res://Skills/Sprites/Icons/RPG_Debuff_Stunned_Disabled_CC_Crowd_Control.png"
+dest_files=["res://.godot/imported/RPG_Debuff_Stunned_Disabled_CC_Crowd_Control.png-32bd510ad8c32ce255e59f1da8ff762c.ctex"]
 
 [params]
 
