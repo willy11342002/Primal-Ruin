@@ -5,6 +5,9 @@ extends Resource
 @export var cast_vfx: SkillVFX
 @export var impact_vfx: SkillVFX
 
+## 碎片半徑, 用於合成UI時的範圍顯示
+@export var radius: float = 1.0
+
 ## 碎片效果, 由效果最小單位組成
 @export var effects: Array[SkillEffect]
 

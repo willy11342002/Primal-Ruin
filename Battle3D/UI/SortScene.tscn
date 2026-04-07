@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccaxwhxf6upyv"]
 
 [ext_resource type="Texture2D" uid="uid://bpisd8p52d768" path="res://Battle3D/Sprites/HealthBar.png" id="1_aqwjg"]
-[ext_resource type="Script" uid="uid://dfwlhka6nyuar" path="res://Battle3D/HUD/SortScene.gd" id="1_bi24b"]
+[ext_resource type="Script" uid="uid://dfwlhka6nyuar" path="res://Battle3D/UI/SortScene.gd" id="1_bi24b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n123s"]
 atlas = ExtResource("1_aqwjg")

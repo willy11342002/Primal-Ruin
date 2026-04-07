@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ci75fuv7knemh"]
+
+[ext_resource type="Script" uid="uid://3kkjhc83qe8i" path="res://UI/CraftManagers/SkillFragmentBody.gd" id="1_k5rsd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ditq"]
+resource_local_to_scene = true
+radius = 30.0
+
+[node name="SkillFragmentBody" type="RigidBody2D" unique_id=81966807]
+input_pickable = true
+gravity_scale = 0.0
+linear_damp = 20.0
+script = ExtResource("1_k5rsd")
+drag_force = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=770663842]
+shape = SubResource("CircleShape2D_8ditq")
+debug_color = Color(0.80784315, 0.6, 0.69803923, 0.41960785)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

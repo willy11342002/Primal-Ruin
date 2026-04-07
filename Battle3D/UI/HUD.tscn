@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://fo7kwd7yqf37"]
 
-[ext_resource type="Script" uid="uid://bl3hsu0acxp4k" path="res://Battle3D/HUD/HUD.gd" id="1_l1683"]
+[ext_resource type="Script" uid="uid://bl3hsu0acxp4k" path="res://Battle3D/UI/HUD.gd" id="1_l1683"]
 [ext_resource type="Texture2D" uid="uid://bpisd8p52d768" path="res://Battle3D/Sprites/HealthBar.png" id="2_dl6o4"]
-[ext_resource type="PackedScene" uid="uid://ccaxwhxf6upyv" path="res://Battle3D/HUD/SortScene.tscn" id="2_n123s"]
-[ext_resource type="PackedScene" uid="uid://bgxmtx3hxn5on" path="res://Battle3D/HUD/SkillScene.tscn" id="4_1ilym"]
+[ext_resource type="PackedScene" uid="uid://ccaxwhxf6upyv" path="res://Battle3D/UI/SortScene.tscn" id="2_n123s"]
+[ext_resource type="PackedScene" uid="uid://bgxmtx3hxn5on" path="res://Battle3D/UI/SkillScene.tscn" id="4_1ilym"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n123s"]
 atlas = ExtResource("2_dl6o4")

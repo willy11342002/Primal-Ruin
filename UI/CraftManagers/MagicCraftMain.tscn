@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bqc11deyg8i1q"]
+
+[ext_resource type="Texture2D" uid="uid://bjbfglt2hykiy" path="res://UI/CraftManagers/MagicCircleBackground.png" id="1_01nf6"]
+[ext_resource type="PackedScene" uid="uid://ccw5d1mv64e6h" path="res://UI/CraftManagers/SkillFragmentSlot.tscn" id="1_11wbn"]
+[ext_resource type="Script" uid="uid://bxrv5ducctxj1" path="res://UI/CraftManagers/BackgroundArea.gd" id="2_8ditq"]
+[ext_resource type="PackedScene" uid="uid://ci75fuv7knemh" path="res://UI/CraftManagers/SkillFragmentBody.tscn" id="3_8ditq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11wbn"]
+radius = 200.0
+
+[node name="MagicCraftMain" type="CanvasLayer" unique_id=63603039]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=750813134]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=535389319]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=297093561]
+layout_mode = 2
+
+[node name="LeftContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=601327515]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer" unique_id=1090924909]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer" unique_id=1172530997]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer" unique_id=1933856703]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="FragmentInventories" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=2043700069]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SkillFragmentSlot" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/ScrollContainer/FragmentInventories" unique_id=903706759 instance=ExtResource("1_11wbn")]
+layout_mode = 2
+
+[node name="CenterContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=632451423]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer" unique_id=18791892]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer" unique_id=1051031865]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_01nf6")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Background" type="Area2D" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer" unique_id=555098879]
+unique_name_in_owner = true
+position = Vector2(208, 300)
+script = ExtResource("2_8ditq")
+fragment_prefab = ExtResource("3_8ditq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" unique_id=950652951]
+shape = SubResource("CircleShape2D_11wbn")
+
+[node name="RightContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1131545463]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer" unique_id=1306315374]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer" unique_id=1677989997]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer" unique_id=24582113]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=2089613566]
+layout_mode = 2
+
+[connection signal="drag_started" from="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/ScrollContainer/FragmentInventories/SkillFragmentSlot" to="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" method="_on_inventory_item_drag_started"]
+[connection signal="body_entered" from="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" to="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" method="_on_body_entered"]
+[connection signal="body_exited" from="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" to="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" method="_on_body_exited"]

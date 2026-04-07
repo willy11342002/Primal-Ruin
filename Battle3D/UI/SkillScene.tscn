@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b1nv4ytrdc2iq" path="res://Battle3D/Sprites/SkillBorder.png" id="1_nog6c"]
 [ext_resource type="Texture2D" uid="uid://bq672mei8ykku" path="res://Battle3D/Sprites/SkillBorderPressed.png" id="2_jnyrt"]
 [ext_resource type="Texture2D" uid="uid://d3agus1uy5ohw" path="res://Battle3D/Sprites/SkillBorderHover.png" id="3_mkpp2"]
-[ext_resource type="Script" uid="uid://k6sxh6vtk4l2" path="res://Battle3D/HUD/SkillScene.gd" id="4_jnyrt"]
+[ext_resource type="Script" uid="uid://k6sxh6vtk4l2" path="res://Battle3D/UI/SkillScene.gd" id="4_jnyrt"]
 [ext_resource type="Texture2D" uid="uid://bef5yscvf3qts" path="res://Battle3D/Sprites/SkillBorderDisabled.png" id="4_mkpp2"]
 [ext_resource type="Texture2D" uid="uid://c868p0fiqvaf3" path="res://Skills/Sprites/Icons/RPG_Debuff_Zzz_Sleep_Status.png" id="5_jnyrt"]
 
