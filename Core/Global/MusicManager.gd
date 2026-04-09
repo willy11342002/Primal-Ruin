@@ -1,3 +1,4 @@
+@tool
 extends AudioStreamPlayer
 
 
@@ -8,7 +9,7 @@ var current_track_index: int = 0
 
 
 func _ready() -> void:
-	if autoplay:
+	if not Engine.is_editor_hint() and autoplay:
 		play_playlist(playlist, is_shuffled)
 
 

@@ -5,10 +5,17 @@ extends Resource
 @export var name: String
 @export var icon: Texture2D
 @export var description: String
-
+@export var limit: int = 16
+@export var space: int = 50
 
 ## 施放邏輯, 用來決定可被施放格子
-@export var cast_rule: CastRule
+@export var cast_rule: CastRule:
+	get:
+		var result = CastRule.new()
+		for fragment in fragments:
+			if fragment.cast_rule:
+				result = fragment.cast_rule
+		return result
 ## 能量傳遞, 用來決定如何通過路徑
 @export var emitter_rule: EmitterRule
 
@@ -16,11 +23,16 @@ extends Resource
 @export var fragments: Array[SkillFragment]
 
 
-func costs_enough(caster: CombatUnit) -> bool:
+func make_costs_dictionary() -> Dictionary:
 	var costs = {}
 	for fragment in fragments:
 		if fragment.cost:
 			fragment.cost.apply(costs)
+	return costs
+
+
+func costs_enough(caster: CombatUnit) -> bool:
+	var costs = make_costs_dictionary()
 
 	for cost_name in costs.keys():
 		var cost_amount: int = costs[cost_name]
@@ -33,10 +45,7 @@ func costs_enough(caster: CombatUnit) -> bool:
 
 
 func costs_pay(caster: CombatUnit) -> void:
-	var costs = {}
-	for fragment in fragments:
-		if fragment.cost:
-			fragment.cost.apply(costs)
+	var costs = make_costs_dictionary()
 
 	for cost_name in costs.keys():
 		var cost_amount: int = costs[cost_name]
@@ -45,7 +54,7 @@ func costs_pay(caster: CombatUnit) -> void:
 			caster.unit_data.set(cost_name, property - cost_amount)
 
 
-func get_castable_positions(caster_map_pos: Vector2i) -> Array:
+func get_cast_positions(caster_map_pos: Vector2i) -> Array:
 	var positions := cast_rule.get_valid_positions()
 	return positions.map(func(pos): return pos + caster_map_pos)
 

@@ -32,8 +32,8 @@ CombatServer="*uid://it1ip55o4u7u"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
@@ -46,6 +46,10 @@ folder_colors={
 "res://Core/": "gray",
 "res://Skills/": "red"
 }
+
+[global_group]
+
+Persist=""
 
 [input]
 

@@ -6,6 +6,9 @@ class_name SaveData extends Resource
 @export var file_name: String = ""
 @export var modified_time: int = 0
 
+@export var skills: Array[SkillData] = []
+@export var fragments: Array[SkillFragment] = []
+
 
 func save_to_disk():
 	ResourceSaver.save(self, self.file_name)

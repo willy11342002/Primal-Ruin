@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bqxqgl6cqtibq"]
+
+[ext_resource type="Script" uid="uid://cun08sfw0pwyo" path="res://UI/CraftManagers/SkillFragmentBodies/FragmentBody.gd" id="1_1xtqh"]
+[ext_resource type="Shader" uid="uid://csw1pe0qbd0rn" path="res://Core/Shaders/2D/BlackHole/BlackHole.gdshader" id="2_8nkmr"]
+[ext_resource type="Texture2D" uid="uid://4pex0kl56c21" path="res://UI/CraftManagers/Sprites/BlackHole.png" id="3_0fqyt"]
+[ext_resource type="Shader" uid="uid://0p3nbe76el75" path="res://Core/Shaders/2D/ShieldRim/ShieldRim.gdshader" id="3_4o4l5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_37yiq"]
+shader = ExtResource("2_8nkmr")
+shader_parameter/_ShowDebugColors = false
+shader_parameter/_DistortionStrenght = 0.9
+shader_parameter/_Attenuation = 7.0
+shader_parameter/_Radius = 0.5
+shader_parameter/_Feather = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_my7yx"]
+resource_local_to_scene = true
+shader = ExtResource("3_4o4l5")
+shader_parameter/line_color = Color(0, 0.8, 1, 1)
+shader_parameter/_Radius = 0.5
+shader_parameter/hit_points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/hit_intensities = PackedFloat32Array(0, 0, 0, 0, 0)
+shader_parameter/actual_contacts = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37yiq"]
+
+[node name="FragmentBody" type="PathFollow2D" unique_id=1305234764 node_paths=PackedStringArray("chape")]
+rotates = false
+script = ExtResource("1_1xtqh")
+chape = NodePath("Area2D/CollisionShape2D")
+
+[node name="BlackHoleSprite" type="Sprite2D" parent="." unique_id=1158388108]
+material = SubResource("ShaderMaterial_37yiq")
+texture = ExtResource("3_0fqyt")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=682279768]
+copy_mode = 2
+
+[node name="ShieldRimSprite" type="Sprite2D" parent="." unique_id=965814152]
+material = SubResource("ShaderMaterial_my7yx")
+texture = ExtResource("3_0fqyt")
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="." unique_id=804247963]
+copy_mode = 2
+
+[node name="IconSprite" type="Sprite2D" parent="." unique_id=381153779]
+scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=804475463]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=36966407]
+shape = SubResource("CircleShape2D_37yiq")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

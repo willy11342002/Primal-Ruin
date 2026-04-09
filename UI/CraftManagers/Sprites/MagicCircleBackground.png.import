@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjbfglt2hykiy"
-path="res://.godot/imported/MagicCircleBackground.png-857a5c99dec12d369be9561c8b1b85fc.ctex"
+path="res://.godot/imported/MagicCircleBackground.png-4ec3b34f2488ce4cbc00cfe1b87bae22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/CraftManagers/MagicCircleBackground.png"
-dest_files=["res://.godot/imported/MagicCircleBackground.png-857a5c99dec12d369be9561c8b1b85fc.ctex"]
+source_file="res://UI/CraftManagers/Sprites/MagicCircleBackground.png"
+dest_files=["res://.godot/imported/MagicCircleBackground.png-4ec3b34f2488ce4cbc00cfe1b87bae22.ctex"]
 
 [params]
 

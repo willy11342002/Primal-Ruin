@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ci75fuv7knemh"]
+
+[ext_resource type="Script" uid="uid://3kkjhc83qe8i" path="res://UI/CraftManagers/SkillFragmentPreviews/FragmentPreview.gd" id="1_k5rsd"]
+[ext_resource type="Shader" uid="uid://csw1pe0qbd0rn" path="res://Core/Shaders/2D/BlackHole/BlackHole.gdshader" id="2_8nkmr"]
+[ext_resource type="Texture2D" uid="uid://4pex0kl56c21" path="res://UI/CraftManagers/Sprites/BlackHole.png" id="3_0fqyt"]
+[ext_resource type="Shader" uid="uid://0p3nbe76el75" path="res://Core/Shaders/2D/ShieldRim/ShieldRim.gdshader" id="3_4o4l5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4o4l5"]
+shader = ExtResource("2_8nkmr")
+shader_parameter/_ShowDebugColors = false
+shader_parameter/_DistortionStrenght = 0.9
+shader_parameter/_Attenuation = 10.0
+shader_parameter/_Radius = 0.4
+shader_parameter/_Feather = 0.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ditq"]
+resource_local_to_scene = true
+radius = 30.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpjea"]
+shader = ExtResource("2_8nkmr")
+shader_parameter/_ShowDebugColors = false
+shader_parameter/_DistortionStrenght = 0.9
+shader_parameter/_Attenuation = 7.0
+shader_parameter/_Radius = 0.5
+shader_parameter/_Feather = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0fqyt"]
+resource_local_to_scene = true
+shader = ExtResource("3_4o4l5")
+shader_parameter/line_color = Color(0, 0.8, 1, 1)
+shader_parameter/_Radius = 0.5
+shader_parameter/hit_points = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/hit_intensities = PackedFloat32Array(0, 0, 0, 0, 0)
+shader_parameter/actual_contacts = 0
+
+[node name="FragmentPreview" type="RigidBody2D" unique_id=1955840382]
+material = SubResource("ShaderMaterial_4o4l5")
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+linear_damp = 20.0
+script = ExtResource("1_k5rsd")
+drag_force = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=770663842]
+shape = SubResource("CircleShape2D_8ditq")
+debug_color = Color(0.80784315, 0.6, 0.69803923, 0.41960785)
+
+[node name="BlackHoleSprite" type="Sprite2D" parent="." unique_id=1474458211]
+material = SubResource("ShaderMaterial_kpjea")
+texture = ExtResource("3_0fqyt")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1091948803]
+copy_mode = 2
+
+[node name="ShieldRimSprite" type="Sprite2D" parent="." unique_id=1264405623]
+material = SubResource("ShaderMaterial_0fqyt")
+texture = ExtResource("3_0fqyt")
+
+[node name="BackBufferCopy2" type="BackBufferCopy" parent="." unique_id=391918445]
+copy_mode = 2
+
+[node name="IconSprite" type="Sprite2D" parent="." unique_id=1080876401]
+scale = Vector2(2, 2)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,4 +1,4 @@
-class_name FourWayRule
+class_name FourWayImpact
 extends ImpactRule
 
 
@@ -10,3 +10,8 @@ func get_valid_positions(_direction: Vector2i) -> Array[Vector2i]:
 		Vector2i.LEFT,  # (-1, 0)
 		Vector2i.RIGHT  # (1, 0)
 	]
+
+
+func description() -> String:
+	var result = tr("p_AfterImpact") + " " + tr("p_FourWayImpact")
+	return result

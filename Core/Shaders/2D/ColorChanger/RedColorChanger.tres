@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://bby6uj8aemiaj"]
 
-[ext_resource type="Shader" uid="uid://ccienl5gqh4ri" path="res://CombatUnits/DamageAlert/Shaders/color.gdshader" id="1_d311v"]
+[ext_resource type="Shader" uid="uid://ccienl5gqh4ri" path="res://Core/Shaders/2D/ColorChanger/ColorChanger.gdshader" id="1_d311v"]
 
 [resource]
 shader = ExtResource("1_d311v")

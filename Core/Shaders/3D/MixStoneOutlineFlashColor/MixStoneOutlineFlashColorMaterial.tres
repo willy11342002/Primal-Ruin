@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://b18ou3jovj26n"]
 
-[ext_resource type="Shader" uid="uid://dn8jdaklo0ogg" path="res://CombatUnits/Shaders/Mix.gdshader" id="1_ocdum"]
+[ext_resource type="Shader" uid="uid://dn8jdaklo0ogg" path="res://Core/Shaders/3D/MixStoneOutlineFlashColor/MixStoneOutlineFlashColor.gdshader" id="1_ocdum"]
 
 [resource]
 render_priority = 0

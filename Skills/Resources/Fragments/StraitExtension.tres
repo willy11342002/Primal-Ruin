@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bpcfx7c8vexnt" path="res://Skills/Scripts/SkillCost.gd" id="1_v8q57"]
 [ext_resource type="Script" uid="uid://bdgl7g7q246dr" path="res://Skills/Scripts/SkillEffects/SkillEffect.gd" id="2_0rjpr"]
-[ext_resource type="Script" uid="uid://dnmr0aukfw25g" path="res://Skills/Scripts/ImpactRules/LongitudeRule.gd" id="3_v8q57"]
+[ext_resource type="Texture2D" uid="uid://brkjbgpffjv12" path="res://Skills/Sprites/Icons/RPG_Spell_Skill_Meteorite_Strike_Comet.png" id="3_0rjpr"]
+[ext_resource type="Script" uid="uid://dnmr0aukfw25g" path="res://Skills/Scripts/ImpactRules/LongitudeImpact.gd" id="3_v8q57"]
 [ext_resource type="Script" uid="uid://ku3p73hx8cr3" path="res://Skills/Scripts/SkillFragment.gd" id="4_7dq31"]
 
 [sub_resource type="Resource" id="Resource_150js"]
@@ -17,6 +18,9 @@ metadata/_custom_type_script = "uid://dnmr0aukfw25g"
 
 [resource]
 script = ExtResource("4_7dq31")
+name = "向後延伸"
+icon = ExtResource("3_0rjpr")
+radius = 20.0
 cost = SubResource("Resource_150js")
 impact_rule = SubResource("Resource_0rjpr")
 metadata/_custom_type_script = "uid://ku3p73hx8cr3"

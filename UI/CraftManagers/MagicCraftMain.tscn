@@ -1,16 +1,60 @@
-[gd_scene format=3 uid="uid://bqc11deyg8i1q"]
+[gd_scene format=4 uid="uid://bqc11deyg8i1q"]
 
-[ext_resource type="Texture2D" uid="uid://bjbfglt2hykiy" path="res://UI/CraftManagers/MagicCircleBackground.png" id="1_01nf6"]
-[ext_resource type="PackedScene" uid="uid://ccw5d1mv64e6h" path="res://UI/CraftManagers/SkillFragmentSlot.tscn" id="1_11wbn"]
-[ext_resource type="Script" uid="uid://bxrv5ducctxj1" path="res://UI/CraftManagers/BackgroundArea.gd" id="2_8ditq"]
-[ext_resource type="PackedScene" uid="uid://ci75fuv7knemh" path="res://UI/CraftManagers/SkillFragmentBody.tscn" id="3_8ditq"]
+[ext_resource type="PackedScene" uid="uid://ccw5d1mv64e6h" path="res://UI/CraftManagers/SkillFragmentSlots/FragmentSlot.tscn" id="1_11wbn"]
+[ext_resource type="Script" uid="uid://dem5rqwjvf75k" path="res://UI/CraftManagers/MagicCraftMain.gd" id="1_icv4j"]
+[ext_resource type="Texture2D" uid="uid://bbu713ggc87yn" path="res://Battle3D/Sprites/Range.png" id="1_yu40k"]
+[ext_resource type="PackedScene" uid="uid://ci75fuv7knemh" path="res://UI/CraftManagers/SkillFragmentPreviews/FragmentPreview.tscn" id="3_8ditq"]
+[ext_resource type="Script" uid="uid://c62b06c48p8g7" path="res://UI/CraftManagers/SkillFragmentSlots/SlotContainer.gd" id="3_icv4j"]
+[ext_resource type="Script" uid="uid://ku3p73hx8cr3" path="res://Skills/Scripts/SkillFragment.gd" id="4_u1ntc"]
+[ext_resource type="Resource" uid="uid://dvty121y1xgr0" path="res://Skills/Resources/Fragments/Illumination.tres" id="5_0np70"]
+[ext_resource type="Script" uid="uid://rw6ekkcoapgj" path="res://UI/CraftManagers/SkillFragmentPreviews/PreviewContainer.gd" id="5_yjig7"]
+[ext_resource type="Resource" uid="uid://dl33d4big576t" path="res://Skills/Resources/Fragments/StraitExtension.tres" id="6_hcptq"]
+[ext_resource type="Material" uid="uid://b6x5fwy6v47fi" path="res://Core/Shaders/2D/DiscreteClouds/DiscreteCloudMaterial.tres" id="7_airal"]
+[ext_resource type="Script" uid="uid://c81ujgt0rxo2p" path="res://UI/CraftManagers/SkillFragmentBodies/BodyContainer.gd" id="8_hcptq"]
+[ext_resource type="Texture2D" uid="uid://4pex0kl56c21" path="res://UI/CraftManagers/Sprites/BlackHole.png" id="10_airal"]
+[ext_resource type="PackedScene" uid="uid://bqxqgl6cqtibq" path="res://UI/CraftManagers/SkillFragmentBodies/FragmentBody.tscn" id="10_kgmyy"]
+[ext_resource type="Script" uid="uid://dnhd1au57t2ju" path="res://UI/CraftManagers/TilesPreviews/CastPreview.gd" id="11_vkeha"]
+[ext_resource type="Script" uid="uid://c05ue64cnt60o" path="res://UI/CraftManagers/TilesPreviews/ImpactPreview.gd" id="12_airal"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11wbn"]
 radius = 200.0
 
-[node name="MagicCraftMain" type="CanvasLayer" unique_id=63603039]
+[sub_resource type="Curve2D" id="Curve2D_airal"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 15.810947, -8.56088, -15.810947, 8.56088, -1, 35, 2.7932575, 12.974768, -2.7932575, -12.974768, -47, 8, -25.500225, 0.023246765, 25.500225, -0.023246765, -3, -48, -2.5676565, -29.837805, 2.5676565, 29.837805, 61, 11, 47.023937, 1.1196175, -47.023937, -1.1196175, -2, 82, -1.1196175, 41.799053, 1.1196175, -41.799053, -86, -1, -45.15791, 0.37320584, 45.15791, -0.37320584, -1, -97, -22.392351, -29.483261, 22.392351, 29.483261, 99, -55, 16.100918, -32.330585, -16.100918, 32.330585, 102, 67, 45.970753, -0.36126333, -45.970753, 0.36126333, 3, 132, 30.545452, 44.363632, -30.545452, -44.363632, -121, 71, -20.121166, 40.11975, 20.121166, -40.11975, -123, -82, -45.935986, -1.6162014, 45.935986, 1.6162014, 2, -157, -39.123005, -66.59256, 39.123005, 66.59256, 153, -58, 60.50753, -30.002914, -60.50753, 30.002914, 81, 149, 66.38095, 41.041637, -66.38095, -41.041637, -119, 134, -113.39511, 79.70641, 113.39511, -79.70641, -114, -161, 0, 0, 0, 0, 118, -159, 0.99347395, -77.49097, -0.99347395, 77.49097, 199, -3, 38.399998, -42.399998, -38.399998, 42.399998, 119, 163)
+}
+point_count = 21
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=750813134]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwsxw"]
+texture = ExtResource("1_yu40k")
+4:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vkeha"]
+sources/0 = SubResource("TileSetAtlasSource_qwsxw")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=298970156]
+
+[node name="MagicCraftMain" type="Control" parent="." unique_id=890088151]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_icv4j")
+total_fragments = Array[ExtResource("4_u1ntc")]([ExtResource("5_0np70"), ExtResource("5_0np70"), ExtResource("5_0np70"), ExtResource("6_hcptq")])
+
+[node name="PreviewContainer" type="PanelContainer" parent="MagicCraftMain" unique_id=750813134]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -23,95 +67,365 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("5_yjig7")
+preview_scene = ExtResource("3_8ditq")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=535389319]
+[node name="MarginContainer" type="MarginContainer" parent="MagicCraftMain/PreviewContainer" unique_id=535389319]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=297093561]
+[node name="HBoxContainer" type="HBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer" unique_id=297093561]
 layout_mode = 2
 
-[node name="LeftContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=601327515]
+[node name="LeftContainer" type="MarginContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer" unique_id=601327515]
 layout_mode = 2
 theme_override_constants/margin_right = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer" unique_id=1090924909]
+[node name="PanelContainer" type="PanelContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer" unique_id=1090924909]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer" unique_id=1172530997]
+[node name="MarginContainer" type="MarginContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer" unique_id=1172530997]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer" unique_id=1933856703]
+[node name="VBoxContainer" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer" unique_id=513147460]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1890535934]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1297607232]
+layout_mode = 2
+text = "UI_NameFilter"
+
+[node name="LineEdit" type="LineEdit" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2106370503]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=621752702]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=453026563]
+layout_mode = 2
+text = "UI_Sort"
+
+[node name="LineEdit" type="OptionButton" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=535353360]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "UI_Space"
+popup/item_0/id = 0
+popup/item_1/text = "UI_CreatedTime"
+popup/item_1/id = 1
+
+[node name="LineEdit2" type="OptionButton" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1667865584]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 2
+popup/item_0/text = "UI_Asc"
+popup/item_0/id = 0
+popup/item_1/text = "UI_Desc"
+popup/item_1/id = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1450087351]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HFlowContainer" unique_id=1588216368]
+layout_mode = 2
+text = "噪音"
+
+[node name="Button3" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HFlowContainer" unique_id=1368489435]
+layout_mode = 2
+text = "水"
+
+[node name="Button2" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/HFlowContainer" unique_id=1474077835]
+layout_mode = 2
+text = "火"
+
+[node name="Button4" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1648924719]
+layout_mode = 2
+text = "UI_Search"
+
+[node name="HSeparator" type="HSeparator" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1423574513]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1933856703]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="FragmentInventories" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=2043700069]
+[node name="SlotContainer" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=2043700069]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("3_icv4j")
+slot_scene = ExtResource("1_11wbn")
 
-[node name="SkillFragmentSlot" parent="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/ScrollContainer/FragmentInventories" unique_id=903706759 instance=ExtResource("1_11wbn")]
+[node name="SkillFragmentSlot" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/SlotContainer" unique_id=1194434139 instance=ExtResource("1_11wbn")]
 layout_mode = 2
 
-[node name="CenterContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=632451423]
+[node name="SkillFragmentSlot2" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/SlotContainer" unique_id=919408505 instance=ExtResource("1_11wbn")]
+layout_mode = 2
+
+[node name="CenterContainer" type="PanelContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer" unique_id=632451423]
 custom_minimum_size = Vector2(0, 600)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer" unique_id=18791892]
+[node name="VBoxContainer" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer" unique_id=428411688]
 layout_mode = 2
+
+[node name="BodyContainer" type="MarginContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=18791892]
+layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer" unique_id=1051031865]
+[node name="TextureRect" type="TextureRect" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer" unique_id=1051031865]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("1_01nf6")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Background" type="Area2D" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer" unique_id=555098879]
+[node name="BodyContainer" type="Area2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer" unique_id=555098879]
 unique_name_in_owner = true
-position = Vector2(208, 300)
-script = ExtResource("2_8ditq")
-fragment_prefab = ExtResource("3_8ditq")
+position = Vector2(209, 206)
+script = ExtResource("8_hcptq")
+body_distance = 64.0
+body_speed = 256.0
+body_scene = ExtResource("10_kgmyy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" unique_id=950652951]
+[node name="Sprite2D" type="Sprite2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=1308465733]
+material = ExtResource("7_airal")
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("10_airal")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=2145207052]
+position = Vector2(-3.499939, 1)
+scale = Vector2(2.105, 2.1699998)
+copy_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=950652951]
 shape = SubResource("CircleShape2D_11wbn")
 
-[node name="RightContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1131545463]
+[node name="Path2D" type="Path2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=1967185167]
+curve = SubResource("Curve2D_airal")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer/Path2D" unique_id=768864281]
+rotation = 1.0601629
+
+[node name="HSeparator" type="HSeparator" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=355395478]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=1396370457]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="FragmentDetail" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2" unique_id=1473338548]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/FragmentDetail" unique_id=153078373]
+layout_mode = 2
+
+[node name="FragmentDetailName" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/FragmentDetail/HBoxContainer" unique_id=149606128]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UI_FragmentName"
+
+[node name="Label" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/FragmentDetail/HBoxContainer" unique_id=1258675096]
+layout_mode = 2
+text = "Ui_Radius"
+
+[node name="FragmentDetailSpace" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/FragmentDetail/HBoxContainer" unique_id=745638912]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ui_Space"
+
+[node name="HSeparator" type="HSeparator" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/FragmentDetail" unique_id=1862442796]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/FragmentDetail" unique_id=493196187]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="FragmentDetailEffects" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/FragmentDetail/ScrollContainer" unique_id=11131004]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TilePreview" type="HBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2" unique_id=531529760]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview" unique_id=602241410]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer" unique_id=1935590822]
+layout_mode = 2
+text = "UI_CastPreview"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer" unique_id=1461438363]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer/SubViewportContainer" unique_id=256592010]
+handle_input_locally = false
+size = Vector2i(198, 137)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer/SubViewportContainer/SubViewport" unique_id=1787220671]
+offset = Vector2(8, -8)
+
+[node name="CastPreview" type="TileMapLayer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer/SubViewportContainer/SubViewport" unique_id=92980292]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAEAAAAAAPz/AAACAAAAAAAAAPv/AAACAAAAAAAAAAIAAAACAAAAAAAAAAMAAAACAAAAAAADAP//AAACAAAAAAAEAP//AAACAAAAAAADAP7/AAACAAAAAAACAP7/AAACAAAAAAABAP3/AAACAAAAAAACAP3/AAACAAAAAAABAPz/AAACAAAAAAACAAAAAAACAAAAAAABAAEAAAACAAAAAAABAAIAAAACAAAAAAACAAEAAAACAAAAAAADAAAAAAACAAAAAAD9////AAACAAAAAAD8////AAACAAAAAAD9/wAAAAACAAAAAAD+/wAAAAACAAAAAAD//wEAAAACAAAAAAD+/wEAAAACAAAAAAD//wIAAAACAAAAAAD9//7/AAACAAAAAAD+//7/AAACAAAAAAD///3/AAACAAAAAAD+//3/AAACAAAAAAD///z/AAACAAAAAAA=")
+tile_set = SubResource("TileSet_vkeha")
+script = ExtResource("11_vkeha")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview" unique_id=1659421097]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer2" unique_id=1595003165]
+layout_mode = 2
+text = "UI_ImpactPreview"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer2" unique_id=1191697081]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer2/SubViewportContainer" unique_id=546243735]
+handle_input_locally = false
+size = Vector2i(198, 137)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer2/SubViewportContainer/SubViewport" unique_id=328591948]
+offset = Vector2(8, -8)
+
+[node name="ImpactPreview" type="TileMapLayer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/MarginContainer2/TilePreview/VBoxContainer2/SubViewportContainer/SubViewport" unique_id=750232422]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAABAAEAAAABAAAAAAABAAAAAAABAAAAAAABAP//AAABAAAAAAACAAAAAAABAAAAAAACAP//AAABAAAAAAACAP7/AAABAAAAAAADAP//AAABAAAAAAABAP7/AAABAAAAAAABAP3/AAABAAAAAAAAAP3/AAABAAAAAAAAAP7/AAABAAAAAAAAAPz/AAABAAAAAAD///3/AAABAAAAAAD///7/AAABAAAAAAD/////AAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAD+/wAAAAABAAAAAAD+////AAABAAAAAAD+//7/AAABAAAAAAD9////AAABAAAAAAAAAP//AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_vkeha")
+script = ExtResource("12_airal")
+
+[node name="RightContainer" type="MarginContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer" unique_id=1131545463]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer" unique_id=1306315374]
+[node name="PanelContainer" type="PanelContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer" unique_id=1306315374]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer" unique_id=1677989997]
+[node name="MarginContainer" type="MarginContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer" unique_id=1677989997]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer" unique_id=24582113]
+[node name="ScrollContainer" type="ScrollContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer" unique_id=24582113]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=2089613566]
+[node name="VBoxContainer" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=2089613566]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=938891631]
 layout_mode = 2
 
-[connection signal="drag_started" from="PanelContainer/MarginContainer/HBoxContainer/LeftContainer/PanelContainer/MarginContainer/ScrollContainer/FragmentInventories/SkillFragmentSlot" to="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" method="_on_inventory_item_drag_started"]
-[connection signal="body_entered" from="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" to="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" method="_on_body_entered"]
-[connection signal="body_exited" from="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" to="PanelContainer/MarginContainer/HBoxContainer/CenterContainer/MarginContainer/Background" method="_on_body_exited"]
+[node name="Button" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=1489576934]
+layout_mode = 2
+text = "噪音"
+
+[node name="Button3" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=1972811963]
+layout_mode = 2
+text = "水"
+
+[node name="Button2" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=220832357]
+layout_mode = 2
+text = "火"
+
+[node name="MarginContainer" type="MarginContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1021547838]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer" unique_id=1801069980]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1510442775]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1005752804]
+layout_mode = 2
+text = "p_BaseDamage"
+
+[node name="ContextBaseDamage" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=67311103]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=226082701]
+layout_mode = 2
+text = "p_DamageMultiplier"
+
+[node name="ContextDamageMultiplier" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=159133251]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label5" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1191721344]
+layout_mode = 2
+text = "p_FinalDamage"
+
+[node name="ContextFinalDamage" type="Label" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1242247923]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContextEffects" type="VBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1066294118]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=219041702]
+layout_mode = 2
+alignment = 1
+
+[node name="Cancel" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=57217678]
+layout_mode = 2
+text = "UI_Cancel"
+
+[node name="Confirm" type="Button" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1233151350]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "UI_Confirm"
+
+[connection signal="button_up" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Cancel" to="MagicCraftMain" method="_on_cancel_button_up"]
+[connection signal="button_up" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Confirm" to="MagicCraftMain" method="_on_confirm_button_up"]

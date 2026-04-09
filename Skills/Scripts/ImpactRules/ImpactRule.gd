@@ -4,3 +4,7 @@ extends Resource
 
 func get_valid_positions(_direction: Vector2i) -> Array:
 	return []
+
+
+func description() -> String:
+	return ""

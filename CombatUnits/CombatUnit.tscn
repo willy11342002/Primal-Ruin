@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b07y288pje36l" path="res://CombatUnits/DamageAlert/DamageAlert.tscn" id="3_pvs5s"]
 [ext_resource type="Script" uid="uid://bjsp5qbh1svgr" path="res://CombatUnits/Components/CombatUnitModel.gd" id="4_oermp"]
 [ext_resource type="SpriteFrames" uid="uid://daotlkw66s7qn" path="res://CombatUnits/Resources/GiantFly/Sprites/All_Front.ase_layer" id="4_pvyvv"]
-[ext_resource type="Material" uid="uid://b18ou3jovj26n" path="res://CombatUnits/Shaders/MixMaterial.tres" id="5_d8x18"]
+[ext_resource type="Material" uid="uid://b18ou3jovj26n" path="res://Core/Shaders/3D/MixStoneOutlineFlashColor/MixStoneOutlineFlashColorMaterial.tres" id="5_d8x18"]
 [ext_resource type="SpriteFrames" uid="uid://h7b3q173e6j7" path="res://CombatUnits/Resources/GiantFly/Sprites/All_Back.ase_layer" id="6_81gct"]
 [ext_resource type="Script" uid="uid://bpkj21so7dwmp" path="res://CombatUnits/Components/AnimatedSprite3D.gd" id="6_gndi1"]
 [ext_resource type="Script" uid="uid://16xd682ue0cq" path="res://CombatUnits/Components/CombatUnitMovement.gd" id="8_u1s1b"]

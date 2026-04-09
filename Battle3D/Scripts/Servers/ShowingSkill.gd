@@ -21,7 +21,7 @@ func enter(context: Dictionary = {}) -> void:
 	NavServer.clear_preview()
 
 	var map_pos = NavServer.local_to_map(CombatServer.current_unit.global_position)
-	castable_positions = skill.get_castable_positions(map_pos)
+	castable_positions = skill.get_cast_positions(map_pos)
 	NavServer.show_array(Global.Camp.NEUTRAL, castable_positions)
 	if camera:
 		camera.cast_position_changed.connect(_on_cast_position_changed)
@@ -45,7 +45,8 @@ func handle_input(event: InputEvent) -> void:
 			skill.costs_pay(CombatServer.current_unit)
 			# 計算技能效果
 			var context = SkillContext.new()
-			context.setup(CombatServer.current_unit, skill)
+			context.caster = CombatServer.current_unit
+			context.setup(skill)
 			# 展示施放特效
 			await context.apply_cast_vfx(caster_position)
 			# 每一個影響位置展示特效, 並處理效果

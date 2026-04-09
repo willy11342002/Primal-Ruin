@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ccw5d1mv64e6h"]
+
+[ext_resource type="Script" uid="uid://cwg3xmfr7f886" path="res://UI/CraftManagers/SkillFragmentSlots/FragmentSlot.gd" id="1_e527t"]
+
+[node name="FragmentSlot" type="Button" unique_id=1194434139]
+offset_right = 38.0
+offset_bottom = 31.0
+text = "test"
+script = ExtResource("1_e527t")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

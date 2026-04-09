@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bdgl7g7q246dr" path="res://Skills/Scripts/SkillEffects/SkillEffect.gd" id="2_wu5yn"]
 [ext_resource type="Script" uid="uid://b6erl8mqobmit" path="res://Skills/Scripts/SkillEffects/DamageEffect.gd" id="3_42dc7"]
 [ext_resource type="Script" uid="uid://ku3p73hx8cr3" path="res://Skills/Scripts/SkillFragment.gd" id="4_18ixq"]
+[ext_resource type="Texture2D" uid="uid://dgtqt2bvdd4xj" path="res://Skills/Sprites/Icons/RPG_Skill_Teeth_Fangs_Bite_Beast_Vampire_Blood_Leech_Damage.png" id="6_18ixq"]
+[ext_resource type="Script" uid="uid://13ti78x65mgr" path="res://Skills/Scripts/ImpactRules/LatitudeImpact.gd" id="7_150js"]
 
 [sub_resource type="Resource" id="Resource_nxm7n"]
 script = ExtResource("1_42dc7")
@@ -24,6 +26,10 @@ metadata/_custom_type_script = "uid://bpcfx7c8vexnt"
 script = ExtResource("3_42dc7")
 metadata/_custom_type_script = "uid://b6erl8mqobmit"
 
+[sub_resource type="Resource" id="Resource_0pfkq"]
+script = ExtResource("7_150js")
+metadata/_custom_type_script = "uid://13ti78x65mgr"
+
 [sub_resource type="Resource" id="Resource_trqwq"]
 script = ExtResource("1_42dc7")
 vfx_scene = ExtResource("2_18ixq")
@@ -33,8 +39,12 @@ metadata/_custom_type_script = "uid://cw5gkwmsvt7j5"
 
 [resource]
 script = ExtResource("4_18ixq")
+name = "深淵鳴嚎"
+icon = ExtResource("6_18ixq")
 cast_vfx = SubResource("Resource_nxm7n")
 impact_vfx = SubResource("Resource_trqwq")
+radius = 20.0
 effects = Array[ExtResource("2_wu5yn")]([SubResource("Resource_03o71")])
 cost = SubResource("Resource_150js")
+impact_rule = SubResource("Resource_0pfkq")
 metadata/_custom_type_script = "uid://ku3p73hx8cr3"
