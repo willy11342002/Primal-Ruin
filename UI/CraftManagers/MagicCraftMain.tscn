@@ -21,7 +21,7 @@
 radius = 200.0
 
 [sub_resource type="Curve" id="Curve_7blg8"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9463808, 0.2045089), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.18880838), -1.6858996, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwsxw"]
@@ -222,7 +222,7 @@ shape = SubResource("CircleShape2D_11wbn")
 [node name="Line2D" type="Line2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=2000502545]
 material = ExtResource("13_7blg8")
 points = PackedVector2Array(-125, -5, -24, -16, 122, -25, 136, 38)
-width = 20.0
+width = 30.0
 width_curve = SubResource("Curve_7blg8")
 texture_mode = 2
 joint_mode = 2

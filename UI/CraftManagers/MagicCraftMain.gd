@@ -4,6 +4,9 @@ extends Control
 @export_file_path("*.tscn") var cancel_scene_path: String
 @export var total_fragments: Array[SkillFragment]
 
+signal display_fragments_updated
+
+var display_fragments: Array[SkillFragment]
 var inside_body_container: bool = false
 var dragging_data: SkillFragment
 var skill_context: SkillContext
@@ -12,6 +15,7 @@ var skill_data: SkillData
 
 func _ready() -> void:
 	# total_fragments = Persistence.data.fragments.duplicate()
+	display_fragments = total_fragments.duplicate()
 	skill_data = SkillData.new()
 	skill_context = SkillContext.new()
 	%SlotContainer.setup(self)
@@ -46,7 +50,7 @@ func _confirm_add_fragment(data: SkillFragment) -> void:
 func _cancel_add_fragment(data: SkillFragment) -> void:
 	%SlotContainer.display_fragments.append(data)
 	%PreviewContainer.remove_preview()
-	%SlotContainer.add_slot(data)
+	display_fragments_updated.emit()
 
 
 func _on_start_drag(data: SkillFragment) -> void:

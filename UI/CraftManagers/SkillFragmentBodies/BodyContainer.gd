@@ -20,14 +20,9 @@ func add_body(fragment: SkillFragment) -> void:
 
 	body.setup(fragment)
 	body.global_position = get_global_mouse_position()
-	body.drag_started.connect(_on_start_drag)
+	body.drag_started.connect(craft_main._on_start_drag)
 	body.hovered.connect(craft_main.show_fragment_detail)
 	body.unhovered.connect(craft_main.close_fragment_detail)
-
-
-func _on_start_drag(data: SkillFragment) -> void:
-	craft_main.skill_data.fragments.erase(data)
-	craft_main._on_start_drag(data)
 
 
 func _process(_delta: float) -> void:
@@ -40,4 +35,5 @@ func _on_child_entered_tree(node: Node) -> void:
 
 
 func _on_child_exiting_tree(node: Node) -> void:
+	craft_main.skill_data.fragments.pop_at(node.get_index())
 	$Line2D.remove_point(node.get_index())
