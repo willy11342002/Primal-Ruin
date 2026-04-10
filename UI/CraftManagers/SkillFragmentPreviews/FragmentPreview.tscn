@@ -17,14 +17,6 @@ shader_parameter/_Feather = 0.05
 resource_local_to_scene = true
 radius = 30.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpjea"]
-shader = ExtResource("2_8nkmr")
-shader_parameter/_ShowDebugColors = false
-shader_parameter/_DistortionStrenght = 0.9
-shader_parameter/_Attenuation = 7.0
-shader_parameter/_Radius = 0.5
-shader_parameter/_Feather = 0.05
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0fqyt"]
 resource_local_to_scene = true
 shader = ExtResource("3_4o4l5")
@@ -46,13 +38,6 @@ drag_force = 500.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=770663842]
 shape = SubResource("CircleShape2D_8ditq")
 debug_color = Color(0.80784315, 0.6, 0.69803923, 0.41960785)
-
-[node name="BlackHoleSprite" type="Sprite2D" parent="." unique_id=1474458211]
-material = SubResource("ShaderMaterial_kpjea")
-texture = ExtResource("3_0fqyt")
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1091948803]
-copy_mode = 2
 
 [node name="ShieldRimSprite" type="Sprite2D" parent="." unique_id=1264405623]
 material = SubResource("ShaderMaterial_0fqyt")

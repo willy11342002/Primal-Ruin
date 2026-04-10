@@ -15,15 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://bqxqgl6cqtibq" path="res://UI/CraftManagers/SkillFragmentBodies/FragmentBody.tscn" id="10_kgmyy"]
 [ext_resource type="Script" uid="uid://dnhd1au57t2ju" path="res://UI/CraftManagers/TilesPreviews/CastPreview.gd" id="11_vkeha"]
 [ext_resource type="Script" uid="uid://c05ue64cnt60o" path="res://UI/CraftManagers/TilesPreviews/ImpactPreview.gd" id="12_airal"]
+[ext_resource type="Material" uid="uid://1qb11a131qtl" path="res://Core/Shaders/Line2D/LightingBeam.tres" id="13_7blg8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11wbn"]
 radius = 200.0
 
-[sub_resource type="Curve2D" id="Curve2D_airal"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 15.810947, -8.56088, -15.810947, 8.56088, -1, 35, 2.7932575, 12.974768, -2.7932575, -12.974768, -47, 8, -25.500225, 0.023246765, 25.500225, -0.023246765, -3, -48, -2.5676565, -29.837805, 2.5676565, 29.837805, 61, 11, 47.023937, 1.1196175, -47.023937, -1.1196175, -2, 82, -1.1196175, 41.799053, 1.1196175, -41.799053, -86, -1, -45.15791, 0.37320584, 45.15791, -0.37320584, -1, -97, -22.392351, -29.483261, 22.392351, 29.483261, 99, -55, 16.100918, -32.330585, -16.100918, 32.330585, 102, 67, 45.970753, -0.36126333, -45.970753, 0.36126333, 3, 132, 30.545452, 44.363632, -30.545452, -44.363632, -121, 71, -20.121166, 40.11975, 20.121166, -40.11975, -123, -82, -45.935986, -1.6162014, 45.935986, 1.6162014, 2, -157, -39.123005, -66.59256, 39.123005, 66.59256, 153, -58, 60.50753, -30.002914, -60.50753, 30.002914, 81, 149, 66.38095, 41.041637, -66.38095, -41.041637, -119, 134, -113.39511, 79.70641, 113.39511, -79.70641, -114, -161, 0, 0, 0, 0, 118, -159, 0.99347395, -77.49097, -0.99347395, 77.49097, 199, -3, 38.399998, -42.399998, -38.399998, 42.399998, 119, 163)
-}
-point_count = 21
+[sub_resource type="Curve" id="Curve_7blg8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9463808, 0.2045089), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwsxw"]
 texture = ExtResource("1_yu40k")
@@ -220,11 +219,13 @@ copy_mode = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=950652951]
 shape = SubResource("CircleShape2D_11wbn")
 
-[node name="Path2D" type="Path2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=1967185167]
-curve = SubResource("Curve2D_airal")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer/Path2D" unique_id=768864281]
-rotation = 1.0601629
+[node name="Line2D" type="Line2D" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" unique_id=2000502545]
+material = ExtResource("13_7blg8")
+points = PackedVector2Array(-125, -5, -24, -16, 122, -25, 136, 38)
+width = 20.0
+width_curve = SubResource("Curve_7blg8")
+texture_mode = 2
+joint_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer" unique_id=355395478]
 layout_mode = 2
@@ -427,5 +428,7 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "UI_Confirm"
 
+[connection signal="child_entered_tree" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer/Line2D" to="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer/Line2D" to="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" method="_on_child_exiting_tree"]
 [connection signal="button_up" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Cancel" to="MagicCraftMain" method="_on_cancel_button_up"]
 [connection signal="button_up" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Confirm" to="MagicCraftMain" method="_on_confirm_button_up"]

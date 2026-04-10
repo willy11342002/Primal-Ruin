@@ -5,40 +5,39 @@ extends Area2D
 @export var body_speed: float = 5.0
 @export var rotate_speed: float = 0.5
 @export var body_scene: PackedScene
-@onready var path2d: Path2D = $Path2D
 
-var follows: Array = []
 var craft_main: Node
 
 
 func setup(_craft_main) -> void:
+	$Line2D.clear_points()
 	craft_main = _craft_main
 
 
 func add_body(fragment: SkillFragment) -> void:
-	var body: PathFollow2D = body_scene.instantiate()
-	path2d.add_child(body)
-
-	var mouse_position: Vector2 = path2d.to_local(get_global_mouse_position())
-	var closest_offset = path2d.curve.get_closest_offset(mouse_position)
-	body.progress = closest_offset
+	var body: Node2D = body_scene.instantiate()
+	$Line2D.add_child(body)
 
 	body.setup(fragment)
-	body.drag_started.connect(craft_main._on_start_drag)
+	body.global_position = get_global_mouse_position()
+	body.drag_started.connect(_on_start_drag)
 	body.hovered.connect(craft_main.show_fragment_detail)
 	body.unhovered.connect(craft_main.close_fragment_detail)
 
 
-func _physics_process(delta: float) -> void:
-	path2d.rotate(rotate_speed * delta)
+func _on_start_drag(data: SkillFragment) -> void:
+	craft_main.skill_data.fragments.erase(data)
+	craft_main._on_start_drag(data)
 
-	for child in path2d.get_children():
-		if child.is_queued_for_deletion():
-			continue
-		if child.get_child_count() == 0:
-			child.queue_free()
-			return
-		
-		# 根據索引計算目標進度，並平滑過渡
-		var target_progress = body_distance * child.get_index()
-		child.progress = move_toward(child.progress, target_progress, body_speed * delta)
+
+func _process(_delta: float) -> void:
+	for child in $Line2D.get_children():
+		$Line2D.set_point_position(child.get_index(), child.position)
+
+
+func _on_child_entered_tree(node: Node) -> void:
+	$Line2D.add_point(node.position)
+
+
+func _on_child_exiting_tree(node: Node) -> void:
+	$Line2D.remove_point(node.get_index())

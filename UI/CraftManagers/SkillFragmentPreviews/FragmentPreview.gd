@@ -26,7 +26,6 @@ func setup(_data: SkillFragment) -> void:
 	
 	# 根據 Resource 半徑調整視覺
 	var visual_scale = (data.radius * 2.0) / 128.0
-	$BlackHoleSprite.scale = Vector2.ONE * visual_scale
 	$ShieldRimSprite.scale = Vector2.ONE * visual_scale
 
 	shield_mat.set_shader_parameter("line_color", Color(0.953, 0.537, 1.0))

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://sq3phyikvjwn"]
+
+[ext_resource type="Shader" uid="uid://c6tg8bss2bdns" path="res://Core/Shaders/Line2D/LaserBlasterGlow.gdshader" id="1_u8i2y"]
+
+[resource]
+shader = ExtResource("1_u8i2y")
+shader_parameter/glow_intensity = 6.0
+shader_parameter/core_width = 0.5450000258875
+shader_parameter/core_length = 0.5

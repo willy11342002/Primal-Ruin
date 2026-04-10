@@ -50,7 +50,6 @@ func _cancel_add_fragment(data: SkillFragment) -> void:
 
 
 func _on_start_drag(data: SkillFragment) -> void:
-	%SlotContainer.display_fragments.erase(data)
 	%PreviewContainer.add_preview(data)
 	dragging_data = data
 
