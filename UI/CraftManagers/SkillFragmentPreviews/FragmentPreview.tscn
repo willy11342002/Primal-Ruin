@@ -31,7 +31,6 @@ material = SubResource("ShaderMaterial_4o4l5")
 gravity_scale = 0.0
 can_sleep = false
 lock_rotation = true
-linear_damp = 20.0
 script = ExtResource("1_k5rsd")
 drag_force = 500.0
 

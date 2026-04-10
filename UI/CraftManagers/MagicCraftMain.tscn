@@ -428,6 +428,7 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "UI_Confirm"
 
+[connection signal="body_exited" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" to="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" method="_on_body_exited"]
 [connection signal="child_entered_tree" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer/Line2D" to="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer/Line2D" to="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/CenterContainer/VBoxContainer/BodyContainer/BodyContainer" method="_on_child_exiting_tree"]
 [connection signal="button_up" from="MagicCraftMain/PreviewContainer/MarginContainer/HBoxContainer/RightContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Cancel" to="MagicCraftMain" method="_on_cancel_button_up"]

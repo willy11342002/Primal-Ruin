@@ -39,6 +39,7 @@ func _handle_drag_end() -> void:
 
 	dragging_data = null
 	_update_skill_context()
+	close_fragment_detail()
 
 
 func _confirm_add_fragment(data: SkillFragment) -> void:
@@ -48,8 +49,8 @@ func _confirm_add_fragment(data: SkillFragment) -> void:
 	
 
 func _cancel_add_fragment(data: SkillFragment) -> void:
-	%SlotContainer.display_fragments.append(data)
 	%PreviewContainer.remove_preview()
+	display_fragments.append(data)
 	display_fragments_updated.emit()
 
 

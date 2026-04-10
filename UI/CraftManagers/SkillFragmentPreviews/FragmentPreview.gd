@@ -1,3 +1,4 @@
+class_name FragmentPreview
 extends RigidBody2D
 
 

@@ -37,3 +37,8 @@ func _on_child_entered_tree(node: Node) -> void:
 func _on_child_exiting_tree(node: Node) -> void:
 	craft_main.skill_data.fragments.pop_at(node.get_index())
 	$Line2D.remove_point(node.get_index())
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is FragmentBody:
+		body._on_exit_container()

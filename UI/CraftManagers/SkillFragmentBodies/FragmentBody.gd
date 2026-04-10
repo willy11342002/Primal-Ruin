@@ -1,4 +1,5 @@
-extends Node2D
+class_name FragmentBody
+extends RigidBody2D
 
 
 @export var shape: CollisionShape2D
@@ -12,6 +13,7 @@ extends Node2D
 
 var data: SkillFragment
 var is_hovered: bool = false
+var is_dragging: bool = false
 var max_radius: float = 200.0
 var _dir := Vector2.RIGHT
 var _time_left := 0.0
@@ -57,12 +59,28 @@ func _on_area_2d_mouse_exited() -> void:
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			drag_started.emit(data)
-			queue_free()
+			is_dragging = true
+
+
+func _input(event: InputEvent) -> void:
+	if is_dragging and event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			is_dragging = false
+
+
+func _on_exit_container() -> void:
+	await get_tree().process_frame
+	drag_started.emit(data)
+	queue_free()
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var dt := state.step
+
+	if is_dragging:
+		state.transform.origin = get_global_mouse_position()
+		state.linear_velocity = Vector2.ZERO
+		return
 
 	_time_left -= dt
 	if _time_left <= 0.0:
