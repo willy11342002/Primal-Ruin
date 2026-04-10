@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dpewo12by13jy"]
+
+[ext_resource type="Script" uid="uid://bmidv1m3fjp62" path="res://Main/Player/Scripts/Player.gd" id="1_6nlce"]
+[ext_resource type="Script" uid="uid://dhk5jxgfqug2t" path="res://Main/Player/Scripts/MoveComponent.gd" id="2_vpmj6"]
+[ext_resource type="Script" uid="uid://d0unl6ghb8s61" path="res://Main/Player/Scripts/InputComponent.gd" id="2_wyc5r"]
+
+[node name="Player" type="CharacterBody3D" unique_id=2035177486]
+script = ExtResource("1_6nlce")
+
+[node name="MoveComponent" type="Node" parent="." unique_id=180745494 node_paths=PackedStringArray("input_handler")]
+script = ExtResource("2_vpmj6")
+input_handler = NodePath("../InputComponent")
+
+[node name="InputComponent" type="Node" parent="." unique_id=228220969]
+script = ExtResource("2_wyc5r")
