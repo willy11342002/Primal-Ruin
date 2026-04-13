@@ -3,6 +3,13 @@
 [ext_resource type="Script" uid="uid://bmidv1m3fjp62" path="res://Main/Player/Scripts/Player.gd" id="1_6nlce"]
 [ext_resource type="Script" uid="uid://dhk5jxgfqug2t" path="res://Main/Player/Scripts/MoveComponent.gd" id="2_vpmj6"]
 [ext_resource type="Script" uid="uid://d0unl6ghb8s61" path="res://Main/Player/Scripts/InputComponent.gd" id="2_wyc5r"]
+[ext_resource type="Texture2D" uid="uid://dkkeeg6u0jtpv" path="res://Assets/Sprites/NPCs/BodyAndClothes/BodyDress_Color1.png" id="4_w3p4g"]
+[ext_resource type="Texture2D" uid="uid://g2p116w4ccjf" path="res://Assets/Sprites/NPCs/Head/Head_Color1.png" id="5_gg4dw"]
+[ext_resource type="Texture2D" uid="uid://b58mpay4vbkcn" path="res://Assets/Sprites/NPCs/Face/Eyes2.png" id="6_t34ig"]
+[ext_resource type="Texture2D" uid="uid://cgjhv55m2bjdr" path="res://Assets/Sprites/NPCs/Face/Pipe.png" id="7_vlahi"]
+[ext_resource type="Texture2D" uid="uid://14162rmid0yq" path="res://Assets/Sprites/NPCs/Face/BeardStyle2_Color4.png" id="8_brdoa"]
+[ext_resource type="Texture2D" uid="uid://34ljo68qfrah" path="res://Assets/Sprites/NPCs/Headwear/Barret_Black.png" id="9_32ink"]
+[ext_resource type="Texture2D" uid="uid://cdxtnsttqiup3" path="res://Assets/Sprites/NPCs/Hair/Hairstyle1_Color6.png" id="10_8qo4x"]
 
 [node name="Player" type="CharacterBody3D" unique_id=2035177486]
 script = ExtResource("1_6nlce")
@@ -13,3 +20,58 @@ input_handler = NodePath("../InputComponent")
 
 [node name="InputComponent" type="Node" parent="." unique_id=228220969]
 script = ExtResource("2_wyc5r")
+
+[node name="Model" type="Node3D" parent="." unique_id=1594024060]
+
+[node name="Body" type="Sprite3D" parent="Model" unique_id=1402349636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, 0)
+billboard = 1
+texture = ExtResource("4_w3p4g")
+hframes = 8
+
+[node name="Head" type="Sprite3D" parent="Model" unique_id=1932171941]
+billboard = 1
+texture = ExtResource("5_gg4dw")
+hframes = 8
+vframes = 5
+frame = 12
+
+[node name="Eyes" type="Sprite3D" parent="Model/Head" unique_id=1455776411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0, 0)
+billboard = 1
+texture = ExtResource("6_t34ig")
+hframes = 8
+vframes = 5
+frame = 12
+
+[node name="Pipe" type="Sprite3D" parent="Model/Head" unique_id=2106417088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004, 0, 0)
+billboard = 1
+texture = ExtResource("7_vlahi")
+hframes = 8
+vframes = 5
+frame = 12
+
+[node name="Mouth" type="Sprite3D" parent="Model/Head" unique_id=1628693668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003, 0, 0)
+billboard = 1
+texture = ExtResource("8_brdoa")
+hframes = 8
+vframes = 5
+frame = 12
+
+[node name="HeadWear" type="Sprite3D" parent="Model/Head" unique_id=1727852349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, 0, 0)
+billboard = 1
+texture = ExtResource("9_32ink")
+hframes = 8
+vframes = 5
+frame = 12
+
+[node name="Hair" type="Sprite3D" parent="Model/Head" unique_id=471411242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0, 0)
+billboard = 1
+texture = ExtResource("10_8qo4x")
+hframes = 8
+vframes = 5
+frame = 12
