@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d0unl6ghb8s61" path="res://Main/Player/Scripts/InputComponent.gd" id="2_wyc5r"]
 [ext_resource type="Texture2D" uid="uid://dkkeeg6u0jtpv" path="res://Assets/Sprites/NPCs/BodyAndClothes/BodyDress_Color1.png" id="4_w3p4g"]
 [ext_resource type="Texture2D" uid="uid://g2p116w4ccjf" path="res://Assets/Sprites/NPCs/Head/Head_Color1.png" id="5_gg4dw"]
+[ext_resource type="Texture2D" uid="uid://dk1a2e5opv8gg" path="res://Assets/Sprites/NPCs/BodyAccessories/Bowtie_Color1.png" id="5_t34ig"]
 [ext_resource type="Texture2D" uid="uid://b58mpay4vbkcn" path="res://Assets/Sprites/NPCs/Face/Eyes2.png" id="6_t34ig"]
 [ext_resource type="Texture2D" uid="uid://cgjhv55m2bjdr" path="res://Assets/Sprites/NPCs/Face/Pipe.png" id="7_vlahi"]
 [ext_resource type="Texture2D" uid="uid://14162rmid0yq" path="res://Assets/Sprites/NPCs/Face/BeardStyle2_Color4.png" id="8_brdoa"]
@@ -28,6 +29,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, 0)
 billboard = 1
 texture = ExtResource("4_w3p4g")
 hframes = 8
+
+[node name="BodyAccessory" type="Sprite3D" parent="Model/Body" unique_id=1604543782]
+billboard = 1
+texture = ExtResource("5_t34ig")
+hframes = 8
+vframes = 5
 
 [node name="Head" type="Sprite3D" parent="Model" unique_id=1932171941]
 billboard = 1
