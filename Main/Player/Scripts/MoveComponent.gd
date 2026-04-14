@@ -1,8 +1,13 @@
 extends Node
 class_name MoveComponent
 
+
+signal input_direction_changed(new_direction: Vector3)
+
 @onready var entity: CharacterBody3D = get_parent()
 @export var input_handler: InputComponent
+
+var last_input_direction: Vector3 = Vector3.FORWARD
 
 
 func _physics_process(delta: float) -> void:
@@ -16,6 +21,10 @@ func _physics_process(delta: float) -> void:
 	var direction = input_handler.get_movement_direction()
 	
 	# 3. 計算水平移動
+	if direction != Vector3.ZERO and direction != last_input_direction:
+		last_input_direction = direction
+		input_direction_changed.emit(last_input_direction)
+
 	if direction:
 		entity.velocity.x = direction.x * entity.speed
 		entity.velocity.z = direction.z * entity.speed
