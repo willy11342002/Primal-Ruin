@@ -29,6 +29,7 @@ SceneLoader="*uid://cvwjm24l3ydfd"
 Persistence="*uid://dvod5cngq3pf3"
 NavServer="*uid://c4b6gibe6t3xj"
 CombatServer="*uid://it1ip55o4u7u"
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [display]
 
@@ -37,7 +38,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/TileMapLayer3D/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/TileMapLayer3D/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg")
 
 [file_customization]
 
