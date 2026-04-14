@@ -23,11 +23,12 @@ func _physics_process(delta: float) -> void:
 	# 2. 獲取輸入方向
 	var direction = input_handler.get_movement_direction()
 	
-	# 3. 計算水平移動
+	# 3. 發出輸入方向改變信號（如果有變化）
 	if direction != Vector3.ZERO and direction != last_input_direction:
 		last_input_direction = direction
 		input_direction_changed.emit(last_input_direction)
 
+	# 4. 計算水平移動
 	if direction:
 		entity.velocity.x = direction.x * speed
 		entity.velocity.z = direction.z * speed
@@ -36,6 +37,6 @@ func _physics_process(delta: float) -> void:
 		entity.velocity.x = move_toward(entity.velocity.x, 0, speed)
 		entity.velocity.z = move_toward(entity.velocity.z, 0, speed)
 
-	# 4. 處理跳躍 (範例)
+	# 5. 處理跳躍
 	#if Input.is_action_just_pressed("ui_accept") and entity.is_on_floor():
 		#entity.velocity.y = jump_velocity
