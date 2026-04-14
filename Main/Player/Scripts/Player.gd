@@ -1,10 +1,6 @@
 extends CharacterBody3D
 
 
-# 取得重力設定 (從專案設定讀取)
-var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-
 func _ready() -> void:
 	%MoveComponent.input_direction_changed.connect(_on_input_direction_changed)
 
