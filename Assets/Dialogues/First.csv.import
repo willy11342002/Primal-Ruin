@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ct47f5lom1hb"
+
+[deps]
+
+files=["res://Assets/Dialogues/First.zh_TW.translation", "res://Assets/Dialogues/First.en.translation"]
+
+source_file="res://Assets/Dialogues/First.csv"
+dest_files=["res://Assets/Dialogues/First.zh_TW.translation", "res://Assets/Dialogues/First.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

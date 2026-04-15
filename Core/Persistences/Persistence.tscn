@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://dvod5cngq3pf3"]
 
 [ext_resource type="Script" uid="uid://bqf53epsb5xpj" path="res://Core/Persistences/Persistence.gd" id="1_wxst7"]
+[ext_resource type="Script" uid="uid://db0c52gmcxdon" path="res://Battle3D/Scripts/Resources/UnitData.gd" id="2_1oosg"]
+[ext_resource type="Script" uid="uid://ku3p73hx8cr3" path="res://Skills/Scripts/SkillFragment.gd" id="3_b3gnf"]
 [ext_resource type="Script" uid="uid://d0pg7hdmyujgo" path="res://Core/Scripts/Resources/SaveData.gd" id="3_si005"]
+[ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Skills/Scripts/SkillData.gd" id="5_nq4ph"]
 
 [sub_resource type="Resource" id="Resource_ngy8j"]
 script = ExtResource("3_si005")

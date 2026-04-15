@@ -9,6 +9,7 @@
 script = ExtResource("1_hdi5s")
 
 [node name="MusicManager" type="AudioStreamPlayer" parent="." unique_id=678455621]
+process_mode = 3
 autoplay = true
 bus = &"BGM"
 script = ExtResource("2_px3t7")

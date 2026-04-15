@@ -5,9 +5,9 @@ class_name MoveComponent
 signal input_direction_changed(new_direction: Vector3)
 
 @onready var entity: CharacterBody3D = get_parent()
-@export var input_handler: InputComponent
-@export var speed := 5.0
-@export var jump_velocity := 4.5
+@export var input_handler: Node
+@export var speed: float = 5.0
+@export var jump_velocity: float = 4.5
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var last_input_direction: Vector3 = Vector3.FORWARD

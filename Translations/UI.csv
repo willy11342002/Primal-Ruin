@@ -31,6 +31,7 @@ UI_Cancel,Cancel,取消
 Ui_Radius,Radius,半徑
 UI_CastPreview,Cast Preview,施法預覽
 UI_ImpactPreview,Impact Preview,衝擊預覽
+UI_WhatsYourName,What's your name?,你叫什麼名字？
 
 p_Summon,Summon,召喚
 p_BaseDamage,Base Damage,基礎傷害

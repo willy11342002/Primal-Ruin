@@ -6,6 +6,7 @@ class_name SaveData extends Resource
 @export var file_name: String = ""
 @export var modified_time: int = 0
 
+@export var player_name: String = ""
 @export var player: UnitData
 @export var active_team: Array[UnitData]
 @export var skills: Array[SkillData] = []
