@@ -11,6 +11,7 @@ class_name SaveData extends Resource
 @export var active_team: Array[UnitData]
 @export var skills: Array[SkillData] = []
 @export var fragments: Array[SkillFragment] = []
+@export var quests: Array[Quest] = []
 
 
 func save_to_disk():

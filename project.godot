@@ -31,6 +31,7 @@ NavServer="*uid://c4b6gibe6t3xj"
 CombatServer="*uid://it1ip55o4u7u"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 DialogueManager="*uid://c3rodes2l3gxb"
+QuestManager="*uid://dvlbfprq13m7w"
 
 [display]
 
