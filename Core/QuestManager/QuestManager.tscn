@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://crt20sooiwgh3" path="res://Core/QuestManager/QuestManager.gd" id="1_n66aq"]
 
 [node name="QuestManager" type="Node" unique_id=1920427000 groups=["Persist"]]
+process_mode = 3
 script = ExtResource("1_n66aq")

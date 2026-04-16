@@ -32,6 +32,8 @@ CombatServer="*uid://it1ip55o4u7u"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 DialogueManager="*uid://c3rodes2l3gxb"
 QuestManager="*uid://dvlbfprq13m7w"
+RelationshipManager="*uid://dbbifry431db1"
+MusicManager="*uid://biwfb4405xoj3"
 
 [display]
 

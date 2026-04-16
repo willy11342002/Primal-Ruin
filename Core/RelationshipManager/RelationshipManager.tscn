@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dbbifry431db1"]
+
+[ext_resource type="Script" uid="uid://c4axvdbon30ni" path="res://Core/RelationshipManager/RelationshipManager.gd" id="1_am3k4"]
+
+[node name="RelationshipManager" type="Node" unique_id=155841812 groups=["Persist"]]
+process_mode = 3
+script = ExtResource("1_am3k4")
