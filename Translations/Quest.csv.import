@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cvjt2xsds67se"
+
+[deps]
+
+files=["res://Translations/Quest.zh_TW.translation", "res://Translations/Quest.en.translation"]
+
+source_file="res://Translations/Quest.csv"
+dest_files=["res://Translations/Quest.zh_TW.translation", "res://Translations/Quest.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

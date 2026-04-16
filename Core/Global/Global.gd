@@ -22,3 +22,11 @@ const Languages: Array = [
 ]
 
 @warning_ignore("unused_signal") signal pause_player_input(paused: bool)
+
+
+func set_game_pause() -> void:
+	get_tree().paused = true
+
+
+func set_game_resume() -> void:
+	get_tree().paused = false

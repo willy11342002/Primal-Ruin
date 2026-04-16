@@ -4,6 +4,7 @@
 
 [node name="MainMenu" type="Node" unique_id=835853513]
 script = ExtResource("1_uahxu")
+start_scene_path = "res://UI/GameBegins/GameBegin.tscn"
 setting_scene_path = "res://UI/SettingMenu.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1623330931]
@@ -39,11 +40,11 @@ theme_override_constants/margin_bottom = 8
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=1587066060]
 layout_mode = 2
 
-[node name="StartGame" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1339338621]
+[node name="Start" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1339338621]
 layout_mode = 2
 text = "UI_StartGame"
 
-[node name="LoadGame" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=247215896]
+[node name="Load" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=247215896]
 layout_mode = 2
 text = "UI_LoadGame"
 
@@ -59,5 +60,8 @@ text = "UI_Credit"
 layout_mode = 2
 text = "UI_Exit"
 
+[connection signal="button_up" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Start" to="." method="_on_start_button_up"]
+[connection signal="button_up" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Load" to="." method="_on_load_button_up"]
 [connection signal="button_up" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Setting" to="." method="_on_setting_button_up"]
+[connection signal="button_up" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Credit" to="." method="_on_credit_button_up"]
 [connection signal="button_up" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_button_up"]

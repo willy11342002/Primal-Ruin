@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://dvlbfprq13m7w"]
 
 [ext_resource type="Script" uid="uid://crt20sooiwgh3" path="res://Core/QuestManager/QuestManager.gd" id="1_n66aq"]
+[ext_resource type="Script" uid="uid://cjdqnwu7ol5h5" path="res://Core/QuestManager/Quest.gd" id="2_qeccd"]
+
+[sub_resource type="Resource" id="Resource_6gkak"]
+script = ExtResource("2_qeccd")
+quest_name = "q_TalkToBuck"
+quest_desc = "q_TalkToBuckDesc"
+quest_status = 1
+quest_receiver_id = "c_Buck"
+metadata/_custom_type_script = "uid://cjdqnwu7ol5h5"
 
 [node name="QuestManager" type="Node" unique_id=1920427000 groups=["Persist"]]
 process_mode = 3
 script = ExtResource("1_n66aq")
+quests = Array[ExtResource("2_qeccd")]([SubResource("Resource_6gkak")])

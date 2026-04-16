@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://52oonlw8w41k"
+path="res://.godot/imported/Buck.dialogue-cdd0973e1a9fb94961d651ecc7346f6b.tres"
+
+[deps]
+
+source_file="res://Assets/Dialogues/Buck.dialogue"
+dest_files=["res://.godot/imported/Buck.dialogue-cdd0973e1a9fb94961d651ecc7346f6b.tres"]
+
+[params]
+
+defaults=true

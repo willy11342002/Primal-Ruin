@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjef5j82gmsmh"]
 
 [ext_resource type="Script" uid="uid://74v8n8xprlyf" path="res://Main/Characters/Scripts/Character.gd" id="1_v5q54"]
+[ext_resource type="Resource" uid="uid://52oonlw8w41k" path="res://Assets/Dialogues/Buck.dialogue" id="2_oc7w3"]
 [ext_resource type="Script" uid="uid://vqcpmkdojh0k" path="res://Main/Characters/Scripts/PlayerModel.gd" id="2_v5q54"]
 [ext_resource type="Script" uid="uid://dhk5jxgfqug2t" path="res://Main/Characters/Scripts/MoveComponent.gd" id="3_dnjfd"]
 [ext_resource type="Script" uid="uid://bqqqeixrtsym6" path="res://Main/Characters/Scripts/NpcNavigationComponent.gd" id="3_rdxx1"]
@@ -1365,6 +1366,8 @@ height = 1.0
 
 [node name="Npc" type="CharacterBody3D" unique_id=1371006646]
 script = ExtResource("1_v5q54")
+character_id = "c_Buck"
+dialogue = ExtResource("2_oc7w3")
 
 [node name="MoveComponent" type="Node" parent="." unique_id=1915111827 node_paths=PackedStringArray("input_handler")]
 unique_name_in_owner = true

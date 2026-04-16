@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://r0xkf6uitosa"
+
+[deps]
+
+files=["res://Assets/Dialogues/Buck.zh_TW.translation", "res://Assets/Dialogues/Buck.en.translation"]
+
+source_file="res://Assets/Dialogues/Buck.csv"
+dest_files=["res://Assets/Dialogues/Buck.zh_TW.translation", "res://Assets/Dialogues/Buck.en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

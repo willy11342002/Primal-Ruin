@@ -12,6 +12,12 @@ func load_data() -> void:
 	relationships = Persistence.data.relationships.duplicate(true)
 
 
+## 取得當前好感度
+func get_relationship(character_id: String) -> Relationship:
+	_ensure_character_exists(character_id)
+	return relationships[character_id]
+
+
 ## 增加好感度
 func add_affinity(character_id: String, amount: int) -> void:
 	_ensure_character_exists(character_id)
@@ -35,6 +41,7 @@ func has_met(character_id: String) -> bool:
 	return relationships.get(character_id, {"is_met": false}).is_met
 
 
+## 內部函示, 確保角色存在於字典中
 func _ensure_character_exists(character_id: String) -> void:
 	if not relationships.has(character_id):
 		relationships[character_id] = Relationship.new(character_id)
