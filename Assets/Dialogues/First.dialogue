@@ -1,6 +1,6 @@
 ~ start
 
-do play_animation("MagicAcademy")
+do play_animation("MagicAcademy", false)
 這裡是艾米洛亞王國的中心，戰爭的搖籃：聖艾爾魔法學院。
 
 學院的規則只有一條：變強，或者被摧毀。
@@ -12,6 +12,7 @@ do play_animation("MagicAcademy")
 
 
 do play_animation("MentorOffice")
+do show_character_portrait()
 
 Dialogue_導師: 《魔物中繼式擴張猜想》。{{Persistence.data.player_name}}，這就是你花了四年交出的答卷？
 {{Persistence.data.player_name}}: 是的，老師。目前的魔法體系太過依賴術者自身的魔力上限，但如果能與魔物達成頻率共鳴，我們就能借用大自然本身的...

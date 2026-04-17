@@ -35,10 +35,17 @@ QuestManager="*uid://dvlbfprq13m7w"
 RelationshipManager="*uid://dbbifry431db1"
 MusicManager="*uid://biwfb4405xoj3"
 
+[dialogue_manager]
+
+editor/wrap_long_lines=true
+editor/translations/default_csv_locale="zh_TW"
+runtime/balloon_path="uid://dgh23ay56kc6c"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
