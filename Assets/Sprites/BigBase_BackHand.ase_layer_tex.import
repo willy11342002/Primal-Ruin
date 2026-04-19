@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture-split-layer"
+type="PortableCompressedTexture2D"
+uid="uid://16wffc41xkej"
+path="res://.godot/imported/BigBase_BackHand.ase_layer_tex-63907b8be0c698066865dad5108c469e.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/BigBase_BackHand.ase_layer_tex"
+dest_files=["res://.godot/imported/BigBase_BackHand.ase_layer_tex-63907b8be0c698066865dad5108c469e.res"]
+
+[params]
+

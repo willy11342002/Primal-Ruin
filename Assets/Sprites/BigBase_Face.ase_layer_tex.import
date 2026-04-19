@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture-split-layer"
+type="PortableCompressedTexture2D"
+uid="uid://cu7fnlm4rjxks"
+path="res://.godot/imported/BigBase_Face.ase_layer_tex-f07c57a563e4dbce9471bfb54032597e.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/BigBase_Face.ase_layer_tex"
+dest_files=["res://.godot/imported/BigBase_Face.ase_layer_tex-f07c57a563e4dbce9471bfb54032597e.res"]
+
+[params]
+

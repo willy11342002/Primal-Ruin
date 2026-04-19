@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture-split-layer"
+type="PortableCompressedTexture2D"
+uid="uid://ctp021v67jiic"
+path="res://.godot/imported/BigBase_FrontHand.ase_layer_tex-6714312561d66fe13181d23f9d42481b.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/BigBase_FrontHand.ase_layer_tex"
+dest_files=["res://.godot/imported/BigBase_FrontHand.ase_layer_tex-6714312561d66fe13181d23f9d42481b.res"]
+
+[params]
+

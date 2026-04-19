@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture-split-layer"
+type="PortableCompressedTexture2D"
+uid="uid://ngdkrajn7bq6"
+path="res://.godot/imported/BigBase_Hand.ase_layer_tex-9d5e48f1ea8d1c208a83644ebfe65020.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/BigBase_Hand.ase_layer_tex"
+dest_files=["res://.godot/imported/BigBase_Hand.ase_layer_tex-9d5e48f1ea8d1c208a83644ebfe65020.res"]
+
+[params]
+
