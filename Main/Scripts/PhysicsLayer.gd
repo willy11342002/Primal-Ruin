@@ -55,4 +55,26 @@ func _create_collision_child(layer: TileMapLayer, coords: Vector2i, points: Pack
 		transformed_points.append(p + map_pos)
 	
 	col.polygon = transformed_points
+	col.set_meta("coords", coords)
 	add_child(col)
+
+
+func update_coords(coords: Vector2i) -> void:
+	# 刪除該 coords 對應的舊碰撞 child
+	for child in get_children():
+		if child.has_meta("coords") and child.get_meta("coords") == coords:
+			child.queue_free()
+
+	# 從最高層往低層找，高層優先，找到有地塊的層就生成並停止
+	var layers_count = base_layers.size()
+	for i in range(layers_count - 1, -1, -1):
+		var layer = base_layers[i]
+		var source_id = layer.get_cell_source_id(coords)
+		if source_id != -1:
+			var data: TileData = layer.get_cell_tile_data(coords)
+			if data:
+				var poly_count = data.get_collision_polygons_count(physics_layer_index)
+				for j in range(poly_count):
+					var points = data.get_collision_polygon_points(physics_layer_index, j)
+					_create_collision_child(layer, coords, points)
+			break  # 高層優先，找到後不繼續往下層
