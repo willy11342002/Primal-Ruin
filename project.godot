@@ -153,13 +153,6 @@ locale/translations=PackedStringArray("res://Translations/UI.en.translation", "r
 locale/translations_pot_files=PackedStringArray("res://Assets/Dialogues/First.dialogue", "res://Assets/Dialogues/Buck.dialogue")
 locale/locale_filter_mode=0
 
-[layer_names]
-
-2d_physics/layer_1="BaseLayer1"
-2d_physics/layer_2="BaseLayer2"
-2d_physics/layer_3="BaseLayer3"
-2d_physics/layer_9="Fixed"
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

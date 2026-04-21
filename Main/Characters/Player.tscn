@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cu7fnlm4rjxks" path="res://Assets/Sprites/BigBase_Face.ase_layer_tex" id="7_uxqtm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q5y7p"]
+radius = 6.0
 height = 20.0
 
 [sub_resource type="Animation" id="Animation_hqns4"]
@@ -1326,8 +1327,6 @@ states/Run/position = Vector2(514.4, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k73cj"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_rjqkl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_fs4d3")]
 
 [node name="Player" type="CharacterBody2D" unique_id=612898299 groups=["Character", "Player"]]
-collision_layer = 0
-collision_mask = 256
 script = ExtResource("1_kavl8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587681960]
@@ -1349,6 +1348,9 @@ nav_agent = NodePath("../NavigationAgent2D")
 move_component = NodePath("../MoveComponent")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1557770308]
+avoidance_enabled = true
+avoidance_layers = 256
+avoidance_mask = 0
 
 [node name="Model" type="CanvasGroup" parent="." unique_id=179574222]
 position = Vector2(0, -16)

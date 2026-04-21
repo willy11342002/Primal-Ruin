@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cu7fnlm4rjxks" path="res://Assets/Sprites/BigBase_Face.ase_layer_tex" id="8_rchpn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q5y7p"]
+radius = 6.0
 height = 20.0
 
 [sub_resource type="Animation" id="Animation_hqns4"]
@@ -1334,6 +1335,7 @@ position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_q5y7p")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1672153585]
+avoidance_enabled = true
 
 [node name="NpcNavigationComponent" type="Node" parent="." unique_id=956782105 node_paths=PackedStringArray("nav_agent")]
 script = ExtResource("2_f7sih")

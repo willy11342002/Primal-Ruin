@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjn3o475sx2od"
-path="res://.godot/imported/Tufts and Lumps.png-7c58bc2d08a24b4229e3cdefb751249e.ctex"
+path="res://.godot/imported/WallTufts.png-ddb35827110559ab44e6bf343f8dc0b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Extras/Tufts and Lumps.png"
-dest_files=["res://.godot/imported/Tufts and Lumps.png-7c58bc2d08a24b4229e3cdefb751249e.ctex"]
+source_file="res://Assets/Tilesets/Extras/WallTufts.png"
+dest_files=["res://.godot/imported/WallTufts.png-ddb35827110559ab44e6bf343f8dc0b0.ctex"]
 
 [params]
 
