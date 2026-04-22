@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpgv25meu1d51"
-path="res://.godot/imported/Dirt Wall.png-d99dba6fc14d07702dc4e0753e6f8f34.ctex"
+uid="uid://cl50bwq2k2v5k"
+path="res://.godot/imported/BaseTufts.png-8c0739f9ea9a796bf7f489ac9ed2df6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Extras/Dirt Wall.png"
-dest_files=["res://.godot/imported/Dirt Wall.png-d99dba6fc14d07702dc4e0753e6f8f34.ctex"]
+source_file="res://Assets/Tilesets/Wall/Decorate/BaseTufts.png"
+dest_files=["res://.godot/imported/BaseTufts.png-8c0739f9ea9a796bf7f489ac9ed2df6e.ctex"]
 
 [params]
 

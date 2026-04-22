@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl50bwq2k2v5k"
-path="res://.godot/imported/BaseTufts.png-66c5de6fd83e9c1c61798b2436cfeb8c.ctex"
+uid="uid://c7pb57fjmtoxn"
+path="res://.godot/imported/Stone and Rock.png-d4a78be3f0d8544754d05d2daf429e7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Extras/BaseTufts.png"
-dest_files=["res://.godot/imported/BaseTufts.png-66c5de6fd83e9c1c61798b2436cfeb8c.ctex"]
+source_file="res://Assets/Tilesets/Obstacle/Stone and Rock.png"
+dest_files=["res://.godot/imported/Stone and Rock.png-d4a78be3f0d8544754d05d2daf429e7f.ctex"]
 
 [params]
 

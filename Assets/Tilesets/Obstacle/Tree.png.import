@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0dwmflphyvmk"
-path="res://.godot/imported/Texture.png-f69ed143de51ed4718cddd12f6e4ca16.ctex"
+uid="uid://ig6h6jc8my6p"
+path="res://.godot/imported/Tree.png-615d906bd2a6b6c55d5533a6ff978305.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Extras/Texture.png"
-dest_files=["res://.godot/imported/Texture.png-f69ed143de51ed4718cddd12f6e4ca16.ctex"]
+source_file="res://Assets/Tilesets/Obstacle/Tree.png"
+dest_files=["res://.godot/imported/Tree.png-615d906bd2a6b6c55d5533a6ff978305.ctex"]
 
 [params]
 

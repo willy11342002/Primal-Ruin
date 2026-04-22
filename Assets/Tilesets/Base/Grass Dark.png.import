@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btna8l5b0yoly"
-path="res://.godot/imported/Steps.png-f16934d12fbc123b0e76eb764c7ae4a7.ctex"
+uid="uid://bw5fkpse501i7"
+path="res://.godot/imported/Grass Dark.png-157b301c80e634f0bdc635d36ff71bf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Extras/Steps.png"
-dest_files=["res://.godot/imported/Steps.png-f16934d12fbc123b0e76eb764c7ae4a7.ctex"]
+source_file="res://Assets/Tilesets/Base/Grass Dark.png"
+dest_files=["res://.godot/imported/Grass Dark.png-157b301c80e634f0bdc635d36ff71bf3.ctex"]
 
 [params]
 

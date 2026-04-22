@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjn3o475sx2od"
-path="res://.godot/imported/WallTufts.png-ddb35827110559ab44e6bf343f8dc0b0.ctex"
+uid="uid://rjlkdtibulij"
+path="res://.godot/imported/Crate.png-cf3ac21e67b4d949e00e9eccb0f6ce52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Extras/WallTufts.png"
-dest_files=["res://.godot/imported/WallTufts.png-ddb35827110559ab44e6bf343f8dc0b0.ctex"]
+source_file="res://Assets/Tilesets/Animated/Crate.png"
+dest_files=["res://.godot/imported/Crate.png-cf3ac21e67b4d949e00e9eccb0f6ce52.ctex"]
 
 [params]
 
