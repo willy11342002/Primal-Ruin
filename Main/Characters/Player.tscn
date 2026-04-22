@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://brmn0rrtwyuhr" path="res://Main/Characters/Scripts/Character.gd" id="1_kavl8"]
 [ext_resource type="Script" uid="uid://cj0rrjd833ku1" path="res://Main/Characters/Scripts/MoveComponent.gd" id="2_3p57l"]
-[ext_resource type="Script" uid="uid://be303h1tnbfyi" path="res://Main/Characters/Scripts/PlayerInputComponent.gd" id="2_kavl8"]
 [ext_resource type="Texture2D" uid="uid://cn4towv4cdkg0" path="res://Assets/Sprites/BigBase_Shadow.ase_layer_tex" id="3_otsbu"]
 [ext_resource type="Texture2D" uid="uid://cxt55b1qiru3j" path="res://Assets/Sprites/BigBase_Body.ase_layer_tex" id="4_3tcir"]
 [ext_resource type="Script" uid="uid://dmevehk06ewi7" path="res://Main/Characters/Scripts/PlayerNavigationComponent.gd" id="4_r1sbq"]
@@ -1333,24 +1332,22 @@ script = ExtResource("1_kavl8")
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_q5y7p")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1397094489]
+navigation_layers = 2
+path_metadata_flags = 0
+simplify_path = true
+avoidance_enabled = true
+debug_enabled = true
+
 [node name="MoveComponent" type="Node" parent="." unique_id=758249329]
 unique_name_in_owner = true
 script = ExtResource("2_3p57l")
 speed = 128.0
 
-[node name="InputComponent" type="Node" parent="." unique_id=1266090510 node_paths=PackedStringArray("move_component")]
-script = ExtResource("2_kavl8")
-move_component = NodePath("../MoveComponent")
-
 [node name="PlayerNavigationComponent" type="Node" parent="." unique_id=1253862648 node_paths=PackedStringArray("nav_agent", "move_component")]
 script = ExtResource("4_r1sbq")
 nav_agent = NodePath("../NavigationAgent2D")
 move_component = NodePath("../MoveComponent")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1557770308]
-avoidance_enabled = true
-avoidance_layers = 256
-avoidance_mask = 0
 
 [node name="Model" type="CanvasGroup" parent="." unique_id=179574222]
 position = Vector2(0, -16)
@@ -1410,6 +1407,3 @@ advance_expression_base_node = NodePath("../..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.4211055, 0.5358362)
 parameters/Run/blend_position = Vector2(-0.009045243, 0.6040956)
-
-[node name="Camera2D" type="Camera2D" parent="Model" unique_id=590967604]
-zoom = Vector2(4, 4)

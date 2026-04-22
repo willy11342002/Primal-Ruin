@@ -3,24 +3,28 @@ extends Node
 
 @export var nav_agent: NavigationAgent2D
 @export var move_component: MoveComponent
-@export var rotation_speed: float = 10.0
 
 var _is_active := false
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			nav_agent.target_position = get_parent().get_global_mouse_position()
-			_is_active = true 
+	if "pressed" in event:
+		_is_active = event.pressed
+
+	if event.is_action_pressed("Confirm", true):
+		nav_agent.target_position = get_parent().get_global_mouse_position()
+
+
+func _process(_delta: float) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and _is_active:
+		nav_agent.target_position = get_parent().get_global_mouse_position()
 
 
 func _physics_process(_delta: float) -> void:
-	if not move_component or not _is_active: return
+	if not move_component: return
 	
 	if nav_agent.is_navigation_finished():
 		move_component.move(Vector2.ZERO)
-		_is_active = false
 		return
 
 	# 1. 獲取導航方向 
