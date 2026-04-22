@@ -8,15 +8,15 @@ var _is_active := false
 
 
 func _input(event: InputEvent) -> void:
-	if "pressed" in event:
-		_is_active = event.pressed
-
-	if event.is_action_pressed("Confirm", true):
+	if event.is_action_pressed("Cancel", true):
 		nav_agent.target_position = get_parent().get_global_mouse_position()
+		_is_active = true
+	elif event.is_action_released("Cancel"):
+		_is_active = false
 
 
 func _process(_delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and _is_active:
+	if _is_active:
 		nav_agent.target_position = get_parent().get_global_mouse_position()
 
 
