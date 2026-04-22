@@ -18,23 +18,33 @@ func generate_navigation_mask() -> void:
 	# 1. 先清空目前這一層的所有方塊
 	clear()
 	
-	# 2. 用一個字典（Dictionary）來儲存所有已經掃描到的座標，避免重複計算
+	# 2. 用一個字典（Dictionary）來儲存所有已經掃描到的座標，以及對應的 atlas 座標
 	var combined_cells: Dictionary = {}
 	
 	# 3. 遍歷所有基礎圖層
 	for layer in base_layers:
-		if not layer:
-			continue
-			
 		var used_cells = layer.get_used_cells()
 		for cell in used_cells:
-			# 將座標存入字典（Key 為座標，Value 為 true 即可）
-			# 這裡不需要考慮多層疊加，只要該位置「有東西」就行
-			combined_cells[cell] = true
-	
-	# 4. 在目前這一層填上導航用的 Placeholder
+			# 已經被更高層的地塊佔用，跳過
+			if cell in combined_cells:
+				continue
+			# 讀取該 tile 的 custom_data "alternative_tile"
+			# 若有設定則使用該值，否則退回預設 placeholder_atlas_coords
+			var data: TileData = layer.get_cell_tile_data(cell)
+			if data:
+				var alt = data.get_custom_data("alternative_tile")
+				if alt != -1:
+					combined_cells[cell] = alt
+
+				var under_cell = Vector2i(cell.x, cell.y + 1)
+				var under = data.get_custom_data("alternative_under")
+				if under_cell not in combined_cells:
+					if under not in [null, -1]:
+						combined_cells[under_cell] = under
+
+	# 4. 在目前這一層填上對應的導航 Tile
 	for cell in combined_cells.keys():
-		set_cell(cell, placeholder_source_id, placeholder_atlas_coords)
+		set_cell(cell, placeholder_source_id, placeholder_atlas_coords, combined_cells[cell])
 	
 	# 💡 注意：TileMapLayer 的導航更新通常是自動的。
 	# 但如果你發現導航網格沒出現，可以強制烘焙（如果父節點是 NavigationRegion2D）

@@ -1334,8 +1334,15 @@ script = ExtResource("1_f7sih")
 position = Vector2(0, -10)
 shape = SubResource("CapsuleShape2D_q5y7p")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1672153585]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=472336251]
+path_desired_distance = 4.0
+navigation_layers = 2
+path_postprocessing = 1
+path_metadata_flags = 0
 avoidance_enabled = true
+avoidance_layers = 0
+avoidance_mask = 0
+debug_enabled = true
 
 [node name="NpcNavigationComponent" type="Node" parent="." unique_id=956782105 node_paths=PackedStringArray("nav_agent")]
 script = ExtResource("2_f7sih")

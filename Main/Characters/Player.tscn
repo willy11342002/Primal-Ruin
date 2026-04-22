@@ -9,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cfamj6jusd47" path="res://Assets/Sprites/BigBase_Head.ase_layer_tex" id="6_rhhr6"]
 [ext_resource type="Texture2D" uid="uid://cu7fnlm4rjxks" path="res://Assets/Sprites/BigBase_Face.ase_layer_tex" id="7_uxqtm"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q5y7p"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ap55s"]
 radius = 6.0
-height = 20.0
 
 [sub_resource type="Animation" id="Animation_hqns4"]
 resource_name = "down"
@@ -1326,17 +1325,21 @@ states/Run/position = Vector2(514.4, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k73cj"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_rjqkl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_fs4d3")]
 
 [node name="Player" type="CharacterBody2D" unique_id=612898299 groups=["Character", "Player"]]
+motion_mode = 1
 script = ExtResource("1_kavl8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587681960]
-position = Vector2(0, -10)
-shape = SubResource("CapsuleShape2D_q5y7p")
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_ap55s")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1397094489]
+path_desired_distance = 4.0
 navigation_layers = 2
+path_postprocessing = 1
 path_metadata_flags = 0
-simplify_path = true
 avoidance_enabled = true
+avoidance_layers = 0
+avoidance_mask = 0
 debug_enabled = true
 
 [node name="MoveComponent" type="Node" parent="." unique_id=758249329]
