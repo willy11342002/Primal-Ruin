@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://byy8tunp0o078" path="res://Main/Scripts/WaterLayer.gd" id="3_ps1la"]
 [ext_resource type="Texture2D" uid="uid://myrncumddsj2" path="res://Assets/Tilesets/Base/Dirt Dark.png" id="4_bor5n"]
 [ext_resource type="Texture2D" uid="uid://b32hx4ohsjt28" path="res://Assets/Tilesets/Base/Dirt.png" id="4_qg80j"]
+[ext_resource type="Script" uid="uid://b3fi7vhkhacvw" path="res://Main/Scripts/LayerLogicManager.gd" id="4_rd5ln"]
 [ext_resource type="Texture2D" uid="uid://cjj5b0tr5owm2" path="res://Assets/Tilesets/Base/Sand.png" id="5_bor5n"]
 [ext_resource type="Texture2D" uid="uid://bqvw26s3qen7e" path="res://Assets/Tilesets/Base/Grass.png" id="6_j2iu7"]
 [ext_resource type="Texture2D" uid="uid://cqabna3m4qnmq" path="res://Assets/Tilesets/Grass/Grass Dark.png" id="6_wltqy"]
@@ -7409,19 +7410,22 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("32_sl01w")
 
-[node name="LogicLayers" type="Node2D" parent="." unique_id=1124711960]
+[node name="LayerLogicManager" type="Node2D" parent="." unique_id=1124711960 node_paths=PackedStringArray("base_layers")]
+script = ExtResource("4_rd5ln")
+base_layers = [NodePath("../Level/Obstacle"), NodePath("../Ground/Wall"), NodePath("../Ground/Base3"), NodePath("../Ground/Base2"), NodePath("../Ground/Base")]
 
-[node name="NavigationLayer" type="TileMapLayer" parent="LogicLayers" unique_id=59310915 node_paths=PackedStringArray("base_layers")]
+[node name="NavigationLayer" type="TileMapLayer" parent="LayerLogicManager" unique_id=59310915]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 tile_set = SubResource("TileSet_rd5ln")
 script = ExtResource("2_dr2ar")
-base_layers = [NodePath("../../Level/Obstacle"), NodePath("../../Ground/Wall"), NodePath("../../Ground/Base3"), NodePath("../../Ground/Base2"), NodePath("../../Ground/Base")]
 
-[node name="PhysicsLayer" type="StaticBody2D" parent="LogicLayers" unique_id=1330266255 node_paths=PackedStringArray("base_layers")]
+[node name="PhysicsLayer" type="StaticBody2D" parent="LayerLogicManager" unique_id=1330266255]
+unique_name_in_owner = true
 script = ExtResource("20_fayjp")
-base_layers = [NodePath("../../Ground/Base"), NodePath("../../Ground/Base2"), NodePath("../../Ground/Base3"), NodePath("../../Ground/Wall"), NodePath("../../Level/Obstacle")]
 
-[node name="DoorManager" type="TileMapLayer" parent="LogicLayers" unique_id=2069215542 node_paths=PackedStringArray("layer", "physics_layer")]
+[node name="DoorManager" type="TileMapLayer" parent="LayerLogicManager" unique_id=2069215542 node_paths=PackedStringArray("layer", "physics_layer")]
+unique_name_in_owner = true
 tile_set = SubResource("TileSet_qfrgw")
 script = ExtResource("7_qfrgw")
 layer = NodePath("../../Level/Obstacle")
