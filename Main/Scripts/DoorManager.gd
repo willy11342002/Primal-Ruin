@@ -1,4 +1,4 @@
-extends TileMapLayer
+extends Node
 
 
 @export var auto_door_mode: bool = true: set = set_auto_door_mode
@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Confirm", true):
-		var mouse_pos := get_global_mouse_position()
+		var mouse_pos := layer.get_global_mouse_position()
 		var coords := layer.local_to_map(mouse_pos)
 		switch_door(coords)
 

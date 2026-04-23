@@ -1344,14 +1344,14 @@ avoidance_layers = 0
 avoidance_mask = 0
 debug_enabled = true
 
-[node name="NpcNavigationComponent" type="Node" parent="." unique_id=956782105 node_paths=PackedStringArray("nav_agent")]
-script = ExtResource("2_f7sih")
-nav_agent = NodePath("../NavigationAgent2D")
-
 [node name="MoveComponent" type="Node" parent="." unique_id=758249329]
 unique_name_in_owner = true
 script = ExtResource("3_si0u8")
 speed = 128.0
+
+[node name="NpcNavigationComponent" type="Node" parent="." unique_id=956782105 node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("2_f7sih")
+nav_agent = NodePath("../NavigationAgent2D")
 
 [node name="Model" type="CanvasGroup" parent="." unique_id=179574222]
 position = Vector2(0, -16)
