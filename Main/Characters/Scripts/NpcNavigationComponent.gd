@@ -9,8 +9,7 @@ func _ready() -> void:
 	if not nav_agent:
 		push_error("NpcNavigationComponent: 找不到 NavigationAgent2D")
 		return
-	# 等一個物理幀，確保 NavigationServer 地圖已同步
-	await get_tree().physics_frame
+
 	nav_agent.velocity_computed.connect(_on_velocity_computed)
 
 
@@ -20,7 +19,9 @@ func move_to(target_pos: Vector2) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if not move_component or not nav_agent: return
+	if not move_component: return
+	if not nav_agent: return
+	
 	if nav_agent.is_navigation_finished():
 		move_component.move(Vector2.ZERO)
 		return

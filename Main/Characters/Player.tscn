@@ -1343,19 +1343,22 @@ path_metadata_flags = 0
 avoidance_enabled = true
 debug_enabled = true
 
+[node name="ActionComponent" type="Node2D" parent="." unique_id=1417570796]
+unique_name_in_owner = true
+script = ExtResource("3_4dcq2")
+radius = 80.0
+action = "watering"
+
 [node name="MoveComponent" type="Node" parent="." unique_id=758249329]
 unique_name_in_owner = true
 script = ExtResource("2_3p57l")
 speed = 128.0
 
-[node name="ActionComponent" type="Node" parent="." unique_id=708167037]
-unique_name_in_owner = true
-script = ExtResource("3_4dcq2")
-
-[node name="PlayerNavigationComponent" type="Node" parent="." unique_id=1253862648 node_paths=PackedStringArray("nav_agent", "move_component")]
+[node name="PlayerNavigationComponent" type="Node" parent="." unique_id=1253862648 node_paths=PackedStringArray("nav_agent", "move_component", "action_component")]
 script = ExtResource("4_r1sbq")
 nav_agent = NodePath("../NavigationAgent2D")
 move_component = NodePath("../MoveComponent")
+action_component = NodePath("../ActionComponent")
 
 [node name="Model" type="CanvasGroup" parent="." unique_id=179574222]
 position = Vector2(0, -16)

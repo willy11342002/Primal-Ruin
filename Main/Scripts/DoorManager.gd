@@ -12,13 +12,6 @@ func _ready() -> void:
 	set_auto_door_mode.call_deferred(auto_door_mode)
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Confirm", true):
-		var mouse_pos := layer.get_global_mouse_position()
-		var coords := layer.local_to_map(mouse_pos)
-		switch_door(coords)
-
-
 func set_auto_door_mode(value: bool) -> void:
 	auto_door_mode = value
 	if auto_door_mode:
@@ -55,7 +48,9 @@ func update_auto_door(coords: Vector2i) -> void:
 		return
 
 
-func switch_door(coords: Vector2i) -> void:
+func interact(_data: Resource) -> void:
+	var mouse_pos := layer.get_global_mouse_position()
+	var coords := layer.local_to_map(mouse_pos)
 	var source_id := layer.get_cell_source_id(coords)
 	var atlas := layer.get_cell_atlas_coords(coords)
 	for res in door_resources:

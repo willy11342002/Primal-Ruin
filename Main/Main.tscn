@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://ivp7pm2oc43y" path="res://Assets/Tilesets/Ground/Dirt.png" id="9_kmnsd"]
 [ext_resource type="Texture2D" uid="uid://c4jf1jiuelcgw" path="res://Assets/Tilesets/Ground/Sand.png" id="10_h5g1y"]
 [ext_resource type="Script" uid="uid://bt7pjwi74ls8y" path="res://Main/Scripts/PlantManager.gd" id="11_n3ovv"]
-[ext_resource type="Resource" uid="uid://5put7mc4gk12" path="res://Main/Resources/Turnip.tres" id="12_j7lf3"]
 [ext_resource type="Texture2D" uid="uid://dpgv25meu1d51" path="res://Assets/Tilesets/Wall/Dirt Wall.png" id="12_kmnsd"]
 [ext_resource type="Texture2D" uid="uid://c1in2msttsd7t" path="res://Assets/Tilesets/Ground/Decorates/Flower.png" id="13_d3r6l"]
 [ext_resource type="Texture2D" uid="uid://btna8l5b0yoly" path="res://Assets/Tilesets/Wall/Steps.png" id="13_h5g1y"]
@@ -7872,7 +7871,7 @@ script = ExtResource("2_dr2ar")
 unique_name_in_owner = true
 script = ExtResource("20_fayjp")
 
-[node name="DoorManager" type="Node" parent="LayerLogicManager" unique_id=1374231413 node_paths=PackedStringArray("layer", "physics_layer")]
+[node name="DoorManager" type="Node" parent="LayerLogicManager" unique_id=1374231413 node_paths=PackedStringArray("layer", "physics_layer") groups=["ActionReceiver"]]
 unique_name_in_owner = true
 script = ExtResource("7_qfrgw")
 layer = NodePath("../../Level/Obstacle")
@@ -7880,7 +7879,7 @@ physics_layer = NodePath("../PhysicsLayer")
 auto_door_scene = ExtResource("8_d1bft")
 door_resources = Array[ExtResource("8_sl01w")]([SubResource("Resource_rd5ln"), SubResource("Resource_h0lbo")])
 
-[node name="PlantManager" type="Node" parent="LayerLogicManager" unique_id=1744900788 node_paths=PackedStringArray("ground_decorate_layer", "obstacle_layer")]
+[node name="PlantManager" type="Node" parent="LayerLogicManager" unique_id=1744900788 node_paths=PackedStringArray("ground_decorate_layer", "obstacle_layer") groups=["ActionReceiver"]]
 unique_name_in_owner = true
 script = ExtResource("11_n3ovv")
 ground_decorate_layer = NodePath("../../Ground/GroundDecorate")
@@ -7889,7 +7888,6 @@ farmland_source_id = 3
 dry_farmland_atlas_coords = Vector2i(11, 0)
 wet_farmland_atlas_coords = Vector2i(12, 0)
 seed_atlas_coords = Vector2i(2, 0)
-plant_resource = ExtResource("12_j7lf3")
 
 [node name="Ground" type="Node2D" parent="." unique_id=105752967]
 
