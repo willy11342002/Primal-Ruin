@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brmn0rrtwyuhr" path="res://Main/Characters/Scripts/Character.gd" id="1_kavl8"]
 [ext_resource type="Script" uid="uid://cj0rrjd833ku1" path="res://Main/Characters/Scripts/MoveComponent.gd" id="2_3p57l"]
+[ext_resource type="Script" uid="uid://ba4df8pc745b2" path="res://Main/Characters/Scripts/ActionComponent.gd" id="3_4dcq2"]
 [ext_resource type="Texture2D" uid="uid://cn4towv4cdkg0" path="res://Assets/Sprites/BigBase_Shadow.ase_layer_tex" id="3_otsbu"]
 [ext_resource type="Texture2D" uid="uid://cxt55b1qiru3j" path="res://Assets/Sprites/BigBase_Body.ase_layer_tex" id="4_3tcir"]
 [ext_resource type="Script" uid="uid://dmevehk06ewi7" path="res://Main/Characters/Scripts/PlayerNavigationComponent.gd" id="4_r1sbq"]
@@ -1325,6 +1326,8 @@ states/Run/position = Vector2(514.4, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k73cj"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_rjqkl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_fs4d3")]
 
 [node name="Player" type="CharacterBody2D" unique_id=612898299 groups=["Character", "Player"]]
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("1_kavl8")
 
@@ -1338,14 +1341,16 @@ navigation_layers = 2
 path_postprocessing = 1
 path_metadata_flags = 0
 avoidance_enabled = true
-avoidance_layers = 0
-avoidance_mask = 0
 debug_enabled = true
 
 [node name="MoveComponent" type="Node" parent="." unique_id=758249329]
 unique_name_in_owner = true
 script = ExtResource("2_3p57l")
 speed = 128.0
+
+[node name="ActionComponent" type="Node" parent="." unique_id=708167037]
+unique_name_in_owner = true
+script = ExtResource("3_4dcq2")
 
 [node name="PlayerNavigationComponent" type="Node" parent="." unique_id=1253862648 node_paths=PackedStringArray("nav_agent", "move_component")]
 script = ExtResource("4_r1sbq")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://brmn0rrtwyuhr" path="res://Main/Characters/Scripts/Character.gd" id="1_f7sih"]
 [ext_resource type="Script" uid="uid://kmur5ra1l622" path="res://Main/Characters/Scripts/NpcNavigationComponent.gd" id="2_f7sih"]
 [ext_resource type="Script" uid="uid://cj0rrjd833ku1" path="res://Main/Characters/Scripts/MoveComponent.gd" id="3_si0u8"]
+[ext_resource type="Script" uid="uid://cdeebkq6jvvsv" path="res://Main/Characters/Scripts/AIComponent.gd" id="4_7yus3"]
 [ext_resource type="Texture2D" uid="uid://cn4towv4cdkg0" path="res://Assets/Sprites/BigBase_Shadow.ase_layer_tex" id="4_i555o"]
 [ext_resource type="Texture2D" uid="uid://cxt55b1qiru3j" path="res://Assets/Sprites/BigBase_Body.ase_layer_tex" id="5_dv65w"]
 [ext_resource type="Texture2D" uid="uid://ngdkrajn7bq6" path="res://Assets/Sprites/BigBase_Hand.ase_layer_tex" id="6_2x0xb"]
@@ -1326,8 +1327,9 @@ states/Run/position = Vector2(514.4, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k73cj"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_rjqkl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_fs4d3")]
 
 [node name="Npc" type="CharacterBody2D" unique_id=612898299 groups=["Character", "Npc"]]
-collision_layer = 0
-collision_mask = 256
+y_sort_enabled = true
+scale = Vector2(0.5, 0.5)
+motion_mode = 1
 script = ExtResource("1_f7sih")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587681960]
@@ -1349,9 +1351,15 @@ unique_name_in_owner = true
 script = ExtResource("3_si0u8")
 speed = 128.0
 
-[node name="NpcNavigationComponent" type="Node" parent="." unique_id=956782105 node_paths=PackedStringArray("nav_agent")]
+[node name="NpcNavigationComponent" type="Node" parent="." unique_id=956782105 node_paths=PackedStringArray("nav_agent", "move_component")]
 script = ExtResource("2_f7sih")
 nav_agent = NodePath("../NavigationAgent2D")
+move_component = NodePath("../MoveComponent")
+
+[node name="AIComponent" type="Node" parent="." unique_id=1487603272 node_paths=PackedStringArray("nav_component")]
+script = ExtResource("4_7yus3")
+nav_component = NodePath("../NpcNavigationComponent")
+wander_radius = 20.0
 
 [node name="Model" type="CanvasGroup" parent="." unique_id=179574222]
 position = Vector2(0, -16)
