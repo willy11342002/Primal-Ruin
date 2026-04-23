@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://bik3xmts4eyce"]
+[gd_scene format=4 uid="uid://cp4p8fslq1ugt"]
 
 [ext_resource type="Texture2D" uid="uid://diyr48lcqmoqj" path="res://Assets/Tilesets/Placeholder.png" id="1_p4pbn"]
-[ext_resource type="PackedScene" uid="uid://dlesakkje3ggi" path="res://Main/Characters/Player.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://dpewo12by13jy" path="res://Main/Characters/Player.tscn" id="2_83ytx"]
 [ext_resource type="Script" uid="uid://sg55333mgqwc" path="res://Main/Scripts/NavigationLayer.gd" id="2_dr2ar"]
 [ext_resource type="Texture2D" uid="uid://dqbr70743iini" path="res://Assets/Tilesets/Base/Water.png" id="2_hh5pf"]
 [ext_resource type="Script" uid="uid://byy8tunp0o078" path="res://Main/Scripts/WaterLayer.gd" id="3_ps1la"]
@@ -38,10 +38,11 @@
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="30_efctk"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="31_qfrgw"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="32_sl01w"]
-[ext_resource type="PackedScene" uid="uid://ds6vjme7jwg0e" path="res://Main/Characters/Npc.tscn" id="33_dk6jw"]
+[ext_resource type="PackedScene" uid="uid://bjef5j82gmsmh" path="res://Main/Characters/Npc.tscn" id="33_dk6jw"]
 [ext_resource type="Texture2D" uid="uid://bsrapg6luoubn" path="res://Assets/Tilesets/Farming/farming n foraging - all.png" id="39_ctjju"]
 [ext_resource type="Texture2D" uid="uid://bxfh04hxy1p25" path="res://Assets/Sprites/UI/DownArrowButton_7x10.png" id="41_nrysi"]
-[ext_resource type="Texture2D" uid="uid://c0xjb580e2im5" path="res://Assets/Sprites/UI/HotkeyBox.png" id="42_jkd0a"]
+[ext_resource type="Texture2D" uid="uid://vkkdj8fyoilf" path="res://Assets/Sprites/UI/panel_Example1.png" id="42_nrysi"]
+[ext_resource type="Texture2D" uid="uid://67qxahrkocw2" path="res://Assets/Sprites/UI/checkbox_example.png" id="43_jkd0a"]
 
 [sub_resource type="Resource" id="Resource_d1bft"]
 script = ExtResource("31_qfrgw")
@@ -7836,6 +7837,9 @@ sources/7 = SubResource("TileSetAtlasSource_dk6jw")
 atlas = ExtResource("39_ctjju")
 region = Rect2(16, 16, 16, 16)
 
+[sub_resource type="LabelSettings" id="LabelSettings_4h55j"]
+font_size = 12
+
 [node name="Main" type="Node2D" unique_id=1776075769]
 
 [node name="Cameras" type="Node2D" parent="." unique_id=616633672]
@@ -7996,32 +8000,61 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2100878250]
+[node name="Choosen" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2100878250]
+custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("41_nrysi")
-stretch_mode = 3
+expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2011286065]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1296750685]
+[node name="BackgroundRect" type="NinePatchRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1437354996]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("42_jkd0a")
+texture = ExtResource("42_nrysi")
+region_rect = Rect2(0, 0, 97, 97)
+patch_margin_left = 8
+patch_margin_top = 10
+patch_margin_right = 8
+patch_margin_bottom = 10
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=187512430]
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=973216687]
+[node name="Icon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=973216687]
 layout_mode = 2
 texture = SubResource("AtlasTexture_kisd8")
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=2057701196]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1765718868]
+custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+texture = ExtResource("43_jkd0a")
+patch_margin_left = 6
+patch_margin_top = 7
+patch_margin_right = 6
+patch_margin_bottom = 7
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/NinePatchRect" unique_id=786501513]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "12"
+label_settings = SubResource("LabelSettings_4h55j")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_up" from="CanvasLayer/Button" to="LayerLogicManager/PlantManager" method="_on_next_day_button_up"]

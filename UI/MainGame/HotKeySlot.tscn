@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://khs7exdy5h3a"]
+
+[ext_resource type="Texture2D" uid="uid://bxfh04hxy1p25" path="res://Assets/Sprites/UI/DownArrowButton_7x10.png" id="1_fdodc"]
+[ext_resource type="Script" uid="uid://3wml1gwh20ib" path="res://UI/MainGame/Scripts/HotKeySlot.gd" id="1_nyhxw"]
+[ext_resource type="Texture2D" uid="uid://vkkdj8fyoilf" path="res://Assets/Sprites/UI/panel_Example1.png" id="2_nyhxw"]
+[ext_resource type="Texture2D" uid="uid://bsrapg6luoubn" path="res://Assets/Tilesets/Farming/farming n foraging - all.png" id="3_8vuoo"]
+[ext_resource type="Texture2D" uid="uid://67qxahrkocw2" path="res://Assets/Sprites/UI/checkbox_example.png" id="4_eo2op"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kisd8"]
+atlas = ExtResource("3_8vuoo")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h55j"]
+font_size = 12
+
+[node name="HotKeySlot" type="VBoxContainer" unique_id=5495064]
+theme_override_constants/separation = 0
+script = ExtResource("1_nyhxw")
+
+[node name="Choosen" type="TextureRect" parent="." unique_id=434397316]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_fdodc")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=360616404]
+layout_mode = 2
+
+[node name="BackgroundRect" type="NinePatchRect" parent="MarginContainer" unique_id=849892366]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_nyhxw")
+region_rect = Rect2(0, 0, 97, 97)
+patch_margin_left = 8
+patch_margin_top = 10
+patch_margin_right = 8
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=121597787]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/MarginContainer" unique_id=1511992233]
+unique_name_in_owner = true
+layout_mode = 2
+texture = SubResource("AtlasTexture_kisd8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=1813961993]
+custom_minimum_size = Vector2(22, 22)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("4_eo2op")
+patch_margin_left = 6
+patch_margin_top = 7
+patch_margin_right = 6
+patch_margin_bottom = 7
+
+[node name="Amount" type="Label" parent="MarginContainer/NinePatchRect" unique_id=1449236026]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "12"
+label_settings = SubResource("LabelSettings_4h55j")
+horizontal_alignment = 1
+vertical_alignment = 1

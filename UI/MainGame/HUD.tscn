@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://d24e0wcm3va7q"]
+
+[ext_resource type="PackedScene" uid="uid://khs7exdy5h3a" path="res://UI/MainGame/HotKeySlot.tscn" id="1_30rx8"]
+[ext_resource type="Script" uid="uid://kb64kq25m8xs" path="res://UI/MainGame/Scripts/HotKeyContainer.gd" id="1_a0wuf"]
+[ext_resource type="Resource" uid="uid://ba1qfkn3kg2ot" path="res://Main/ItemResources/TurnipSeed.tres" id="3_85ngo"]
+[ext_resource type="Resource" uid="uid://b6xoukiwn55lm" path="res://Main/ItemResources/WateringCan.tres" id="4_3wb6d"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1983293412]
+
+[node name="Button" type="Button" parent="." unique_id=1016316770]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+text = "Next Day"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=861102271]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -40.0
+offset_right = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 16
+
+[node name="HotKeyContainer" type="HBoxContainer" parent="MarginContainer" unique_id=329392333]
+layout_mode = 2
+script = ExtResource("1_a0wuf")
+
+[node name="HotKeySlot" parent="MarginContainer/HotKeyContainer" unique_id=5495064 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+data = ExtResource("3_85ngo")
+amount = 20
+
+[node name="HotKeySlot2" parent="MarginContainer/HotKeyContainer" unique_id=1671278218 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+data = ExtResource("4_3wb6d")
+amount = 1
+
+[node name="HotKeySlot3" parent="MarginContainer/HotKeyContainer" unique_id=626070439 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+
+[node name="HotKeySlot4" parent="MarginContainer/HotKeyContainer" unique_id=723605825 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+
+[node name="HotKeySlot5" parent="MarginContainer/HotKeyContainer" unique_id=1834609133 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+
+[node name="HotKeySlot6" parent="MarginContainer/HotKeyContainer" unique_id=2108962604 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+
+[node name="HotKeySlot7" parent="MarginContainer/HotKeyContainer" unique_id=1480670249 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+
+[node name="HotKeySlot8" parent="MarginContainer/HotKeyContainer" unique_id=1031091924 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+
+[node name="HotKeySlot9" parent="MarginContainer/HotKeyContainer" unique_id=1406398693 instance=ExtResource("1_30rx8")]
+layout_mode = 2
+
+[node name="HotKeySlot10" parent="MarginContainer/HotKeyContainer" unique_id=733681350 instance=ExtResource("1_30rx8")]
+layout_mode = 2
