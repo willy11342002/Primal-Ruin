@@ -40,6 +40,8 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="32_sl01w"]
 [ext_resource type="PackedScene" uid="uid://ds6vjme7jwg0e" path="res://Main/Characters/Npc.tscn" id="33_dk6jw"]
 [ext_resource type="Texture2D" uid="uid://bsrapg6luoubn" path="res://Assets/Tilesets/Farming/farming n foraging - all.png" id="39_ctjju"]
+[ext_resource type="Texture2D" uid="uid://bxfh04hxy1p25" path="res://Assets/Sprites/UI/DownArrowButton_7x10.png" id="41_nrysi"]
+[ext_resource type="Texture2D" uid="uid://c0xjb580e2im5" path="res://Assets/Sprites/UI/HotkeyBox.png" id="42_jkd0a"]
 
 [sub_resource type="Resource" id="Resource_d1bft"]
 script = ExtResource("31_qfrgw")
@@ -7830,6 +7832,10 @@ sources/6 = SubResource("TileSetAtlasSource_sl01w")
 sources/0 = SubResource("TileSetAtlasSource_n3ovv")
 sources/7 = SubResource("TileSetAtlasSource_dk6jw")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kisd8"]
+atlas = ExtResource("39_ctjju")
+region = Rect2(16, 16, 16, 16)
+
 [node name="Main" type="Node2D" unique_id=1776075769]
 
 [node name="Cameras" type="Node2D" parent="." unique_id=616633672]
@@ -7969,5 +7975,53 @@ offset_right = 4.0
 offset_bottom = 8.0
 grow_horizontal = 2
 text = "Next Day"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1603320892]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -40.0
+offset_right = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1015899642]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=414503263]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2100878250]
+layout_mode = 2
+texture = ExtResource("41_nrysi")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2011286065]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1296750685]
+layout_mode = 2
+texture = ExtResource("42_jkd0a")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=187512430]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=973216687]
+layout_mode = 2
+texture = SubResource("AtlasTexture_kisd8")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=2057701196]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [connection signal="button_up" from="CanvasLayer/Button" to="LayerLogicManager/PlantManager" method="_on_next_day_button_up"]
