@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://bxfh04hxy1p25" path="res://Assets/Sprites/UI/DownArrowButton_7x10.png" id="1_fdodc"]
 [ext_resource type="Script" uid="uid://3wml1gwh20ib" path="res://UI/MainGame/Scripts/HotKeySlot.gd" id="1_nyhxw"]
 [ext_resource type="Texture2D" uid="uid://vkkdj8fyoilf" path="res://Assets/Sprites/UI/panel_Example1.png" id="2_nyhxw"]
-[ext_resource type="Texture2D" uid="uid://bsrapg6luoubn" path="res://Assets/Tilesets/Farming/farming n foraging - all.png" id="3_8vuoo"]
 [ext_resource type="Texture2D" uid="uid://67qxahrkocw2" path="res://Assets/Sprites/UI/checkbox_example.png" id="4_eo2op"]
+[ext_resource type="Texture2D" uid="uid://dfvuss764k45b" path="res://Assets/Tilesets/Farming/crops - all.png" id="4_nyhxw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kisd8"]
-atlas = ExtResource("3_8vuoo")
+atlas = ExtResource("4_nyhxw")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4h55j"]

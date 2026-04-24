@@ -2,10 +2,10 @@
 
 [ext_resource type="Resource" uid="uid://5put7mc4gk12" path="res://Main/PlantResources/Turnip.tres" id="1_tgp0w"]
 [ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="1_wbtbr"]
-[ext_resource type="Texture2D" uid="uid://bsrapg6luoubn" path="res://Assets/Tilesets/Farming/farming n foraging - all.png" id="2_61lfb"]
+[ext_resource type="Texture2D" uid="uid://dfvuss764k45b" path="res://Assets/Tilesets/Farming/crops - all.png" id="2_tgp0w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kisd8"]
-atlas = ExtResource("2_61lfb")
+atlas = ExtResource("2_tgp0w")
 region = Rect2(16, 16, 16, 16)
 
 [resource]

@@ -1,12 +1,15 @@
 extends Node
 
 
+@export var obstacle_layers: Array[TileMapLayer]
 @export var base_layers: Array[TileMapLayer]
 
 
 func _ready() -> void:
 	%NavigationLayer.base_layers = base_layers
 	%PhysicsLayer.base_layers = base_layers
+
+	%PlantManager.obstacle_layers = obstacle_layers
 
 	generate_physics_and_navigation()
 

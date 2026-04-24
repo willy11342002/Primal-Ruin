@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsrapg6luoubn"
-path="res://.godot/imported/farming n foraging - all.png-7075b84845776ac029baeea74049b6fe.ctex"
+uid="uid://ck1ct7av6y6j3"
+path="res://.godot/imported/mushrooms - all.png-c68c05767fa5094c32f2996f18e1e4ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tilesets/Farming/farming n foraging - all.png"
-dest_files=["res://.godot/imported/farming n foraging - all.png-7075b84845776ac029baeea74049b6fe.ctex"]
+source_file="res://Assets/Tilesets/Farming/mushrooms - all.png"
+dest_files=["res://.godot/imported/mushrooms - all.png-c68c05767fa5094c32f2996f18e1e4ce.ctex"]
 
 [params]
 
