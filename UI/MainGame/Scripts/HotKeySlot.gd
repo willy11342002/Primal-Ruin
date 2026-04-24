@@ -24,13 +24,9 @@ func set_slot(new_slot: InventorySlot) -> void:
 func update_display() -> void:
 	%Choosen.visible = choose
 
-	if slot:
-		if slot.amount > 0:
-			%Icon.texture = slot.item.icon
-			%Amount.text = str(slot.amount)
-		else:
-			slot = null
-			update_display()
+	if slot and slot.item and slot.amount > 0:
+		%Icon.texture = slot.item.icon
+		%Amount.text = str(slot.amount)
 	else:
 		%Icon.texture = null
 		%Amount.text = ""
