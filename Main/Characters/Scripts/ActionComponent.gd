@@ -3,8 +3,7 @@ extends Node2D
 
 
 @export var radius: float = 50.0
-@export var action: String = "interact"
-@export var data: Resource
+@export var node: Node
 
 
 func click() -> void:
@@ -13,4 +12,21 @@ func click() -> void:
 	if distance > radius:
 		return
 
-	get_tree().call_group("ActionReceiver", action, data)
+	if node and node.item and node.amount > 0:
+		var action = node.item.action
+		var data = node.item.data
+		var result = _call_action(action, data)
+		if result and node.item.consumable:
+			node.amount -= 1
+			node.update_display()
+	else:
+		_call_action("interact", null)
+
+
+func _call_action(action: String, data: Resource) -> bool:
+	for receiver in get_tree().get_nodes_in_group("ActionReceiver"):
+		if receiver.has_method(action):
+			var result = receiver.call(action, data)
+			if result:
+				return true
+	return false

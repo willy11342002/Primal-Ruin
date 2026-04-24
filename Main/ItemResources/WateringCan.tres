@@ -12,4 +12,5 @@ script = ExtResource("3_46sdv")
 name = "TurnipSeed"
 icon = SubResource("AtlasTexture_kisd8")
 action = "watering"
+consumable = false
 metadata/_custom_type_script = "uid://dh6rc24shfheu"

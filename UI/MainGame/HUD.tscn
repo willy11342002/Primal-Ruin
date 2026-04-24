@@ -26,12 +26,12 @@ script = ExtResource("1_a0wuf")
 
 [node name="HotKeySlot" parent="MarginContainer/HotKeyContainer" unique_id=5495064 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-data = ExtResource("3_85ngo")
-amount = 20
+item = ExtResource("3_85ngo")
+amount = 8
 
 [node name="HotKeySlot2" parent="MarginContainer/HotKeyContainer" unique_id=1671278218 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-data = ExtResource("4_3wb6d")
+item = ExtResource("4_3wb6d")
 amount = 1
 
 [node name="HotKeySlot3" parent="MarginContainer/HotKeyContainer" unique_id=626070439 instance=ExtResource("1_30rx8")]

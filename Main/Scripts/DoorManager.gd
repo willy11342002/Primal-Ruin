@@ -48,7 +48,7 @@ func update_auto_door(coords: Vector2i) -> void:
 		return
 
 
-func interact(_data: Resource) -> void:
+func interact(_data: Resource) -> bool:
 	var mouse_pos := layer.get_global_mouse_position()
 	var coords := layer.local_to_map(mouse_pos)
 	var source_id := layer.get_cell_source_id(coords)
@@ -59,9 +59,12 @@ func interact(_data: Resource) -> void:
 		if atlas == res.open_atlas:
 			layer.set_cell(coords, res.source_id, res.close_atlas)
 			physics_layer.update_coords.call_deferred(coords)
+			return true
 		elif atlas == res.close_atlas:
 			layer.set_cell(coords, res.source_id, res.open_atlas)
 			physics_layer.update_coords.call_deferred(coords)
+			return true
+	return false
 
 
 func open_door(coords: Vector2i) -> void:

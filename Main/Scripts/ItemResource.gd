@@ -7,4 +7,5 @@ extends Resource
 
 @export_group("Action")
 @export var action: String
+@export var consumable: bool = true
 @export var data: Resource

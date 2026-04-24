@@ -13,20 +13,24 @@ extends Node
 var plant_dic: Dictionary = {}
 
 
-func sow_seed(plant: PlantResource) -> void:
+func sow_seed(plant: PlantResource) -> bool:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
 	if obstacle_layer.get_cell_source_id(coords) == -1:
 		if _is_dry_farmland(coords) or _is_wet_farmland(coords):
 			obstacle_layer.set_cell(coords, seed_source_id, seed_atlas_coords)
 			plant_dic[coords] = plant.duplicate()
+			return true
+	return false
 
 
-func watering(_data: Resource) -> void:
+func watering(_data: Resource) -> bool:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
 	if _is_dry_farmland(coords):
 		ground_decorate_layer.set_cell(coords, farmland_source_id, wet_farmland_atlas_coords)
+		return true
+	return false
 
 
 func _is_dry_farmland(coords: Vector2i) -> bool:

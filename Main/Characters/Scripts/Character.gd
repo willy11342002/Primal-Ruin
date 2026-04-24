@@ -8,13 +8,11 @@ func set_moveing(is_moving: bool) -> void:
 	moving = is_moving
 
 
-func set_item(item: ItemResource) -> void:
-	if item:
-		%ActionComponent.action = item.action
-		%ActionComponent.data = item.data
+func set_item(node: Node) -> void:
+	if node:
+		%ActionComponent.node = node
 	else:
-		%ActionComponent.action = "interact"
-		%ActionComponent.data = null
+		%ActionComponent.node = null
 
 
 func _ready() -> void:

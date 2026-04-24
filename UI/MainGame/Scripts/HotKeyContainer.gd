@@ -31,7 +31,7 @@ func _choose_slot(new_index: int) -> void:
 	
 	var player = get_tree().get_first_node_in_group("Player")
 	if player:
-		player.set_item(current_slot.data)
+		player.set_item(current_slot)
 
 
 func prev_slot() -> void:
