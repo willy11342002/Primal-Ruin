@@ -16,22 +16,31 @@ var plant_dic: Dictionary = {}
 func sow_seed(plant: PlantResource) -> void:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
-	obstacle_layer.set_cell(coords, plant.source_id, plant.atlas_coords)
-	plant_dic[coords] = plant
+	if obstacle_layer.get_cell_source_id(coords) == -1:
+		if _is_dry_farmland(coords) or _is_wet_farmland(coords):
+			obstacle_layer.set_cell(coords, seed_source_id, seed_atlas_coords)
+			plant_dic[coords] = plant.duplicate()
 
 
 func watering(_data: Resource) -> void:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
-	ground_decorate_layer.set_cell(coords, farmland_source_id, wet_farmland_atlas_coords)
+	if _is_dry_farmland(coords):
+		ground_decorate_layer.set_cell(coords, farmland_source_id, wet_farmland_atlas_coords)
 
 
 func _is_dry_farmland(coords: Vector2i) -> bool:
-	return ground_decorate_layer.get_cell_source_id(coords) == farmland_source_id and ground_decorate_layer.get_cell_atlas_coords(coords) == dry_farmland_atlas_coords
+	if ground_decorate_layer.get_cell_source_id(coords) == farmland_source_id:
+		if ground_decorate_layer.get_cell_atlas_coords(coords) == dry_farmland_atlas_coords:
+			return true
+	return false
 
 
 func _is_wet_farmland(coords: Vector2i) -> bool:
-	return ground_decorate_layer.get_cell_source_id(coords) == farmland_source_id and ground_decorate_layer.get_cell_atlas_coords(coords) == wet_farmland_atlas_coords
+	if ground_decorate_layer.get_cell_source_id(coords) == farmland_source_id:
+		if ground_decorate_layer.get_cell_atlas_coords(coords) == wet_farmland_atlas_coords:
+			return true
+	return false
 
 
 func _on_next_day_button_up() -> void:

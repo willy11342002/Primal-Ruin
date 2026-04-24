@@ -7,9 +7,9 @@ var current_slot: HotKeySlot = null
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("CameraZoomIn"):
-		next_slot()
-	if event.is_action_pressed("CameraZoomOut"):
 		prev_slot()
+	if event.is_action_pressed("CameraZoomOut"):
+		next_slot()
 
 
 func _ready() -> void:
@@ -28,7 +28,10 @@ func _choose_slot(new_index: int) -> void:
 	current_slot = get_child(index)
 	current_slot.choose = true
 	current_slot.update_display()
-
+	
+	var player = get_tree().get_first_node_in_group("Player")
+	if player:
+		player.set_item(current_slot.data)
 
 
 func prev_slot() -> void:

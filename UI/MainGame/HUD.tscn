@@ -7,16 +7,6 @@
 
 [node name="HUD" type="CanvasLayer" unique_id=1983293412]
 
-[node name="Button" type="Button" parent="." unique_id=1016316770]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -4.0
-offset_right = 4.0
-offset_bottom = 8.0
-grow_horizontal = 2
-text = "Next Day"
-
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=861102271]
 anchors_preset = 7
 anchor_left = 0.5
