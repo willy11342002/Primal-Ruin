@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://c0wm85r1i1cti"]
+
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="1_1hady"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mad3"]
+load_path = "res://.godot/imported/crops - all.png-3ef1d74cddd98d433c6f64b4f7f5ba5c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i6fd"]
+atlas = SubResource("CompressedTexture2D_5mad3")
+region = Rect2(304, 144, 16, 16)
+
+[resource]
+script = ExtResource("1_1hady")
+name = "BellPepper(Green)"
+icon = SubResource("AtlasTexture_2i6fd")
+action = "interact"
+consumable = false
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

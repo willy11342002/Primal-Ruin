@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://ceaoamx2ob7vf"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_8caxx"]
+[ext_resource type="Resource" uid="uid://bk0m5x88s8hha" path="res://Main/ItemResources/Crops/Honeydew.tres" id="1_731pj"]
 
 [resource]
 script = ExtResource("1_8caxx")
@@ -8,4 +9,5 @@ name = "Honeydew"
 source_id = 7
 atlas_coords = Vector2i(11, 6)
 season = 1
+harvest = ExtResource("1_731pj")
 growth_time = Array[int]([2, 3, 4, 5, 5])

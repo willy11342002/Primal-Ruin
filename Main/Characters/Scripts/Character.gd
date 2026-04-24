@@ -8,11 +8,11 @@ func set_moveing(is_moving: bool) -> void:
 	moving = is_moving
 
 
-func set_item(node: Node) -> void:
-	if node:
-		%ActionComponent.node = node
+func set_item(slot: InventorySlot) -> void:
+	if slot:
+		%ActionComponent.slot = slot
 	else:
-		%ActionComponent.node = null
+		%ActionComponent.slot = null
 
 
 func _ready() -> void:

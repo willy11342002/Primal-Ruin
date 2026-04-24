@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cxddp8hgmi3p6"]
 
+[ext_resource type="Resource" uid="uid://betqlaud06fsp" path="res://Main/ItemResources/Crops/Wheat.tres" id="1_3dns6"]
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_apm1d"]
 
 [resource]
@@ -7,4 +8,5 @@ script = ExtResource("1_apm1d")
 name = "Wheat"
 source_id = 7
 atlas_coords = Vector2i(2, 7)
+harvest = ExtResource("1_3dns6")
 growth_time = Array[int]([1, 3, 3, 5])

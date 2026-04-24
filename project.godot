@@ -34,6 +34,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 QuestManager="*uid://dvlbfprq13m7w"
 RelationshipManager="*uid://dbbifry431db1"
 MusicManager="*uid://biwfb4405xoj3"
+InventoryManager="*uid://cllw86vylfn5w"
 
 [dialogue_manager]
 

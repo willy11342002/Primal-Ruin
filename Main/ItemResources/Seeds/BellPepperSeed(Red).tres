@@ -12,7 +12,7 @@ region = Rect2(288, 208, 16, 16)
 
 [resource]
 script = ExtResource("2_n50nu")
-name = "BellPepper(Red)"
+name = "BellPepperSeed(Red)"
 icon = SubResource("AtlasTexture_2i6fd")
 action = "sow_seed"
 data = ExtResource("1_7kymk")

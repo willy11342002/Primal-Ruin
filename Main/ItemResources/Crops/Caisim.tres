@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://b2qn0wkihd4ay"]
+
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_p74in"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mad3"]
+load_path = "res://.godot/imported/crops - all.png-3ef1d74cddd98d433c6f64b4f7f5ba5c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i6fd"]
+atlas = SubResource("CompressedTexture2D_5mad3")
+region = Rect2(16, 208, 16, 16)
+
+[resource]
+script = ExtResource("2_p74in")
+name = "Caisim"
+icon = SubResource("AtlasTexture_2i6fd")
+action = "interact"
+consumable = false
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

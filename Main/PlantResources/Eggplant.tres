@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://bjxt7dmmrk2b4"]
 
+[ext_resource type="Resource" uid="uid://dvnr4ttqp0d3d" path="res://Main/ItemResources/Crops/Eggplant.tres" id="1_f4i0h"]
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_qrnh5"]
 
 [resource]
@@ -8,5 +9,6 @@ name = "Eggplant"
 source_id = 7
 atlas_coords = Vector2i(20, 1)
 season = 1
+harvest = ExtResource("1_f4i0h")
 multiple_harvest = true
 growth_time = Array[int]([1, 1, 2, 4, 4])

@@ -3,11 +3,52 @@
 [ext_resource type="PackedScene" uid="uid://khs7exdy5h3a" path="res://UI/MainGame/HotKeySlot.tscn" id="1_30rx8"]
 [ext_resource type="Script" uid="uid://kb64kq25m8xs" path="res://UI/MainGame/Scripts/HotKeyContainer.gd" id="1_a0wuf"]
 [ext_resource type="Resource" uid="uid://ba1qfkn3kg2ot" path="res://Main/ItemResources/Seeds/TurnipSeed.tres" id="3_85ngo"]
+[ext_resource type="Script" uid="uid://bwpamli60pmvq" path="res://UI/MainGame/Scripts/InventorySlot.gd" id="4_1hcft"]
 [ext_resource type="Resource" uid="uid://b6xoukiwn55lm" path="res://Main/ItemResources/WateringCan.tres" id="4_3wb6d"]
-[ext_resource type="Resource" uid="uid://rc2xw4iah1iv" path="res://Main/ItemResources/Seeds/WheatSeed.tres" id="5_8afya"]
-[ext_resource type="Resource" uid="uid://b7bfnlvc3dxdy" path="res://Main/ItemResources/Seeds/CucumberSeed.tres" id="6_n6bgw"]
-[ext_resource type="Resource" uid="uid://d116rauftoduy" path="res://Main/ItemResources/Seeds/CarrotSeed.tres" id="7_t71s5"]
-[ext_resource type="Resource" uid="uid://clxiksm668rpr" path="res://Main/ItemResources/Seeds/CaisimSeed.tres" id="8_yj813"]
+
+[sub_resource type="Resource" id="Resource_8afya"]
+script = ExtResource("4_1hcft")
+item = ExtResource("4_3wb6d")
+amount = 1
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_n6bgw"]
+script = ExtResource("4_1hcft")
+item = ExtResource("3_85ngo")
+amount = 2
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_3wb6d"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_1hcft"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_4u2qj"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_t71s5"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_yj813"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_hq7cq"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_w52po"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
+
+[sub_resource type="Resource" id="Resource_ia1sc"]
+script = ExtResource("4_1hcft")
+metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [node name="HUD" type="CanvasLayer" unique_id=1983293412]
 
@@ -24,48 +65,46 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 16
 
-[node name="HotKeyContainer" type="HBoxContainer" parent="MarginContainer" unique_id=329392333]
+[node name="HotKeyContainer" type="HBoxContainer" parent="MarginContainer" unique_id=329392333 groups=["Persist"]]
 layout_mode = 2
 script = ExtResource("1_a0wuf")
 
 [node name="HotKeySlot" parent="MarginContainer/HotKeyContainer" unique_id=5495064 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-item = ExtResource("3_85ngo")
-amount = 8
+slot = SubResource("Resource_8afya")
 
 [node name="HotKeySlot2" parent="MarginContainer/HotKeyContainer" unique_id=1671278218 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-item = ExtResource("4_3wb6d")
-amount = 1
+slot = SubResource("Resource_n6bgw")
 
 [node name="HotKeySlot3" parent="MarginContainer/HotKeyContainer" unique_id=626070439 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-item = ExtResource("5_8afya")
-amount = 3
+slot = SubResource("Resource_3wb6d")
 
 [node name="HotKeySlot4" parent="MarginContainer/HotKeyContainer" unique_id=723605825 instance=ExtResource("1_30rx8")]
 layout_mode = 2
+slot = SubResource("Resource_1hcft")
 
 [node name="HotKeySlot5" parent="MarginContainer/HotKeyContainer" unique_id=1834609133 instance=ExtResource("1_30rx8")]
 layout_mode = 2
+slot = SubResource("Resource_4u2qj")
 
 [node name="HotKeySlot6" parent="MarginContainer/HotKeyContainer" unique_id=2108962604 instance=ExtResource("1_30rx8")]
 layout_mode = 2
+slot = SubResource("Resource_t71s5")
 
 [node name="HotKeySlot7" parent="MarginContainer/HotKeyContainer" unique_id=1480670249 instance=ExtResource("1_30rx8")]
 layout_mode = 2
+slot = SubResource("Resource_yj813")
 
 [node name="HotKeySlot8" parent="MarginContainer/HotKeyContainer" unique_id=1031091924 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-item = ExtResource("6_n6bgw")
-amount = 2
+slot = SubResource("Resource_hq7cq")
 
 [node name="HotKeySlot9" parent="MarginContainer/HotKeyContainer" unique_id=1406398693 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-item = ExtResource("7_t71s5")
-amount = 1
+slot = SubResource("Resource_w52po")
 
 [node name="HotKeySlot10" parent="MarginContainer/HotKeyContainer" unique_id=733681350 instance=ExtResource("1_30rx8")]
 layout_mode = 2
-item = ExtResource("8_yj813")
-amount = 2
+slot = SubResource("Resource_ia1sc")

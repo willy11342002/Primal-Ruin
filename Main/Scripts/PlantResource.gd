@@ -5,6 +5,7 @@ extends Resource
 ## 植物名稱
 @export var name: String
 
+
 ## 圖集來源ID
 @export var source_id: int
 
@@ -14,6 +15,9 @@ extends Resource
 ## 生長季節
 @export_enum("Spring", "Summer", "Fall", "Winter")
 var season: int
+
+## 收穫農作物
+@export var harvest: ItemResource
 
 ## 重複採收
 @export var multiple_harvest: bool = false

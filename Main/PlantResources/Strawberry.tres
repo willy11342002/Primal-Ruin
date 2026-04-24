@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://dmhs25raioima"]
 
+[ext_resource type="Resource" uid="uid://de5tdy7aek0g5" path="res://Main/ItemResources/Crops/Strawberry.tres" id="1_l23s6"]
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_pkmgv"]
 
 [resource]
@@ -7,5 +8,6 @@ script = ExtResource("1_pkmgv")
 name = "Strawberry"
 source_id = 7
 atlas_coords = Vector2i(2, 5)
+harvest = ExtResource("1_l23s6")
 multiple_harvest = true
 growth_time = Array[int]([1, 2, 2, 3, 3])

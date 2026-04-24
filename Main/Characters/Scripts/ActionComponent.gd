@@ -3,7 +3,7 @@ extends Node2D
 
 
 @export var radius: float = 50.0
-@export var node: Node
+@export var slot: InventorySlot
 
 
 func click() -> void:
@@ -12,13 +12,12 @@ func click() -> void:
 	if distance > radius:
 		return
 
-	if node and node.item and node.amount > 0:
-		var action = node.item.action
-		var data = node.item.data
+	if slot and slot.amount > 0:
+		var action = slot.item.action
+		var data = slot.item.data
 		var result = _call_action(action, data)
-		if result and node.item.consumable:
-			node.amount -= 1
-			node.update_display()
+		if result and slot.item.consumable:
+			slot.amount -= 1
 	else:
 		_call_action("interact", null)
 

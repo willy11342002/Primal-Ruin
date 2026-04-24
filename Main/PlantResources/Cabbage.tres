@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://d1ee331cw26un"]
 
+[ext_resource type="Resource" uid="uid://crky3ayb5l40e" path="res://Main/ItemResources/Crops/Cabbage.tres" id="1_18nl1"]
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_hjeds"]
 
 [resource]
@@ -8,4 +9,5 @@ name = "Cabbage"
 source_id = 7
 atlas_coords = Vector2i(2, 2)
 season = 2
+harvest = ExtResource("1_18nl1")
 growth_time = Array[int]([1, 3, 4, 5])

@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://b128brjrgd6db"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_612y0"]
+[ext_resource type="Resource" uid="uid://dgbyckgmx5m7s" path="res://Main/ItemResources/Crops/WaterMelon.tres" id="1_xoqie"]
 
 [resource]
 script = ExtResource("1_612y0")
@@ -8,4 +9,5 @@ name = "WaterMelon"
 source_id = 7
 atlas_coords = Vector2i(11, 5)
 season = 1
+harvest = ExtResource("1_xoqie")
 growth_time = Array[int]([1, 3, 3, 4, 6])

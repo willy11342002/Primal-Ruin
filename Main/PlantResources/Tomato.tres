@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://dne4wn4tjcbf5"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_h0voe"]
+[ext_resource type="Resource" uid="uid://brfqo5p2lev1g" path="res://Main/ItemResources/Crops/Tomato.tres" id="1_lpoyf"]
 
 [resource]
 script = ExtResource("1_h0voe")
@@ -8,5 +9,6 @@ name = "Tomato"
 source_id = 7
 atlas_coords = Vector2i(11, 7)
 season = 1
+harvest = ExtResource("1_lpoyf")
 multiple_harvest = true
 growth_time = Array[int]([1, 2, 3, 3, 4])

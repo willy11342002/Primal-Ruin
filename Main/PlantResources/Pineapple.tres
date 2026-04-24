@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://c4id5jj3xj8cv"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_nl5jy"]
+[ext_resource type="Resource" uid="uid://co8ipqnybcs1o" path="res://Main/ItemResources/Crops/Pineapple.tres" id="1_qf2eo"]
 
 [resource]
 script = ExtResource("1_nl5jy")
@@ -8,4 +9,5 @@ name = "Pineapple"
 source_id = 7
 atlas_coords = Vector2i(11, 8)
 season = 1
+harvest = ExtResource("1_qf2eo")
 growth_time = Array[int]([2, 3, 3, 4, 5])

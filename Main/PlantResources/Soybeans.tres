@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://0s4wt45ja0fm"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_5t4c4"]
+[ext_resource type="Resource" uid="uid://bhl275mj88en8" path="res://Main/ItemResources/Crops/Soybeans.tres" id="1_18472"]
 
 [resource]
 script = ExtResource("1_5t4c4")
@@ -8,4 +9,5 @@ name = "Soybeans"
 source_id = 7
 atlas_coords = Vector2i(11, 9)
 season = 1
+harvest = ExtResource("1_18472")
 growth_time = Array[int]([1, 2, 3, 3, 4])

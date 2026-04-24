@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://bfl5iv3q0282f"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_e8l1e"]
+[ext_resource type="Resource" uid="uid://dqj8f84mfm0x3" path="res://Main/ItemResources/Crops/Yam.tres" id="1_y1rhs"]
 
 [resource]
 script = ExtResource("1_e8l1e")
@@ -8,4 +9,5 @@ name = "Yam"
 source_id = 7
 atlas_coords = Vector2i(20, 3)
 season = 2
+harvest = ExtResource("1_y1rhs")
 growth_time = Array[int]([5, 6, 7])

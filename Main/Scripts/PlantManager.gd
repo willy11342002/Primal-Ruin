@@ -31,6 +31,26 @@ func watering(_data: Resource) -> bool:
 	return false
 
 
+func interact(_data: Resource) -> bool:
+	var mouse_pos = plant_layer.get_global_mouse_position()
+	var coords := plant_layer.local_to_map(mouse_pos)
+	var plant = plant_dic.get(coords, null)
+	if not plant:
+		return false
+	if plant.current_stage < plant.growth_time.size():
+		return false
+
+	if plant.multiple_harvest:
+		plant.current_stage -= 1
+		plant.current_days = 0
+		plant_layer.set_cell(coords, plant.source_id, plant.atlas_coords + Vector2i(plant.current_stage, 0))
+	else:	
+		plant_layer.erase_cell(coords)
+		plant_dic.erase(coords)
+
+	return true
+
+
 func _is_obstacle_empty(coords: Vector2i) -> bool:
 	for layer in obstacle_layers:
 		if layer.get_cell_source_id(coords) != -1:
@@ -53,9 +73,14 @@ func _is_wet_farmland(coords: Vector2i) -> bool:
 
 
 func _on_next_day_button_up() -> void:
-	for coords in plant_dic.keys():
-		var plant = plant_dic[coords]
+	for coords in ground_decorate_layer.get_used_cells():
 		if _is_wet_farmland(coords):
+			ground_decorate_layer.set_cell(coords, farmland_source_id, dry_farmland_atlas_coords)
+
+			var plant = plant_dic.get(coords, null)
+			if not plant:
+				continue
+
 			var source = plant_layer.tile_set.get_source(plant.source_id)
 			if not source:
 				continue
@@ -63,3 +88,7 @@ func _on_next_day_button_up() -> void:
 				continue
 			if plant.grow():
 				plant_layer.set_cell(coords, plant.source_id, plant.atlas_coords + Vector2i(plant.current_stage, 0))
+
+
+func _on_add_item_button_up() -> void:
+	InventoryManager.add_item(preload("uid://bspqxfnltaxmo"), 1)

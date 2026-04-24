@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://ccwlgywfv3go5"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_w2iuj"]
+[ext_resource type="Resource" uid="uid://cbhvaws0m25bt" path="res://Main/ItemResources/Crops/Leek.tres" id="1_wvii8"]
 
 [resource]
 script = ExtResource("1_w2iuj")
@@ -8,5 +9,6 @@ name = "Leek"
 source_id = 7
 atlas_coords = Vector2i(20, 9)
 season = 2
+harvest = ExtResource("1_wvii8")
 multiple_harvest = true
 growth_time = Array[int]([3, 4, 4])

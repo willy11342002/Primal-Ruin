@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://fd42i6iolybj"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_ai5q6"]
+[ext_resource type="Resource" uid="uid://c0wm85r1i1cti" path="res://Main/ItemResources/Crops/BellPepper(Green).tres" id="1_tr03c"]
 
 [resource]
 script = ExtResource("1_ai5q6")
 name = "BellPepper(Green)"
 source_id = 7
 atlas_coords = Vector2i(20, 4)
+harvest = ExtResource("1_tr03c")
 multiple_harvest = true
 growth_time = [1, 1, 2, 2, 5]

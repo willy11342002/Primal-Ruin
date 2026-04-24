@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dkpsuhfj8osmi"]
+
+[ext_resource type="Texture2D" uid="uid://dfvuss764k45b" path="res://Assets/Tilesets/Farming/crops - all.png" id="1_uyyqg"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_uopgo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kisd8"]
+atlas = ExtResource("1_uyyqg")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_uopgo")
+name = "TurnipSeed"
+icon = SubResource("AtlasTexture_kisd8")
+action = "interact"
+consumable = false
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

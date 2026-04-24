@@ -8580,16 +8580,24 @@ sources/0 = SubResource("TileSetAtlasSource_e5f4v")
 
 [node name="HUD" parent="." unique_id=1983293412 instance=ExtResource("1_dk6jw")]
 
-[node name="Button" type="Button" parent="HUD" unique_id=176323642]
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD" unique_id=94615751]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -39.5
-offset_right = 39.5
-offset_bottom = 31.0
+offset_left = -116.0
+offset_right = 116.0
+offset_bottom = 42.0
 grow_horizontal = 2
+
+[node name="Button" type="Button" parent="HUD/HBoxContainer" unique_id=176323642]
+layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Next Day"
+
+[node name="Button2" type="Button" parent="HUD/HBoxContainer" unique_id=324277158]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Add Item"
 
 [node name="Cameras" type="Node2D" parent="." unique_id=616633672]
 
@@ -8722,4 +8730,5 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AADx/+//AQAAAAkAAADy//T/AQACAAAAAAD2//v/AQAAAAAAAAD+//D/AQACAAAAAADx//v/AQAQAAYAAAD//+//AQAAAAMAAAD7/+//AQAAAAAAAAD6/+//AQAQAAMAAAD5/+//AQACAAMAAAD3/+//AQAAAAAAAAAFAPr/AQAQAAYAAAAGAPr/AQASAAkAAAAHAPn/AQASAAAAAAAJAPj/AQAAAAAAAAAKAPj/AQAQAAkAAADw//X/AQASAAYAAADx//b/AQACAAAAAAD2/+7/AQAAAAYAAAD4//z/AQAQAAYAAAD8//b/AQAQAAMAAAAEAO//AQAAAAMAAADw//n/AQAAAAMAAAA=")
 tile_set = SubResource("TileSet_4h55j")
 
-[connection signal="button_up" from="HUD/Button" to="LayerLogicManager/PlantManager" method="_on_next_day_button_up"]
+[connection signal="button_up" from="HUD/HBoxContainer/Button" to="LayerLogicManager/PlantManager" method="_on_next_day_button_up"]
+[connection signal="button_up" from="HUD/HBoxContainer/Button2" to="LayerLogicManager/PlantManager" method="_on_add_item_button_up"]
