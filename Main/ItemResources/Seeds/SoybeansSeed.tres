@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://d0wlndj86exa1"]
+
+[ext_resource type="Resource" uid="uid://0s4wt45ja0fm" path="res://Main/PlantResources/Soybeans.tres" id="1_bds57"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_tuwmy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mad3"]
+load_path = "res://.godot/imported/crops - all.png-3ef1d74cddd98d433c6f64b4f7f5ba5c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i6fd"]
+atlas = SubResource("CompressedTexture2D_5mad3")
+region = Rect2(144, 304, 16, 16)
+
+[resource]
+script = ExtResource("2_tuwmy")
+name = "SoybeansSeed"
+icon = SubResource("AtlasTexture_2i6fd")
+action = "sow_seed"
+data = ExtResource("1_bds57")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

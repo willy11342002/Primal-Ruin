@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://61obdidb1fom"]
+
+[ext_resource type="Resource" uid="uid://ceaoamx2ob7vf" path="res://Main/PlantResources/Honeydew.tres" id="1_a4l7a"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_08r4n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mad3"]
+load_path = "res://.godot/imported/crops - all.png-3ef1d74cddd98d433c6f64b4f7f5ba5c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i6fd"]
+atlas = SubResource("CompressedTexture2D_5mad3")
+region = Rect2(144, 208, 16, 16)
+
+[resource]
+script = ExtResource("2_08r4n")
+name = "HoneydewSeed"
+icon = SubResource("AtlasTexture_2i6fd")
+action = "sow_seed"
+data = ExtResource("1_a4l7a")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://d1ee331cw26un"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_hjeds"]
+
+[resource]
+script = ExtResource("1_hjeds")
+name = "Cabbage"
+source_id = 7
+atlas_coords = Vector2i(2, 2)
+season = 2
+growth_time = Array[int]([1, 3, 4, 5])

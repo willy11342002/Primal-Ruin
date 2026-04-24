@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://b2o6tjm01s114"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_dkr74"]
+
+[resource]
+script = ExtResource("1_dkr74")
+name = "Cauliflower"
+source_id = 7
+atlas_coords = Vector2i(20, 8)
+growth_time = Array[int]([2, 3, 3, 5])

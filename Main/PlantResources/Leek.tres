@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://ccwlgywfv3go5"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_w2iuj"]
+
+[resource]
+script = ExtResource("1_w2iuj")
+name = "Leek"
+source_id = 7
+atlas_coords = Vector2i(20, 9)
+season = 2
+multiple_harvest = true
+growth_time = Array[int]([3, 4, 4])

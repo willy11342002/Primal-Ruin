@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cnwcjr1upwoi5"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_yiwl4"]
+
+[resource]
+script = ExtResource("1_yiwl4")
+name = "Asparagus"
+source_id = 7
+atlas_coords = Vector2i(2, 4)
+multiple_harvest = true
+growth_time = [2, "4", "5"]

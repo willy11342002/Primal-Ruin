@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://df3h5a2svhgb3"]
+
+[ext_resource type="Resource" uid="uid://d1ee331cw26un" path="res://Main/PlantResources/Cabbage.tres" id="1_3m7a3"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_420fb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mad3"]
+load_path = "res://.godot/imported/crops - all.png-3ef1d74cddd98d433c6f64b4f7f5ba5c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i6fd"]
+atlas = SubResource("CompressedTexture2D_5mad3")
+region = Rect2(0, 80, 16, 16)
+
+[resource]
+script = ExtResource("2_420fb")
+name = "CabbageSeed"
+icon = SubResource("AtlasTexture_2i6fd")
+action = "sow_seed"
+data = ExtResource("1_3m7a3")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

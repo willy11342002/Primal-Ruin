@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://bp0qpfmiv81ei"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_qj0v7"]
+
+[resource]
+script = ExtResource("1_qj0v7")
+name = "Caisim"
+source_id = 7
+atlas_coords = Vector2i(2, 6)
+growth_time = Array[int]([2, 2, 3])

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://xpwfikn7cpax"
+
+[deps]
+
+files=["res://Translations/Plants.en.translation", "res://Translations/Plants.zh_TW.translation"]
+
+source_file="res://Translations/Plants.csv"
+dest_files=["res://Translations/Plants.en.translation", "res://Translations/Plants.zh_TW.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

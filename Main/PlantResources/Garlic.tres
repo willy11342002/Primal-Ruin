@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://crmw5sfqsv7yb"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_4kpc3"]
+
+[resource]
+script = ExtResource("1_4kpc3")
+name = "Garlic"
+source_id = 7
+atlas_coords = Vector2i(11, 3)
+season = 2
+growth_time = Array[int]([3, 4, 5])

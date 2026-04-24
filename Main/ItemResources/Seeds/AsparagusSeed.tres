@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://cnt7vtbl6cpht"]
+
+[ext_resource type="Resource" uid="uid://cnwcjr1upwoi5" path="res://Main/PlantResources/Asparagus.tres" id="1_cg0ex"]
+[ext_resource type="Texture2D" uid="uid://dfvuss764k45b" path="res://Assets/Tilesets/Farming/crops - all.png" id="2_xw3s0"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="3_aa6sl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kisd8"]
+atlas = ExtResource("2_xw3s0")
+region = Rect2(0, 144, 16, 16)
+
+[resource]
+script = ExtResource("3_aa6sl")
+name = "AsparagusSeed"
+icon = SubResource("AtlasTexture_kisd8")
+action = "sow_seed"
+data = ExtResource("1_cg0ex")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

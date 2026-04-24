@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://cneum1mnw0hi1"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_275cg"]
+
+[resource]
+script = ExtResource("1_275cg")
+name = "Carrot"
+source_id = 7
+atlas_coords = Vector2i(20, 0)
+season = 2
+growth_time = Array[int]([3, 3, 4])

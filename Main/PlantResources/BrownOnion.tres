@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://dyubme3cfysle"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_58dnp"]
+
+[resource]
+script = ExtResource("1_58dnp")
+name = "BrownOnion"
+source_id = 7
+atlas_coords = Vector2i(11, 2)
+season = 2
+growth_time = Array[int]([3, 3, 5])

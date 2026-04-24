@@ -49,7 +49,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/TileMapLayer3D/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/TileMapLayer3D/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/resource_database/plugin.cfg", "res://addons/simple_resource_icons/plugin.cfg")
 
 [file_customization]
 
@@ -150,7 +150,7 @@ interact={
 [internationalization]
 
 locale/translation_remaps={}
-locale/translations=PackedStringArray("res://Translations/UI.en.translation", "res://Translations/UI.zh_TW.translation", "res://Translations/Quest.en.translation", "res://Translations/Quest.zh_TW.translation", "res://Assets/Dialogues/First.en.translation", "res://Assets/Dialogues/First.zh_TW.translation", "res://Assets/Dialogues/Buck.en.translation", "res://Assets/Dialogues/Buck.zh_TW.translation")
+locale/translations=PackedStringArray("res://Translations/UI.en.translation", "res://Translations/UI.zh_TW.translation", "res://Translations/Quest.en.translation", "res://Translations/Quest.zh_TW.translation", "res://Assets/Dialogues/First.en.translation", "res://Assets/Dialogues/First.zh_TW.translation", "res://Assets/Dialogues/Buck.en.translation", "res://Assets/Dialogues/Buck.zh_TW.translation", "res://Translations/Plants.en.translation", "res://Translations/Plants.zh_TW.translation")
 locale/translations_pot_files=PackedStringArray("res://Assets/Dialogues/First.dialogue", "res://Assets/Dialogues/Buck.dialogue")
 locale/locale_filter_mode=0
 

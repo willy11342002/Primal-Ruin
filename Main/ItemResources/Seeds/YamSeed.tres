@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://eadmm777lgx8"]
+
+[ext_resource type="Resource" uid="uid://bfl5iv3q0282f" path="res://Main/PlantResources/Yam.tres" id="1_kta33"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_02rs7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kta33"]
+load_path = "res://.godot/imported/crops - all.png-3ef1d74cddd98d433c6f64b4f7f5ba5c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02rs7"]
+atlas = SubResource("CompressedTexture2D_kta33")
+region = Rect2(288, 112, 16, 16)
+
+[resource]
+script = ExtResource("2_02rs7")
+name = "YamSeed"
+icon = SubResource("AtlasTexture_02rs7")
+action = "sow_seed"
+data = ExtResource("1_kta33")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

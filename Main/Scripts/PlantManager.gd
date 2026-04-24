@@ -8,9 +8,6 @@ extends Node
 @export var dry_farmland_atlas_coords: Vector2i
 @export var wet_farmland_atlas_coords: Vector2i
 
-@export var seed_source_id: int
-@export var seed_atlas_coords: Vector2i
-
 var plant_dic: Dictionary = {}
 
 
@@ -19,7 +16,7 @@ func sow_seed(plant: PlantResource) -> bool:
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
 	if _is_obstacle_empty(coords):
 		if _is_dry_farmland(coords) or _is_wet_farmland(coords):
-			plant_layer.set_cell(coords, seed_source_id, seed_atlas_coords)
+			plant_layer.set_cell(coords, plant.source_id, plant.atlas_coords)
 			plant_dic[coords] = plant.duplicate()
 			return true
 	return false

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://clxiksm668rpr"]
+
+[ext_resource type="Resource" uid="uid://bp0qpfmiv81ei" path="res://Main/PlantResources/Caisim.tres" id="1_twa0u"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_13y12"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5mad3"]
+load_path = "res://.godot/imported/crops - all.png-3ef1d74cddd98d433c6f64b4f7f5ba5c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i6fd"]
+atlas = SubResource("CompressedTexture2D_5mad3")
+region = Rect2(0, 208, 16, 16)
+
+[resource]
+script = ExtResource("2_13y12")
+name = "CaisimSeed"
+icon = SubResource("AtlasTexture_2i6fd")
+action = "sow_seed"
+data = ExtResource("1_twa0u")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

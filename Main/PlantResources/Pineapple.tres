@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://c4id5jj3xj8cv"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_nl5jy"]
+
+[resource]
+script = ExtResource("1_nl5jy")
+name = "Pineapple"
+source_id = 7
+atlas_coords = Vector2i(11, 8)
+season = 1
+growth_time = Array[int]([2, 3, 3, 4, 5])

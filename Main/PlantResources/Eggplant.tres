@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://bjxt7dmmrk2b4"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_qrnh5"]
+
+[resource]
+script = ExtResource("1_qrnh5")
+name = "Eggplant"
+source_id = 7
+atlas_coords = Vector2i(20, 1)
+season = 1
+multiple_harvest = true
+growth_time = Array[int]([1, 1, 2, 4, 4])

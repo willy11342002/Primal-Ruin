@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://ciibwjboh8nbw"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_ogd51"]
+
+[resource]
+script = ExtResource("1_ogd51")
+name = "Spinach"
+source_id = 7
+atlas_coords = Vector2i(20, 2)
+growth_time = Array[int]([2, 3, 3])
