@@ -46,12 +46,14 @@ func load_data():
 		var slot = Persistence.data.hotkey_inventory[i]
 		var hotkey_slot = get_child(i)
 		if hotkey_slot is HotKeySlot:
-			hotkey_slot.set_slot(slot)
+			hotkey_slot.set_slot(slot.duplicate(true))
+
+	_choose_slot(index)
 
 
 func save_data():
 	var hotkey_inventory: Array[InventorySlot] = []
 	for child in get_children():
 		if child is HotKeySlot:
-			hotkey_inventory.append(child.slot)
+			hotkey_inventory.append(child.slot.duplicate(true))
 	Persistence.data.hotkey_inventory = hotkey_inventory

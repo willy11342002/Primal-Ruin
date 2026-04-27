@@ -52,7 +52,7 @@ func update_auto_door(coords: Vector2i) -> void:
 		return
 
 
-func interact(_data: Resource) -> bool:
+func interact(_executor: Node, _data: Resource) -> bool:
 	var mouse_pos := layer.get_global_mouse_position()
 	var coords := layer.local_to_map(mouse_pos)
 	var source_id := layer.get_cell_source_id(coords)

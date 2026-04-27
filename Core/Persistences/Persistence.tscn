@@ -60,6 +60,7 @@ metadata/_custom_type_script = "uid://bwpamli60pmvq"
 [sub_resource type="Resource" id="Resource_ngy8j"]
 script = ExtResource("3_si005")
 hotkey_inventory = Array[ExtResource("4_nq4ph")]([SubResource("Resource_nq4ph"), SubResource("Resource_uhiav"), SubResource("Resource_hgu0w"), SubResource("Resource_limd3"), SubResource("Resource_m21yx"), SubResource("Resource_yxj0o"), SubResource("Resource_e6567"), SubResource("Resource_st2in"), SubResource("Resource_jaw50"), SubResource("Resource_eposl")])
+auto_door = true
 metadata/_custom_type_script = "uid://d0pg7hdmyujgo"
 
 [node name="Persistence" type="Node2D" unique_id=608044120]

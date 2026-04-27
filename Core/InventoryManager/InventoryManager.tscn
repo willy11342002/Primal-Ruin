@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://cc5m0521ekvr6" path="res://Core/InventoryManager/InventoryManager.gd" id="1_8ukgp"]
 
-[node name="Inventory" type="Node" unique_id=1548500678]
+[node name="Inventory" type="Node" unique_id=1548500678 groups=["Persist"]]
 script = ExtResource("1_8ukgp")

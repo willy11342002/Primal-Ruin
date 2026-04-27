@@ -12,14 +12,14 @@ var plant_dic: Dictionary = {}
 
 
 func load_data() -> void:
-	plant_dic = Persistence.data.plants_data.duplicate()
+	plant_dic = Persistence.data.plants_data.duplicate(true)
 
 
 func save_data() -> void:
-	Persistence.data.plants_data = plant_dic.duplicate()
+	Persistence.data.plants_data = plant_dic.duplicate(true)
 
 
-func sow_seed(plant: PlantResource) -> bool:
+func sow_seed(_executor: Node, plant: PlantResource) -> bool:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
 	if _is_obstacle_empty(coords):
@@ -30,7 +30,7 @@ func sow_seed(plant: PlantResource) -> bool:
 	return false
 
 
-func watering(_data: Resource) -> bool:
+func watering(_executor: Node, _data: Resource) -> bool:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
 	if _is_dry_farmland(coords):
@@ -39,7 +39,7 @@ func watering(_data: Resource) -> bool:
 	return false
 
 
-func interact(_data: Resource) -> bool:
+func interact(_executor: Node, _data: Resource) -> bool:
 	var mouse_pos = plant_layer.get_global_mouse_position()
 	var coords := plant_layer.local_to_map(mouse_pos)
 	var plant = plant_dic.get(coords, null)

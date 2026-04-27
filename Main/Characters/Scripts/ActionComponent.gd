@@ -2,6 +2,7 @@ class_name ActionComponent
 extends Node2D
 
 
+@onready var entity: CharacterBody2D = get_parent()
 @export var radius: float = 50.0
 @export var slot: InventorySlot
 
@@ -12,7 +13,7 @@ func use_tool() -> bool:
 	if distance > radius:
 		return false
 
-	if not slot or slot.amount <= 0:
+	if not slot or slot.item == null or slot.amount <= 0:
 		return false
 
 	var action = slot.item.action
@@ -31,7 +32,7 @@ func interact() -> bool:
 func _call_action(action: String, data: Resource=null) -> bool:
 	for receiver in get_tree().get_nodes_in_group("ActionReceiver"):
 		if receiver.has_method(action):
-			var result = receiver.call(action, data)
+			var result = receiver.call(action, entity, data)
 			if result:
 				return true
 	return false
