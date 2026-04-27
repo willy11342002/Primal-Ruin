@@ -6,7 +6,6 @@
 
 [node name="MusicManager" type="AudioStreamPlayer" unique_id=309465206]
 process_mode = 3
-autoplay = true
 bus = &"BGM"
 script = ExtResource("1_qpwcf")
 is_shuffled = true

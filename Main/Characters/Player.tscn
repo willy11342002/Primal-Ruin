@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxt55b1qiru3j" path="res://Assets/Sprites/BigBase_Body.ase_layer_tex" id="4_3tcir"]
 [ext_resource type="Script" uid="uid://dmevehk06ewi7" path="res://Main/Characters/Scripts/PlayerNavigationComponent.gd" id="4_r1sbq"]
 [ext_resource type="Texture2D" uid="uid://ngdkrajn7bq6" path="res://Assets/Sprites/BigBase_Hand.ase_layer_tex" id="5_k5tqr"]
+[ext_resource type="Script" uid="uid://be303h1tnbfyi" path="res://Main/Characters/Scripts/PlayerInputComponent.gd" id="5_mgfxh"]
 [ext_resource type="Texture2D" uid="uid://cfamj6jusd47" path="res://Assets/Sprites/BigBase_Head.ase_layer_tex" id="6_rhhr6"]
 [ext_resource type="Texture2D" uid="uid://cu7fnlm4rjxks" path="res://Assets/Sprites/BigBase_Face.ase_layer_tex" id="7_uxqtm"]
 
@@ -1347,7 +1348,6 @@ debug_enabled = true
 unique_name_in_owner = true
 script = ExtResource("3_4dcq2")
 radius = 80.0
-action = "watering"
 
 [node name="MoveComponent" type="Node" parent="." unique_id=758249329]
 unique_name_in_owner = true
@@ -1356,7 +1356,13 @@ speed = 128.0
 
 [node name="PlayerNavigationComponent" type="Node" parent="." unique_id=1253862648 node_paths=PackedStringArray("nav_agent", "move_component", "action_component")]
 script = ExtResource("4_r1sbq")
+enabled = false
 nav_agent = NodePath("../NavigationAgent2D")
+move_component = NodePath("../MoveComponent")
+action_component = NodePath("../ActionComponent")
+
+[node name="PlayerInputComponent" type="Node" parent="." unique_id=597618375 node_paths=PackedStringArray("move_component", "action_component")]
+script = ExtResource("5_mgfxh")
 move_component = NodePath("../MoveComponent")
 action_component = NodePath("../ActionComponent")
 

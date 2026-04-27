@@ -63,3 +63,6 @@ func load_config():
 
 func _ready() -> void:
 	load_config()
+
+	if not OS.is_debug_build():
+		$CanvasLayer.hide()

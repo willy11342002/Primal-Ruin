@@ -1,6 +1,7 @@
 extends Node
 
 
+@export var enabled: bool = true
 @export var nav_agent: NavigationAgent2D
 @export var move_component: MoveComponent
 @export var action_component: ActionComponent
@@ -14,9 +15,11 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if not enabled: return
 	if event.is_action_pressed("Confirm"):
 		if action_component:
-			action_component.click()
+			if not action_component.use_tool():
+				action_component.interact()
 	elif event.is_action_pressed("Cancel", true):
 		nav_agent.target_position = get_parent().get_global_mouse_position()
 		_is_active = true

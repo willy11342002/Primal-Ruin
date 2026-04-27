@@ -6,18 +6,27 @@
 [ext_resource type="Script" uid="uid://d0pg7hdmyujgo" path="res://Core/Scripts/Resources/SaveData.gd" id="3_si005"]
 [ext_resource type="Script" uid="uid://cjdqnwu7ol5h5" path="res://Core/QuestManager/Quest.gd" id="4_b3gnf"]
 [ext_resource type="Script" uid="uid://bwpamli60pmvq" path="res://UI/MainGame/Scripts/InventorySlot.gd" id="4_nq4ph"]
+[ext_resource type="Resource" uid="uid://ba1qfkn3kg2ot" path="res://Main/ItemResources/Seeds/TurnipSeed.tres" id="5_limd3"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Skills/Scripts/SkillData.gd" id="5_nq4ph"]
+[ext_resource type="Resource" uid="uid://brkmi61bce1yf" path="res://Main/ItemResources/Seeds/PineappleSeed.tres" id="6_limd3"]
+[ext_resource type="Resource" uid="uid://b6xoukiwn55lm" path="res://Main/ItemResources/WateringCan.tres" id="7_yxj0o"]
 
 [sub_resource type="Resource" id="Resource_nq4ph"]
 script = ExtResource("4_nq4ph")
+item = ExtResource("5_limd3")
+amount = 3
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_uhiav"]
 script = ExtResource("4_nq4ph")
+item = ExtResource("6_limd3")
+amount = 3
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_hgu0w"]
 script = ExtResource("4_nq4ph")
+item = ExtResource("7_yxj0o")
+amount = 1
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_limd3"]
@@ -56,3 +65,22 @@ metadata/_custom_type_script = "uid://d0pg7hdmyujgo"
 [node name="Persistence" type="Node2D" unique_id=608044120]
 script = ExtResource("1_wxst7")
 data = SubResource("Resource_ngy8j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567716207]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1998166050]
+offset_right = 83.0
+offset_bottom = 66.0
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=114887004]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "SaveData"
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=14156471]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "LoadData"
+
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button" to="." method="save_data"]
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button2" to="." method="load_data"]

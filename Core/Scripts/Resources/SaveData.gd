@@ -4,6 +4,14 @@ class_name SaveData extends Resource
 @export var player_name: String = ""
 @export var hotkey_inventory: Array[InventorySlot]
 
+## Settings Data
+@export var auto_door: bool = false
+
+## Scene Logic Data
+@export var plants_data: Dictionary = {}
+## Scene Tile Data
+@export var tiles_data: Dictionary = {}
+
 
 @export_group("File Info")
 @export var title: String = ""

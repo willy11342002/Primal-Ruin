@@ -18,7 +18,7 @@ func _ready() -> void:
 		return
 
 	clear()
-	generate_water_layer()
+	generate_water_layer.call_deferred()
 
 
 func _get_merged_rect() -> Rect2i:

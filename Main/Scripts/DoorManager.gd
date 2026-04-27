@@ -8,8 +8,12 @@ extends Node
 @export var door_resources: Array[DoorResource]
 
 
-func _ready() -> void:
-	set_auto_door_mode.call_deferred(auto_door_mode)
+func load_data() -> void:
+	auto_door_mode = Persistence.data.auto_door
+
+
+func save_data() -> void:
+	Persistence.data.auto_door = auto_door_mode
 
 
 func set_auto_door_mode(value: bool) -> void:

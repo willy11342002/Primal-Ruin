@@ -11,6 +11,14 @@ extends Node
 var plant_dic: Dictionary = {}
 
 
+func load_data() -> void:
+	plant_dic = Persistence.data.plants_data.duplicate()
+
+
+func save_data() -> void:
+	Persistence.data.plants_data = plant_dic.duplicate()
+
+
 func sow_seed(plant: PlantResource) -> bool:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
@@ -48,6 +56,7 @@ func interact(_data: Resource) -> bool:
 		plant_layer.erase_cell(coords)
 		plant_dic.erase(coords)
 
+	InventoryManager.add_item(plant.harvest, 1)
 	return true
 
 
@@ -72,7 +81,7 @@ func _is_wet_farmland(coords: Vector2i) -> bool:
 	return false
 
 
-func _on_next_day_button_up() -> void:
+func _on_check_during_across_days() -> void:
 	for coords in ground_decorate_layer.get_used_cells():
 		if _is_wet_farmland(coords):
 			ground_decorate_layer.set_cell(coords, farmland_source_id, dry_farmland_atlas_coords)
@@ -88,7 +97,3 @@ func _on_next_day_button_up() -> void:
 				continue
 			if plant.grow():
 				plant_layer.set_cell(coords, plant.source_id, plant.atlas_coords + Vector2i(plant.current_stage, 0))
-
-
-func _on_add_item_button_up() -> void:
-	InventoryManager.add_item(preload("uid://bspqxfnltaxmo"), 1)
