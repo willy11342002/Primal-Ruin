@@ -3,7 +3,7 @@ extends StaticBody2D
 
 @export var physics_layer_index: int = 0
 
-var base_layers: Array[TileMapLayer] = []
+@export var base_layers: Array[TileMapLayer] = []
 
 
 func _create_collision_child(layer: TileMapLayer, coords: Vector2i, points: PackedVector2Array) -> void:

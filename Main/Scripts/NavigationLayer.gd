@@ -5,7 +5,7 @@ extends TileMapLayer
 @export var placeholder_source_id: int = 0
 @export var placeholder_atlas_coords: Vector2i = Vector2i(0, 0)
 
-var base_layers: Array[TileMapLayer] = []
+@export var base_layers: Array[TileMapLayer] = []
 
 
 func update_coords(coords: Vector2i) -> void:

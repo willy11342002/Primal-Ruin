@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Skills/Scripts/SkillData.gd" id="5_nq4ph"]
 [ext_resource type="Resource" uid="uid://brkmi61bce1yf" path="res://Main/ItemResources/Seeds/PineappleSeed.tres" id="6_limd3"]
 [ext_resource type="Resource" uid="uid://b6xoukiwn55lm" path="res://Main/ItemResources/WateringCan.tres" id="7_yxj0o"]
+[ext_resource type="Resource" uid="uid://bt8itmtihkrui" path="res://Main/ItemResources/Buildings/Fence.tres" id="8_m21yx"]
 
 [sub_resource type="Resource" id="Resource_nq4ph"]
 script = ExtResource("4_nq4ph")
@@ -31,6 +32,8 @@ metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_limd3"]
 script = ExtResource("4_nq4ph")
+item = ExtResource("8_m21yx")
+amount = 20
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_m21yx"]

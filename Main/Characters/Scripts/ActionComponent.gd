@@ -3,17 +3,18 @@ extends Node2D
 
 
 @onready var entity: CharacterBody2D = get_parent()
+@export var nav_component: Node
 @export var radius: float = 50.0
 @export var slot: InventorySlot
 
 
 func use_tool() -> bool:
+	if not slot or slot.item == null or slot.amount <= 0:
+		return false
+
 	var mouse_pos := get_global_mouse_position()
 	var distance = global_position.distance_to(mouse_pos)
 	if distance > radius:
-		return false
-
-	if not slot or slot.item == null or slot.amount <= 0:
 		return false
 
 	var action = slot.item.action
@@ -26,7 +27,6 @@ func use_tool() -> bool:
 
 func interact() -> bool:
 	return _call_action("interact")
-
 
 
 func _call_action(action: String, data: Resource=null) -> bool:

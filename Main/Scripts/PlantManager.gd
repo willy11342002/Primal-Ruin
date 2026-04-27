@@ -24,7 +24,7 @@ func sow_seed(_executor: Node, plant: PlantResource) -> bool:
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
 	if _is_obstacle_empty(coords):
 		if _is_dry_farmland(coords) or _is_wet_farmland(coords):
-			plant_layer.set_cell(coords, plant.source_id, plant.atlas_coords)
+			plant_layer.set_cell_with_signal(coords, plant.source_id, plant.atlas_coords)
 			plant_dic[coords] = plant.duplicate()
 			return true
 	return false
@@ -34,7 +34,7 @@ func watering(_executor: Node, _data: Resource) -> bool:
 	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
 	var coords := ground_decorate_layer.local_to_map(mouse_pos)
 	if _is_dry_farmland(coords):
-		ground_decorate_layer.set_cell(coords, farmland_source_id, wet_farmland_atlas_coords)
+		ground_decorate_layer.set_cell_with_signal(coords, farmland_source_id, wet_farmland_atlas_coords)
 		return true
 	return false
 
@@ -84,7 +84,7 @@ func _is_wet_farmland(coords: Vector2i) -> bool:
 func _on_check_during_across_days() -> void:
 	for coords in ground_decorate_layer.get_used_cells():
 		if _is_wet_farmland(coords):
-			ground_decorate_layer.set_cell(coords, farmland_source_id, dry_farmland_atlas_coords)
+			ground_decorate_layer.set_cell_with_signal(coords, farmland_source_id, dry_farmland_atlas_coords)
 
 			var plant = plant_dic.get(coords, null)
 			if not plant:
@@ -96,4 +96,4 @@ func _on_check_during_across_days() -> void:
 			if not source.has_tile(plant.atlas_coords + Vector2i(plant.current_stage, 0) + Vector2i.RIGHT):
 				continue
 			if plant.grow():
-				plant_layer.set_cell(coords, plant.source_id, plant.atlas_coords + Vector2i(plant.current_stage, 0))
+				plant_layer.set_cell_with_signal(coords, plant.source_id, plant.atlas_coords + Vector2i(plant.current_stage, 0))

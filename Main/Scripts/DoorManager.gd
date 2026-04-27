@@ -61,12 +61,10 @@ func interact(_executor: Node, _data: Resource) -> bool:
 		if source_id != res.source_id:
 			continue
 		if atlas == res.open_atlas:
-			layer.set_cell(coords, res.source_id, res.close_atlas)
-			physics_layer.update_coords.call_deferred(coords)
+			layer.set_cell_with_signal(coords, res.source_id, res.close_atlas)
 			return true
 		elif atlas == res.close_atlas:
-			layer.set_cell(coords, res.source_id, res.open_atlas)
-			physics_layer.update_coords.call_deferred(coords)
+			layer.set_cell_with_signal(coords, res.source_id, res.open_atlas)
 			return true
 	return false
 
@@ -78,8 +76,7 @@ func open_door(coords: Vector2i) -> void:
 		if source_id != res.source_id:
 			continue
 		if atlas == res.close_atlas:
-			layer.set_cell(coords, res.source_id, res.open_atlas)
-			physics_layer.update_coords.call_deferred(coords)
+			layer.set_cell_with_signal(coords, res.source_id, res.open_atlas)
 
 
 func close_door(coords: Vector2i) -> void:
@@ -89,5 +86,4 @@ func close_door(coords: Vector2i) -> void:
 		if source_id != res.source_id:
 			continue
 		if atlas == res.open_atlas:
-			layer.set_cell(coords, res.source_id, res.close_atlas)
-			physics_layer.update_coords.call_deferred(coords)
+			layer.set_cell_with_signal(coords, res.source_id, res.close_atlas)
