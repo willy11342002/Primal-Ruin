@@ -1,5 +1,5 @@
 class_name ActionComponent
-extends Node2D
+extends Node
 
 
 @onready var entity: CharacterBody2D = get_parent()
@@ -12,21 +12,38 @@ func use_tool() -> bool:
 	if not slot or slot.item == null or slot.amount <= 0:
 		return false
 
-	var mouse_pos := get_global_mouse_position()
-	var distance = global_position.distance_to(mouse_pos)
-	if distance > radius:
-		return false
-
-	var action = slot.item.action
-	var data = slot.item.data
-	var result = _call_action(action, data)
-	if result and slot.item.consumable:
-		slot.amount -= 1
-	return result
+	if await _detect_distance():
+		var action = slot.item.action
+		var data = slot.item.data
+		var result = _call_action(action, data)
+		if result and slot.item.consumable:
+			slot.amount -= 1
+		return result
+	return false
 
 
 func interact() -> bool:
-	return _call_action("interact")
+	if await _detect_distance():
+		return _call_action("interact")
+	return false
+
+
+func _detect_distance() -> bool:
+	var mouse_pos := entity.get_global_mouse_position()
+	var distance = entity.global_position.distance_to(mouse_pos)
+	if distance <= radius:
+		return true
+
+	nav_component.move_to(mouse_pos)
+	var first_singal = await Global.any_signal([
+		nav_component.navigation_finished,
+		nav_component.navigation_interrupted,
+	])
+
+	if first_singal != nav_component.navigation_interrupted:
+		return true
+
+	return false
 
 
 func _call_action(action: String, data: Resource=null) -> bool:

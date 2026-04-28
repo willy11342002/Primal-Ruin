@@ -52,5 +52,3 @@ func set_cells_terrain_path_with_signal(
 ) -> void:
 	set_cells_terrain_path(cells, terrain_set, terrain, ignore_empty_terrains)
 	_modified_cells.append_array(cells)
-
-

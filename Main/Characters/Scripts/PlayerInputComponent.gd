@@ -2,6 +2,7 @@ extends Node
 
 
 @export var enabled: bool = true
+@export var nav_component: Node
 @export var move_component: MoveComponent
 @export var action_component: ActionComponent
 @onready var entity: CharacterBody2D = get_parent()
@@ -13,13 +14,16 @@ func _physics_process(_delta: float) -> void:
 
 	var input_direction: Vector2 = Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
 	move_component.move(input_direction)
+	if input_direction != Vector2.ZERO:
+		nav_component.stop()
 
 
 func _input(event: InputEvent) -> void:
 	if not enabled: return
 	if event.is_action_pressed("Confirm", false):
-		if not action_component.use_tool():
-			action_component.interact()
+		action_component.use_tool()
+	if event.is_action_pressed("Cancel", false):
+		action_component.interact()
 
 	if not OS.is_debug_build():
 		return

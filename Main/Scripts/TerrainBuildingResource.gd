@@ -13,6 +13,21 @@ enum LayerCheckType {
 @export var tarrain_source_id: int
 @export var tarrent_id: int
 
-@export var water_need_empty: LayerCheckType = LayerCheckType.IGNORED
-@export var base_need_empty: LayerCheckType = LayerCheckType.IGNORED
-@export var obstacle_need_empty: LayerCheckType = LayerCheckType.IGNORED
+@export var water_need_empty: BuildingManager.LayerCheckType
+@export var base_need_empty: BuildingManager.LayerCheckType
+@export var obstacle_need_empty: BuildingManager.LayerCheckType
+
+
+func build(layer: TileMapLayer, coords: Vector2i) -> void:
+	if terrain_type == 0:
+		layer.set_cells_terrain_connect_with_signal(
+			[coords],
+			tarrain_source_id,
+			tarrent_id
+		)
+	else:
+		layer.set_cells_terrain_path_with_signal(
+			[coords],
+			tarrain_source_id,
+			tarrent_id
+		)

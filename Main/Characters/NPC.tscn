@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ds6vjme7jwg0e"]
 
 [ext_resource type="Script" uid="uid://brmn0rrtwyuhr" path="res://Main/Characters/Scripts/Character.gd" id="1_f7sih"]
-[ext_resource type="Script" uid="uid://kmur5ra1l622" path="res://Main/Characters/Scripts/NpcNavigationComponent.gd" id="2_f7sih"]
+[ext_resource type="Script" uid="uid://kmur5ra1l622" path="res://Main/Characters/Scripts/NavigationComponent.gd" id="2_f7sih"]
 [ext_resource type="Script" uid="uid://cj0rrjd833ku1" path="res://Main/Characters/Scripts/MoveComponent.gd" id="3_si0u8"]
 [ext_resource type="Script" uid="uid://cdeebkq6jvvsv" path="res://Main/Characters/Scripts/AIComponent.gd" id="4_7yus3"]
 [ext_resource type="Texture2D" uid="uid://cn4towv4cdkg0" path="res://Assets/Sprites/BigBase_Shadow.ase_layer_tex" id="4_i555o"]
