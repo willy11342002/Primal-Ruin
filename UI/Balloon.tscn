@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgh23ay56kc6c"]
 
 [ext_resource type="Script" uid="uid://d06n680v1i8bg" path="res://UI/Balloon.gd" id="1_nxnsu"]
+[ext_resource type="Texture2D" uid="uid://luen0sg4ey1e" path="res://UI/GameBegins/Sprites/Gemini_Generated_Image_owwz2sowwz2sowwz.png" id="2_kja54"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_m1kxl"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_5lcpq"]
 
@@ -102,6 +103,33 @@ _data = {
 [sub_resource type="Animation" id="Animation_nxnsu"]
 length = 0.001
 
+[sub_resource type="Animation" id="Animation_kja54"]
+resource_name = "lights_on"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Balloon/Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Balloon/Background:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_80h8d"]
 resource_name = "show_character_portrait"
 tracks/0/type = "value"
@@ -135,6 +163,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4nhtq"]
 _data = {
 &"RESET": SubResource("Animation_nxnsu"),
+&"lights_on": SubResource("Animation_kja54"),
 &"show_character_portrait": SubResource("Animation_80h8d"),
 &"show_player_portrait": SubResource("Animation_b58ux")
 }
@@ -152,6 +181,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
+
+[node name="Background" type="TextureRect" parent="Balloon" unique_id=1690312589]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_kja54")
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" unique_id=966297223 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
@@ -211,23 +251,23 @@ layout_mode = 2
 mouse_filter = 2
 flip_h = true
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer/VBoxContainer" unique_id=810051587]
+[node name="DialoguePanel" type="PanelContainer" parent="Balloon/MarginContainer/VBoxContainer" unique_id=810051587]
+unique_name_in_owner = true
 clip_children = 2
 layout_mode = 2
-size_flags_vertical = 3
 mouse_filter = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer" unique_id=1030936092]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel" unique_id=1030936092]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1428277592]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer" unique_id=1428277592]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1624289611]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer/HBoxContainer" unique_id=1624289611]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=507199029]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=507199029]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
@@ -237,23 +277,28 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1225160028 instance=ExtResource("2_m1kxl")]
+[node name="ScrollContainer" type="ScrollContainer" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2071271932]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="DialogueLabel" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer" unique_id=1225160028 instance=ExtResource("2_m1kxl")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Dialogue..."
 
-[node name="Control" type="Control" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
+[node name="Control" type="Control" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer/HBoxContainer" unique_id=1162966119]
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=821575988]
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer/HBoxContainer/Control" unique_id=821575988]
 unique_name_in_owner = true
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=452325722]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/VBoxContainer/DialoguePanel/MarginContainer/HBoxContainer/Control" unique_id=452325722]
 libraries/ = SubResource("AnimationLibrary_1337t")
 autoplay = &"progress"
 

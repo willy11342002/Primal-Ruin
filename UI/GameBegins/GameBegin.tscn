@@ -2,132 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b728833j2ejwk" path="res://UI/GameBegins/GameBegin.gd" id="1_ta7g5"]
 [ext_resource type="Resource" uid="uid://uffnpltxb7yb" path="res://Assets/Dialogues/First.dialogue" id="2_1mm6o"]
-[ext_resource type="Texture2D" uid="uid://xgast0wa1nsd" path="res://UI/GameBegins/Sprites/MagicAcademy.png" id="3_l0irn"]
-[ext_resource type="Texture2D" uid="uid://bttx4mw4ylook" path="res://UI/GameBegins/Sprites/MentorOffice.png" id="4_q27jt"]
-[ext_resource type="Texture2D" uid="uid://dnbpvatsrkee4" path="res://UI/GameBegins/Sprites/Mentor.png" id="5_jyktj"]
-
-[sub_resource type="Animation" id="Animation_q27jt"]
-resource_name = "MagicAcademy"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MagicAcademy:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.51),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MagicAcademy:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.5, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MagicAcademy:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.5, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-240, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_h4pvn"]
-resource_name = "MentorOffice"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MentorOffice:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_jyktj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MagicAcademy:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MagicAcademy:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MagicAcademy:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MentorOffice:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4pvn"]
-_data = {
-&"MagicAcademy": SubResource("Animation_q27jt"),
-&"MentorOffice": SubResource("Animation_h4pvn"),
-&"RESET": SubResource("Animation_jyktj")
-}
 
 [node name="GameBegin" type="CanvasLayer" unique_id=388683166]
 script = ExtResource("1_ta7g5")
-character_texture = ExtResource("5_jyktj")
 dialogue = ExtResource("2_1mm6o")
-next_scene = "res://Main/Main.tscn"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1284035555]
-libraries/ = SubResource("AnimationLibrary_h4pvn")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1993352183]
 anchors_preset = 15
@@ -157,30 +35,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 text = "UI_Confirm"
-
-[node name="MagicAcademy" type="TextureRect" parent="." unique_id=1597096157]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("3_l0irn")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="MentorOffice" type="TextureRect" parent="." unique_id=2105279485]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("4_q27jt")
-expand_mode = 2
-stretch_mode = 6
 
 [connection signal="text_submitted" from="PanelContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_button_up"]
