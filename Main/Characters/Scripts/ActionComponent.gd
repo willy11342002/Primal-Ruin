@@ -8,6 +8,16 @@ extends Node
 @export var slot: InventorySlot
 
 
+func rotate_building_right() -> void:
+	if slot.item and slot.item.data is DirectionBuildingResource:
+		slot.item.data.rotate_right()
+
+
+func rotate_building_left() -> void:
+	if slot.item and slot.item.data is DirectionBuildingResource:
+		slot.item.data.rotate_left()
+
+
 func use_tool() -> bool:
 	if not slot or slot.item == null or slot.amount <= 0:
 		return false

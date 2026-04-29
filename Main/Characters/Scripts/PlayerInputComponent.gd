@@ -24,8 +24,10 @@ func _input(event: InputEvent) -> void:
 		action_component.use_tool()
 	if event.is_action_pressed("Cancel", false):
 		action_component.interact()
-	#if event.is_action_pressed("RotateBuildingRight", false):
-		
+	if event.is_action_pressed("RotateBuildingRight", false):
+		action_component.rotate_building_right()
+	if event.is_action_pressed("RotateBuildingLeft", false):
+		action_component.rotate_building_left()
 
 	if not OS.is_debug_build():
 		return
