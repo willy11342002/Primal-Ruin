@@ -9,31 +9,82 @@
 [ext_resource type="Resource" uid="uid://ba1qfkn3kg2ot" path="res://Main/ItemResources/Seeds/TurnipSeed.tres" id="5_limd3"]
 [ext_resource type="Script" uid="uid://byv54yb4gof43" path="res://Skills/Scripts/SkillData.gd" id="5_nq4ph"]
 [ext_resource type="Resource" uid="uid://brkmi61bce1yf" path="res://Main/ItemResources/Seeds/PineappleSeed.tres" id="6_limd3"]
+[ext_resource type="Resource" uid="uid://bl4jjgqk2526q" path="res://Main/ItemResources/Seeds/CornSeed.tres" id="6_m21yx"]
 [ext_resource type="Resource" uid="uid://b6xoukiwn55lm" path="res://Main/ItemResources/WateringCan.tres" id="7_yxj0o"]
 [ext_resource type="Resource" uid="uid://bt8itmtihkrui" path="res://Main/ItemResources/Buildings/Fence.tres" id="8_m21yx"]
+[ext_resource type="Resource" uid="uid://hnq2b0p7fwd2" path="res://Main/ItemResources/Buildings/FenceDoor.tres" id="9_yxj0o"]
+[ext_resource type="Script" uid="uid://wdamkm7jbg7c" path="res://Core/Persistences/DebugWindow.gd" id="13_jaw50"]
+[ext_resource type="Resource" uid="uid://bspqxfnltaxmo" path="res://Main/ItemResources/Crops/Asparagus.tres" id="14_4rqvi"]
+[ext_resource type="Resource" uid="uid://cnt7vtbl6cpht" path="res://Main/ItemResources/Seeds/AsparagusSeed.tres" id="15_r6ec4"]
+[ext_resource type="Resource" uid="uid://boi54o4flsrnx" path="res://Main/ItemResources/Crops/Beetroot.tres" id="16_lb5vs"]
+[ext_resource type="Resource" uid="uid://dmtrt2stkwmia" path="res://Main/ItemResources/Seeds/BeetrootSeed.tres" id="17_4agst"]
+[ext_resource type="Resource" uid="uid://c0wm85r1i1cti" path="res://Main/ItemResources/Crops/BellPepper(Green).tres" id="18_6jv7a"]
+[ext_resource type="Resource" uid="uid://bm5wawvmy1xx5" path="res://Main/ItemResources/Crops/BellPepper(Red).tres" id="19_s74br"]
+[ext_resource type="Resource" uid="uid://g4nike6ooley" path="res://Main/ItemResources/Crops/BellPepper(Yellow).tres" id="20_281bp"]
+[ext_resource type="Resource" uid="uid://cijfp3ifo1bar" path="res://Main/ItemResources/Seeds/BellPepperSeed(Green).tres" id="21_hnv4h"]
+[ext_resource type="Resource" uid="uid://b6jiyqh2v7flh" path="res://Main/ItemResources/Seeds/BellPepperSeed(Red).tres" id="22_p3alo"]
+[ext_resource type="Resource" uid="uid://8m6xd1nrgtmy" path="res://Main/ItemResources/Seeds/BellPepperSeed(Yellow).tres" id="23_ab32k"]
+[ext_resource type="Resource" uid="uid://c65ab6dvf1vum" path="res://Main/ItemResources/Crops/BrownOnion.tres" id="24_4lo5n"]
+[ext_resource type="Resource" uid="uid://i62vgp24md2n" path="res://Main/ItemResources/Seeds/BrownOnionSeed.tres" id="25_a7jkn"]
+[ext_resource type="Resource" uid="uid://crky3ayb5l40e" path="res://Main/ItemResources/Crops/Cabbage.tres" id="26_y8rcn"]
+[ext_resource type="Resource" uid="uid://df3h5a2svhgb3" path="res://Main/ItemResources/Seeds/CabbageSeed.tres" id="27_yj8h1"]
+[ext_resource type="Resource" uid="uid://b2qn0wkihd4ay" path="res://Main/ItemResources/Crops/Caisim.tres" id="28_d3srr"]
+[ext_resource type="Resource" uid="uid://clxiksm668rpr" path="res://Main/ItemResources/Seeds/CaisimSeed.tres" id="29_13n17"]
+[ext_resource type="Resource" uid="uid://d0fronio8vfdq" path="res://Main/ItemResources/Crops/Carrot.tres" id="30_kyvwt"]
+[ext_resource type="Resource" uid="uid://d116rauftoduy" path="res://Main/ItemResources/Seeds/CarrotSeed.tres" id="31_2bcxt"]
+[ext_resource type="Resource" uid="uid://cyy3tt1ujo6" path="res://Main/ItemResources/Crops/Cauliflower.tres" id="32_7f40w"]
+[ext_resource type="Resource" uid="uid://fjka32s8kcyx" path="res://Main/ItemResources/Seeds/CauliflowerSeed.tres" id="33_sdghk"]
+[ext_resource type="Resource" uid="uid://boq0nr858xde0" path="res://Main/ItemResources/Crops/Corn.tres" id="34_7d4tv"]
+[ext_resource type="Resource" uid="uid://c68rl48prkm3" path="res://Main/ItemResources/Crops/Cucumber.tres" id="36_kqno3"]
+[ext_resource type="Resource" uid="uid://b7bfnlvc3dxdy" path="res://Main/ItemResources/Seeds/CucumberSeed.tres" id="37_7nhlh"]
+[ext_resource type="Resource" uid="uid://dvnr4ttqp0d3d" path="res://Main/ItemResources/Crops/Eggplant.tres" id="38_wfe8t"]
+[ext_resource type="Resource" uid="uid://8xoibenegagd" path="res://Main/ItemResources/Seeds/EggplantSeed.tres" id="39_vigc3"]
+[ext_resource type="Resource" uid="uid://v5rlcnk73plh" path="res://Main/ItemResources/Crops/Garlic.tres" id="40_1eh8y"]
+[ext_resource type="Resource" uid="uid://b1vx1blvgim3" path="res://Main/ItemResources/Seeds/GarlicSeed.tres" id="41_n0j5f"]
+[ext_resource type="Resource" uid="uid://bk0m5x88s8hha" path="res://Main/ItemResources/Crops/Honeydew.tres" id="42_3kgxl"]
+[ext_resource type="Resource" uid="uid://61obdidb1fom" path="res://Main/ItemResources/Seeds/HoneydewSeed.tres" id="43_1q7cr"]
+[ext_resource type="Resource" uid="uid://cbhvaws0m25bt" path="res://Main/ItemResources/Crops/Leek.tres" id="44_rfctu"]
+[ext_resource type="Resource" uid="uid://rngl1e4j6sh4" path="res://Main/ItemResources/Seeds/LeekSeed.tres" id="45_75gan"]
+[ext_resource type="Resource" uid="uid://co8ipqnybcs1o" path="res://Main/ItemResources/Crops/Pineapple.tres" id="46_3d06l"]
+[ext_resource type="Resource" uid="uid://b4ftdv6sypqki" path="res://Main/ItemResources/Crops/Potato.tres" id="47_d8c07"]
+[ext_resource type="Resource" uid="uid://cw88tq1fw0iir" path="res://Main/ItemResources/Seeds/PotatoSeed.tres" id="48_820gh"]
+[ext_resource type="Resource" uid="uid://byiu1h6hylbog" path="res://Main/ItemResources/Crops/Pumpkin.tres" id="49_q3oaq"]
+[ext_resource type="Resource" uid="uid://cmeoo76esnt1h" path="res://Main/ItemResources/Seeds/PumpkinSeed.tres" id="50_o6olx"]
+[ext_resource type="Resource" uid="uid://iaaxs4trf34j" path="res://Main/ItemResources/Crops/Radish.tres" id="51_eore6"]
+[ext_resource type="Resource" uid="uid://dwn2m1hxk2awq" path="res://Main/ItemResources/Seeds/RadishSeed.tres" id="52_3yp5w"]
+[ext_resource type="Resource" uid="uid://bqeg64cx8nq18" path="res://Main/ItemResources/Crops/Shallots.tres" id="53_c3xs7"]
+[ext_resource type="Resource" uid="uid://c7502mnqetxqe" path="res://Main/ItemResources/Seeds/ShallotsSeed.tres" id="54_glg37"]
+[ext_resource type="Resource" uid="uid://bhl275mj88en8" path="res://Main/ItemResources/Crops/Soybeans.tres" id="55_oetrm"]
+[ext_resource type="Resource" uid="uid://d0wlndj86exa1" path="res://Main/ItemResources/Seeds/SoybeansSeed.tres" id="56_eq2up"]
+[ext_resource type="Resource" uid="uid://e0kq5vn7xx7h" path="res://Main/ItemResources/Crops/Spinach.tres" id="57_k4n14"]
+[ext_resource type="Resource" uid="uid://w7tghqu60vpu" path="res://Main/ItemResources/Seeds/SpinachSeed.tres" id="58_sd5wv"]
+[ext_resource type="Resource" uid="uid://de5tdy7aek0g5" path="res://Main/ItemResources/Crops/Strawberry.tres" id="59_e7wlw"]
+[ext_resource type="Resource" uid="uid://bwlhqa7c1t5r2" path="res://Main/ItemResources/Seeds/StrawberrySeed.tres" id="60_aa2y2"]
+[ext_resource type="Resource" uid="uid://brfqo5p2lev1g" path="res://Main/ItemResources/Crops/Tomato.tres" id="61_rjyyu"]
+[ext_resource type="Resource" uid="uid://dweilclknxncb" path="res://Main/ItemResources/Seeds/TomatoSeed.tres" id="62_6ppaf"]
+[ext_resource type="Resource" uid="uid://dkpsuhfj8osmi" path="res://Main/ItemResources/Crops/Turnip.tres" id="63_s5pkt"]
+[ext_resource type="Resource" uid="uid://dgbyckgmx5m7s" path="res://Main/ItemResources/Crops/WaterMelon.tres" id="64_vyjqu"]
+[ext_resource type="Resource" uid="uid://4ko1rtkhwkrq" path="res://Main/ItemResources/Seeds/WaterMelonSeed.tres" id="65_obyuq"]
+[ext_resource type="Resource" uid="uid://betqlaud06fsp" path="res://Main/ItemResources/Crops/Wheat.tres" id="66_mfjkx"]
+[ext_resource type="Resource" uid="uid://rc2xw4iah1iv" path="res://Main/ItemResources/Seeds/WheatSeed.tres" id="67_by6xw"]
+[ext_resource type="Resource" uid="uid://dqj8f84mfm0x3" path="res://Main/ItemResources/Crops/Yam.tres" id="68_b0fqy"]
+[ext_resource type="Resource" uid="uid://eadmm777lgx8" path="res://Main/ItemResources/Seeds/YamSeed.tres" id="69_wahei"]
+[ext_resource type="Texture2D" uid="uid://dfvuss764k45b" path="res://Assets/Tilesets/Farming/crops - all.png" id="70_r6ec4"]
 
 [sub_resource type="Resource" id="Resource_nq4ph"]
 script = ExtResource("4_nq4ph")
-item = ExtResource("5_limd3")
-amount = 3
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_uhiav"]
 script = ExtResource("4_nq4ph")
-item = ExtResource("6_limd3")
-amount = 3
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_hgu0w"]
 script = ExtResource("4_nq4ph")
-item = ExtResource("7_yxj0o")
-amount = 1
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_limd3"]
 script = ExtResource("4_nq4ph")
-item = ExtResource("8_m21yx")
-amount = 20
 metadata/_custom_type_script = "uid://bwpamli60pmvq"
 
 [sub_resource type="Resource" id="Resource_m21yx"]
@@ -66,25 +117,115 @@ hotkey_inventory = Array[ExtResource("4_nq4ph")]([SubResource("Resource_nq4ph"),
 auto_door = true
 metadata/_custom_type_script = "uid://d0pg7hdmyujgo"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kisd8"]
+atlas = ExtResource("70_r6ec4")
+region = Rect2(0, 144, 16, 16)
+
 [node name="Persistence" type="Node2D" unique_id=608044120]
 script = ExtResource("1_wxst7")
 data = SubResource("Resource_ngy8j")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567716207]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1998166050]
-offset_right = 83.0
-offset_bottom = 66.0
+[node name="DebugWindow" type="TabContainer" parent="CanvasLayer" unique_id=1438999710]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(800, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -75.5
+offset_right = 100.5
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+current_tab = 1
+script = ExtResource("13_jaw50")
 
-[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=114887004]
+[node name="ItemDB" type="ResourcePreloader" parent="CanvasLayer/DebugWindow" unique_id=1893120097]
+resources = [PackedStringArray("Asparagus", "AsparagusSeed", "Beetroot", "BeetrootSeed", "BellPepper(Green)", "BellPepper(Red)", "BellPepper(Yellow)", "BellPepperSeed(Green)", "BellPepperSeed(Red)", "BellPepperSeed(Yellow)", "BrownOnion", "BrownOnionSeed", "Cabbage", "CabbageSeed", "Caisim", "CaisimSeed", "Carrot", "CarrotSeed", "Cauliflower", "CauliflowerSeed", "Corn", "CornSeed", "Cucumber", "CucumberSeed", "Eggplant", "EggplantSeed", "Fence", "FenceDoor", "Garlic", "GarlicSeed", "Honeydew", "HoneydewSeed", "Leek", "LeekSeed", "Pineapple", "PineappleSeed", "Potato", "PotatoSeed", "Pumpkin", "PumpkinSeed", "Radish", "RadishSeed", "Shallots", "ShallotsSeed", "Soybeans", "SoybeansSeed", "Spinach", "SpinachSeed", "Strawberry", "StrawberrySeed", "Tomato", "TomatoSeed", "Turnip", "TurnipSeed", "WaterMelon", "WaterMelonSeed", "WateringCan", "Wheat", "WheatSeed", "Yam", "YamSeed"), [ExtResource("14_4rqvi"), ExtResource("15_r6ec4"), ExtResource("16_lb5vs"), ExtResource("17_4agst"), ExtResource("18_6jv7a"), ExtResource("19_s74br"), ExtResource("20_281bp"), ExtResource("21_hnv4h"), ExtResource("22_p3alo"), ExtResource("23_ab32k"), ExtResource("24_4lo5n"), ExtResource("25_a7jkn"), ExtResource("26_y8rcn"), ExtResource("27_yj8h1"), ExtResource("28_d3srr"), ExtResource("29_13n17"), ExtResource("30_kyvwt"), ExtResource("31_2bcxt"), ExtResource("32_7f40w"), ExtResource("33_sdghk"), ExtResource("34_7d4tv"), ExtResource("6_m21yx"), ExtResource("36_kqno3"), ExtResource("37_7nhlh"), ExtResource("38_wfe8t"), ExtResource("39_vigc3"), ExtResource("8_m21yx"), ExtResource("9_yxj0o"), ExtResource("40_1eh8y"), ExtResource("41_n0j5f"), ExtResource("42_3kgxl"), ExtResource("43_1q7cr"), ExtResource("44_rfctu"), ExtResource("45_75gan"), ExtResource("46_3d06l"), ExtResource("6_limd3"), ExtResource("47_d8c07"), ExtResource("48_820gh"), ExtResource("49_q3oaq"), ExtResource("50_o6olx"), ExtResource("51_eore6"), ExtResource("52_3yp5w"), ExtResource("53_c3xs7"), ExtResource("54_glg37"), ExtResource("55_oetrm"), ExtResource("56_eq2up"), ExtResource("57_k4n14"), ExtResource("58_sd5wv"), ExtResource("59_e7wlw"), ExtResource("60_aa2y2"), ExtResource("61_rjyyu"), ExtResource("62_6ppaf"), ExtResource("63_s5pkt"), ExtResource("5_limd3"), ExtResource("64_vyjqu"), ExtResource("65_obyuq"), ExtResource("7_yxj0o"), ExtResource("66_mfjkx"), ExtResource("67_by6xw"), ExtResource("68_b0fqy"), ExtResource("69_wahei")]]
+
+[node name="SaveAndLoad" type="VBoxContainer" parent="CanvasLayer/DebugWindow" unique_id=1998166050]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Button" type="Button" parent="CanvasLayer/DebugWindow/SaveAndLoad" unique_id=114887004]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "SaveData"
 
-[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=14156471]
+[node name="Button2" type="Button" parent="CanvasLayer/DebugWindow/SaveAndLoad" unique_id=14156471]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "LoadData"
 
-[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button" to="." method="save_data"]
-[connection signal="button_up" from="CanvasLayer/VBoxContainer/Button2" to="." method="load_data"]
+[node name="ItemAdd" type="MarginContainer" parent="CanvasLayer/DebugWindow" unique_id=564987620]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DebugWindow/ItemAdd" unique_id=1410759099]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer" unique_id=1632859376]
+layout_mode = 2
+
+[node name="NameFilter" type="LineEdit" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer2" unique_id=315608841]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer2" unique_id=1594569291]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer" unique_id=982055922]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer" unique_id=2902950]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemTitle" type="Button" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer" unique_id=1917975922]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+disabled = true
+text = "test"
+icon = SubResource("AtlasTexture_kisd8")
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer" unique_id=706049796]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer" unique_id=1940824662]
+layout_mode = 2
+
+[node name="AddItemSpin" type="SpinBox" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1793762874]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+value = 10.0
+
+[node name="AddItemButton" type="Button" parent="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1339711318]
+layout_mode = 2
+text = "Add Item"
+
+[connection signal="visibility_changed" from="CanvasLayer/DebugWindow" to="CanvasLayer/DebugWindow" method="_on_visibility_changed"]
+[connection signal="button_up" from="CanvasLayer/DebugWindow/SaveAndLoad/Button" to="." method="save_data"]
+[connection signal="button_up" from="CanvasLayer/DebugWindow/SaveAndLoad/Button2" to="." method="load_data"]
+[connection signal="text_submitted" from="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer2/NameFilter" to="CanvasLayer/DebugWindow" method="_on_name_filter_text_submitted"]
+[connection signal="item_activated" from="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer2/ItemList" to="CanvasLayer/DebugWindow" method="_on_item_list_item_activated"]
+[connection signal="item_selected" from="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer2/ItemList" to="CanvasLayer/DebugWindow" method="_on_item_list_item_selected"]
+[connection signal="button_up" from="CanvasLayer/DebugWindow/ItemAdd/HBoxContainer/VBoxContainer/HBoxContainer/AddItemButton" to="CanvasLayer/DebugWindow" method="_on_add_item_button_button_up"]

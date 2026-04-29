@@ -24,10 +24,14 @@ func _input(event: InputEvent) -> void:
 		action_component.use_tool()
 	if event.is_action_pressed("Cancel", false):
 		action_component.interact()
+	#if event.is_action_pressed("RotateBuildingRight", false):
+		
 
 	if not OS.is_debug_build():
 		return
 
-	if event is InputEventKey and event.is_pressed() and event.keycode == Key.KEY_B:
+	if event.is_action_pressed("DebugWindow"):
+		Persistence.toggle_debug_window()
+	if event.is_action_pressed("DebugDayPass"):
 		get_tree().call_group("ActionReceiver", "watering", entity, null)
 		get_tree().call_group("ActionReceiver", "_on_check_during_across_days")

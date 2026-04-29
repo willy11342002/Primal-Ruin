@@ -40,6 +40,11 @@ func _on_door_body_entered(body: Node, coords: Vector2i) -> void:
 		open_door.call_deferred(coords)
 
 
+func update_coords(coords: Vector2i) -> void:
+	if auto_door_mode:
+		update_auto_door(coords)
+
+
 func update_auto_door(coords: Vector2i) -> void:
 	var source_id := layer.get_cell_source_id(coords)
 	var atlas := layer.get_cell_atlas_coords(coords)
@@ -56,9 +61,8 @@ func update_auto_door(coords: Vector2i) -> void:
 		return
 
 
-func interact(_executor: Node, _data: Resource) -> bool:
-	var mouse_pos := layer.get_global_mouse_position()
-	var coords := layer.local_to_map(mouse_pos)
+func interact(_executor: Node, target_position: Vector2, _data: Resource) -> bool:
+	var coords := layer.local_to_map(target_position)
 	var source_id := layer.get_cell_source_id(coords)
 	var atlas := layer.get_cell_atlas_coords(coords)
 	for res in door_resources:

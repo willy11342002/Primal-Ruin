@@ -61,8 +61,12 @@ func load_config():
 	DisplayServer.window_set_size(get_viewport().size)
 
 
+func toggle_debug_window():
+	%DebugWindow.visible = not %DebugWindow.visible
+
+
 func _ready() -> void:
 	load_config()
 
 	if not OS.is_debug_build():
-		$CanvasLayer.hide()
+		%DebugWindow.hide()

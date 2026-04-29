@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://hnq2b0p7fwd2"]
+
+[ext_resource type="Script" uid="uid://cj1mbaguvqwyi" path="res://Main/Scripts/SourceBuildingResource.gd" id="1_lw8ob"]
+[ext_resource type="Texture2D" uid="uid://c1uti3sv2l3ng" path="res://Assets/Tilesets/Obstacle/Fence.png" id="2_r68s6"]
+[ext_resource type="Script" uid="uid://pqv46voopcnv" path="res://Main/Characters/Scripts/DirectionBuildingResource.gd" id="2_tuq66"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="4_r68s6"]
+
+[sub_resource type="Resource" id="Resource_38j5q"]
+script = ExtResource("1_lw8ob")
+layer_name = "ObstacleLayer"
+source_id = 3
+atlas_coords = Vector2i(4, 0)
+water_need_empty = 1
+base_need_empty = 2
+obstacle_need_empty = 1
+metadata/_custom_type_script = "uid://cj1mbaguvqwyi"
+
+[sub_resource type="Resource" id="Resource_57sng"]
+script = ExtResource("1_lw8ob")
+layer_name = "ObstacleLayer"
+source_id = 3
+atlas_coords = Vector2i(7, 0)
+water_need_empty = 1
+base_need_empty = 2
+obstacle_need_empty = 1
+metadata/_custom_type_script = "uid://cj1mbaguvqwyi"
+
+[sub_resource type="Resource" id="Resource_kq5oi"]
+script = ExtResource("2_tuq66")
+buildings = Array[ExtResource("1_lw8ob")]([SubResource("Resource_38j5q"), SubResource("Resource_57sng")])
+metadata/_custom_type_script = "uid://pqv46voopcnv"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fie0"]
+atlas = ExtResource("2_r68s6")
+region = Rect2(80, 0, 16, 16)
+
+[resource]
+script = ExtResource("4_r68s6")
+name = "FenceDoor"
+icon = SubResource("AtlasTexture_3fie0")
+action = "build"
+data = SubResource("Resource_kq5oi")
+metadata/_custom_type_script = "uid://pqv46voopcnv"

@@ -1348,7 +1348,7 @@ debug_enabled = true
 unique_name_in_owner = true
 script = ExtResource("3_4dcq2")
 nav_component = NodePath("../NavigationComponent")
-radius = 80.0
+radius = 20.0
 
 [node name="MoveComponent" type="Node" parent="." unique_id=758249329]
 unique_name_in_owner = true

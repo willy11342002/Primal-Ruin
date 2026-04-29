@@ -1,8 +1,6 @@
 extends TileMapLayer
 
 
-signal cell_dirty
-
 var _modified_cells: Array[Vector2i] = []
 
 
@@ -18,10 +16,6 @@ func save_data() -> void:
 func load_data() -> void:
 	if Persistence.data.tiles_data.has(name):
 		tile_map_data = Persistence.data.tiles_data[name]
-
-
-func _process(_delta: float) -> void:
-	cell_dirty.emit()
 
 
 func set_cell_with_signal(

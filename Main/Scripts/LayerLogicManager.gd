@@ -5,10 +5,6 @@ extends Node
 
 
 func _ready() -> void:
-	# 連接信號
-	for layer in trigger_layers:
-		layer.cell_dirty.connect(_on_cell_dirty)
-
 	# 初始生成一次物理和導航數據
 	generate_physics_and_navigation.call_deferred()
 
@@ -29,9 +25,10 @@ func _get_merged_rect() -> Rect2i:
 func _update_coords(coords: Vector2i) -> void:
 	%PhysicsLayer.update_coords(coords)
 	%NavigationLayer.update_coords(coords)
+	%DoorManager.update_coords(coords)
 
 
-func _on_cell_dirty() -> void:
+func _process(_delta: float) -> void:
 	var handled_coords: Array = []
 	for layer in trigger_layers:
 		handled_coords.append_array(layer._modified_cells)

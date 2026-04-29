@@ -7,8 +7,15 @@ extends Resource
 var index: int = 0
 
 
-func build(layer: TileMapLayer, coords: Vector2i) -> void:
+func check_can_build(coords, water_layer, base_layers, obstacle_layers) -> bool:
+	if buildings.size() == 0:
+		return false
+
+	return buildings[index].check_can_build(coords, water_layer, base_layers, obstacle_layers)
+
+
+func build(layers: Array, coords: Vector2i) -> void:
 	if buildings.size() == 0:
 		return
 
-	buildings[index].build(layer, coords)
+	buildings[index].build(layers, coords)

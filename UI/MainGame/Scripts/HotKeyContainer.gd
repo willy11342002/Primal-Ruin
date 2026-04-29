@@ -42,11 +42,13 @@ func next_slot() -> void:
 
 
 func load_data():
+	InventoryManager.clear_slots("HotKeyContainer")
 	for i in range(Persistence.data.hotkey_inventory.size()):
-		var slot = Persistence.data.hotkey_inventory[i]
+		var slot = Persistence.data.hotkey_inventory[i].duplicate(true)
 		var hotkey_slot = get_child(i)
 		if hotkey_slot is HotKeySlot:
-			hotkey_slot.set_slot(slot.duplicate(true))
+			hotkey_slot.set_slot(slot)
+			InventoryManager.add_slot("HotKeyContainer", slot)
 
 	_choose_slot(index)
 

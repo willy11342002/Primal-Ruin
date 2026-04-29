@@ -19,9 +19,8 @@ func save_data() -> void:
 	Persistence.data.plants_data = plant_dic.duplicate(true)
 
 
-func sow_seed(_executor: Node, plant: PlantResource) -> bool:
-	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
-	var coords := ground_decorate_layer.local_to_map(mouse_pos)
+func sow_seed(_executor: Node, target_position: Vector2, plant: PlantResource) -> bool:
+	var coords := ground_decorate_layer.local_to_map(target_position)
 	if _is_obstacle_empty(coords):
 		if _is_dry_farmland(coords) or _is_wet_farmland(coords):
 			plant_layer.set_cell_with_signal(coords, plant.source_id, plant.atlas_coords)
@@ -30,18 +29,16 @@ func sow_seed(_executor: Node, plant: PlantResource) -> bool:
 	return false
 
 
-func watering(_executor: Node, _data: Resource) -> bool:
-	var mouse_pos = ground_decorate_layer.get_global_mouse_position()
-	var coords := ground_decorate_layer.local_to_map(mouse_pos)
+func watering(_executor: Node, target_position: Vector2, _data: Resource) -> bool:
+	var coords := ground_decorate_layer.local_to_map(target_position)
 	if _is_dry_farmland(coords):
 		ground_decorate_layer.set_cell_with_signal(coords, farmland_source_id, wet_farmland_atlas_coords)
 		return true
 	return false
 
 
-func interact(_executor: Node, _data: Resource) -> bool:
-	var mouse_pos = plant_layer.get_global_mouse_position()
-	var coords := plant_layer.local_to_map(mouse_pos)
+func interact(_executor: Node, target_position: Vector2, _data: Resource) -> bool:
+	var coords := plant_layer.local_to_map(target_position)
 	var plant = plant_dic.get(coords, null)
 	if not plant:
 		return false

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="1_1ooab"]
 [ext_resource type="Script" uid="uid://bgaqby26etmmi" path="res://Main/Scripts/TerrainBuildingResource.gd" id="1_3fie0"]
-[ext_resource type="Texture2D" uid="uid://c1uti3sv2l3ng" path="res://Assets/Tilesets/Obstacle/Fence.png" id="1_corfs"]
 
 [sub_resource type="Resource" id="Resource_dyxjq"]
 script = ExtResource("1_3fie0")
@@ -12,8 +11,11 @@ base_need_empty = 2
 obstacle_need_empty = 1
 metadata/_custom_type_script = "uid://bgaqby26etmmi"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_corfs"]
+load_path = "res://.godot/imported/Fence.png-ccbe5409583d70f0e25404e71cb62409.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fie0"]
-atlas = ExtResource("1_corfs")
+atlas = SubResource("CompressedTexture2D_corfs")
 region = Rect2(48, 48, 16, 16)
 
 [resource]
