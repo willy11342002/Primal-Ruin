@@ -9,4 +9,4 @@ name = "Caisim"
 source_id = 7
 atlas_coords = Vector2i(2, 6)
 harvest = ExtResource("1_0t4ij")
-growth_time = Array[int]([2, 2, 3])
+growth_time = ["2", "2", "3"]

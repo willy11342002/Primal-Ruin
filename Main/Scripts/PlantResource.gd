@@ -13,7 +13,7 @@ extends Resource
 @export var atlas_coords: Vector2i
 
 ## 生長季節
-@export_enum("Spring", "Summer", "Fall", "Winter")
+@export_flags("Spring", "Summer", "Fall", "Winter")
 var season: int
 
 ## 收穫農作物

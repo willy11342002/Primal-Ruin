@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://dnx5yruqebd2i"]
+
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_3alkf"]
+
+[resource]
+script = ExtResource("1_3alkf")
+name = "Pine"
+source_id = 1
+season = 7

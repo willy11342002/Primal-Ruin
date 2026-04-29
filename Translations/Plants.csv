@@ -59,6 +59,18 @@ WaterMelonSeed,Water Seed Melon,西瓜種子
 WheatSeed,Wheat Seed,小麥種子
 YamSeed,Yam Seed,山藥種子
 
+Pine,Pine,松樹
+Spruce,Spruce,雲杉
+Birch,Birch,樺樹
+Maple,Maple,楓樹
+PineSeed,Pine Seed,松樹種子
+SpruceSeed,Spruce Seed,雲杉種子
+BirchSeed,Birch Seed,樺樹種子
+MapleSeed,Maple Seed,楓樹種子
+
+Sapling,Sapling,樹苗
+Log,Log,原木
+Wood,Wood,木材
 Fence,Fence,柵欄
 FenceDoor,Fence Door,柵欄門
 WateringCan,Watering Can,水壺

@@ -9,4 +9,4 @@ name = "Spinach"
 source_id = 7
 atlas_coords = Vector2i(20, 2)
 harvest = ExtResource("1_bthgf")
-growth_time = Array[int]([2, 3, 3])
+growth_time = ["2", "3", "3"]

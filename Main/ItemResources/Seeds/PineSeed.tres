@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://b48a34pooov7t"]
+
+[ext_resource type="Texture2D" uid="uid://ig6h6jc8my6p" path="res://Assets/Tilesets/Obstacle/Tree.png" id="1_hafba"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="3_7qvlv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fajed"]
+atlas = ExtResource("1_hafba")
+region = Rect2(256, 0, 32, 48)
+
+[resource]
+script = ExtResource("3_7qvlv")
+name = "AsparagusSeed"
+icon = SubResource("AtlasTexture_fajed")
+action = "sow_seed"
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

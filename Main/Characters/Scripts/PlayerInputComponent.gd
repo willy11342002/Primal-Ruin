@@ -35,5 +35,5 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("DebugWindow"):
 		Persistence.toggle_debug_window()
 	if event.is_action_pressed("DebugDayPass"):
-		get_tree().call_group("ActionReceiver", "watering", entity, null)
+		get_tree().call_group("ActionReceiver", "watering", entity, entity.get_global_mouse_position(), null)
 		get_tree().call_group("ActionReceiver", "_on_check_during_across_days")

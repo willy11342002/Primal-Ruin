@@ -11,4 +11,4 @@ atlas_coords = Vector2i(11, 8)
 season = 1
 harvest = ExtResource("1_qf2eo")
 multiple_harvest = true
-growth_time = Array[int]([2, 3, 3, 4, 5])
+growth_time = ["2", "3", "3", "4", "5"]
