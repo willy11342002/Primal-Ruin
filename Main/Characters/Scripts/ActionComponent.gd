@@ -11,11 +11,13 @@ extends Node
 func rotate_building_right() -> void:
 	if slot.item and slot.item.data is DirectionBuildingResource:
 		slot.item.data.rotate_right()
+		get_tree().call_group("ActionReceiver", "preview_building", slot.item.data)
 
 
 func rotate_building_left() -> void:
 	if slot.item and slot.item.data is DirectionBuildingResource:
 		slot.item.data.rotate_left()
+		get_tree().call_group("ActionReceiver", "preview_building", slot.item.data)
 
 
 func use_tool() -> bool:

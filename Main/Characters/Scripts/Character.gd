@@ -14,6 +14,9 @@ func set_item(slot: InventorySlot) -> void:
 	else:
 		%ActionComponent.slot = null
 
+	var data = slot.item.data if slot and slot.item else null
+	get_tree().call_group("ActionReceiver", "preview_building", data)
+
 
 func _ready() -> void:
 	%MoveComponent.input_direction_changed.connect(_on_input_direction_changed)

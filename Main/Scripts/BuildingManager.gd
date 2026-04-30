@@ -13,6 +13,57 @@ enum LayerCheckType {
 @export var base_layers: Array[TileMapLayer]
 @export var obstacle_layers: Array[TileMapLayer]
 
+var _preview_data: Resource = null
+var _preview_coords := Vector2i(-9999, -9999)
+
+
+func preview_building(data: Resource) -> void:
+	clear()
+	_preview_data = null
+	_preview_coords = Vector2i(-9999, -9999)
+
+	var building := _resolve(data)
+	if not building:
+		visible = false
+		return
+
+	for layer in get_tree().get_nodes_in_group("TileMapLayer"):
+		if layer.name == building.layer_name:
+			tile_set = layer.tile_set
+			break
+
+	_preview_data = data
+	visible = true
+
+
+func _process(_delta: float) -> void:
+	if not _preview_data:
+		return
+
+	var building := _resolve(_preview_data)
+	if not building:
+		return
+
+	var coords := local_to_map(to_local(get_global_mouse_position()))
+	if coords == _preview_coords:
+		return
+
+	clear()
+	_preview_coords = coords
+
+	if building is SourceBuildingResource:
+		set_cell(coords, building.source_id, building.atlas_coords, building.alternalive_id)
+	elif building is TerrainBuildingResource:
+		set_cells_terrain_connect([coords], building.tarrain_source_id, building.tarrent_id)
+
+
+func _resolve(data: Resource) -> Resource:
+	if data is DirectionBuildingResource:
+		return data.buildings[data.index] if data.buildings.size() > 0 else null
+	if data is SourceBuildingResource or data is TerrainBuildingResource:
+		return data
+	return null
+
 
 func build(_executor: Node, target_position: Vector2, data: Resource) -> bool:
 	if not data:
@@ -24,31 +75,3 @@ func build(_executor: Node, target_position: Vector2, data: Resource) -> bool:
 
 	data.build(get_tree().get_nodes_in_group("TileMapLayer"), coords)
 	return false
-
-
-# func _check_can_build(coords: Vector2i, data: Resource) -> bool:
-# 	if data.water_need_empty != LayerCheckType.IGNORED:
-# 		if water_layer.get_cell_source_id(coords) != -1:
-# 			if data.water_need_empty == LayerCheckType.NEED_EMPTY:
-# 				return false
-# 		else:
-# 			if data.water_need_empty == LayerCheckType.NEED_NOT_EMPTY:
-# 				return false
-	
-# 	if data.base_need_empty != LayerCheckType.IGNORED:
-# 		for layer in base_layers:
-# 			if layer.get_cell_source_id(coords) != -1:
-# 				if data.base_need_empty == LayerCheckType.NEED_EMPTY:
-# 					return false
-# 				if data.base_need_empty == LayerCheckType.NEED_NOT_EMPTY:
-# 					break
-	
-# 	if data.obstacle_need_empty != LayerCheckType.IGNORED:
-# 		for layer in obstacle_layers:
-# 			if layer.get_cell_source_id(coords) != -1:
-# 				if data.obstacle_need_empty == LayerCheckType.NEED_EMPTY:
-# 					return false
-# 				if data.obstacle_need_empty == LayerCheckType.NEED_NOT_EMPTY:
-# 					break
-
-# 	return true
