@@ -20,7 +20,7 @@ func update_coords(coords: Vector2i) -> void:
 		if above_data:
 			var above_under = above_data.get_custom_data("alternative_under")
 			if above_under not in [null, -1]:
-				set_cell(coords, placeholder_source_id, placeholder_atlas_coords, above_under)
+				set_cell(coords, placeholder_source_id, placeholder_atlas_coords + Vector2i(above_under, 0))
 				return
 
 		# 更新本格，有值的話就不再檢查其他層
@@ -28,5 +28,5 @@ func update_coords(coords: Vector2i) -> void:
 		if data:
 			var alt = data.get_custom_data("alternative_tile")
 			if alt != -1:
-				set_cell(coords, placeholder_source_id, placeholder_atlas_coords, alt)
+				set_cell(coords, placeholder_source_id, placeholder_atlas_coords + Vector2i(alt, 0))
 				return
