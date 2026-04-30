@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dpfppnesudrdo"]
+
+[ext_resource type="Resource" uid="uid://clx23xqepj8ty" path="res://Main/PlantResources/Birch.tres" id="1_idxbi"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_tt5bg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tt5bg"]
+load_path = "res://.godot/imported/Tree.png-615d906bd2a6b6c55d5533a6ff978305.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvfon"]
+atlas = SubResource("CompressedTexture2D_tt5bg")
+region = Rect2(256, 96, 32, 48)
+
+[resource]
+script = ExtResource("2_tt5bg")
+name = "Birch Seed"
+icon = SubResource("AtlasTexture_wvfon")
+action = "sow_seed"
+data = ExtResource("1_idxbi")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

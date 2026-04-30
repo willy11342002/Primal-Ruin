@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://b48a34pooov7t"]
 
+[ext_resource type="Resource" uid="uid://dnx5yruqebd2i" path="res://Main/PlantResources/Pine.tres" id="1_fajed"]
 [ext_resource type="Texture2D" uid="uid://ig6h6jc8my6p" path="res://Assets/Tilesets/Obstacle/Tree.png" id="1_hafba"]
 [ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="3_7qvlv"]
 
@@ -9,7 +10,8 @@ region = Rect2(256, 0, 32, 48)
 
 [resource]
 script = ExtResource("3_7qvlv")
-name = "AsparagusSeed"
+name = "Pine Seed"
 icon = SubResource("AtlasTexture_fajed")
 action = "sow_seed"
+data = ExtResource("1_fajed")
 metadata/_custom_type_script = "uid://dh6rc24shfheu"

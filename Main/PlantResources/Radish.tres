@@ -6,8 +6,7 @@
 [resource]
 script = ExtResource("1_p8kkx")
 name = "Radish"
-source_id = 7
+source_id = 7.0
 atlas_coords = Vector2i(11, 0)
-season = 2
+season = 4
 harvest = ExtResource("1_t3qbu")
-growth_time = ["2", "2", "3"]

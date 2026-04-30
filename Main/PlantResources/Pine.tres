@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://dnx5yruqebd2i"]
 
 [ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="1_3alkf"]
+[ext_resource type="Resource" uid="uid://dpc785mc1d2vl" path="res://Main/ItemResources/Crops/Log.tres" id="1_k03i3"]
 
 [resource]
 script = ExtResource("1_3alkf")
 name = "Pine"
 source_id = 1
 season = 7
+harvest = ExtResource("1_k03i3")

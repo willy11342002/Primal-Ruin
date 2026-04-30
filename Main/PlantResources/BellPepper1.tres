@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_ai5q6")
 name = "BellPepper(Green)"
-source_id = 7
+source_id = 7.0
 atlas_coords = Vector2i(20, 4)
+season = 1
 harvest = ExtResource("1_tr03c")
 multiple_harvest = true
-growth_time = [1, 1, 2, 2, 5]

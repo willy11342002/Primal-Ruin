@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_apm1d")
 name = "Wheat"
-source_id = 7
+source_id = 7.0
 atlas_coords = Vector2i(2, 7)
+season = 1
 harvest = ExtResource("1_3dns6")
-growth_time = ["1", "3", "3", "5"]

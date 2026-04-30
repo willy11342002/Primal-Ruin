@@ -8,7 +8,7 @@ class_name SaveData extends Resource
 @export var auto_door: bool = false
 
 ## Scene Logic Data
-@export var plants_data: Dictionary = {}
+@export var plant_days_dic: Dictionary = {}
 ## Scene Tile Data
 @export var tiles_data: Dictionary = {}
 

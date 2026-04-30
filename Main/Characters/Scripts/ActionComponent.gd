@@ -34,8 +34,9 @@ func use_tool() -> bool:
 
 
 func interact() -> bool:
+	var mouse_pos := entity.get_global_mouse_position()
 	if await _detect_distance():
-		return _call_action("interact", entity.get_global_mouse_position())
+		return _call_action("interact", mouse_pos)
 	return false
 
 

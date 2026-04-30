@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://clx23xqepj8ty"]
+
+[ext_resource type="Resource" uid="uid://dpc785mc1d2vl" path="res://Main/ItemResources/Crops/Log.tres" id="1_fy6pb"]
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="2_ksqnr"]
+
+[resource]
+script = ExtResource("2_ksqnr")
+name = "Birch"
+source_id = 1
+season = 7
+harvest = ExtResource("1_fy6pb")

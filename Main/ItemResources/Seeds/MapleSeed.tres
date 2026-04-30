@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dd4vxt4ct5ybb"]
+
+[ext_resource type="Resource" uid="uid://nvjeih5su1el" path="res://Main/PlantResources/Maple.tres" id="1_r15wo"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_wl1cw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wl1cw"]
+load_path = "res://.godot/imported/Tree.png-615d906bd2a6b6c55d5533a6ff978305.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_armv4"]
+atlas = SubResource("CompressedTexture2D_wl1cw")
+region = Rect2(256, 144, 32, 48)
+
+[resource]
+script = ExtResource("2_wl1cw")
+name = "Maple Seed"
+icon = SubResource("AtlasTexture_armv4")
+action = "sow_seed"
+data = ExtResource("1_r15wo")
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

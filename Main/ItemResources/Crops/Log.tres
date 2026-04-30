@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dpc785mc1d2vl"]
+
+[ext_resource type="Texture2D" uid="uid://cynr20t2roul0" path="res://Assets/Tilesets/Farming/icon.png" id="1_10h10"]
+[ext_resource type="Script" uid="uid://dh6rc24shfheu" path="res://Main/Scripts/ItemResource.gd" id="2_yfy2x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1c8t"]
+atlas = ExtResource("1_10h10")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_yfy2x")
+name = "Log"
+icon = SubResource("AtlasTexture_s1c8t")
+action = "interact"
+metadata/_custom_type_script = "uid://dh6rc24shfheu"

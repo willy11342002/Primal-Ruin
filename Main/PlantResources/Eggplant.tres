@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_qrnh5")
 name = "Eggplant"
-source_id = 7
+source_id = 7.0
 atlas_coords = Vector2i(20, 1)
-season = 1
+season = 2
 harvest = ExtResource("1_f4i0h")
 multiple_harvest = true
-growth_time = ["1", "1", "2", "4", "4"]

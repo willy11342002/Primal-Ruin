@@ -6,8 +6,7 @@
 [resource]
 script = ExtResource("1_nr8f0")
 name = "Pumpkin"
-source_id = 7
+source_id = 7.0
 atlas_coords = Vector2i(2, 8)
-season = 2
+season = 4
 harvest = ExtResource("1_8vye5")
-growth_time = ["1", "3", "3", "3", "5"]

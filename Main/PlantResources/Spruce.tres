@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlantResource" format=3 uid="uid://pi1gamslfgmr"]
+
+[ext_resource type="Resource" uid="uid://dpc785mc1d2vl" path="res://Main/ItemResources/Crops/Log.tres" id="1_u80id"]
+[ext_resource type="Script" uid="uid://ce7tqfn0rdxax" path="res://Main/Scripts/PlantResource.gd" id="2_25y8n"]
+
+[resource]
+script = ExtResource("2_25y8n")
+name = "Spruce"
+source_id = 1
+season = 7
+harvest = ExtResource("1_u80id")

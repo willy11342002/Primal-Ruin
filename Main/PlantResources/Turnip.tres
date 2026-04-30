@@ -7,9 +7,8 @@
 resource_local_to_scene = true
 script = ExtResource("1_2a6jq")
 name = "Turnip"
-source_id = 7
+source_id = 7.0
 atlas_coords = Vector2i(2, 0)
-season = 2
+season = 4
 harvest = ExtResource("1_n8i58")
-growth_time = ["1", "3", "3"]
 metadata/_custom_type_script = "uid://ce7tqfn0rdxax"
