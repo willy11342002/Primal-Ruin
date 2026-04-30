@@ -30,3 +30,7 @@ func update_display() -> void:
 	else:
 		%Icon.texture = null
 		%Amount.text = ""
+
+
+func _on_button_up() -> void:
+	get_parent()._choose_slot(get_index())

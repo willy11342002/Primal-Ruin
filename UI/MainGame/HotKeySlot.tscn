@@ -76,3 +76,9 @@ text = "12"
 label_settings = SubResource("LabelSettings_4h55j")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=590062093]
+layout_mode = 2
+flat = true
+
+[connection signal="button_up" from="MarginContainer/Button" to="." method="_on_button_up"]
