@@ -7,19 +7,22 @@ extends Node
 @export var action_component: ActionComponent
 @onready var entity: CharacterBody2D = get_parent()
 
+var _input_direction: Vector2 = Vector2.ZERO
+
 
 func _physics_process(_delta: float) -> void:
 	if not enabled: return
 	if not move_component: return
-
-	var input_direction: Vector2 = Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
-	move_component.move(input_direction)
-	if input_direction != Vector2.ZERO:
+	move_component.move(_input_direction)
+	if _input_direction != Vector2.ZERO:
 		nav_component.stop()
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if not enabled: return
+	
+	_input_direction = Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
+	
 	if event.is_action_pressed("Confirm", false):
 		action_component.use_tool()
 	if event.is_action_pressed("Cancel", false):
