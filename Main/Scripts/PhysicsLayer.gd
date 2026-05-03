@@ -1,39 +1,30 @@
-extends StaticBody2D
+extends TileMapLayer
 
 
-@export var physics_layer_index: int = 0
+@export var placeholder_source_id: int = 0
+@export var placeholder_atlas_coords: Vector2i = Vector2i(0, 0)
 
 @export var base_layers: Array[TileMapLayer] = []
 
 
-func _create_collision_child(layer: TileMapLayer, coords: Vector2i, points: PackedVector2Array) -> void:
-	var col := CollisionPolygon2D.new()
-	
-	# 將 Tile 局部座標轉換為 Map 局部座標 (Map Space) [cite: 1]
-	var map_pos = layer.map_to_local(coords)
-	var transformed_points = PackedVector2Array()
-	for p in points:
-		transformed_points.append(p + map_pos)
-	
-	col.polygon = transformed_points
-	col.set_meta("coords", coords)
-	add_child(col)
-
-
 func update_coords(coords: Vector2i) -> void:
-	# 刪除該 coords 對應的舊碰撞 child
-	for child in get_children():
-		if child.has_meta("coords") and child.get_meta("coords") == coords:
-			child.queue_free()
+	erase_cell(coords)
 
-	# 從最高層往低層找，高層優先，找到有地塊的層就生成並停止
 	for layer in base_layers:
-		var source_id = layer.get_cell_source_id(coords)
-		if source_id != -1:
-			var data: TileData = layer.get_cell_tile_data(coords)
-			if data:
-				var poly_count = data.get_collision_polygons_count(physics_layer_index)
-				for j in range(poly_count):
-					var points = data.get_collision_polygon_points(physics_layer_index, j)
-					_create_collision_child(layer, coords, points)
-			break  # 高層優先，找到後不繼續往下層
+		# 檢查上方格子是否有影響此格
+		var above_data: TileData = layer.get_cell_tile_data(coords + Vector2i.UP)
+		if above_data:
+			var above_under = above_data.get_custom_data("alternative_under")
+			if above_under not in [null, -1]:
+				set_cell(coords, placeholder_source_id, placeholder_atlas_coords + Vector2i(above_under, 0))
+				print("under: ", coords, layer.name)
+				return
+
+		# 更新本格，有值的話就不再檢查其他層
+		var data: TileData = layer.get_cell_tile_data(coords)
+		if data:
+			var alt = data.get_custom_data("alternative_tile")
+			if alt != -1:
+				set_cell(coords, placeholder_source_id, placeholder_atlas_coords + Vector2i(alt, 0))
+				print("normal: ", coords, layer.name)
+				return
