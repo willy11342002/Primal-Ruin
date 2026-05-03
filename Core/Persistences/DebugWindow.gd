@@ -18,11 +18,6 @@ var item: ItemResource:
 			item_title.icon = null
 
 
-func _on_visibility_changed() -> void:
-	if is_visible_in_tree():
-		name_filter.grab_focus()
-
-
 func _ready() -> void:
 	update_item_list.call_deferred()
 
